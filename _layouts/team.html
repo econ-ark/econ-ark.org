@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<ul class="team-members">
+	{% assign team-members = site.team | sort:"order" %}
+
+	{% for team-member in team-members %}
+	<li><img alt="" src="/assets/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {% if team-member.role %}— {{ team-member.role }}{% endif %} {{ team-member.content }}</li>
+{% endfor %}
+</ul>

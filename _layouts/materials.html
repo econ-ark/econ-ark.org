@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<p class="visuallyhidden">
+  The following list of links filter and update content in the table below.
+</p>
+
+<div class="display-controls">
+
+  <p class="controls-label">
+    Show materials:
+  </p>
+
+  <ul class="tabs-toggles">
+    <li><a id="allMaterial" class="active">All</a></li>
+    <li><a id="replicationMaterial">Replications</a></li>
+    <li><a id="demonstrationMaterial">Demonstrations</a></li>
+    <li><a id="presentationMaterial">Presentations</a></li>
+    <li><a id="instructionalMaterial">Instructional</a></li>
+  </ul>
+
+  <div class="tag-filter">
+    <label for="tagSelect">Tag:</label>
+    <select id="tagSelect">
+      <option value="All">All</option>
+    </select>
+  </div>
+</div>
+
+<ul class="materials" id="materialsList">
+  {% for material in site.materials %}
+  <li class="{{ material.type }}Material">
+    <p class="title"><a href="{{ material.url }}">{{ material.name }}</a></p>
+    <p class="authors"><em>Authors:</em> {% for author in material.authors %}<span>{{ author }}</span> {% endfor %}</p>
+    <p class="date"><em>Publication date:</em> {{ material.published }}</p>
+    <p>{{ material.summary }}</p>
+    <ul class="tags">
+      {% for tag in material.tags %}
+      <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>

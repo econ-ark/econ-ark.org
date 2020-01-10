@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<h1>{{ page.name }}</h1>
+
+<hr>
+
+{{ content }}
+
+<hr> 
+
+<ul class="material-actions">
+
+{% comment %} Display view button {% endcomment %}
+{% if page.location_url %}
+    
+    <li>
+        <a class="action-button" href="{{ page.location_url }}">View Material</a>
+    </li>
+
+{% endif %}
+
+{% comment %} Display notebook launcher section {% endcomment %}
+{% if page.is_notebook and page.github_user and page.github_repository and page.github_branch and page.github_path %}
+    
+    {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
+    page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
+
+    <li>
+        <a href="{{ launch_url }}"><img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder button"></a>
+    </li>
+
+    {% comment %} Display custom notebook launcher button {% endcomment %}
+    {% if site.custom_launcher %} 
+
+        {% capture custom_launch_url
+        %}{{ site.custom_launcher_domain }}v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
+    page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
+
+        <li>
+            <a href="{{ custom_launch_url }}"><img src="https://img.shields.io/badge/launch-econ--ark-green?logo=jupyter&style=flat" alt="Launch Econ-ARK button"></a>
+        </li>
+
+    {% endif %}
+
+{% endif %}
+</ul>
+
+<dl class="material-metalist">
+    {% for item in page %}    
+        {% if page[item]
+        and item != 'previous'
+        and item != 'output'
+        and item != 'url'
+        and item != 'id'
+        and item != 'relative_path'
+        and item != 'excerpt'
+        and item != 'next'
+        and item != 'content'
+        and item != 'collection'
+        and item != 'path'
+        and item != 'draft'
+        and item != 'categories'
+        and item != 'layout'
+        and item != 'title'
+        and item != 'slug'
+        and item != 'ext'
+        %}
+            <dt>{{ item }}</dt>
+            <dd>{% for i in page[item] %} {{ i }}<br>{% endfor %}</dd>
+        {% endif %}
+    {% endfor %}
+</dl>
