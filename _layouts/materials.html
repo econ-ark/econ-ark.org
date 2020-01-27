@@ -35,7 +35,7 @@ layout: default
   <li class="{{ material.type }}Material">
     <p class="title"><a href="{{ material.url }}">{{ material.name }}</a></p>
     <p class="authors"><em>Authors:</em> {% for author in material.authors %}<span>{{ author }}</span> {% endfor %}</p>
-    <p class="date"><em>Publication date:</em> {{ material.published }}</p>
+<!--    <p class="date"><em>Publication date:</em> {{ material.published }}</p> -->
     <p>{{ material.summary }}</p>
     <ul class="tags">
       {% for tag in material.tags %}
