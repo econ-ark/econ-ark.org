@@ -5,6 +5,7 @@
 <!-- remainder is material that should live in REMARK/[name] -->
 name: LiqConstr
 type: replication <!-- Not sure what this controls, distinctly from tags --> 
+test: do_min.py <!-- Name of the file in the root directory to test, if different from name.py; for Travis etc-->
 
 is_notebook: false <!-- I think we want to insist that there must ALWAYS be an (eponymous) notebook -->
 published:
