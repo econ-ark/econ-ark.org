@@ -11,8 +11,8 @@ tags:
 location_url: https://github.com/llorracc/BufferStockTheory
 github_user: llorracc
 github_repository: BufferStockTheory
-github_branch:
-github_path:
+github_branch: master
+github_path: Code/Python
 ---
 
 Theoretical Foundations of Buffer Stock Saving
