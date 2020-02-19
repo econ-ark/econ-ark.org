@@ -48,6 +48,7 @@ url_to_original_being_REMARKed: [name]-Original-Paper.URL <!-- On macs such file
 summary: [name]-One-Sentence-Summary.md <!-- This should contain the info that comes below the triple-dashes --- below --> 
 
 ---
+<!-- One sentence summary here --> 
 
 Liquidity Constraints and Precautionary Saving <!-- This should be sourced from the [name]-REMARK-title.md file --> 
 
