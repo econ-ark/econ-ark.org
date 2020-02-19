@@ -11,6 +11,6 @@ order: 5
 Econ-ARK materials are categorized under the following types:
 
 - Demonstrations: Jupyter Notebooks demonstrating usage of HARK
-- Replications: Jupyter Notebooks implementing existing papers in HARK
-- Instructional tools: Notebooks constructed for teaching purposes, including problem sets
+- REMARKs: Replications or Reproductions (of results from papers); focused explorations of topics
+- Instructional: Notebooks constructed for teaching purposes, including problem sets
 - Presentations: Notebooks and non-notebook content from presentations given related to HARK/Econ-ARK
