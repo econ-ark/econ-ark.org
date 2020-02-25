@@ -5,14 +5,14 @@ type: replication
 is_notebook: false
 published:
 authors:
-  - Christopher Carroll
+  - Christopher D. Carroll
 tags:
   - Reproduction
-location_url: https://github.com/llorracc/BufferStockTheory
+location_url: https://github.com/llorracc/BufferStockTheory/blob/master/Code/Python/BufferStockTheory.ipynb
 github_user: llorracc
 github_repository: BufferStockTheory
 github_branch: master
-github_path: Code/Python/BufferStockTheory.ipynb
+github_path: REMARKs/Code/Python/BufferStockTheory.ipynb
 ---
 
 Theoretical Foundations of Buffer Stock Saving
