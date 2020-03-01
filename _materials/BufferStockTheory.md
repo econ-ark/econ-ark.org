@@ -2,7 +2,7 @@
 name: BufferStockTheory
 summary: 'Theoretical Foundations of Buffer Stock Saving'
 type: replication
-is_notebook: false
+is_notebook: true
 published:
 authors:
   - Christopher D. Carroll
