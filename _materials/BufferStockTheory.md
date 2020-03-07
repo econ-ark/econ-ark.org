@@ -12,7 +12,7 @@ location_url: https://github.com/llorracc/BufferStockTheory/blob/master/Code/Pyt
 github_user: llorracc
 github_repository: BufferStockTheory
 github_branch: master
-github_path: REMARKs/Code/Python/BufferStockTheory.ipynb
+github_path: Code/Python/BufferStockTheory.ipynb
 ---
 
 Theoretical Foundations of Buffer Stock Saving
