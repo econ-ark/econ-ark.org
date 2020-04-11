@@ -13,7 +13,7 @@ The primary goals of the project are to make entry into the world of such modeli
 
 Econ-ARK is headed by <a href="http://www.econ2.jhu.edu/people/ccarroll/">Christopher D. Carroll</a>, Professor of Economics at the Johns Hopkins University.
 
-The project is a recipient of grants from the <a href="https://sloan.org/">Sloan foundation</a> and the <a href="https://www.thinkforwardinitiative.com/"></a>, and is under the umbrella of projects with fiscal sponsorship by <a href="https://www.numfocus.org/">NumFocus</a>.
+The project is a recipient of grants from the <a href="https://sloan.org/">Sloan foundation</a> and the <a href="https://www.thinkforwardinitiative.com/">Think Forward Initiative</a>, and is under the umbrella of projects with fiscal sponsorship by <a href="https://www.numfocus.org/">NumFocus</a>.
 
 Find out more about Econ-ARK project development on <a href="https://github.com/econ-ark">GitHub</a>.
 
