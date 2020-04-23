@@ -2,7 +2,7 @@
 name: Pandemic-ConsumptionResponse
 summary: 'Analysis of the household consumption response to the Covid-19 crisis and the CAREs Act response'
 type: demonstration
-is_notebook: true
+is_voila: true
 published:
 authors:
   - Christopher D. Carroll
