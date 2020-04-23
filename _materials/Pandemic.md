@@ -1,11 +1,14 @@
 ---
 name: Pandemic-ConsumptionResponse
-summary: 'An interactive dashboard to look at the effect of various parameters on consumption response modeling.'
+summary: 'Analysis of the household consumption response to the Covid-19 crisis and the CAREs Act response'
 type: demonstration
 is_notebook: true
 published:
 authors:
-  - Mridul Seth
+  - Christopher D. Carroll
+  - Edmund Crawley
+  - Jiri Slacalek
+  - Matthew N. White
 tags:
   - Notebook
 location_url: https://github.com/econ-ark/Pandemic/tree/master/Code/Python
@@ -15,4 +18,4 @@ github_branch: master
 github_path: /Code/Python/dashboard.ipynb
 ---
 
-An interactive dashboard to look at the effect of various parameters on consumption response modeling.
+Analysis of the household consumption response to the Covid-19 crisis and the CAREs Act response. 
