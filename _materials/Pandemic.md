@@ -15,7 +15,7 @@ location_url: https://github.com/econ-ark/Pandemic
 github_user: econ-ark
 github_repository: Pandemic
 github_branch: master
-github_path: /Code/Python/dashboard.ipynb
+github_path: Code/Python/dashboard.ipynb
 ---
 
 Analysis of the household consumption response to the Covid-19 crisis and the CAREs Act response.
