@@ -1,5 +1,5 @@
 ---
-name: Pandemic: Consumption Response
+name: Pandemic - Consumption Response
 summary: 'Analysis of the household consumption response to the Covid-19 crisis and the CAREs Act response'
 type: demonstration
 is_voila: true
