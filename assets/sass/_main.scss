@@ -909,6 +909,113 @@ a.action-button {
   }
 }
 
+// Material page
+
+.material-heading {
+}
+.material-wrapper {
+  margin: 2rem 0;
+  display: flex;
+  .material-main {
+    flex-grow: 1;
+    .material-summary {
+      font-size: 1.2rem;
+      border-bottom: 1px solid #ced4da;
+      padding: 0 0 2rem 0;
+      margin: 0 0 2rem 0;
+    }
+    .material-authors {
+      margin: 0 0 2rem 0;
+      font-weight: 500;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      li {
+        //margin: 0 1rem 0 0;
+        &:after {
+          content: ', ';
+          margin: 0 0.5rem 0 0;
+        }
+        &:last-child {
+          &:after {
+            content: '';
+          }
+        }
+      }
+    }
+    .material-content {
+    }
+    .material-metalist {
+      margin: 4rem 0 0 0;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #ccc;
+      li {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        padding: 0.25rem 1rem;
+        &:nth-child(odd) {
+          background-color: #efefef;
+        }
+        .key {
+          font-family: $font-alt;
+          width: 200px;
+          flex-shrink: 0;
+        }
+        .value {
+        }
+      }
+    }
+  }
+  .material-supplementary {
+    width: 25%;
+    margin: 0 0 0 5%;
+    flex-shrink: 0;
+    .material-actions {
+      margin: 0;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      li {
+        margin: 0 0 0.5rem 0;
+        a {
+          display: flex;
+          align-items: center;
+          border: 4px solid $ark-blue;
+          padding: 1rem 1.5rem;
+          font-size: 1.2rem;
+          line-height: 1;
+          font-family: $font-alt;
+          svg {
+            width: 30px;
+            margin: 0 1rem 0 0;
+            font-size: 30px;
+          }
+          &:hover {
+            background-color: $ark-grey; //lighten($ark-blue, 10%);
+            border-color: $ark-grey; //lighten($ark-blue, 10%);
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+        &.primary {
+          a {
+            background-color: $ark-blue;
+            color: #fff;
+            &:hover {
+              background-color: $ark-grey; //lighten($ark-blue, 10%);
+              border-color: $ark-grey; //lighten($ark-blue, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991px) {
 }
