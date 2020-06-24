@@ -2,100 +2,133 @@
 layout: default
 ---
 
-<h1>{{ page.name }}</h1>
+<h1 class="material-heading">{{ page.name }}</h1>
 
-<hr>
+<div class="material-wrapper">
 
-{{ content }}
+    <div class="material-main">
 
-<hr> 
+        <p class="material-summary">{{ page.summary }}</p>
 
-<ul class="material-actions">
+        <ul class="material-authors">
+            {% for item in page.authors %}    
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
 
-{% comment %} Display view button {% endcomment %}
-{% if page.location_url %}
+        <div class="material-content">
+
+        {{ content }}
+
+        </div>
+
+        <ul class="material-metalist">
+            {% for item in page %}    
+                {% if page[item]
+                and item != 'previous'
+                and item != 'output'
+                and item != 'url'
+                and item != 'id'
+                and item != 'relative_path'
+                and item != 'excerpt'
+                and item != 'next'
+                and item != 'content'
+                and item != 'collection'
+                and item != 'path'
+                and item != 'draft'
+                and item != 'categories'
+                and item != 'layout'
+                and item != 'title'
+                and item != 'slug'
+                and item != 'ext'
+                %}
+                <li>
+                    <span class="key">{{ item }}</span>
+                    <span class="value">{% for i in page[item] %} {{ i }}<br>{% endfor %}</span>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+    </div>  
+
+    <div class="material-supplementary">
     
-    <li>
-        <a class="action-button" href="{{ page.location_url }}">View Material</a>
-    </li>
+        <ul class="material-actions">
 
-{% endif %}
+        {% comment %} Display notebook launcher section {% endcomment %}
+        {% if page.github_user and page.github_repository and page.github_branch and page.github_path %}
+            
+            {% if page.is_notebook %}
+            
+                {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
+                page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
 
-{% comment %} Display notebook launcher section {% endcomment %}
-{% if page.github_user and page.github_repository and page.github_branch and page.github_path %}
-    
-    {% if page.is_notebook %}
-    
-        {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-        page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
+                <li class="primary">
+                    <i class="far fa-arrow-to-bottom"></i> <a href="{{ launch_url }}">Launch Binder</a>
+                </li>
 
-        <li>
-            <a href="{{ launch_url }}"><img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder button"></a>
-        </li>
+                {% comment %} Display custom notebook launcher button {% endcomment %}
+                {% if site.custom_launcher %} 
 
-        {% comment %} Display custom notebook launcher button {% endcomment %}
-        {% if site.custom_launcher %} 
+                    {% capture custom_launch_url
+                    %}{{ site.custom_launcher_domain }}v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
+                page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
 
-            {% capture custom_launch_url
-            %}{{ site.custom_launcher_domain }}v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-        page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
+                    <li class="primary">
+                        <a href="{{ custom_launch_url }}"><i class="far fa-arrow-to-bottom"></i> Launch Econ-ARK</a>
+                    </li>
 
+                {% endif %}
+            {% endif %}
+            {% if page.is_voila %}
+                
+                {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
+                page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
+
+                <li class="primary">
+                    <a href="{{ launch_url }}"><i class="fas fa-book-open"></i> Launch Binder</a>
+                </li>
+
+                {% comment %} Display custom notebook launcher button {% endcomment %}
+                {% if site.custom_launcher %} 
+
+                    {% capture custom_launch_url
+                    %}{{ site.custom_launcher_domain }}v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
+                page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
+
+                    <li class="primary">
+                        <a href="{{ custom_launch_url }}"><img src="https://img.shields.io/badge/launch-econ--ark-green?logo=jupyter&style=flat" alt="Launch Econ-ARK button"></a>
+                    </li>
+
+                {% endif %}
+            
+            {% endif %}
+            
+
+        {% endif %}
+
+        {% comment %} Display view button {% endcomment %}
+        {% if page.location_url %}
+            
             <li>
-                <a href="{{ custom_launch_url }}"><img src="https://img.shields.io/badge/launch-econ--ark-green?logo=jupyter&style=flat" alt="Launch Econ-ARK button"></a>
+                <a href="{{ page.location_url }}"><i class="fab fa-github"></i> View Material</a>
             </li>
 
         {% endif %}
-    {% endif %}
-    {% if page.is_voila %}
-        
-        {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-        page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
 
-        <li>
-            <a href="{{ launch_url }}"><img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder button"></a>
-        </li>
-
-        {% comment %} Display custom notebook launcher button {% endcomment %}
-        {% if site.custom_launcher %} 
-
-            {% capture custom_launch_url
-            %}{{ site.custom_launcher_domain }}v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-        page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
-
+        {% comment %} Display paper button {% endcomment %}
+        {% if page.paper_url %}
+            
             <li>
-                <a href="{{ custom_launch_url }}"><img src="https://img.shields.io/badge/launch-econ--ark-green?logo=jupyter&style=flat" alt="Launch Econ-ARK button"></a>
+                <a href="{{ page.paper_url }}"><i class="fas fa-file"></i> Download Paper</a>
             </li>
 
         {% endif %}
-    
-    {% endif %}
-    
 
-{% endif %}
-</ul>
+    </ul>
 
-<dl class="material-metalist">
-    {% for item in page %}    
-        {% if page[item]
-        and item != 'previous'
-        and item != 'output'
-        and item != 'url'
-        and item != 'id'
-        and item != 'relative_path'
-        and item != 'excerpt'
-        and item != 'next'
-        and item != 'content'
-        and item != 'collection'
-        and item != 'path'
-        and item != 'draft'
-        and item != 'categories'
-        and item != 'layout'
-        and item != 'title'
-        and item != 'slug'
-        and item != 'ext'
-        %}
-            <dt>{{ item }}</dt>
-            <dd>{% for i in page[item] %} {{ i }}<br>{% endfor %}</dd>
-        {% endif %}
-    {% endfor %}
-</dl>
+    </div>
+
+</div>
+
