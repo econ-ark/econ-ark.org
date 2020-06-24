@@ -1,7 +1,7 @@
 const nav = document.querySelector('.navigation');
 const navToggle = document.getElementById('toggleNav');
 
-navToggle.addEventListener('click', function(e) {
+navToggle.addEventListener('click', function (e) {
   e.preventDefault();
   if (window.getComputedStyle(nav).display === 'block') {
     nav.style.display = 'none';
@@ -53,7 +53,7 @@ function filterMaterials() {
 if (document.getElementById('materialsList')) {
   const tabLinks = document.querySelectorAll('.tabs-toggles li a');
   for (var i = 0; i < tabLinks.length; i++) {
-    tabLinks[i].addEventListener('click', function(e) {
+    tabLinks[i].addEventListener('click', function (e) {
       e.preventDefault();
       for (var j = 0; j < tabLinks.length; j++) {
         tabLinks[j].classList.remove('active');
@@ -76,11 +76,18 @@ if (document.getElementById('materialsList')) {
     tagSelect.add(option);
   }
 
-  document.getElementById('tagSelect').addEventListener('change', event => {
+  document.getElementById('tagSelect').addEventListener('change', (event) => {
     filterMaterials();
   });
 
   const choices = new Choices('#tagSelect', {
-    itemSelectText: ''
+    itemSelectText: '',
   });
+}
+
+var pathname = window.location.pathname;
+var n = pathname.includes('/launch');
+var href = document.getElementsByClassName('launch-link')[0].href;
+if (n) {
+  window.location = href;
 }
