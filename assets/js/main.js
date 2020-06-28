@@ -85,9 +85,9 @@ if (document.getElementById('materialsList')) {
   });
 }
 
-var pathname = window.location.pathname;
-var n = pathname.includes('/launch');
-var href = document.getElementsByClassName('launch-link')[0].href;
-if (n) {
+// If anchor "launch" open link of first launch button
+var pathname = window.location.hash;
+if (pathname == '#launch') {
+  var href = document.getElementsByClassName('launch-link')[0].href;
   window.location = href;
 }

@@ -60,13 +60,6 @@ layout: default
         {% if page.github_user and page.github_repository and page.github_branch and page.github_path %}
             
             {% if page.is_notebook %}
-            
-                {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-                page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
-
-                <li class="primary">
-                    <a href="{{ launch_url }}" class="launch-link"><i class="fas fa-book-open"></i> Launch Binder</a>
-                </li>
 
                 {% comment %} Display custom notebook launcher button {% endcomment %}
                 {% if site.custom_launcher %} 
@@ -79,16 +72,17 @@ layout: default
                         <a href="{{ custom_launch_url }}" class="launch-link"><i class="fas fa-book-open"></i> Launch Econ-ARK</a>
                     </li>
 
-                {% endif %}
-            {% endif %}
-            {% if page.is_voila %}
-                
+                {% endif %}        
+
                 {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-                page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
+                page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
 
                 <li class="primary">
                     <a href="{{ launch_url }}" class="launch-link"><i class="fas fa-book-open"></i> Launch Binder</a>
                 </li>
+
+            {% endif %}
+            {% if page.is_voila %}
 
                 {% comment %} Display custom notebook launcher button {% endcomment %}
                 {% if site.custom_launcher %} 
@@ -102,6 +96,13 @@ layout: default
                     </li>
 
                 {% endif %}
+
+                {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
+                page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
+
+                <li class="primary">
+                    <a href="{{ launch_url }}" class="launch-link"><i class="fas fa-book-open"></i> Launch Binder</a>
+                </li>
             
             {% endif %}
             
