@@ -1,3 +1,5 @@
+// Econ-ARK main.js v1.0
+
 const nav = document.querySelector('.navigation');
 const navToggle = document.getElementById('toggleNav');
 
