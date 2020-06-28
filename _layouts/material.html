@@ -21,6 +21,8 @@ layout: default
         {{ content }}
 
         </div>
+        
+        {% if page.is_notebook %}
 
         <div class="how-to">
             <p class="how-to-toggle">Options for Executing This Notebook</p>
@@ -50,6 +52,8 @@ layout: default
                 </ol>
             </div>
         </div>
+
+        {% endif %} 
 
         <ul class="material-metalist">
             {% for item in page %}    
