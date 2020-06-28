@@ -88,8 +88,23 @@ if (document.getElementById('materialsList')) {
 }
 
 // If anchor "launch" open link of first launch button
-var pathname = window.location.hash;
-if (pathname == '#launch') {
-  var href = document.getElementsByClassName('launch-link')[0].href;
-  window.location = href;
+function checkForLaunch() {
+  var pathname = window.location.hash;
+  if (pathname == '#launch') {
+    var href = document.getElementsByClassName('launch-link')[0].href;
+    window.location = href;
+  }
 }
+window.addEventListener(
+  'hashchange',
+  function () {
+    checkForLaunch();
+  },
+  false
+);
+checkForLaunch();
+
+// Show/Hide Notebook launching help
+$('.how-to-toggle').click(function () {
+  $(this).siblings('.how-to-copy').slideToggle();
+});

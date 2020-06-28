@@ -22,6 +22,35 @@ layout: default
 
         </div>
 
+        <div class="how-to">
+            <p class="how-to-toggle">Options for Executing This Notebook</p>
+            <div class="how-to-copy" style="display:none;">
+                <ol>
+                    {% if page.location_url %}
+            
+                        <li>
+                            <a href="{{ page.location_url }}">View (noninteractively)</a> on GitHub (warning: sometimes GitHub does not render Jupyter notebooks)
+                        </li>
+            
+                    {% endif %} 
+                    <li><a href="#launch">Launch Online Interactive Version</a> (warning: takes a couple of minutes)</li>
+                    <li>Install <a href="http://github.com/econ-ark">econ-ark</a> on your computer (<a href="https://github.com/econ-ark/HARK/blob/master/README.md">QUICK START GUIDE</a> then follow these instructions:
+                        <ol>
+                            <li>At a command line, change the working directory to the one where you want to install
+                                <ul>
+                                    <li>On MacOS/unix, if you install in the <code>/tmp</code> directory, the installation will disappear after a reboot:</li>
+                                    <li><code>cd /tmp</code></li>
+                                </ul>
+                            </li>
+                            <li><code>git clone https://github.com/econ-ark/REMARK --recursive</code></li>
+                            <li><code>cd REMARK/REMARKs/{{ page.name }}</code></li>
+                            <li><code>jupyter notebook {{ page.name }}.ipynb</code></li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
         <ul class="material-metalist">
             {% for item in page %}    
                 {% if page[item]
@@ -42,10 +71,14 @@ layout: default
                 and item != 'slug'
                 and item != 'ext'
                 %}
+                {% if page[item] != '' %}
                 <li>
                     <span class="key">{{ item }}</span>
-                    <span class="value">{% for i in page[item] %} {{ i }}<br>{% endfor %}</span>
+                    <span class="value">{% for i in page[item] %} {{ i }}<br>{% endfor %}
+                        {% if page[item] == true %}true{% endif %}
+                    </span>
                 </li>
+                {% endif %}
                 {% endif %}
             {% endfor %}
         </ul>
@@ -69,7 +102,7 @@ layout: default
                 page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
 
                     <li class="primary">
-                        <a href="{{ custom_launch_url }}" class="launch-link"><i class="fas fa-book-open"></i> Launch Econ-ARK</a>
+                        <a href="{{ custom_launch_url }}" class="launch-link" target="_blank"><i class="fas fa-book-open"></i> Launch Econ-ARK</a>
                     </li>
 
                 {% endif %}        
@@ -78,7 +111,7 @@ layout: default
                 page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
 
                 <li class="primary">
-                    <a href="{{ launch_url }}" class="launch-link"><i class="fas fa-book-open"></i> Launch Binder</a>
+                    <a href="{{ launch_url }}" class="launch-link" target="_blank"><i class="fas fa-book-open"></i> Launch Binder</a>
                 </li>
 
             {% endif %}
@@ -92,7 +125,7 @@ layout: default
                 page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
 
                     <li class="primary">
-                        <a href="{{ custom_launch_url }}"><img src="https://img.shields.io/badge/launch-econ--ark-green?logo=jupyter&style=flat" alt="Launch Econ-ARK button"></a>
+                        <a href="{{ custom_launch_url }}" target="_blank">Launch Econ-ARK</a>
                     </li>
 
                 {% endif %}
@@ -101,7 +134,7 @@ layout: default
                 page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
 
                 <li class="primary">
-                    <a href="{{ launch_url }}" class="launch-link"><i class="fas fa-book-open"></i> Launch Binder</a>
+                    <a href="{{ launch_url }}" target="_blank" class="launch-link"><i class="fas fa-book-open"></i> Launch Binder</a>
                 </li>
             
             {% endif %}
