@@ -10,11 +10,11 @@ tags:
   - Replication
   - Notebook
   - Blog
-location_url: https://github.com/econ-ark/REMARK/tree/master/REMARKs/PortfolioChoiceBlogPost
+location_url: https://github.com/econ-ark/PortfolioChoiceBlogPost
 github_user: econ-ark
 github_repository: REMARK
 github_branch: master
-github_path: REMARKs/PortfolioChoiceBlogPost/PortfolioChoiceBlogPost.ipynb
+github_path: PortfolioChoiceBlogPost/PortfolioChoiceBlogPost.ipynb
 ---
 
 # Optimal Financial Investment over the Life Cycle
