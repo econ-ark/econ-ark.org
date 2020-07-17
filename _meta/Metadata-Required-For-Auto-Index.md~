@@ -1,0 +1,16 @@
+# Metadata Required for Auto Index
+
+This document is for working out a system whereby certain kinds of materials (DemARKs; REMARKs) can be automatically indexed by econ-ark.org using metadata that resides with the material itself.
+
+Desiderata:
+1. We should have the same mechanism for DemARK and REMARK material
+1. That mechanism should involve:
+    * "Required" metadata:
+        * Author(s) of the material
+        * What else?
+    *  NOT required (maybe not even allowed):
+        * The name of the material itself (because this should never be different from the filename)
+        * The location (DemARK; REMARK; examples)
+
+he name of the material - because that should be identical to the filename
+        * Author(s)
