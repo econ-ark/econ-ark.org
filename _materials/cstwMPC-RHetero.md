@@ -8,11 +8,10 @@ authors:
   - Christopher Carroll
 tags:
   - Replication
-location_url: https://github.com/econ-ark/REMARK/tree/master/REMARKs/cstwMPC-RHetero
+location_url: https://github.com/econ-ark/cstwMPC-RHetero
 github_user: econ-ark
-github_repository: REMARK
+github_repository: cstwMPC-RHetero
 github_branch: master
-github_path: REMARKs/cstwMPC-RHetero
 ---
 
 AksitRHetero is a Reproduction
