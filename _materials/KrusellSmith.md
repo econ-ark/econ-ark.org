@@ -2,17 +2,17 @@
 name: KrusellSmith
 summary: 'This is a Replication of Krusell and Smith, 1998.'
 type: replication
-is_notebook: false
+is_notebook: true
 published:
 authors:
   - Christopher Carroll
 tags:
   - Replication
-location_url: https://github.com/econ-ark/REMARK/tree/master/REMARKs/KrusellSmith
+location_url: https://github.com/econ-ark/KrusellSmith/blob/master/Code/Python/KrusellSmith.ipynb
 github_user: econ-ark
-github_repository: REMARK
+github_repository: KrusellSmith
 github_branch: master
-github_path: REMARKs/KrusellSmith
+github_path: Code/Python/KrusellSmith.ipynb
 ---
 
 KrusellSmith
