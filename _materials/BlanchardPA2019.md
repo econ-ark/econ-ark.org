@@ -2,17 +2,17 @@
 name: BlanchardPA2019
 summary: 'Public Debt and Low Interest Rates'
 type: replication
-is_notebook: false
+is_notebook: true
 published:
 authors:
   - Christopher Carroll
 tags:
   - Replication
-location_url: https://github.com/econ-ark/REMARK/tree/master/REMARKs/BlanchardPA2019
+location_url: https://github.com/econ-ark/BlanchardPA2019/blob/master/Code/Python/BlanchardPA2019.ipynb
 github_user: econ-ark
-github_repository: REMARK/REMARKs
+github_repository: BlanchardPA2019
 github_branch: master
-github_path: BlanchardPA2019
+github_path: Code/Python/BlanchardPA2019.ipynb
 ---
 
 Public Debt and Low Interest Rates
