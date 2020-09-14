@@ -95,14 +95,25 @@ function checkForLaunch() {
     window.location = href;
   }
 }
+
+// If anchor "launch" open link of first launch button
+function checkForLaunchDashboard() {
+  var pathname = window.location.hash;
+  if (pathname == '#dashboard') {
+    var href = document.getElementsByClassName('launch-link')[0].href;
+    window.location = href;
+  }
+}
 window.addEventListener(
   'hashchange',
   function () {
     checkForLaunch();
+    checkForLaunchDashboard();
   },
   false
 );
 checkForLaunch();
+checkForLaunchDashboard();
 
 // Show/Hide Notebook launching help
 $('.how-to-toggle').click(function () {
