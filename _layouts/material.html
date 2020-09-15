@@ -113,6 +113,18 @@ layout: default
 
         {% endif %}
 
+        {% if page.dashboard_path %}
+
+            {% capture dashboard_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
+            page.github_branch }}?filepath={{ page.dashboard_path }}{% endcapture %}
+
+            <li class="primary">
+                <a href="{{ dashboard_url }}" class="launch-link" target="_blank">Launch Dashboard</a>
+            </li>
+
+        {% endif %}
+
+
         {% comment %} Display view button {% endcomment %}
         {% if page.location_url %}
             

@@ -35,10 +35,7 @@ function filterMaterials() {
         }
       }
 
-      if (
-        materials[i].classList.contains(tabChoice) ||
-        tabChoice == 'allMaterial'
-      ) {
+      if (materials[i].classList.contains(tabChoice) || tabChoice == 'allMaterial') {
         var hasTab = true;
       }
 
@@ -96,11 +93,11 @@ function checkForLaunch() {
   }
 }
 
-// If anchor "launch" open link of first launch button
+// If anchor "dashboard" open link of first launch button
 function checkForLaunchDashboard() {
   var pathname = window.location.hash;
   if (pathname == '#dashboard') {
-    var href = document.getElementsByClassName('launch-link')[0].href;
+    var href = document.getElementsByClassName('dashboard-link')[0].href;
     window.location = href;
   }
 }
