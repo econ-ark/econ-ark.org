@@ -13,6 +13,7 @@ github_user: llorracc
 github_repository: BufferStockTheory
 github_branch: master
 github_path: Code/Python/BufferStockTheory.ipynb
+dashboard_path: Code/Python/BufferStockTheory-Interactive-Dashboard.ipynb
 ---
 
 Theoretical Foundations of Buffer Stock Saving
