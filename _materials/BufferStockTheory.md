@@ -1,7 +1,7 @@
 ---
 name: BufferStockTheory
 summary: 'Theoretical Foundations of Buffer Stock Saving'
-type: replication
+type: reproduction
 is_notebook: true
 published:
 authors:
