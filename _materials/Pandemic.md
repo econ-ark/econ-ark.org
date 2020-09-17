@@ -12,7 +12,7 @@ authors:
 tags:
   - Notebook
 location_url: https://github.com/econ-ark/Pandemic
-dashboard_path: Code/Python/BufferStockTheory-Interactive-Dashboard.ipynb
+dashboard_path: Code/Python/dashboard.ipynb
 github_user: econ-ark
 github_repository: Pandemic
 github_branch: master
