@@ -116,7 +116,7 @@ layout: default
         {% if page.dashboard_path %}
 
             {% capture dashboard_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-            page.github_branch }}?filepath={{ page.dashboard_path }}{% endcapture %}
+            page.github_branch }}?urlpath=/voila/render/{{ page.dashboard_path }}{% endcapture %}
 
             <li class="primary">
                 <a href="{{ dashboard_url }}" class="dashboard-link" target="_blank">Launch Dashboard</a>
