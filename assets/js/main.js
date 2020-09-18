@@ -87,10 +87,6 @@ if (document.getElementById('materialsList')) {
 // If anchor "launch" open link of first launch button
 function checkForLaunch() {
   var pathname = window.location.hash;
-  # hack to make it work with URLs that originate from LaTeX
-  if (pathname == '') {
-    var pathname = '#' + window.location.href.split('%23')[1];
-  }
   if (pathname == '#launch') {
     var href = document.getElementsByClassName('launch-link')[0].href;
     window.location = href;
@@ -100,10 +96,6 @@ function checkForLaunch() {
 // If anchor "dashboard" open link of first launch button
 function checkForLaunchDashboard() {
   var pathname = window.location.hash;
-  # hack to make it work with URLs that originate from LaTeX
-  if (pathname == '') {
-    var pathname = '#' + window.location.href.split('%23')[1];
-  }
   if (pathname == '#dashboard') {
     var href = document.getElementsByClassName('dashboard-link')[0].href;
     window.location = href;
