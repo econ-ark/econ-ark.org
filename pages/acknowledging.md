@@ -26,8 +26,9 @@ Or Markdown:
 For LaTeX:
 
 1. Download either (or both) versions of the button to the directory containing the LaTeX file:
-* [pdf](https://github.com/econ-ark/econ-ark.org/blob/master/pages/resources/PoweredByEconARK.pdf)
-* [svg](https://github.com/econ-ark/econ-ark.org/blob/master/pages/resources/PoweredByEconARK.svg)
+https://github.com/econ-ark/econ-ark.org/tree/Fix-LaTeX-Button/pages/resources
+    * [pdf](https://github.com/econ-ark/econ-ark.org/raw/master/pages/resources/PoweredByEconARK.pdf)
+    * [svg](https://github.com/econ-ark/econ-ark.org/raw/master/pages/resources/PoweredByEconARK.svg)
 1. Render the button using:
 '''
 \DeclareGraphicsExtensions{[whichever type you chose above]}, e.g. \DeclareGraphicsExtensions{.pdf}
