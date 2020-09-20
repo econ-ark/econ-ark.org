@@ -112,6 +112,16 @@ window.addEventListener(
 checkForLaunch();
 checkForLaunchDashboard();
 
+// Check for query string, launch notbooks accordingly
+var urlParams = new URLSearchParams(window.location.search);
+if ( urlParams.has('dashboard') ) {
+  var href = document.getElementsByClassName('dashboard-link')[0].href;
+  window.location = href;
+} else if ( urlParams.has('launch') ) {
+  var href = document.getElementsByClassName('launch-link')[0].href;
+  window.location = href;  
+}
+
 // Show/Hide Notebook launching help
 $('.how-to-toggle').click(function () {
   $(this).siblings('.how-to-copy').slideToggle();
