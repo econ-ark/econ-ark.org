@@ -1,42 +1,21 @@
 ---
 name: LiqConstr
-repo: REMARK
-type:  
-
+summary: 'Liquidity Constraints and Precautionary Saving'
+type: reproduction
+is_notebook: true
+published:
+authors:
+  - Christopher D. Carroll
 tags:
   - Reproduction
-  - REMARK/Reproduction
-
-testfile: do_min.sh 
-is_notebook: false 
-is_directory: true 
-is_html: false     
-
-published_to_master:  
-published_to_archive: 
-
-authors:
-
-source_is_remote: true 
-location_url: https://github.com/llorracc/LiqConstr
-github_user: llorracc
+location_url: https://github.com/econ-ark/LiqConstr/blob/master/liqConstr.ipynb
+github_user: econ-ark
 github_repository: LiqConstr
-
-github_branch: 
-github_path: 
-
-authors: 
-bibtex_reference: 
-title: 
-url_to_original_being_REMARKed: 
-summary: 
-
+github_branch: master
+github_path: LiqConstr.ipynb
+dashboard_path: dashboard.ipynb
 ---
 
-<!-- One sentence summary here -->
-
-Liquidity Constraints and Precautionary Saving <!-- This should be sourced from the [name]-REMARK-title.md file -->
-
-<!-- The material below should be sourced from the [name]-One-Sentence-Description.md file -->
+Liquidity Constraints and Precautionary Saving
 
 This paper shows that liquidity constraints and precautionary saving are closely related to each other, since both can be thought of is "counterclockwise concavifications" of the consumption function.
