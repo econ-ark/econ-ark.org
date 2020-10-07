@@ -13,7 +13,7 @@ github_user: econ-ark
 github_repository: LiqConstr
 github_branch: master
 github_path: LiqConstr.ipynb
-dashboard_path: dashboard.ipynb
+dashboard_path: LiqConstr-Dashboard.ipynb
 ---
 
 Liquidity Constraints and Precautionary Saving
