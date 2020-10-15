@@ -13,7 +13,7 @@ github_user: econ-ark
 github_repository: BufferStockTheory
 github_branch: master
 github_path: Code/Python/BufferStockTheory.ipynb
-dashboard_path: dashboard.ipynb
+dashboard_path: BufferStockTheory-dashboard.ipynb
 ---
 
 Theoretical Foundations of Buffer Stock Saving
