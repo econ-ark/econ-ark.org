@@ -2,18 +2,19 @@
 name: BufferStockTheory
 summary: 'Theoretical Foundations of Buffer Stock Saving'
 type: reproduction
+is_voila: true
 is_notebook: true
 published:
 authors:
   - Christopher D. Carroll
 tags:
   - Reproduction
-location_url: https://github.com/econ-ark/BufferStockTheory/blob/master/Code/Python/BufferStockTheory.ipynb
+location_url: https://github.com/econ-ark/BufferStockTheory/
 github_user: econ-ark
 github_repository: BufferStockTheory
 github_branch: master
 github_path: Code/Python/BufferStockTheory.ipynb
-dashboard_path: BufferStockTheory-dashboard.ipynb
+dashboard_path: dashboard.ipynb
 ---
 
 Theoretical Foundations of Buffer Stock Saving
