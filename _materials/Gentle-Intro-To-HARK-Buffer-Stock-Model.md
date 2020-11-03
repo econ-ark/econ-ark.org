@@ -9,6 +9,7 @@ authors:
 tags:
   - Notebook
   - Demonstration
+  - Tutorial
 location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/Gentle-Intro-To-HARK-Buffer-Stock-Model.ipynb
 github_user: econ-ark
 github_repository: DemARK
