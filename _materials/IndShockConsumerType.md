@@ -13,7 +13,7 @@ location_url: https://github.com/econ-ark/HARK/blob/master/examples/ConsIndShock
 github_user: econ-ark
 github_repository: HARK
 github_branch: master
-github_path: HARK/examples/ConsIndShockModel/IndShockConsumerType.ipynb
+github_path: examples/ConsIndShockModel/IndShockConsumerType.ipynb
 ---
 
 IndShockConsumerType Documentation
