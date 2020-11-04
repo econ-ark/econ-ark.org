@@ -9,6 +9,7 @@ authors:
 tags:
   - Notebook
   - Demonstration
+type:
   - Teaching
 location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/DiamondOLG.ipynb
 github_user: econ-ark

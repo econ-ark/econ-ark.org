@@ -9,6 +9,7 @@ authors:
 tags:
   - Assignment
   - Notebook
+  - Teaching
 location_url: https://github.com/econ-ark/QuARK/blob/master/notebooks/PerfForesightCRRA-Impatience-Problems.ipynb
 github_user: econ-ark
 github_repository: QuARK

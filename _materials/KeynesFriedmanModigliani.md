@@ -9,6 +9,8 @@ authors:
 tags:
   - Notebook
   - Demonstration
+type:
+  - Teaching
 location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/KeynesFriedmanModigliani.ipynb
 github_user: econ-ark
 github_repository: DemARK
