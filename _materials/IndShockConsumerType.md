@@ -9,11 +9,11 @@ authors:
 tags:
   - Notebook
   - Demonstration
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/IndShockConsumerType.ipynb
+location_url: https://github.com/econ-ark/HARK/blob/master/examples/ConsIndShockModel/IndShockConsumerType.ipynb
 github_user: econ-ark
-github_repository: DemARK
+github_repository: HARK
 github_branch: master
-github_path: notebooks/IndShockConsumerType.ipynb
+github_path: HARK/examples/ConsIndShockModel/IndShockConsumerType.ipynb
 ---
 
 IndShockConsumerType Documentation
