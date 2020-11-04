@@ -1,7 +1,7 @@
 ---
 name: FisherTwoPeriod
 summary: 'The Fisher Two-Period Optimal Consumption Problem'
-type: demonstration
+type: Teaching
 is_notebook: true
 published:
 authors:
@@ -9,8 +9,6 @@ authors:
 tags:
   - Notebook
   - Demonstration
-type:
-  - Teaching
 location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/FisherTwoPeriod.ipynb
 github_user: econ-ark
 github_repository: DemARK

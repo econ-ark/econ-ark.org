@@ -1,7 +1,7 @@
 ---
 name: Gentle-Intro-To-HARK-PerfForesightCRRA
 summary: 'A Gentle Introduction to HARK In Perfect Foresight'
-type: demonstration
+type: teaching
 is_notebook: true
 published:
 authors:

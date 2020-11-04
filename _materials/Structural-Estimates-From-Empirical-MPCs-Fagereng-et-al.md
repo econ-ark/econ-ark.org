@@ -5,7 +5,8 @@ type: demonstration
 is_notebook: true
 published:
 authors:
-  - Christopher Carroll
+  - Christopher D Carroll
+  - Matthew N White
 tags:
   - Notebook
   - Demonstration
