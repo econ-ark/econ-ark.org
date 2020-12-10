@@ -1,7 +1,7 @@
 ---
 name: FisherTwoPeriod
 summary: 'The Fisher Two-Period Optimal Consumption Problem'
-type: demonstration
+type: Teaching
 is_notebook: true
 published:
 authors:

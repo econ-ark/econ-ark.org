@@ -9,6 +9,8 @@ authors:
 tags:
   - Notebook
   - Demonstration
+  - Tutorial
+  - Teaching
 location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/Gentle-Intro-To-HARK.ipynb
 github_user: econ-ark
 github_repository: DemARK

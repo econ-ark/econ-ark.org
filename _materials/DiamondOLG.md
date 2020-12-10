@@ -1,7 +1,7 @@
 ---
 name: DiamondOLG
 summary: 'The Diamond OLG Model'
-type: demonstration
+type: teaching
 is_notebook: true
 published:
 authors:
@@ -16,4 +16,4 @@ github_branch: master
 github_path: notebooks/DiamondOLG.ipynb
 ---
 
-The Diamond OLG Model
+The Diamond (1965) OLG Model

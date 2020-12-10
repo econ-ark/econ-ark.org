@@ -1,7 +1,7 @@
 ---
 name: KeynesFriedmanModigliani
 summary: 'Introduction: Keynes, Friedman, Modigliani'
-type: demonstration
+type: teaching
 is_notebook: true
 published:
 authors:
@@ -9,6 +9,7 @@ authors:
 tags:
   - Notebook
   - Demonstration
+  - Teaching
 location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/KeynesFriedmanModigliani.ipynb
 github_user: econ-ark
 github_repository: DemARK

@@ -1,7 +1,7 @@
 ---
 name: Gentle-Intro-To-HARK-PerfForesightCRRA
 summary: 'A Gentle Introduction to HARK In Perfect Foresight'
-type: demonstration
+type: teaching
 is_notebook: true
 published:
 authors:
@@ -9,6 +9,7 @@ authors:
 tags:
   - Notebook
   - Demonstration
+  - Tutorial
 location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/Gentle-Intro-To-HARK-PerfForesightCRRA.ipynb
 github_user: econ-ark
 github_repository: DemARK

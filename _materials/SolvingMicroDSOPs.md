@@ -1,13 +1,15 @@
 ---
 name: SolvingMicroDSOPs
 summary: 'SolvingMicroDSOPs Is an Exploration of Indirect Inference for a Life Cycle Model'
-type: replication
+type: teaching
 is_notebook: false
 published:
 authors:
   - Christopher Carroll
 tags:
   - Replication
+  - Teaching
+  - Tutorial
 location_url: https://github.com/econ-ark/REMARK/tree/master/REMARKs/SolvingMicroDSOPs
 github_user: econ-ark
 github_repository: REMARK
