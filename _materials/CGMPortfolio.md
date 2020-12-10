@@ -2,17 +2,18 @@
 name: CGMPortfolio
 summary: 'This is a reproduction of the results in the paper "Consumption and Portfolio Choice over the Life Cycle" by Mateo Velasquez-Giraldo and Matthew V. Zahn.'
 type: replication
-is_notebook: false
+is_notebook: true
 published:
 authors:
   - Mateo Velasquez-Giraldo
   - Matthew V. Zahn
 tags:
   - Replication
-location_url: https://github.com/econ-ark/CGMPortfolio
+location_url: https://github.com/econ-ark/CGMPortfolio/blob/master/Code/Python/CGMPortfolio.ipynb
 github_user: econ-ark
 github_repository: CGMPortfolio
 github_branch: master
+github_path: Code/Python/CGMPortfolio.ipynb
 ---
 
 This is a reproduction of the results in Cocco, Gomes, & Maenhout (2005) "Consumption and Portfolio Choice Over the Life Cycle".
