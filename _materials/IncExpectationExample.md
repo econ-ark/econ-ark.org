@@ -1,19 +1,20 @@
 ---
 name: IncExpectationExample
-summary: 'The Persistent Shock Model and Income Expectations'
-type: demonstration
-is_notebook: true
-published:
-authors:
-  - Christopher Carroll
 tags:
-  - Notebook
+  - DemARK
   - Demonstration
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/IncExpectationExample.ipynb
-github_user: econ-ark
-github_repository: DemARK
-github_branch: master
-github_path: notebooks/IncExpectationExample.ipynb
+  - Notebook
+abstract: 'The Persistent Shock Model and Income Expectations'
+authors:
+  -
+    family-names: Carroll
+    given-names: "Christopher D."
+    orcid: "https://orcid.org/0000-0003-3732-9312"
+github_repo_url: https://github.com/econ-ark/DemARK
+notebooks:
+  - 
+    notebooks/IncExpectationExample.ipynb
+dashboards:
 ---
 
 The Persistent Shock Model and Income Expectations

@@ -1,20 +1,22 @@
 ---
-name: Alternative-Combos-Of-Parameter-Values
-summary: 'Alternative Combinations of Parameter Values'
-type: demonstration
-is_notebook: true
-published: 2018/09/12
-authors:
-  - Christopher Carroll
+name: Alternative Combos Of Parameter Values
 tags:
+  - DemARK
+  - Demonstration
   - Assignment
   - Notebook
-  - Demonstration
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/Alternative-Combos-Of-Parameter-Values.ipynb
-github_user: econ-ark
-github_repository: DemARK
-github_branch: master
-github_path: notebooks/Alternative-Combos-Of-Parameter-Values.ipynb
+abstract: "Alternative Combinations of Parameter Values"
+authors:
+  -
+    family-names: Carroll
+    given-names: "Christopher D."
+    orcid: "https://orcid.org/0000-0003-3732-9312"
+date-released: 2018/09/12
+github_repo_url: https://github.com/econ-ark/DemARK
+notebooks:
+  - 
+    notebooks/Alternative-Combos-Of-Parameter-Values.ipynb
+dashboards:
 ---
 
 Alternative Combinations of Parameter Values

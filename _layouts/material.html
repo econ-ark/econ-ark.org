@@ -2,28 +2,291 @@
 layout: default
 ---
 
-<h1 class="material-heading">{{ page.name }}</h1>
+{% assign github_parts = page.github_repo_url | split: "/" | reverse %}
+{% assign github_repo = github_parts[0] %}
+{% assign github_user = github_parts[1] %}
 
-<div class="material-wrapper">
+<h1 class="material-heading">
+    
+    {% if page.name %}
+    {{ page.name }}
+    {% else if page.title %}
+    {{ page.title }}
+    {% else if page.remark-name %}
+    {{ page.remark-name }}
+    {% else if page.title-original-paper %}
+    {{ page.title-original-paper }}
+    {% else %}
+    {{ github_repo }}
+    {% endif %}
 
-    <div class="material-main">
+</h1>
 
-        <p class="material-summary">{{ page.summary }}</p>
 
-        <ul class="material-authors">
-            {% for item in page.authors %}    
-                <li>{{ item }}</li>
-            {% endfor %}
-        </ul>
 
-        <div class="material-content">
+<div class="panel">
 
-        {{ content }}
+    <div class="panel-content">
+        <div class="meterial-content">
+            {% if content.size > 10 %}
+            {{ content }}
+            {% else %}
+            <p>No content available.</p>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="dashboard-group">
+
+
+    <div class="dashboard-group-left">
+
+        <div class="panel">
+
+            <div class="panel-head">
+
+                <h2 class="heading">Details</h2>
+
+            </div>
+
+            <div class="panel-content">
+
+                <h3 class="details__title">Authors</h3>
+
+                <ul class="details__authors">
+
+                    {% for item in page.authors %}
+                    <li>{{ item.family-names }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h3 class="details__title">Abstract</h3>
+
+                <p class="details__abstract">
+                    {% if page.abstract and page.abstract.size > 2 %}
+                    {{ page.abstract }}
+                    {% else %}
+                    No abstract.
+                    {% endif %}
+                </p>
+
+            </div>
 
         </div>
 
-        <ul class="material-metalist">
-            {% for item in page %}    
+    </div>
+
+    <div class="dashboard-group-right">
+
+        <div class="panel">
+
+            <div class="panel-head">
+
+                <h2 class="heading">Actions</h2>
+
+            </div>
+
+            <div class="panel-content">
+
+                {% if page.github_repo_url %}
+
+                <div class="actions">
+
+                    {% if page.notebooks.size > 0 %}
+
+                    <div class="action">
+                        <div class="action__header">
+                            <h3 class="heading">Live Interactive Notebook</h3>
+                            <div class="status status-go"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="action__details">
+
+                            <p class="desc">This material includes a <a href="https://jupyter.org/">Jupyter Notebook</a>
+                                version. You can directly launch and interact with the Notebook within your browser
+                                using <a href="https://mybinder.org/">MyBinder</a>.</p>
+
+                            {% for notebook_path in page.notebooks %}
+
+                            <p class="btns">
+
+                                {% capture launch_url %}https://mybinder.org/v2/gh/{{ github_user }}/{{ github_repo }}/master?filepath={{ notebook_path }}{% endcapture %}
+
+                                <a class="btn" href="{{ launch_url }}" target="_blank">Launch Notebook</a>
+
+                                {% if site.custom_launcher %}
+
+                                {% capture custom_launch_url
+                                        %}{{ site.custom_launcher_domain }}v2/gh/{{ github_user }}/{{ github_repo }}/master?filepath={{ notebook_path }}{% endcapture %}
+
+                                <a class="btn btn-alt" href="{{ custom_launch_url }}" target="_blank">Launch on
+                                    Econ-ARK</a>
+
+                                {% endif %}
+
+                            </p>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+                    {% if page.dashboards.size > 0 %}
+
+                    <div class="action">
+                        <div class="action__header">
+                            <h3 class="heading">Launch Dashboard</h3>
+                            <div class="status status-go"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="action__details">
+
+                            <p class="desc">This material includes an interactive dashboard.
+                                The dashboard is a <a href="https://jupyter.org/">Jupyter Notebook</a> which utilizes
+                                the <a href="https://voila.readthedocs.io/en/stable/">Voila</a> extension. You can
+                                directly launch the dashboard within your browser using <a
+                                    href="https://mybinder.org/">MyBinder</a>.</p>
+
+                            {% for dashboard_path in page.dashboards %}
+
+                            <p class="btns">
+
+                                {% capture launch_url %}https://mybinder.org/v2/gh/{{ github_user }}/{{ github_repo }}/master?urlpath=/voila/render/{{ dashboard_path }}{% endcapture %}
+
+                                <a class="btn" href="{{ launch_url }}" target="_blank">Launch Dashboard</a>
+
+                                {% if site.custom_launcher %}
+
+                                {% capture custom_launch_url
+                                    %}{{ site.custom_launcher_domain }}v2/gh/{{ github_user }}/{{ github_repo }}/master?urlpath=/voila/render/{{ dashboard_path }}{% endcapture %}
+
+                                <a class="btn btn-alt" href="{{ custom_launch_url }}" target="_blank">Launch on
+                                    Econ-ARK</a>
+
+                                {% endif %}
+
+                            </p>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+
+                    <div class="action">
+                        <div class="action__header">
+                            <h3 class="heading">Material Source Code</h3>
+                            <div class="status status-stop"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="action__details">
+
+                            <p class="desc">Econ-ARK materials are open source and available to view and clone from
+                                GitHub.</p>
+
+                            <p class="btns"><a href="{{ page.github_repo_url }}" class="btn">View on GitHub</a></p>
+
+                        </div>
+                    </div>
+
+
+                    {% if page.identifiers-paper.size > 0 %}
+
+
+                    <div class="action">
+                        <div class="action__header">
+                            <h3 class="heading">View Paper</h3>
+                            <div class="status status-go"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="action__details">
+
+
+                            <p class="desc">An electronic version of the research paper associated with this material is
+                                avaiable to view and download.</p>
+
+                            {% assign identifiers-paper_url = page.identifiers-paper | where: "type", "url" %}
+                            
+                            {% for url in identifiers-paper_url %}
+                            <p class="btns"><a class="btn" href="{{ url.value }}">View Paper</a></p>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+                    {% if page.notebooks.size > 0 %}
+
+                    <div class="action">
+                        <div class="action__header">
+                            <h3 class="heading">How to Execute this Notebook</h3>
+                            <div class="status status-go"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="action__details">
+
+                            <p class="desc">Install <a href="http://github.com/econ-ark">econ-ark</a> on your computer
+                                (<a href="https://github.com/econ-ark/HARK/blob/master/README.md">Quick Start Guide</a>
+                                then follow these instructions:</p>
+
+                            <ol class="instructions">
+                                <li>At a command line, change the working directory to the one where you want to install
+                                    <ul>
+                                        <li>On MacOS/unix, if you install in the <code>/tmp</code> directory, the
+                                            installation will disappear after a reboot:</li>
+                                        <li><code>cd /tmp</code></li>
+                                    </ul>
+                                </li>
+                                <li><code>git clone {{ page.github_repo_url }} --recursive</code></li>
+                                <li><code>cd {{ github_repo }}</code></li>
+                                <li><code>jupyter notebook {{ page.notebooks[0] }}</code></li>
+                            </ol>
+
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+                {% else %}
+
+                <p class="alert">No GitHub repository in metadata.</p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="panel">
+
+    <div class="panel-head">
+
+        <h2 class="heading">Metadata</h2>
+
+    </div>
+
+    <div class="panel-content">
+
+        <table class="metadata-table">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in page %}
                 {% if page[item]
                 and item != 'previous'
                 and item != 'output'
@@ -43,157 +306,18 @@ layout: default
                 and item != 'ext'
                 %}
                 {% if page[item] != '' %}
-                <li>
-                    <span class="key">{{ item }}</span>
-                    <span class="value">{% for i in page[item] %} {{ i }}<br>{% endfor %}
+                <tr>
+                    <th class="key">{{ item }}</td>
+                    <td class="value">{% for i in page[item] %} {{ i }}<br>{% endfor %}
                         {% if page[item] == true %}true{% endif %}
-                    </span>
-                </li>
+                    </td>
+                </tr>
                 {% endif %}
                 {% endif %}
-            {% endfor %}
-        </ul>
-
-    </div>  
-
-    <div class="material-supplementary">
-    
-        <ul class="material-actions">
-
-        {% comment %} Display notebook launcher section {% endcomment %}
-        {% if page.github_user and page.github_repository and page.github_branch and page.github_path %}
-            
-            {% if page.is_notebook %}
-
-                {% comment %} Display custom notebook launcher button {% endcomment %}
-                {% if site.custom_launcher %} 
-
-                    {% capture custom_launch_url
-                    %}{{ site.custom_launcher_domain }}v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-                page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
-
-                    <li class="primary">
-                        <a href="{{ custom_launch_url }}" class="launch-link" target="_blank"><i class="fas fa-desktop"></i> Launch Econ-ARK</a>
-                    </li>
-
-                {% endif %}        
-
-                {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-                page.github_branch }}?filepath={{ page.github_path }}{% endcapture %}
-
-                <li class="primary">
-                    <a href="{{ launch_url }}" class="launch-link" target="_blank"><i class="fas fa-desktop"></i> Live Interactive Version</a>
-                </li>
-
-            {% endif %}
-            {% if page.is_voila %}
-
-                {% comment %} Display custom notebook launcher button {% endcomment %}
-                {% if site.custom_launcher %} 
-
-                    {% capture custom_launch_url
-                    %}{{ site.custom_launcher_domain }}v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-                page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
-
-                    <li class="primary">
-                        <a href="{{ custom_launch_url }}" target="_blank"><i class="fas fa-desktop"></i> Launch Econ-ARK</a>
-                    </li>
-
-                {% endif %}
-
-                {% capture launch_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-                page.github_branch }}?urlpath=/voila/render/{{ page.github_path }}{% endcapture %}
-
-                <li class="primary">
-                    <a href="{{ launch_url }}" target="_blank" class="launch-link"><i class="fas fa-desktop"></i> Live Interactive Version</a>
-                </li>
-            
-            {% endif %}
-            
-
-        {% endif %}
-
-        {% if page.dashboard_path %}
-
-             {% comment %} Display custom notebook launcher button {% endcomment %}
-             {% if site.custom_launcher %} 
-
-                    {% capture custom_launch_url
-                    %}{{ site.custom_launcher_domain }}v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-                page.github_branch }}?urlpath=/voila/render/{{ page.dashboard_path }}{% endcapture %}
-
-                    <li class="primary">
-                        <a href="{{ custom_launch_url }}" class="dashboard-link" target="_blank"><i class="fas fa-desktop"></i> Launch Econ-ARK</a>
-                    </li>
-
-            {% endif %}
-            {% capture dashboard_url %}https://mybinder.org/v2/gh/{{ page.github_user }}/{{ page.github_repository }}/{{
-            page.github_branch }}?urlpath=/voila/render/{{ page.dashboard_path }}{% endcapture %}
-
-            <li class="primary">
-                <a href="{{ dashboard_url }}" class="dashboard-link" target="_blank">Launch Dashboard</a>
-            </li>
-
-        {% endif %}
-
-
-        {% comment %} Display view button {% endcomment %}
-        {% if page.location_url %}
-            
-            <li>
-                <a href="{{ page.location_url }}" class="gh"><i class="fab fa-github"></i> View Material</a>
-            </li>
-
-        {% endif %}
-
-        {% comment %} Display paper button {% endcomment %}
-        {% if page.paper_url %}
-            
-            <li>
-                <a href="{{ page.paper_url }}"><i class="fas fa-cloud-download-alt"></i> Download Paper</a>
-            </li>
-
-        {% endif %}
-
-    </ul>
-
-        {% if page.is_notebook %}
-
-            <p class="how-to-toggle"><a href="#ex1" rel="modal:open">How to execute this Notebook</a></p>
-            
-            <div id="ex1" class="modal how-to-modal">
-
-                <h2>How to execute this Notebook</h2>
-                
-                <ol>
-                    {% if page.location_url %}
-            
-                        <li>
-                            <a href="{{ page.location_url }}">View (noninteractively)</a> on GitHub (warning: sometimes GitHub does not render Jupyter notebooks)
-                        </li>
-            
-                    {% endif %} 
-                    <li><a href="#launch">Launch Online Interactive Version</a> (warning: takes a couple of minutes)</li>
-                    <li>Install <a href="http://github.com/econ-ark">econ-ark</a> on your computer (<a href="https://github.com/econ-ark/HARK/blob/master/README.md">QUICK START GUIDE</a> then follow these instructions:
-                        <ol>
-                            <li>At a command line, change the working directory to the one where you want to install
-                                <ul>
-                                    <li>On MacOS/unix, if you install in the <code>/tmp</code> directory, the installation will disappear after a reboot:</li>
-                                    <li><code>cd /tmp</code></li>
-                                </ul>
-                            </li>
-                            <li><code>git clone https://github.com/econ-ark/REMARK --recursive</code></li>
-                            <li><code>cd REMARK/REMARKs/{{ page.name }}</code></li>
-                            <li><code>jupyter notebook {{ page.name }}.ipynb</code></li>
-                        </ol>
-                    </li>
-                </ol>
-
-            </div>
-
-        {% endif %} 
+                {% endfor %}
+            </tbody>
+        </table>
 
     </div>
 
 </div>
-

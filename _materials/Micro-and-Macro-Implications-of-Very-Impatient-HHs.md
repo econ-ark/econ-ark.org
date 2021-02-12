@@ -1,19 +1,20 @@
 ---
 name: Micro-and-Macro-Implications-of-Very-Impatient-HHs
-summary: 'Micro- and Macroeconomic Implications of Very Impatient Households'
-type: demonstration
-is_notebook: true
-published:
-authors:
-  - Christopher Carroll
 tags:
-  - Notebook
+  - DemARK
   - Demonstration
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/Micro-and-Macro-Implications-of-Very-Impatient-HHs.ipynb
-github_user: econ-ark
-github_repository: DemARK
-github_branch: master
-github_path: notebooks/Micro-and-Macro-Implications-of-Very-Impatient-HHs.ipynb
+  - Notebook
+abstract: 'Micro- and Macroeconomic Implications of Very Impatient Households'
+authors:
+  -
+    family-names: Carroll
+    given-names: "Christopher D."
+    orcid: "https://orcid.org/0000-0003-3732-9312"
+github_repo_url: https://github.com/econ-ark/DemARK
+notebooks:
+  - 
+    notebooks/Micro-and-Macro-Implications-of-Very-Impatient-HHs.ipynb
+dashboards:
 ---
 
 Micro- and Macroeconomic Implications of Very Impatient Households

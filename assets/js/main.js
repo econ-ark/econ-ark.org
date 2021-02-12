@@ -13,34 +13,49 @@ navToggle.addEventListener('click', function (e) {
 });
 
 function filterMaterials() {
-  var materials = document.querySelectorAll('#materialsList>li');
-  var tabChoice = document.querySelector('.tabs-toggles li a.active').id;
-  var tagChoice = document.getElementById('tagSelect').value;
+  var materials = document.querySelectorAll('#materialsList tbody tr');
+  var tabChoice = document.querySelector('.tabs-toggles li a.active').text;
+  var tagChoice = $('#tagSelect option:selected').toArray().map(item => item.text);
+
+  console.log(tabChoice);
+  console.log(tagChoice);
 
   for (var i = 0; i < materials.length; i++) {
-    if (tagChoice == 'All' && tabChoice == 'All') {
+    if (tagChoice == '' && tabChoice == 'All') {
       materials[i].classList.remove('hideMaterial');
+
     } else {
       var hasTag = false;
       var hasTab = false;
 
-      if (tagChoice == 'All') {
+
+      
+
+      if (tagChoice == '') {
         hasTag = true;
       } else {
         var materialTags = materials[i].querySelectorAll('.tags li');
         for (var j = 0; j < materialTags.length; j++) {
-          if (materialTags[j].textContent == tagChoice) {
+          if(jQuery.inArray(materialTags[j].textContent, tagChoice) !== -1) {
             hasTag = true;
           }
         }
       }
 
-      if (materials[i].classList.contains(tabChoice) || tabChoice == 'allMaterial') {
-        var hasTab = true;
+      if (tabChoice == 'All') {
+        hasTab = true;
+      } else {
+        var materialTags = materials[i].querySelectorAll('.tags li');
+        for (var j = 0; j < materialTags.length; j++) {
+          if (materialTags[j].textContent == tabChoice) {
+            hasTab = true;
+          }
+        }
       }
 
       if (hasTag && hasTab) {
         materials[i].classList.remove('hideMaterial');
+        console.log('booya');
       } else {
         materials[i].classList.add('hideMaterial');
       }
@@ -80,7 +95,11 @@ if (document.getElementById('materialsList')) {
   });
 
   const choices = new Choices('#tagSelect', {
-    itemSelectText: '',
+    //itemSelectText: '',
+    delimiter: ',',
+    editItems: true,
+    maxItemCount: 5,
+    removeItemButton: true,
   });
 }
 
@@ -126,3 +145,20 @@ if ( urlParams.has('dashboard') ) {
 $('.how-to-toggle').click(function () {
   $(this).siblings('.how-to-copy').slideToggle();
 });
+
+
+// Actions accordion
+if ( document.getElementsByClassName('actions')[0] ) {
+  var actionDetails = $('.actions .action__details');
+  var actionHeaders = $('.actions .action__header');
+  $('.action__header').click(function(e){
+    e.preventDefault();
+    actionHeaders.removeClass('active');
+    actionHeaders.find('i').removeClass('fa-chevron-down').addClass('fa-chevron-right');
+    $(this).addClass('active');
+    $(this).find('i').removeClass('fa-chevron-right').addClass('fa-chevron-down');
+    actionDetails.slideUp('fast');
+    $(this).next('.action__details').slideDown('fast');
+  });
+  $('.actions .action__header')[0].click();
+}

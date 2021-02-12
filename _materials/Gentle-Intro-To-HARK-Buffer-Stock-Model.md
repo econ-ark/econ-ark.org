@@ -1,21 +1,22 @@
 ---
 name: Gentle-Intro-To-HARK-Buffer-Stock-Model
-summary: 'A Gentle Introduction to Buffer Stock Saving'
-type: demonstration
-is_notebook: true
-published:
-authors:
-  - Christopher Carroll
 tags:
-  - Notebook
+  - DemARK
   - Demonstration
   - Tutorial
   - Teaching
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/Gentle-Intro-To-HARK-Buffer-Stock-Model.ipynb
-github_user: econ-ark
-github_repository: DemARK
-github_branch: master
-github_path: notebooks/Gentle-Intro-To-HARK-Buffer-Stock-Model.ipynb
+  - Notebook
+abstract: 'A Gentle Introduction to Buffer Stock Saving'
+authors:
+  -
+    family-names: Carroll
+    given-names: "Christopher D."
+    orcid: "https://orcid.org/0000-0003-3732-9312"
+github_repo_url: https://github.com/econ-ark/DemARK
+notebooks:
+  - 
+    notebooks/Gentle-Intro-To-HARK-Buffer-Stock-Model.ipynb
+dashboards:
 ---
 
 A Gentle Introduction to Buffer Stock Saving

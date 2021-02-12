@@ -1,19 +1,22 @@
 ---
 name: FisherTwoPeriod
-summary: 'The Fisher Two-Period Optimal Consumption Problem'
-type: Teaching
-is_notebook: true
-published:
-authors:
-  - Christopher Carroll
 tags:
-  - Notebook
+  - DemARK
   - Demonstration
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/FisherTwoPeriod.ipynb
-github_user: econ-ark
-github_repository: DemARK
-github_branch: master
-github_path: notebooks/FisherTwoPeriod.ipynb
+  - Teaching
+  - Notebook
+abstract: 'The Fisher Two-Period Optimal Consumption Problem'
+authors:
+  -
+    family-names: Carroll
+    given-names: "Christopher D."
+    orcid: "https://orcid.org/0000-0003-3732-9312"
+date-released: 
+github_repo_url: https://github.com/econ-ark/DemARK
+notebooks:
+  - 
+    notebooks/FisherTwoPeriod.ipynb
+dashboards:
 ---
 
 The Fisher Two-Period Optimal Consumption Problem
