@@ -1,22 +1,21 @@
 ---
-name: PortfolioChoiceBlogPost
-summary: 'Optimal Financial Investment over the Life Cycle'
-type: replication
-is_notebook: true
-published: 20 March 2020
-authors:
-  - Christopher Carroll
 tags:
+  - REMARK
   - Replication
   - Notebook
   - Blog
 location_url: https://github.com/econ-ark/PortfolioChoiceBlogPost
-github_user: econ-ark
-github_repository: PortfolioChoiceBlogPost
-github_branch: master
-github_path: PortfolioChoiceBlogPost.html
+name: PortfolioChoiceBlogPost
+summary: 'Optimal Financial Investment over the Life Cycle'
+abstract: ''
+notebook: PortfolioChoiceBlogPost.ipynb
+authors:
+  - Christopher Carroll
+blog_link: https://econ-ark.github.io/PortfolioChoiceBlogPost/PortfolioChoiceBlogPost.html
 ---
 
-# Optimal Financial Investment over the Life Cycle
 
-Economists like to compare actual human behavior to the choices that would be made by a "rational" agent who optimally takes into account all the complexities of a decision.
+## PortfolioChoiceBlogPost
+
+Optimal Financial Investment over the Life Cycle
+

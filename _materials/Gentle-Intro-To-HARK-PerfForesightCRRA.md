@@ -1,20 +1,21 @@
 ---
 name: Gentle-Intro-To-HARK-PerfForesightCRRA
-summary: 'A Gentle Introduction to HARK In Perfect Foresight'
-type: teaching
-is_notebook: true
-published:
-authors:
-  - Christopher Carroll
 tags:
-  - Notebook
+  - DemARK
   - Demonstration
   - Tutorial
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/Gentle-Intro-To-HARK-PerfForesightCRRA.ipynb
-github_user: econ-ark
-github_repository: DemARK
-github_branch: master
-github_path: notebooks/Gentle-Intro-To-HARK-PerfForesightCRRA.ipynb
+  - Notebook
+abstract: 'A Gentle Introduction to HARK In Perfect Foresight'
+authors:
+  -
+    family-names: Carroll
+    given-names: "Christopher D."
+    orcid: "https://orcid.org/0000-0003-3732-9312"
+github_repo_url: https://github.com/econ-ark/DemARK
+notebooks:
+  - 
+    notebooks/Gentle-Intro-To-HARK-PerfForesightCRRA.ipynb
+dashboards:
 ---
 
 A Gentle Introduction to HARK In Perfect Foresight

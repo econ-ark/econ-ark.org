@@ -1,19 +1,21 @@
 ---
 name: Change Liq Constr
-summary: 'What Happens To the Consumption Function When A Liquidity Constraint is Tightened?'
-type: demonstration
-is_notebook: true
-published:
-authors:
-  - Christopher Carroll
 tags:
-  - Notebook
+  - DemARK
   - Demonstration
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/ChangeLiqConstr.ipynb
-github_user: econ-ark
-github_repository: DemARK
-github_branch: master
-github_path: notebooks/ChangeLiqConstr.ipynb
+  - Notebook
+abstract: 'What Happens To the Consumption Function When A Liquidity Constraint is Tightened?'
+authors:
+  -
+    family-names: Carroll
+    given-names: "Christopher D."
+    orcid: "https://orcid.org/0000-0003-3732-9312"
+date-released: 
+github_repo_url: https://github.com/econ-ark/DemARK
+notebooks:
+  - 
+    notebooks/ChangeLiqConstr.ipynb
+dashboards:
 ---
 
 What Happens To the Consumption Function When A Liquidity Constraint is Tightened?

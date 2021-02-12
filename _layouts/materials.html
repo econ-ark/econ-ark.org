@@ -15,35 +15,77 @@ layout: default
   </p>
 
   <ul class="tabs-toggles">
-    <li><a id="allMaterial" class="active">All</a></li>
-    <li><a id="replicationMaterial">Reproductions</a></li>
-    <li><a id="demonstrationMaterial">Demonstrations</a></li>
-    <li><a id="teachingMaterial">Teaching</a></li>
-    <li><a id="presentationMaterial">Presentations</a></li>
-    <li><a id="instructionalMaterial">Instructional</a></li>
-    <li><a id="examplesMaterial">Examples</a></li>
+    <li><a id="toggle-all" class="active">All</a></li>
+    <li><a id="toggle-remark">REMARK</a></li>
+    <li><a id="toggle-demark">DemARK</a></li>
+    <li><a id="toggle-example">Example</a></li>
+    <li><a id="toggle-documentation">Documentation</a></li>
   </ul>
 
-  <div class="tag-filter">
-    <label for="tagSelect">Tag:</label>
-    <select id="tagSelect">
-      <option value="All">All</option>
-    </select>
-  </div>
 </div>
 
-<ul class="materials" id="materialsList">
+<div class="materials-panel">
+
+<div class="tag-filter">
+  <label for="tagSelect">Tags:</label>
+  <!-- <select id="tagSelect">
+    <option value="All">All</option>
+  </select> -->
+  <!-- <input class="form-control" id="tagSelect" type="text" value="All" placeholder="Select tags" /> -->
+  <select class="form-control" name="tagSelect" id="tagSelect" placeholder="Select tags" multiple>
+    </select>
+
+
+</div>
+
+<table class="materials" id="materialsList">
+  <thead>
+    <tr>
+        <th>Material</th>
+        <th>Authors</th>
+        <th>Abstract</th>
+    </tr>
+</thead>
+  <tbody>
   {% for material in site.materials %}
-  <li class="{{ material.type }}Material">
-    <p class="title"><a href="{{ material.url }}">{{ material.name }}</a></p>
-    <p class="authors"><em>Authors:</em> {% for author in material.authors %}<span>{{ author }}</span> {% endfor %}</p>
-<!--    <p class="date"><em>Publication date:</em> {{ material.published }}</p> -->
-    <p>{{ material.summary }}</p>
-    <ul class="tags">
-      {% for tag in material.tags %}
-      <li>{{ tag }}</li>
-      {% endfor %}
-    </ul>
-  </li>
+  <tr class="material">
+    <td class="material__details">
+      <p class="title"><a href="{{ material.url }}">
+        
+        {% assign github_parts = material.github_repo_url | split: "/" | reverse %}
+        {% assign github_repo = github_parts[0] %}
+        
+        {% if material.name %}
+        {{ material.name }}
+        {% elsif material.title %}
+        {{ material.title }}
+        {% elsif material.remark-name %}
+        {{ material.remark-name }}
+        {% elsif material.title-original-paper %}
+        {{ material.title-original-paper }}
+        {% else %}
+        {{ github_repo }}
+        {% endif %}
+
+      </a></p>
+      <ul class="tags">
+        {% for tag in material.tags %}
+        <li>{{ tag }}</li>
+        {% endfor %}
+        </ul>
+        
+    </td>
+    <td class="material__authors">
+      <ul class="authors">
+        {% for item in material.authors %}
+        <li>{{ item.family-names }}</li>
+        {% endfor %}
+      </ul>
+    <td class="material__tags">
+      <p class="summary">{{ material.abstract | truncatewords: 30 }}</p>
+    </td>
+  </tr>
   {% endfor %}
-</ul>
+</tbody>
+</table>
+</div>

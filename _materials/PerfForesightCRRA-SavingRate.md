@@ -1,20 +1,21 @@
 ---
 name: PerfForesightCRRA-SavingRate
-summary: 'Perfect Foresight CRRA Model - Savings Rate'
-type: demonstration
-is_notebook: true
-published:
-authors:
-  - Christopher Carroll
 tags:
-  - Notebook
+  - DemARK
   - Demonstration
   - Teaching
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/PerfForesightCRRA-SavingRate.ipynb
-github_user: econ-ark
-github_repository: DemARK
-github_branch: master
-github_path: notebooks/PerfForesightCRRA-SavingRate.ipynb
+  - Notebook
+abstract: 'Perfect Foresight CRRA Model - Savings Rate'
+authors:
+  -
+    family-names: Carroll
+    given-names: "Christopher D."
+    orcid: "https://orcid.org/0000-0003-3732-9312"
+github_repo_url: https://github.com/econ-ark/DemARK
+notebooks:
+  - 
+    notebooks/PerfForesightCRRA-SavingRate.ipynb
+dashboards:
 ---
 
 Perfect Foresight CRRA Model - Savings Rate

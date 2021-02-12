@@ -1,20 +1,23 @@
 ---
 name: Structural-Estimates-From-Empirical-MPCs-Fagereng-et-al
-summary: 'Making Structural Estimates From Empirical Results'
-type: demonstration
-is_notebook: true
-published:
-authors:
-  - Christopher D Carroll
-  - Matthew N White
 tags:
-  - Notebook
+  - DemARK
   - Demonstration
-location_url: https://github.com/econ-ark/DemARK/blob/master/notebooks/Structural-Estimates-From-Empirical-MPCs-Fagereng-et-al.ipynb
-github_user: econ-ark
-github_repository: DemARK
-github_branch: master
-github_path: notebooks/Structural-Estimates-From-Empirical-MPCs-Fagereng-et-al.ipynb
+  - Notebook
+abstract: 'Making Structural Estimates From Empirical Results'
+authors:
+  -
+    family-names: Carroll
+    given-names: "Christopher D."
+    orcid: "https://orcid.org/0000-0003-3732-9312"
+  -
+    family-names: White
+    given-names: "Matthew N."
+github_repo_url: https://github.com/econ-ark/DemARK
+notebooks:
+  - 
+    notebooks/Structural-Estimates-From-Empirical-MPCs-Fagereng-et-al.ipynb
+dashboards:
 ---
 
 Making Structural Estimates From Empirical Results
