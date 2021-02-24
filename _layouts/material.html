@@ -63,6 +63,15 @@ layout: default
                     <li>{{ item.family-names }}</li>
                     {% endfor %}
                 </ul>
+                
+                {% if page.summary and page.summary.size > 2 %}
+                <h3 class="details__summary">Summary</h3>
+
+                <p class="details__summary">
+                    {{ page.summary }}
+
+                </p>
+                {% endif %}
 
                 <h3 class="details__title">Abstract</h3>
 
