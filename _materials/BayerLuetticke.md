@@ -2,7 +2,7 @@
 tags: # Use the relevant tags
   - REMARK
   - Reproduction
-abstract: "Code that solves models from the paper of Bayer and Luetikke, "Solving heterogeneous agent models in discrete time with many idiosyncratic states by perturbation methods"." # abstract: optional
+abstract: "Code that solves models from the paper of Bayer and Luetikke, \"Solving heterogeneous agent models in discrete time with many idiosyncratic states by perturbation methods\"." # abstract: optional
 authors: # required
   -
     family-names: "Bayer"
@@ -15,7 +15,7 @@ authors: # required
     
 cff-version: "1.1.0" # required 
 date-released: 2021-02-02 # required
-message: "Code that solves models from the paper of Bayer and Luetikke, "Solving heterogeneous agent models in discrete time with many idiosyncratic states by perturbation methods"." # required
+message: "Code that solves models from the paper of Bayer and Luetikke, \"Solving heterogeneous agent models in discrete time with many idiosyncratic states by perturbation methods\"." # required
 title: "Solving heterogeneous agent models in discrete time with many idiosyncratic states by perturbation methods" # required
 version: "1.0" # required
 # REMARK fields
