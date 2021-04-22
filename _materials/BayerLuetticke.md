@@ -1,16 +1,16 @@
 ---
-tags: # Use the relevant tags
+tags: # Use the relavent tags
   - REMARK
   - Reproduction
 abstract: "Code that solves models from the paper of Bayer and Luetikke, \"Solving heterogeneous agent models in discrete time with many idiosyncratic states by perturbation methods\"." # abstract: optional
 authors: # required
   -
-    family-names: "Bayer"
-    given-names: "Christian"
+    family-names: "Author 1 Last Name"
+    given-names: "Author 1 First Name"
     orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
   -
-    family-names: "Luetticke"
-    given-names: "Ralph"
+    family-names: "Author 2 Last Name"
+    given-names: "Author 2 First Name"
     orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
     
 cff-version: "1.1.0" # required 
