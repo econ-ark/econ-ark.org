@@ -23,9 +23,17 @@ Or Markdown:
     [![econ-ark.org](https://img.shields.io/badge/Powered%20by-Econ--ARK-3e8acc.svg)](https://econ-ark.org/)
     
 
-Or Latex:
+For LaTeX:
 
-    \href{https://raster.shields.io/badge/Powered%20by-Econ--ARK-3e8acc.png}{Econ-ARK badge}
+1. Download either (or both) versions of the button to the directory containing the LaTeX file:
+https://github.com/econ-ark/econ-ark.org/tree/Fix-LaTeX-Button/pages/resources
+    * [pdf](https://github.com/econ-ark/econ-ark.org/raw/master/pages/resources/PoweredByEconARK.pdf)
+    * [svg](https://github.com/econ-ark/econ-ark.org/raw/master/pages/resources/PoweredByEconARK.svg)
+1. Render the button using:
+'''
+\DeclareGraphicsExtensions{[whichever type you chose above]}, e.g. \DeclareGraphicsExtensions{.pdf}
+`\centerline{includegraphics{PoweredByEconARK}`
+'''
     
 ------------------------------------------------------------------------
 
