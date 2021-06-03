@@ -4,7 +4,7 @@ author: Econ-ARK
 keywords:
 description: 'Structural modeling of economic choices of heterogeneous agents'
 
-custom_launcher: true
+custom_launcher: false
 
 custom_launcher_domain: 'http://35.239.158.93/'
 
