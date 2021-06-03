@@ -124,14 +124,14 @@ layout: default
 
                                 {% capture launch_url %}https://mybinder.org/v2/gh/{{ github_user }}/{{ github_repo }}/master?filepath={{ notebook_path }}{% endcapture %}
 
-                                <a class="btn" href="{{ launch_url }}" target="_blank">Launch Notebook</a>
+                                <a class="btn" href="{{ launch_url }}" class="launch-link" target="_blank">Launch Notebook</a>
 
                                 {% if site.custom_launcher %}
 
                                 {% capture custom_launch_url
                                         %}{{ site.custom_launcher_domain }}v2/gh/{{ github_user }}/{{ github_repo }}/master?filepath={{ notebook_path }}{% endcapture %}
 
-                                <a class="btn btn-alt" href="{{ custom_launch_url }}" target="_blank">Launch on
+                                <a class="btn btn-alt" href="{{ custom_launch_url }}" class="launch-link" target="_blank">Launch on
                                     Econ-ARK</a>
 
                                 {% endif %}
@@ -166,14 +166,14 @@ layout: default
 
                                 {% capture launch_url %}https://mybinder.org/v2/gh/{{ github_user }}/{{ github_repo }}/master?urlpath=/voila/render/{{ dashboard_path }}{% endcapture %}
 
-                                <a class="btn" href="{{ launch_url }}" target="_blank">Launch Dashboard</a>
+                                <a class="btn" href="{{ launch_url }}" class="dashboard-link" target="_blank">Launch Dashboard</a>
 
                                 {% if site.custom_launcher %}
 
                                 {% capture custom_launch_url
                                     %}{{ site.custom_launcher_domain }}v2/gh/{{ github_user }}/{{ github_repo }}/master?urlpath=/voila/render/{{ dashboard_path }}{% endcapture %}
 
-                                <a class="btn btn-alt" href="{{ custom_launch_url }}" target="_blank">Launch on
+                                <a class="btn btn-alt" href="{{ custom_launch_url }}" class="dashboard-link" target="_blank">Launch on
                                     Econ-ARK</a>
 
                                 {% endif %}
