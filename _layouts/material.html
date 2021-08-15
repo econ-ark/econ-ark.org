@@ -54,7 +54,11 @@ layout: default
                 <ul class="details__authors">
 
                     {% for item in page.authors %}
-                    <li>{{ item.family-names }}</li>
+                        {% if item.orcid != '' %}
+                           <li><a href="https://orcid.org/"{{ item.orcid }}>{{ item.family-names }}, {{ item.given-names }}</a></li>
+                        {% else %}
+                            <li>{{ item.family-names }}, {{ item.given-names }}</li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
                 
