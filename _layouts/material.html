@@ -23,21 +23,15 @@ layout: default
 </h1>
 
 
-
-<div class="panel">
-
-    <div class="panel-content">
-        <div class="meterial-content">
-            {% if content.size > 10 %}
-            {{ content }}
-            {% else %}
-            <p>No content available.</p>
-            {% endif %}
+{% if content.size > 10 %}
+    <div class="panel">
+        <div class="panel-content">
+            <div class="meterial-content">
+                {{ content }}
+            </div>
         </div>
     </div>
-
-</div>
-
+{% endif %}
 
 
 <div class="dashboard-group">
