@@ -55,7 +55,7 @@ layout: default
 
                     {% for item in page.authors %}
                         {% if item.orcid != '' %}
-                           <li><a href="https://orcid.org/{{ item.orcid }}">{{ item.family-names }}, {{ item.given-names }}</a></li>
+                           <li><a href="{{ item.orcid }}">{{ item.family-names }}, {{ item.given-names }}</a></li>
                         {% else %}
                             <li>{{ item.family-names }}, {{ item.given-names }}</li>
                         {% endif %}
