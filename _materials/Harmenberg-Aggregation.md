@@ -1,5 +1,5 @@
 ---
-name: Harmenberg Agregation
+name: Harmenberg-Agregation
 tags:
   - DemARK
   - Demonstration
