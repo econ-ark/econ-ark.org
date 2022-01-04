@@ -120,14 +120,14 @@ layout: default
 
                             <p class="btns">
 
-                                {% capture launch_url %}https://mybinder.org/v2/gh/{{ github_user }}/{{ github_repo }}/HEAD?filepath={{ notebook_path }}{% endcapture %}
+                                {% capture launch_url %}https://mybinder.org/v2/gh/{{ github_user }}/{{ github_repo }}/HEAD?labpath={{ notebook_path }}{% endcapture %}
 
                                 <a class="btn launch-link" href="{{ launch_url }}" target="_blank">Launch Notebook</a>
 
                                 {% if site.custom_launcher %}
 
                                 {% capture custom_launch_url
-                                        %}{{ site.custom_launcher_domain }}v2/gh/{{ github_user }}/{{ github_repo }}/HEAD?filepath={{ notebook_path }}{% endcapture %}
+                                        %}{{ site.custom_launcher_domain }}v2/gh/{{ github_user }}/{{ github_repo }}/HEAD?labpath={{ notebook_path }}{% endcapture %}
 
                                 <a class="btn btn-alt launch-link" href="{{ custom_launch_url }}" target="_blank">Launch on
                                     Econ-ARK</a>
