@@ -117,7 +117,8 @@ function checkForLaunchDashboard() {
   var pathname = window.location.hash;
   if (pathname == '#dashboard') {
     var href = document.getElementsByClassName('dashboard-link')[0].href;
-    window.location = href;
+    window.open(href, '_blank');
+//     window.location = href;
   }
 }
 window.addEventListener(
