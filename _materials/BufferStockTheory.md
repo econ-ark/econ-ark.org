@@ -9,7 +9,7 @@ authors: # required
     given-names: "Christopher D."
     orcid: "https://orcid.org/0000-0003-3732-9312"
 cff-version: "1.1.0" # required 
-date-released: 2020-10-11 # required
+date-released: 2022-01-24 # required
 identifiers: # optional
   - 
     type: url
@@ -31,6 +31,7 @@ title-original-paper: Theoretical Foundations of Buffer Stock Saving # optional
 notebooks: # path to any notebooks within the repo - optional
   - 
     BufferStockTheory.ipynb
+    Code/Python/BufferStockTheory-Problems.ipynb
 dashboards: # path to any dahsboards within the repo - optional
   - 
     BufferStockTheory-dashboard.ipynb
@@ -41,5 +42,5 @@ identifiers-paper: # required for Replications; optional for Reproductions
    - 
       type: doi
       value: 
-date-published-original-paper: 2020-09-14 # required for Replications; optional for Reproductions
+date-published-original-paper: 2022-01-24 # required for Replications; optional for Reproductions
 ---
