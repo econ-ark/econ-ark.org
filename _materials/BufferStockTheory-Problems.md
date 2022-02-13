@@ -1,8 +1,8 @@
 ---
 tags:
-  - REMARK
-  - Reproduction
-abstract: "This paper builds foundations for rigorous and intuitive understanding of `buffer stock' saving models (Bewley (1977)-like models with a wealth target), pairing each theoretical result with quantitative illustrations.  After describing conditions under which a consumption function exists, the paper articulates stricter `Growth Impatience' conditions that guarantee alternative forms of stability --- either at the population level, or for individual consumers.  Together, the numerical tools and analytical results constitute a comprehensive toolkit for understanding buffer stock models." # abstract: optional
+  - Teaching
+  - Problems
+abstract: "This adds some PhD student problems to the BufferStockTheory repo" # abstract: optional
 authors: # required
   -
     family-names: Carroll
@@ -15,13 +15,11 @@ identifiers: # optional
     type: url
     value: "https://github.com/econ-ark/BufferStockTheory"
   - 
-    type: doi
-    value: "10.5281/zenodo.1234"
 keywords: # optional
-  - Consumption
-message: "For a consumption/saving problem with transitory and permanent shocks and unbounded (CRRA) utility, this paper derives conditions under which a nondegenerate solution exists, and under which a target wealth ratio exists; all results are paired with illustrative numerical solutions." # required
+  - Problems
+message: "BufferStockTheory problems in notebook context" # required
 repository-code: "https://github.com/econ-ark/BufferStockTheory" # optional
-title: "Theoretical Foundations of Buffer Stock Saving" # required
+title: "Theoretical Foundations of Buffer Stock Saving: Problems" # required
 version: "1.0" # required
 # REMARK fields
 github_repo_url: https://github.com/econ-ark/BufferStockTheory # required 
@@ -32,9 +30,6 @@ notebooks: # path to any notebooks within the repo - optional
   - 
     Code/Python/BufferStockTheory-Problems.ipynb
     BufferStockTheory.ipynb
-dashboards: # path to any dahsboards within the repo - optional
-  - 
-    BufferStockTheory-dashboard.ipynb
 identifiers-paper: # required for Replications; optional for Reproductions
    - 
       type: url 
