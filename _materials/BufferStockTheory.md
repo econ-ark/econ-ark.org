@@ -30,7 +30,6 @@ remark-name: BufferStockTheory # required
 title-original-paper: Theoretical Foundations of Buffer Stock Saving # optional 
 notebooks: # path to any notebooks within the repo - optional
   - 
-    Code/Python/BufferStockTheory-Problems.ipynb
     BufferStockTheory.ipynb
 dashboards: # path to any dahsboards within the repo - optional
   - 
