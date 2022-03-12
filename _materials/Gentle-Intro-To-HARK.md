@@ -6,6 +6,7 @@ tags:
   - Tutorial
   - Teaching
   - Notebook
+  - Example
 abstract: 'A Gentle Introduction to HARK for Economists'
 authors:
   -
@@ -15,7 +16,7 @@ authors:
 github_repo_url: https://github.com/econ-ark/HARK
 notebooks:
   - 
-    examples/Gentle-Intro-To-HARK-Buffer-Stock-Model.ipynb
+    examples/Gentle-Intro-To-HARK.ipynb
 dashboards:
 ---
 
