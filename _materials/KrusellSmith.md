@@ -2,6 +2,7 @@
 tags:
   - REMARK
   - Notebook
+  - Teaching
 authors:
   -
     family-names: Carroll

@@ -1,6 +1,7 @@
 ---
 tags:
   - REMARK
+  - Problems
 abstract: "This adds some PhD student problems to the BufferStockTheory repo" # abstract: optional
 authors: # required
   -
