@@ -15,7 +15,7 @@ authors:
 github_repo_url: https://github.com/econ-ark/HARK
 notebooks:
   - 
-    examples/ConsIndShockModel/ConsPortfolioModel.ipynb
+    examples/ConsPortfolioModel/ConsPortfolioModel.ipynb
 dashboards:
 ---
 
