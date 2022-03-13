@@ -16,7 +16,7 @@ authors:
 github_repo_url: https://github.com/econ-ark/HARK
 notebooks:
   - 
-    examples/Gentle-Intro-To-HARK.ipynb
+    examples/Gentle-Intro/Gentle-Intro-To-HARK.ipynb
 dashboards:
 ---
 
