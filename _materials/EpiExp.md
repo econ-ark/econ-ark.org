@@ -1,7 +1,7 @@
 ---
 tags:
   - REMARK
-abstract: "‘Epidemiological’ models of belief formation put social interactions at their core; such models are the main (almost, the only) tool used by non-economists to study the dynamics of beliefs in populations. We survey the (comparatively) small literature in which economists attempting to model the consequences of beliefs about the future – ‘expectations’ – have employed what we view as a full-fledged epidemiological approach to explore an economic question. We draw connections to related work on narrative economics, news/rumor spreading, ‘contagion,’ and the spread of online content. Finally, we discuss a number of promising directions for future research.
+abstract: "‘Epidemiological’ models of belief formation put social interactions at their core; such models are the main (almost, the only) kind of tool used by scholars who are not economists to study the dynamics of beliefs in populations.  We survey the literature in which economists attempting to model the consequences of beliefs about the future -- ‘expectations’ -- have employed a full-fledged epidemiological approach to explore an economic question.  We draw connections to related work on ‘contagion’ narrative economics, news/rumor spreading, and the spread of internet memes. We conclude by arguing that a number of independent developments have recently converged to make epidemiological expectations (`EE') modeling more feasible and appealing than in the past."
 " # abstract: optional
 authors: # required
   -
@@ -21,7 +21,8 @@ identifiers: # optional
 
 keywords: # optional
   - Epidemiology
-  - Expectation
+  - Expectations
+  - Survey
 message: "" # required
 repository-code: "https://github.com/llorracc/EpiExp" # optional
 title: "Epidemiological Expectations in Economics" # required
@@ -32,5 +33,5 @@ commit: # Git commit number that the REMARK will always use; required for "froze
 remark-name: EpiExp # required 
 notebooks: # path to any notebooks within the repo - optional
   - SIR_Ndlib.ipynb
-date-published-original-paper: 2020-09-14 # required for Replications; optional for Reproductions
+date-published-original-paper: 2022-03-13 # required for Replications; optional for Reproductions
 ---
