@@ -23,7 +23,7 @@ keywords: # optional
   - Epidemiology
   - Expectations
   - Survey
-message: "" # required
+message: "Epidemiological Expectations" # required
 repository-code: "https://github.com/llorracc/EpiExp" # optional
 title: "Epidemiological Expectations in Economics" # required
 version: "1.0" # required
