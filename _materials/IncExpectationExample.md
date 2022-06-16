@@ -4,7 +4,6 @@ tags:
   - DemARK
   - Demonstration
   - Notebook
-  - Example
 abstract: 'The Persistent Shock Model and Income Expectations'
 authors:
   -
