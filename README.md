@@ -11,3 +11,8 @@ So, to trigger a recompile (for example, in case some external source material h
 You can also browse directly to the site's info for a particular resource with a command like:
 
 https://econ-ark.org/materials/bufferstocktheory
+
+or 
+
+https://econ-ark.org/materials/distributionofwealthmpc
+
