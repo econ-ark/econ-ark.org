@@ -7,3 +7,7 @@ The site code is hosted here on GitHub, the compiled site is hosted on Netlify, 
 Any edits to any of the markdown files will be recompiled and pushed live upon commit to `master` branch. Changes should be visible <10 minutes.
 
 So, to trigger a recompile (for example, in case some external source material has changed), edit this README.md
+
+You can also browse directly to the site's info for a particular resource with a command like:
+
+https://econ-ark.org/materials/bufferstocktheory
