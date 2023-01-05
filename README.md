@@ -16,3 +16,7 @@ or
 
 https://econ-ark.org/materials/distributionofwealthmpc
 
+(note that our convention is that the name of the "material" should be all lower case)
+
+- Updated REMARK/REMARKS/SolvingMicroDSOPs.md to point to llorracc versions
+
