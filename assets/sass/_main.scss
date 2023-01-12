@@ -564,34 +564,33 @@ a.action-button {
 
 .tag-filter {
   display: flex;
+  flex-direction: column;
   //justify-content: flex-end;
-  align-items: center;
+  align-items: left;
   margin: 2rem 2rem;
-  .choices__inner {
-    min-height: auto;
-  }
-  label {
-    display: inline-block;
-    margin: 0 0.5rem 0 0;
+  > label {
     font-weight: bold;
     color: $ark-blue;
   }
-  .choices {
-    display: inline-block;
-    width: 50%;
+  > input {
+    padding: 6.5px 7.5px 6.5px 7.5px;
+    min-height: auto;
+    box-sizing: border-box;
+    border: 1px solid $ark-blue;
+    border-radius: 2.5px;
   }
-  .choices[data-type*='select-one'] .choices__inner {
+  .choices[data-type*='select-multiple'] .choices__inner {
     padding: 0 7.5px;
     min-height: auto;
     box-sizing: border-box;
     border-color: $ark-blue;
   }
-  .choices__list--dropdown {
-    box-sizing: border-box;
-    .choices__item--selectable {
-      padding-right: inherit;
-    }
-  }
+   .choices__list--dropdown {
+     box-sizing: border-box;
+     .choices__item--selectable {
+       padding-right: inherit;
+     }
+   }
   .choices__list--single .choices__item {
     //width: 150px;
     white-space: nowrap;
@@ -1000,27 +999,6 @@ a.action-button {
     //     }
     //   }
     // }
-  }
-  .tag-filter {
-    display: block;
-    margin: 0 0 2rem 0;
-    label {
-      margin: 1rem 0;
-      display: block;
-      color: #444;
-    }
-    .choices {
-      display: block;
-      width: auto;
-    }
-  }
-  .materials-panel {
-    .tag-filter {
-      margin:0 2rem 1rem 2rem;
-    }
-    .choices__inner {
-      width: auto;
-    }
   }
 }
 
