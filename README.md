@@ -20,3 +20,17 @@ https://econ-ark.org/materials/distributionofwealthmpc
 
 - Updated SolvingMicroDSOPs.md to point to llorracc/SolvingMicroDSOPS/SolvingMicroDSOPS.ipynb
 
+
+## Local Build Instructions
+
+1. Install Ruby 3.0.4
+2. Run the following commands:
+```
+gem install bundler  # installs bundler gem
+git clone ...        # clone repo
+cd path/to/repo      # navigate to repo top level
+bundle config set --local path 'vendor/bundle'  # set bundler output directory
+bundle install       # bundle your jekyll application
+bundle exec jekyll serve  # begin serving your site locally
+```
+
