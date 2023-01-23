@@ -578,6 +578,11 @@ a.action-button {
     box-sizing: border-box;
     border: 1px solid $ark-blue;
     border-radius: 2.5px;
+    margin-bottom: 24px;
+  }
+  .submit-btn {
+    margin-bottom: 0px;
+    max-width: 100px;
   }
   .choices[data-type*='select-multiple'] .choices__inner {
     padding: 0 7.5px;
