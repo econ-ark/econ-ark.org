@@ -122,11 +122,11 @@ form.addEventListener("submit", function(e) {
     const row_abstract = row.querySelector("p.summary").innerText;
 
     const tag_matches = isSuperset(row_tags, formData.getAll("tagSelect"));
-    const title_matches = row_title.toLowerCase().includes(formData.get("search"));
+    const title_matches = row_title.toLowerCase().includes(formData.get("search").toLowerCase());
     const author_matches = row_authors.some( (li) => {
       return li.innerText.toLowerCase().includes(formData.get("search"))
     });
-    const abstract_matches = row_abstract.toLowerCase().includes(formData.get("search"));
+    const abstract_matches = row_abstract.toLowerCase().includes(formData.get("search").toLowerCase());
     console.log(title_matches, author_matches, abstract_matches);
     if (tag_matches && (title_matches || author_matches || abstract_matches)) {
       row.style.display = '';
