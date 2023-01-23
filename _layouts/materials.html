@@ -31,8 +31,8 @@ layout: default
       <select name="tagSelect" id="tagSelect" placeholder="Select tags" multiple>
       </select>
 
-      <label for="titleSearch">Title Search:</label>
-      <input name="titleSearch" id="titleSearch"></input>
+      <label for="search">Search:</label>
+      <input name="search" id="search"></input>
 
       <input class="btn submit-btn" type="submit"></input>
   </form>
@@ -95,7 +95,6 @@ const form = document.querySelector("form")
 const tags = [...document.querySelectorAll("ul.tags li")].map((v) => { return v.innerText });
 
 const tagSelect = document.getElementById('tagSelect');
-const titleSearch = document.getElementById('titleSearch');
 
 form.addEventListener("change", (e) => {
   let evt = document.createEvent("Event");
@@ -117,12 +116,19 @@ form.addEventListener("submit", function(e) {
   const formData = new FormData(form);
 
   table_rows.forEach(function(row) {
-    const row_title = row.querySelector("p.title").innerText;
     const row_tags = new Set([... row.querySelectorAll("ul.tags li")].map((v) => { return v.innerText} ));
+    const row_title = row.querySelector("p.title").innerText;
+    const row_authors = [... row.querySelectorAll("ul.authors li")]
+    const row_abstract = row.querySelector("p.summary").innerText;
 
-    const title_matches = row_title.toLowerCase().includes(formData.get("titleSearch"));
     const tag_matches = isSuperset(row_tags, formData.getAll("tagSelect"));
-    if (title_matches && tag_matches) {
+    const title_matches = row_title.toLowerCase().includes(formData.get("search"));
+    const author_matches = row_authors.some( (li) => {
+      return li.innerText.toLowerCase().includes(formData.get("search"))
+    });
+    const abstract_matches = row_abstract.toLowerCase().includes(formData.get("search"));
+    console.log(title_matches, author_matches, abstract_matches);
+    if (tag_matches && (title_matches || author_matches || abstract_matches)) {
       row.style.display = '';
     } else {
       row.style.display = 'none';
