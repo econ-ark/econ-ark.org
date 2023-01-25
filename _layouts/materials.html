@@ -26,66 +26,146 @@ layout: default
 
 <div class="materials-panel">
 
-<div class="tag-filter">
-  <label for="tagSelect">Tags:</label>
-  <!-- <select id="tagSelect">
-    <option value="All">All</option>
-  </select> -->
-  <!-- <input class="form-control" id="tagSelect" type="text" value="All" placeholder="Select tags" /> -->
-  <select class="form-control" name="tagSelect" id="tagSelect" placeholder="Select tags" multiple>
-    </select>
+  <form class="tag-filter">
+      <label for="tagSelect">Tags:</label>
+      <select name="tagSelect" id="tagSelect" placeholder="Select tags" multiple>
+      </select>
 
+      <label for="search">Search:</label>
+      <input name="search" id="search"></input>
 
-</div>
+      <input class="btn submit-btn" type="submit"></input>
+  </form>
 
-<table class="materials" id="materialsList">
-  <thead>
-    <tr>
-        <th>Material</th>
-        <th>Authors</th>
-        <th>Abstract</th>
-    </tr>
-</thead>
-  <tbody>
-  {% for material in site.materials %}
-  <tr class="material">
-    <td class="material__details">
-      <p class="title"><a href="{{ material.url }}">
-        
-        {% assign github_parts = material.github_repo_url | split: "/" | reverse %}
-        {% assign github_repo = github_parts[0] %}
-        
-        {% if material.name %}
-        {{ material.name }}
-        {% elsif material.title %}
-        {{ material.title }}
-        {% elsif material.remark-name %}
-        {{ material.remark-name }}
-        {% elsif material.title-original-paper %}
-        {{ material.title-original-paper }}
-        {% else %}
-        {{ github_repo }}
-        {% endif %}
+  <table class="materials" id="materialsList">
+    <thead>
+      <tr>
+          <th>Material</th>
+          <th>Authors</th>
+          <th>Abstract</th>
+      </tr>
+  </thead>
+    <tbody>
+    {% for material in site.materials %}
+    <tr class="material visible">
+      <td class="material__details">
+        <p class="title"><a href="{{ material.url }}">
 
-      </a></p>
-      <ul class="tags">
-        {% for tag in material.tags %}
-        <li>{{ tag }}</li>
-        {% endfor %}
+          {% assign github_parts = material.github_repo_url | split: "/" | reverse %}
+          {% assign github_repo = github_parts[0] %}
+
+          {% if material.name %}
+          {{ material.name }}
+          {% elsif material.title %}
+          {{ material.title }}
+          {% elsif material.remark-name %}
+          {{ material.remark-name }}
+          {% elsif material.title-original-paper %}
+          {{ material.title-original-paper }}
+          {% else %}
+          {{ github_repo }}
+          {% endif %}
+
+        </a></p>
+        <ul class="tags">
+          {% for tag in material.tags %}
+          <li>{{ tag }}</li>
+          {% endfor %}
+          </ul>
+
+      </td>
+      <td class="material__authors">
+        <ul class="authors">
+          {% for item in material.authors %}
+          <li>{{ item.family-names }}</li>
+          {% endfor %}
         </ul>
-        
-    </td>
-    <td class="material__authors">
-      <ul class="authors">
-        {% for item in material.authors %}
-        <li>{{ item.family-names }}</li>
-        {% endfor %}
-      </ul>
-    <td class="material__tags">
-      <p class="summary">{{ material.abstract | truncatewords: 30 }}</p>
-    </td>
-  </tr>
-  {% endfor %}
-</tbody>
-</table>
-</div>
+      <td class="material__tags">
+        <p class="summary">{{ material.abstract | truncatewords: 30 }}</p>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+  </div>
+
+<script>
+const table_rows = document.querySelectorAll("tr.material")
+const form = document.querySelector("form")
+const tags = [...document.querySelectorAll("ul.tags li")].map((v) => { return v.innerText });
+
+const tagSelect = document.getElementById('tagSelect');
+
+form.addEventListener("change", (e) => {
+  let evt = document.createEvent("Event");
+  evt.initEvent("submit", true, true);
+  form.dispatchEvent(evt)
+});
+
+function isSuperset(set, subset) {
+  for (const elem of subset) {
+    if (!set.has(elem)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault()
+  const formData = new FormData(form);
+
+  table_rows.forEach(function(row) {
+    const row_tags = new Set([... row.querySelectorAll("ul.tags li")].map((v) => { return v.innerText} ));
+    const row_title = row.querySelector("p.title").innerText;
+    const row_authors = [... row.querySelectorAll("ul.authors li")]
+    const row_abstract = row.querySelector("p.summary").innerText;
+
+    const tag_matches = isSuperset(row_tags, formData.getAll("tagSelect"));
+    const title_matches = row_title.toLowerCase().includes(formData.get("search").toLowerCase());
+    const author_matches = row_authors.some( (li) => {
+      return li.innerText.toLowerCase().includes(formData.get("search"))
+    });
+    const abstract_matches = row_abstract.toLowerCase().includes(formData.get("search").toLowerCase());
+    console.log(title_matches, author_matches, abstract_matches);
+    if (tag_matches && (title_matches || author_matches || abstract_matches)) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+  return false;
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const choices = new Choices(tagSelect, {
+    allowHTML: true,
+    choices: [...new Set(tags)].map((v) => { return {'value': v} }),
+    delimiter: ',',
+    editItems: true,
+    maxItemCount: 5,
+    removeItemButton: true,
+  });
+
+  const tabLinks = document.querySelectorAll('.tabs-toggles li a');
+  for (var i = 0; i < tabLinks.length; i++) {
+    tabLinks[i].addEventListener('click', function (e) {
+      e.preventDefault();
+      for (var j = 0; j < tabLinks.length; j++) {
+        tabLinks[j].classList.remove('active');
+        choices.removeActiveItemsByValue(tabLinks[j].innerText);
+      }
+      this.classList.add('active');
+
+      if (this.innerText != 'All') {
+        choices.setChoiceByValue(this.innerText);
+        console.log(this)
+      }
+      let evt = document.createEvent("Event");
+      evt.initEvent("change", true, true);
+      tagSelect.dispatchEvent(evt)
+    });
+  }
+});
+
+</script>
