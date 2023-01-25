@@ -1,42 +1,35 @@
 ---
-# CFF required fields
-cff-version: "1.1.0" # required (don't change)
-authors: # required
-  - family-names: "Carroll"
-    given-names: "Christopher D."
-    orcid: "https://orcid.org/0000-0003-3732-9312"
-title: "KrusellSmith" # required
-abstract: "Income and wealth heterogeneity in the macroeconomy" # optional
-
-# REMARK required fields
-remark-version: "1.0" # required - specify version of REMARK standard used
-references: # required for replications; optional for reproductions; BibTex data from original paper
-  - type: article
-    authors: # required
-      -
-        family-names: "Krusell"
-        given-names: "Per"
-        # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-      -
-        family-names: "Smith, Jr."
-        given-names: "Anthony A."
-        # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-    title: "Income and Wealth Heterogeneity in the Macroeconomy" # required
-    doi: "https://doi.org/10.1086/250034" # optional
-    date: 1998-10 # required
-    publisher: "Journal of Political Economy"
-
-# Econ-ARK website fields
+cff-version: 1.1.0
+authors:
+- family-names: Carroll
+  given-names: Christopher D.
+  orcid: https://orcid.org/0000-0003-3732-9312
+title: KrusellSmith
+abstract: Income and wealth heterogeneity in the macroeconomy
+remark-version: '1.0'
+references:
+- type: article
+  authors:
+  - family-names: Krusell
+    given-names: Per
+  - family-names: Smith, Jr.
+    given-names: Anthony A.
+  title: Income and Wealth Heterogeneity in the Macroeconomy
+  doi: https://doi.org/10.1086/250034
+  date: 1998-10
+  publisher: Journal of Political Economy
 github_repo_url: https://github.com/econ-ark/KrusellSmith
-remark-name: KrusellSmith # required 
-notebooks: # path to any notebooks within the repo - optional
-  - 
-    Code/Python/KrusellSmith.ipynb
-
-tags: # Use the relavent tags
-  - REMARK
-  - Notebook
-
+remark-name: KrusellSmith
+notebooks:
+- Code/Python/KrusellSmith.ipynb
+tags:
+- REMARK
+- Notebook
+redirects_from:
+- /materials/KrusellSmith
+- /materials/Krusellsmith
+- /materials/krusellSmith
+- /materials/krusellsmith
 ---
 
 

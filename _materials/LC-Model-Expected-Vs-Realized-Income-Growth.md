@@ -1,20 +1,148 @@
 ---
 name: LC-Model-Expected-Vs-Realized-Income-Growth
 tags:
-  - DemARK
-  - Demonstration
-  - Notebook
-abstract: 'This notebook examines the relationship between expected and actual income growth in a model with transitory and permanent shocks'
+- DemARK
+- Demonstration
+- Notebook
+abstract: This notebook examines the relationship between expected and actual income
+  growth in a model with transitory and permanent shocks
 authors:
-  -
-    family-names: Carroll
-    given-names: "Christopher D."
-    orcid: "https://orcid.org/0000-0003-3732-9312"
+- family-names: Carroll
+  given-names: Christopher D.
+  orcid: https://orcid.org/0000-0003-3732-9312
 github_repo_url: https://github.com/econ-ark/DemARK
 notebooks:
-  - 
-    notebooks/LC-Model-Expected-Vs-Realized-Income-Growth.ipynb
-dashboards:
+- notebooks/LC-Model-Expected-Vs-Realized-Income-Growth.ipynb
+dashboards: null
+redirects_from:
+- /materials/LC-Model-Expected-Vs-Realized-Income-Growth
+- /materials/LC-Model-Expected-Vs-Realized-Income-growth
+- /materials/LC-Model-Expected-Vs-Realized-income-Growth
+- /materials/LC-Model-Expected-Vs-Realized-income-growth
+- /materials/LC-Model-Expected-Vs-realized-Income-Growth
+- /materials/LC-Model-Expected-Vs-realized-Income-growth
+- /materials/LC-Model-Expected-Vs-realized-income-Growth
+- /materials/LC-Model-Expected-Vs-realized-income-growth
+- /materials/LC-Model-Expected-vs-Realized-Income-Growth
+- /materials/LC-Model-Expected-vs-Realized-Income-growth
+- /materials/LC-Model-Expected-vs-Realized-income-Growth
+- /materials/LC-Model-Expected-vs-Realized-income-growth
+- /materials/LC-Model-Expected-vs-realized-Income-Growth
+- /materials/LC-Model-Expected-vs-realized-Income-growth
+- /materials/LC-Model-Expected-vs-realized-income-Growth
+- /materials/LC-Model-Expected-vs-realized-income-growth
+- /materials/LC-Model-expected-Vs-Realized-Income-Growth
+- /materials/LC-Model-expected-Vs-Realized-Income-growth
+- /materials/LC-Model-expected-Vs-Realized-income-Growth
+- /materials/LC-Model-expected-Vs-Realized-income-growth
+- /materials/LC-Model-expected-Vs-realized-Income-Growth
+- /materials/LC-Model-expected-Vs-realized-Income-growth
+- /materials/LC-Model-expected-Vs-realized-income-Growth
+- /materials/LC-Model-expected-Vs-realized-income-growth
+- /materials/LC-Model-expected-vs-Realized-Income-Growth
+- /materials/LC-Model-expected-vs-Realized-Income-growth
+- /materials/LC-Model-expected-vs-Realized-income-Growth
+- /materials/LC-Model-expected-vs-Realized-income-growth
+- /materials/LC-Model-expected-vs-realized-Income-Growth
+- /materials/LC-Model-expected-vs-realized-Income-growth
+- /materials/LC-Model-expected-vs-realized-income-Growth
+- /materials/LC-Model-expected-vs-realized-income-growth
+- /materials/LC-model-Expected-Vs-Realized-Income-Growth
+- /materials/LC-model-Expected-Vs-Realized-Income-growth
+- /materials/LC-model-Expected-Vs-Realized-income-Growth
+- /materials/LC-model-Expected-Vs-Realized-income-growth
+- /materials/LC-model-Expected-Vs-realized-Income-Growth
+- /materials/LC-model-Expected-Vs-realized-Income-growth
+- /materials/LC-model-Expected-Vs-realized-income-Growth
+- /materials/LC-model-Expected-Vs-realized-income-growth
+- /materials/LC-model-Expected-vs-Realized-Income-Growth
+- /materials/LC-model-Expected-vs-Realized-Income-growth
+- /materials/LC-model-Expected-vs-Realized-income-Growth
+- /materials/LC-model-Expected-vs-Realized-income-growth
+- /materials/LC-model-Expected-vs-realized-Income-Growth
+- /materials/LC-model-Expected-vs-realized-Income-growth
+- /materials/LC-model-Expected-vs-realized-income-Growth
+- /materials/LC-model-Expected-vs-realized-income-growth
+- /materials/LC-model-expected-Vs-Realized-Income-Growth
+- /materials/LC-model-expected-Vs-Realized-Income-growth
+- /materials/LC-model-expected-Vs-Realized-income-Growth
+- /materials/LC-model-expected-Vs-Realized-income-growth
+- /materials/LC-model-expected-Vs-realized-Income-Growth
+- /materials/LC-model-expected-Vs-realized-Income-growth
+- /materials/LC-model-expected-Vs-realized-income-Growth
+- /materials/LC-model-expected-Vs-realized-income-growth
+- /materials/LC-model-expected-vs-Realized-Income-Growth
+- /materials/LC-model-expected-vs-Realized-Income-growth
+- /materials/LC-model-expected-vs-Realized-income-Growth
+- /materials/LC-model-expected-vs-Realized-income-growth
+- /materials/LC-model-expected-vs-realized-Income-Growth
+- /materials/LC-model-expected-vs-realized-Income-growth
+- /materials/LC-model-expected-vs-realized-income-Growth
+- /materials/LC-model-expected-vs-realized-income-growth
+- /materials/lc-Model-Expected-Vs-Realized-Income-Growth
+- /materials/lc-Model-Expected-Vs-Realized-Income-growth
+- /materials/lc-Model-Expected-Vs-Realized-income-Growth
+- /materials/lc-Model-Expected-Vs-Realized-income-growth
+- /materials/lc-Model-Expected-Vs-realized-Income-Growth
+- /materials/lc-Model-Expected-Vs-realized-Income-growth
+- /materials/lc-Model-Expected-Vs-realized-income-Growth
+- /materials/lc-Model-Expected-Vs-realized-income-growth
+- /materials/lc-Model-Expected-vs-Realized-Income-Growth
+- /materials/lc-Model-Expected-vs-Realized-Income-growth
+- /materials/lc-Model-Expected-vs-Realized-income-Growth
+- /materials/lc-Model-Expected-vs-Realized-income-growth
+- /materials/lc-Model-Expected-vs-realized-Income-Growth
+- /materials/lc-Model-Expected-vs-realized-Income-growth
+- /materials/lc-Model-Expected-vs-realized-income-Growth
+- /materials/lc-Model-Expected-vs-realized-income-growth
+- /materials/lc-Model-expected-Vs-Realized-Income-Growth
+- /materials/lc-Model-expected-Vs-Realized-Income-growth
+- /materials/lc-Model-expected-Vs-Realized-income-Growth
+- /materials/lc-Model-expected-Vs-Realized-income-growth
+- /materials/lc-Model-expected-Vs-realized-Income-Growth
+- /materials/lc-Model-expected-Vs-realized-Income-growth
+- /materials/lc-Model-expected-Vs-realized-income-Growth
+- /materials/lc-Model-expected-Vs-realized-income-growth
+- /materials/lc-Model-expected-vs-Realized-Income-Growth
+- /materials/lc-Model-expected-vs-Realized-Income-growth
+- /materials/lc-Model-expected-vs-Realized-income-Growth
+- /materials/lc-Model-expected-vs-Realized-income-growth
+- /materials/lc-Model-expected-vs-realized-Income-Growth
+- /materials/lc-Model-expected-vs-realized-Income-growth
+- /materials/lc-Model-expected-vs-realized-income-Growth
+- /materials/lc-Model-expected-vs-realized-income-growth
+- /materials/lc-model-Expected-Vs-Realized-Income-Growth
+- /materials/lc-model-Expected-Vs-Realized-Income-growth
+- /materials/lc-model-Expected-Vs-Realized-income-Growth
+- /materials/lc-model-Expected-Vs-Realized-income-growth
+- /materials/lc-model-Expected-Vs-realized-Income-Growth
+- /materials/lc-model-Expected-Vs-realized-Income-growth
+- /materials/lc-model-Expected-Vs-realized-income-Growth
+- /materials/lc-model-Expected-Vs-realized-income-growth
+- /materials/lc-model-Expected-vs-Realized-Income-Growth
+- /materials/lc-model-Expected-vs-Realized-Income-growth
+- /materials/lc-model-Expected-vs-Realized-income-Growth
+- /materials/lc-model-Expected-vs-Realized-income-growth
+- /materials/lc-model-Expected-vs-realized-Income-Growth
+- /materials/lc-model-Expected-vs-realized-Income-growth
+- /materials/lc-model-Expected-vs-realized-income-Growth
+- /materials/lc-model-Expected-vs-realized-income-growth
+- /materials/lc-model-expected-Vs-Realized-Income-Growth
+- /materials/lc-model-expected-Vs-Realized-Income-growth
+- /materials/lc-model-expected-Vs-Realized-income-Growth
+- /materials/lc-model-expected-Vs-Realized-income-growth
+- /materials/lc-model-expected-Vs-realized-Income-Growth
+- /materials/lc-model-expected-Vs-realized-Income-growth
+- /materials/lc-model-expected-Vs-realized-income-Growth
+- /materials/lc-model-expected-Vs-realized-income-growth
+- /materials/lc-model-expected-vs-Realized-Income-Growth
+- /materials/lc-model-expected-vs-Realized-Income-growth
+- /materials/lc-model-expected-vs-Realized-income-Growth
+- /materials/lc-model-expected-vs-Realized-income-growth
+- /materials/lc-model-expected-vs-realized-Income-Growth
+- /materials/lc-model-expected-vs-realized-Income-growth
+- /materials/lc-model-expected-vs-realized-income-Growth
+- /materials/lc-model-expected-vs-realized-income-growth
 ---
 
 Expected Versus Realized Income Growth in a Life Cycle Model with transitory and permanent shocks to income

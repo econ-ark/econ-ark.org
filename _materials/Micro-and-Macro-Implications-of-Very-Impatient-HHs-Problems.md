@@ -1,21 +1,148 @@
 ---
 name: Micro-and-Macro-Implications-of-Very-Impatient-HHs
 tags:
-  - QuARK
-  - Demonstration
-  - Notebook
-  - Teaching
-abstract: 'Micro- and Macroeconomic Implications of Very Impatient Households'
+- QuARK
+- Demonstration
+- Notebook
+- Teaching
+abstract: Micro- and Macroeconomic Implications of Very Impatient Households
 authors:
-  -
-    family-names: Carroll
-    given-names: "Christopher D."
-    orcid: "https://orcid.org/0000-0003-3732-9312"
+- family-names: Carroll
+  given-names: Christopher D.
+  orcid: https://orcid.org/0000-0003-3732-9312
 github_repo_url: https://github.com/econ-ark/QuARK
 notebooks:
-  - 
-    notebooks/Micro-and-Macro-Implications-of-Very-Impatient-HHs.ipynb
-dashboards:
+- notebooks/Micro-and-Macro-Implications-of-Very-Impatient-HHs.ipynb
+dashboards: null
+redirects_from:
+- /materials/Micro-and-Macro-Implications-of-Very-Impatient-HHs-Problems
+- /materials/Micro-and-Macro-Implications-of-Very-Impatient-HHs-problems
+- /materials/Micro-and-Macro-Implications-of-Very-Impatient-hhs-Problems
+- /materials/Micro-and-Macro-Implications-of-Very-Impatient-hhs-problems
+- /materials/Micro-and-Macro-Implications-of-Very-impatient-HHs-Problems
+- /materials/Micro-and-Macro-Implications-of-Very-impatient-HHs-problems
+- /materials/Micro-and-Macro-Implications-of-Very-impatient-hhs-Problems
+- /materials/Micro-and-Macro-Implications-of-Very-impatient-hhs-problems
+- /materials/Micro-and-Macro-Implications-of-very-Impatient-HHs-Problems
+- /materials/Micro-and-Macro-Implications-of-very-Impatient-HHs-problems
+- /materials/Micro-and-Macro-Implications-of-very-Impatient-hhs-Problems
+- /materials/Micro-and-Macro-Implications-of-very-Impatient-hhs-problems
+- /materials/Micro-and-Macro-Implications-of-very-impatient-HHs-Problems
+- /materials/Micro-and-Macro-Implications-of-very-impatient-HHs-problems
+- /materials/Micro-and-Macro-Implications-of-very-impatient-hhs-Problems
+- /materials/Micro-and-Macro-Implications-of-very-impatient-hhs-problems
+- /materials/Micro-and-Macro-implications-of-Very-Impatient-HHs-Problems
+- /materials/Micro-and-Macro-implications-of-Very-Impatient-HHs-problems
+- /materials/Micro-and-Macro-implications-of-Very-Impatient-hhs-Problems
+- /materials/Micro-and-Macro-implications-of-Very-Impatient-hhs-problems
+- /materials/Micro-and-Macro-implications-of-Very-impatient-HHs-Problems
+- /materials/Micro-and-Macro-implications-of-Very-impatient-HHs-problems
+- /materials/Micro-and-Macro-implications-of-Very-impatient-hhs-Problems
+- /materials/Micro-and-Macro-implications-of-Very-impatient-hhs-problems
+- /materials/Micro-and-Macro-implications-of-very-Impatient-HHs-Problems
+- /materials/Micro-and-Macro-implications-of-very-Impatient-HHs-problems
+- /materials/Micro-and-Macro-implications-of-very-Impatient-hhs-Problems
+- /materials/Micro-and-Macro-implications-of-very-Impatient-hhs-problems
+- /materials/Micro-and-Macro-implications-of-very-impatient-HHs-Problems
+- /materials/Micro-and-Macro-implications-of-very-impatient-HHs-problems
+- /materials/Micro-and-Macro-implications-of-very-impatient-hhs-Problems
+- /materials/Micro-and-Macro-implications-of-very-impatient-hhs-problems
+- /materials/Micro-and-macro-Implications-of-Very-Impatient-HHs-Problems
+- /materials/Micro-and-macro-Implications-of-Very-Impatient-HHs-problems
+- /materials/Micro-and-macro-Implications-of-Very-Impatient-hhs-Problems
+- /materials/Micro-and-macro-Implications-of-Very-Impatient-hhs-problems
+- /materials/Micro-and-macro-Implications-of-Very-impatient-HHs-Problems
+- /materials/Micro-and-macro-Implications-of-Very-impatient-HHs-problems
+- /materials/Micro-and-macro-Implications-of-Very-impatient-hhs-Problems
+- /materials/Micro-and-macro-Implications-of-Very-impatient-hhs-problems
+- /materials/Micro-and-macro-Implications-of-very-Impatient-HHs-Problems
+- /materials/Micro-and-macro-Implications-of-very-Impatient-HHs-problems
+- /materials/Micro-and-macro-Implications-of-very-Impatient-hhs-Problems
+- /materials/Micro-and-macro-Implications-of-very-Impatient-hhs-problems
+- /materials/Micro-and-macro-Implications-of-very-impatient-HHs-Problems
+- /materials/Micro-and-macro-Implications-of-very-impatient-HHs-problems
+- /materials/Micro-and-macro-Implications-of-very-impatient-hhs-Problems
+- /materials/Micro-and-macro-Implications-of-very-impatient-hhs-problems
+- /materials/Micro-and-macro-implications-of-Very-Impatient-HHs-Problems
+- /materials/Micro-and-macro-implications-of-Very-Impatient-HHs-problems
+- /materials/Micro-and-macro-implications-of-Very-Impatient-hhs-Problems
+- /materials/Micro-and-macro-implications-of-Very-Impatient-hhs-problems
+- /materials/Micro-and-macro-implications-of-Very-impatient-HHs-Problems
+- /materials/Micro-and-macro-implications-of-Very-impatient-HHs-problems
+- /materials/Micro-and-macro-implications-of-Very-impatient-hhs-Problems
+- /materials/Micro-and-macro-implications-of-Very-impatient-hhs-problems
+- /materials/Micro-and-macro-implications-of-very-Impatient-HHs-Problems
+- /materials/Micro-and-macro-implications-of-very-Impatient-HHs-problems
+- /materials/Micro-and-macro-implications-of-very-Impatient-hhs-Problems
+- /materials/Micro-and-macro-implications-of-very-Impatient-hhs-problems
+- /materials/Micro-and-macro-implications-of-very-impatient-HHs-Problems
+- /materials/Micro-and-macro-implications-of-very-impatient-HHs-problems
+- /materials/Micro-and-macro-implications-of-very-impatient-hhs-Problems
+- /materials/Micro-and-macro-implications-of-very-impatient-hhs-problems
+- /materials/micro-and-Macro-Implications-of-Very-Impatient-HHs-Problems
+- /materials/micro-and-Macro-Implications-of-Very-Impatient-HHs-problems
+- /materials/micro-and-Macro-Implications-of-Very-Impatient-hhs-Problems
+- /materials/micro-and-Macro-Implications-of-Very-Impatient-hhs-problems
+- /materials/micro-and-Macro-Implications-of-Very-impatient-HHs-Problems
+- /materials/micro-and-Macro-Implications-of-Very-impatient-HHs-problems
+- /materials/micro-and-Macro-Implications-of-Very-impatient-hhs-Problems
+- /materials/micro-and-Macro-Implications-of-Very-impatient-hhs-problems
+- /materials/micro-and-Macro-Implications-of-very-Impatient-HHs-Problems
+- /materials/micro-and-Macro-Implications-of-very-Impatient-HHs-problems
+- /materials/micro-and-Macro-Implications-of-very-Impatient-hhs-Problems
+- /materials/micro-and-Macro-Implications-of-very-Impatient-hhs-problems
+- /materials/micro-and-Macro-Implications-of-very-impatient-HHs-Problems
+- /materials/micro-and-Macro-Implications-of-very-impatient-HHs-problems
+- /materials/micro-and-Macro-Implications-of-very-impatient-hhs-Problems
+- /materials/micro-and-Macro-Implications-of-very-impatient-hhs-problems
+- /materials/micro-and-Macro-implications-of-Very-Impatient-HHs-Problems
+- /materials/micro-and-Macro-implications-of-Very-Impatient-HHs-problems
+- /materials/micro-and-Macro-implications-of-Very-Impatient-hhs-Problems
+- /materials/micro-and-Macro-implications-of-Very-Impatient-hhs-problems
+- /materials/micro-and-Macro-implications-of-Very-impatient-HHs-Problems
+- /materials/micro-and-Macro-implications-of-Very-impatient-HHs-problems
+- /materials/micro-and-Macro-implications-of-Very-impatient-hhs-Problems
+- /materials/micro-and-Macro-implications-of-Very-impatient-hhs-problems
+- /materials/micro-and-Macro-implications-of-very-Impatient-HHs-Problems
+- /materials/micro-and-Macro-implications-of-very-Impatient-HHs-problems
+- /materials/micro-and-Macro-implications-of-very-Impatient-hhs-Problems
+- /materials/micro-and-Macro-implications-of-very-Impatient-hhs-problems
+- /materials/micro-and-Macro-implications-of-very-impatient-HHs-Problems
+- /materials/micro-and-Macro-implications-of-very-impatient-HHs-problems
+- /materials/micro-and-Macro-implications-of-very-impatient-hhs-Problems
+- /materials/micro-and-Macro-implications-of-very-impatient-hhs-problems
+- /materials/micro-and-macro-Implications-of-Very-Impatient-HHs-Problems
+- /materials/micro-and-macro-Implications-of-Very-Impatient-HHs-problems
+- /materials/micro-and-macro-Implications-of-Very-Impatient-hhs-Problems
+- /materials/micro-and-macro-Implications-of-Very-Impatient-hhs-problems
+- /materials/micro-and-macro-Implications-of-Very-impatient-HHs-Problems
+- /materials/micro-and-macro-Implications-of-Very-impatient-HHs-problems
+- /materials/micro-and-macro-Implications-of-Very-impatient-hhs-Problems
+- /materials/micro-and-macro-Implications-of-Very-impatient-hhs-problems
+- /materials/micro-and-macro-Implications-of-very-Impatient-HHs-Problems
+- /materials/micro-and-macro-Implications-of-very-Impatient-HHs-problems
+- /materials/micro-and-macro-Implications-of-very-Impatient-hhs-Problems
+- /materials/micro-and-macro-Implications-of-very-Impatient-hhs-problems
+- /materials/micro-and-macro-Implications-of-very-impatient-HHs-Problems
+- /materials/micro-and-macro-Implications-of-very-impatient-HHs-problems
+- /materials/micro-and-macro-Implications-of-very-impatient-hhs-Problems
+- /materials/micro-and-macro-Implications-of-very-impatient-hhs-problems
+- /materials/micro-and-macro-implications-of-Very-Impatient-HHs-Problems
+- /materials/micro-and-macro-implications-of-Very-Impatient-HHs-problems
+- /materials/micro-and-macro-implications-of-Very-Impatient-hhs-Problems
+- /materials/micro-and-macro-implications-of-Very-Impatient-hhs-problems
+- /materials/micro-and-macro-implications-of-Very-impatient-HHs-Problems
+- /materials/micro-and-macro-implications-of-Very-impatient-HHs-problems
+- /materials/micro-and-macro-implications-of-Very-impatient-hhs-Problems
+- /materials/micro-and-macro-implications-of-Very-impatient-hhs-problems
+- /materials/micro-and-macro-implications-of-very-Impatient-HHs-Problems
+- /materials/micro-and-macro-implications-of-very-Impatient-HHs-problems
+- /materials/micro-and-macro-implications-of-very-Impatient-hhs-Problems
+- /materials/micro-and-macro-implications-of-very-Impatient-hhs-problems
+- /materials/micro-and-macro-implications-of-very-impatient-HHs-Problems
+- /materials/micro-and-macro-implications-of-very-impatient-HHs-problems
+- /materials/micro-and-macro-implications-of-very-impatient-hhs-Problems
+- /materials/micro-and-macro-implications-of-very-impatient-hhs-problems
 ---
 
 Micro- and Macroeconomic Implications of Very Impatient Households

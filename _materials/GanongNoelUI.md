@@ -1,44 +1,41 @@
 ---
-# CFF required fields
-cff-version: 1.1.0 # required (don't change)
-# message: If you use this software, please cite it as below. # optional
-authors: # required
-  - family-names: "Ganong"
-    given-names: "Peter"
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-  - family-names: "Noel"
-    given-names: "Pascal"
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-title: GanongNoelUI # required
-abstract: Analysis of Models for "Consumer Spending During Unemployment- Positive and Normative Implications"
-
-# REMARK required fields
-remark-version: "1.0" # required - specify version of REMARK standard used
-references: # required for replications; optional for reproductions; BibTex data from original paper
-  - type: article
-    authors: # required
-      -
-        family-names: "Ganong"
-        given-names: "Peter"
-        # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-      -
-        family-names: "Noel"
-        given-names: "Pascal"
-        # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-    title: "Consumer Spending During Unemployment: Positive and Normative Implications" # required
-    doi: "https://doi.org/10.1257/aer.20170537" # optional
-    date: 2019-07 # required
-    publisher: "The American Economic Review"
-
-# Econ-ARK website fields 
-github_repo_url: "https://github.com/econ-ark/REMARK" # required 
-remark-name: "GanongNoelUI" # required
-title-original-paper: "Consumer Spending During Unemployment: Positive and Normative Implications" # optional 
-
-tags:  # Use the relavent tags
-  - REMARK
-  - Replication
-
+cff-version: 1.1.0
+authors:
+- family-names: Ganong
+  given-names: Peter
+- family-names: Noel
+  given-names: Pascal
+title: GanongNoelUI
+abstract: Analysis of Models for "Consumer Spending During Unemployment- Positive
+  and Normative Implications"
+remark-version: '1.0'
+references:
+- type: article
+  authors:
+  - family-names: Ganong
+    given-names: Peter
+  - family-names: Noel
+    given-names: Pascal
+  title: 'Consumer Spending During Unemployment: Positive and Normative Implications'
+  doi: https://doi.org/10.1257/aer.20170537
+  date: 2019-07
+  publisher: The American Economic Review
+github_repo_url: https://github.com/econ-ark/REMARK
+remark-name: GanongNoelUI
+title-original-paper: 'Consumer Spending During Unemployment: Positive and Normative
+  Implications'
+tags:
+- REMARK
+- Replication
+redirects_from:
+- /materials/GanongNoelUI
+- /materials/GanongNoelui
+- /materials/GanongnoelUI
+- /materials/Ganongnoelui
+- /materials/ganongNoelUI
+- /materials/ganongNoelui
+- /materials/ganongnoelUI
+- /materials/ganongnoelui
 ---
   
   Analysis of Models for "Consumer Spending During Unemployment: Positive and Normative Implications"
