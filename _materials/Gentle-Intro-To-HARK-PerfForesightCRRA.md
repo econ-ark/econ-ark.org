@@ -1,21 +1,148 @@
 ---
 name: Gentle-Intro-To-HARK-PerfForesightCRRA
 tags:
-  - DemARK
-  - Demonstration
-  - Tutorial
-  - Notebook
-abstract: 'A Gentle Introduction to HARK In Perfect Foresight'
+- DemARK
+- Demonstration
+- Tutorial
+- Notebook
+abstract: A Gentle Introduction to HARK In Perfect Foresight
 authors:
-  -
-    family-names: Carroll
-    given-names: "Christopher D."
-    orcid: "https://orcid.org/0000-0003-3732-9312"
+- family-names: Carroll
+  given-names: Christopher D.
+  orcid: https://orcid.org/0000-0003-3732-9312
 github_repo_url: https://github.com/econ-ark/DemARK
 notebooks:
-  - 
-    notebooks/Gentle-Intro-To-HARK-PerfForesightCRRA.ipynb
-dashboards:
+- notebooks/Gentle-Intro-To-HARK-PerfForesightCRRA.ipynb
+dashboards: null
+redirects_from:
+- /materials/Gentle-Intro-To-HARK-PerfForesightCRRA
+- /materials/Gentle-Intro-To-HARK-PerfForesightcrra
+- /materials/Gentle-Intro-To-HARK-PerfforesightCRRA
+- /materials/Gentle-Intro-To-HARK-Perfforesightcrra
+- /materials/Gentle-Intro-To-HARK-perfForesightCRRA
+- /materials/Gentle-Intro-To-HARK-perfForesightcrra
+- /materials/Gentle-Intro-To-HARK-perfforesightCRRA
+- /materials/Gentle-Intro-To-HARK-perfforesightcrra
+- /materials/Gentle-Intro-To-hark-PerfForesightCRRA
+- /materials/Gentle-Intro-To-hark-PerfForesightcrra
+- /materials/Gentle-Intro-To-hark-PerfforesightCRRA
+- /materials/Gentle-Intro-To-hark-Perfforesightcrra
+- /materials/Gentle-Intro-To-hark-perfForesightCRRA
+- /materials/Gentle-Intro-To-hark-perfForesightcrra
+- /materials/Gentle-Intro-To-hark-perfforesightCRRA
+- /materials/Gentle-Intro-To-hark-perfforesightcrra
+- /materials/Gentle-Intro-to-HARK-PerfForesightCRRA
+- /materials/Gentle-Intro-to-HARK-PerfForesightcrra
+- /materials/Gentle-Intro-to-HARK-PerfforesightCRRA
+- /materials/Gentle-Intro-to-HARK-Perfforesightcrra
+- /materials/Gentle-Intro-to-HARK-perfForesightCRRA
+- /materials/Gentle-Intro-to-HARK-perfForesightcrra
+- /materials/Gentle-Intro-to-HARK-perfforesightCRRA
+- /materials/Gentle-Intro-to-HARK-perfforesightcrra
+- /materials/Gentle-Intro-to-hark-PerfForesightCRRA
+- /materials/Gentle-Intro-to-hark-PerfForesightcrra
+- /materials/Gentle-Intro-to-hark-PerfforesightCRRA
+- /materials/Gentle-Intro-to-hark-Perfforesightcrra
+- /materials/Gentle-Intro-to-hark-perfForesightCRRA
+- /materials/Gentle-Intro-to-hark-perfForesightcrra
+- /materials/Gentle-Intro-to-hark-perfforesightCRRA
+- /materials/Gentle-Intro-to-hark-perfforesightcrra
+- /materials/Gentle-intro-To-HARK-PerfForesightCRRA
+- /materials/Gentle-intro-To-HARK-PerfForesightcrra
+- /materials/Gentle-intro-To-HARK-PerfforesightCRRA
+- /materials/Gentle-intro-To-HARK-Perfforesightcrra
+- /materials/Gentle-intro-To-HARK-perfForesightCRRA
+- /materials/Gentle-intro-To-HARK-perfForesightcrra
+- /materials/Gentle-intro-To-HARK-perfforesightCRRA
+- /materials/Gentle-intro-To-HARK-perfforesightcrra
+- /materials/Gentle-intro-To-hark-PerfForesightCRRA
+- /materials/Gentle-intro-To-hark-PerfForesightcrra
+- /materials/Gentle-intro-To-hark-PerfforesightCRRA
+- /materials/Gentle-intro-To-hark-Perfforesightcrra
+- /materials/Gentle-intro-To-hark-perfForesightCRRA
+- /materials/Gentle-intro-To-hark-perfForesightcrra
+- /materials/Gentle-intro-To-hark-perfforesightCRRA
+- /materials/Gentle-intro-To-hark-perfforesightcrra
+- /materials/Gentle-intro-to-HARK-PerfForesightCRRA
+- /materials/Gentle-intro-to-HARK-PerfForesightcrra
+- /materials/Gentle-intro-to-HARK-PerfforesightCRRA
+- /materials/Gentle-intro-to-HARK-Perfforesightcrra
+- /materials/Gentle-intro-to-HARK-perfForesightCRRA
+- /materials/Gentle-intro-to-HARK-perfForesightcrra
+- /materials/Gentle-intro-to-HARK-perfforesightCRRA
+- /materials/Gentle-intro-to-HARK-perfforesightcrra
+- /materials/Gentle-intro-to-hark-PerfForesightCRRA
+- /materials/Gentle-intro-to-hark-PerfForesightcrra
+- /materials/Gentle-intro-to-hark-PerfforesightCRRA
+- /materials/Gentle-intro-to-hark-Perfforesightcrra
+- /materials/Gentle-intro-to-hark-perfForesightCRRA
+- /materials/Gentle-intro-to-hark-perfForesightcrra
+- /materials/Gentle-intro-to-hark-perfforesightCRRA
+- /materials/Gentle-intro-to-hark-perfforesightcrra
+- /materials/gentle-Intro-To-HARK-PerfForesightCRRA
+- /materials/gentle-Intro-To-HARK-PerfForesightcrra
+- /materials/gentle-Intro-To-HARK-PerfforesightCRRA
+- /materials/gentle-Intro-To-HARK-Perfforesightcrra
+- /materials/gentle-Intro-To-HARK-perfForesightCRRA
+- /materials/gentle-Intro-To-HARK-perfForesightcrra
+- /materials/gentle-Intro-To-HARK-perfforesightCRRA
+- /materials/gentle-Intro-To-HARK-perfforesightcrra
+- /materials/gentle-Intro-To-hark-PerfForesightCRRA
+- /materials/gentle-Intro-To-hark-PerfForesightcrra
+- /materials/gentle-Intro-To-hark-PerfforesightCRRA
+- /materials/gentle-Intro-To-hark-Perfforesightcrra
+- /materials/gentle-Intro-To-hark-perfForesightCRRA
+- /materials/gentle-Intro-To-hark-perfForesightcrra
+- /materials/gentle-Intro-To-hark-perfforesightCRRA
+- /materials/gentle-Intro-To-hark-perfforesightcrra
+- /materials/gentle-Intro-to-HARK-PerfForesightCRRA
+- /materials/gentle-Intro-to-HARK-PerfForesightcrra
+- /materials/gentle-Intro-to-HARK-PerfforesightCRRA
+- /materials/gentle-Intro-to-HARK-Perfforesightcrra
+- /materials/gentle-Intro-to-HARK-perfForesightCRRA
+- /materials/gentle-Intro-to-HARK-perfForesightcrra
+- /materials/gentle-Intro-to-HARK-perfforesightCRRA
+- /materials/gentle-Intro-to-HARK-perfforesightcrra
+- /materials/gentle-Intro-to-hark-PerfForesightCRRA
+- /materials/gentle-Intro-to-hark-PerfForesightcrra
+- /materials/gentle-Intro-to-hark-PerfforesightCRRA
+- /materials/gentle-Intro-to-hark-Perfforesightcrra
+- /materials/gentle-Intro-to-hark-perfForesightCRRA
+- /materials/gentle-Intro-to-hark-perfForesightcrra
+- /materials/gentle-Intro-to-hark-perfforesightCRRA
+- /materials/gentle-Intro-to-hark-perfforesightcrra
+- /materials/gentle-intro-To-HARK-PerfForesightCRRA
+- /materials/gentle-intro-To-HARK-PerfForesightcrra
+- /materials/gentle-intro-To-HARK-PerfforesightCRRA
+- /materials/gentle-intro-To-HARK-Perfforesightcrra
+- /materials/gentle-intro-To-HARK-perfForesightCRRA
+- /materials/gentle-intro-To-HARK-perfForesightcrra
+- /materials/gentle-intro-To-HARK-perfforesightCRRA
+- /materials/gentle-intro-To-HARK-perfforesightcrra
+- /materials/gentle-intro-To-hark-PerfForesightCRRA
+- /materials/gentle-intro-To-hark-PerfForesightcrra
+- /materials/gentle-intro-To-hark-PerfforesightCRRA
+- /materials/gentle-intro-To-hark-Perfforesightcrra
+- /materials/gentle-intro-To-hark-perfForesightCRRA
+- /materials/gentle-intro-To-hark-perfForesightcrra
+- /materials/gentle-intro-To-hark-perfforesightCRRA
+- /materials/gentle-intro-To-hark-perfforesightcrra
+- /materials/gentle-intro-to-HARK-PerfForesightCRRA
+- /materials/gentle-intro-to-HARK-PerfForesightcrra
+- /materials/gentle-intro-to-HARK-PerfforesightCRRA
+- /materials/gentle-intro-to-HARK-Perfforesightcrra
+- /materials/gentle-intro-to-HARK-perfForesightCRRA
+- /materials/gentle-intro-to-HARK-perfForesightcrra
+- /materials/gentle-intro-to-HARK-perfforesightCRRA
+- /materials/gentle-intro-to-HARK-perfforesightcrra
+- /materials/gentle-intro-to-hark-PerfForesightCRRA
+- /materials/gentle-intro-to-hark-PerfForesightcrra
+- /materials/gentle-intro-to-hark-PerfforesightCRRA
+- /materials/gentle-intro-to-hark-Perfforesightcrra
+- /materials/gentle-intro-to-hark-perfForesightCRRA
+- /materials/gentle-intro-to-hark-perfForesightcrra
+- /materials/gentle-intro-to-hark-perfforesightCRRA
+- /materials/gentle-intro-to-hark-perfforesightcrra
 ---
 
 A Gentle Introduction to HARK In Perfect Foresight

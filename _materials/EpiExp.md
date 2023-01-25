@@ -1,56 +1,53 @@
 ---
-# CFF required fields
-cff-version: "1.1.0" # required 
-message: "Repository to reproduce results and text of paper" # required
-authors: # required
-  -
-    family-names: "Carroll"
-    given-names: "Christopher D."
-    orcid: "https://orcid.org/0000-0003-3732-9312"
-  -
-    family-names: "Wang"
-    given-names: "Tao"
-    orcid: "https://orcid.org/0000-0003-4806-8592"
-title: "Epidemiological Expectations in Economics" # required
-abstract: "‘Epidemiological’ models of belief formation put social interactions at their core; such models are the main (almost, the only) tool used by non-economists to study the dynamics of beliefs in populations. We survey the (comparatively) small literature in which economists attempting to model the consequences of beliefs about the future – ‘expectations’ – have employed what we view as a full-fledged epidemiological approach to explore an economic question. We draw connections to related work on narrative economics, news/rumor spreading, ‘contagion,’ and the spread of online content. Finally, we discuss a number of promising directions for future research." # abstract: optional
-date-released: 2021-09-29 # required
-
-# REMARK required fields
-remark-version: "1.0"
+cff-version: 1.1.0
+message: Repository to reproduce results and text of paper
+authors:
+- family-names: Carroll
+  given-names: Christopher D.
+  orcid: https://orcid.org/0000-0003-3732-9312
+- family-names: Wang
+  given-names: Tao
+  orcid: https://orcid.org/0000-0003-4806-8592
+title: Epidemiological Expectations in Economics
+abstract: "\u2018Epidemiological\u2019 models of belief formation put social interactions\
+  \ at their core; such models are the main (almost, the only) tool used by non-economists\
+  \ to study the dynamics of beliefs in populations. We survey the (comparatively)\
+  \ small literature in which economists attempting to model the consequences of beliefs\
+  \ about the future \u2013 \u2018expectations\u2019 \u2013 have employed what we\
+  \ view as a full-fledged epidemiological approach to explore an economic question.\
+  \ We draw connections to related work on narrative economics, news/rumor spreading,\
+  \ \u2018contagion,\u2019 and the spread of online content. Finally, we discuss a\
+  \ number of promising directions for future research."
+date-released: 2021-09-29
+remark-version: '1.0'
 references:
-  - type: Handbook-Chapter
-    authors: # required
-      -
-        family-names: "Carroll"
-        given-names: "Christopher D."
-        orcid: "https://orcid.org/0000-0003-3732-9312"
-      -
-        family-names: "Wang"
-        given-names: "Tao"
-        orcid: "https://orcid.org/0000-0003-4806-8592"
-    title: "Epidemiological Expectations in Economics" # required
-    # doi: "Original paper DOI" # optional
-    date: 2022-03-22 # required
-    # publisher: "Publisher information"
-
-# Econ-ARK website fields
-github_repo_url: "https://github.com/econ-ark/EpiExp"
+- type: Handbook-Chapter
+  authors:
+  - family-names: Carroll
+    given-names: Christopher D.
+    orcid: https://orcid.org/0000-0003-3732-9312
+  - family-names: Wang
+    given-names: Tao
+    orcid: https://orcid.org/0000-0003-4806-8592
+  title: Epidemiological Expectations in Economics
+  date: 2022-03-22
+github_repo_url: https://github.com/econ-ark/EpiExp
 Remark-name: EpiExp
 notebooks:
-  - SIR_Ndlib.ipynb
-
+- SIR_Ndlib.ipynb
 identifiers-paper:
-  -
-    type: doi
-    value: https://doi.org/10.5281/zenodo.6363391
-
-tags: # Use the relavent tags
-  - REMARK
-
-keywords: # optional
-  - Epidemiology
-  - Expectations
-  
+- type: doi
+  value: https://doi.org/10.5281/zenodo.6363391
+tags:
+- REMARK
+keywords:
+- Epidemiology
+- Expectations
+redirects_from:
+- /materials/EpiExp
+- /materials/Epiexp
+- /materials/epiExp
+- /materials/epiexp
 ---
 
 # EpiExp

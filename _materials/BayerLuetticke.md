@@ -1,42 +1,36 @@
 ---
-# CFF Requires fields
-cff-version: 1.1.0 # required (don't change)
-authors: # required
-  -
-    family-names: "Lee"
-    given-names: "Seungcheol"
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-  -
-    family-names: "Park"
-    given-names:  "Seungmoon" 
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-title: "Solving heterogeneous agent models in discrete time with many idiosyncratic states by perturbation methods" # required
-abstract: "Code that solves models from the paper of Bayer and Luetikke, \"Solving heterogeneous agent models in discrete time with many idiosyncratic states by perturbation methods\"." # optional
-date-released: 2021-02-02 # required
-
-# REMARK required fields
-remark-version: 1.0 # required - specify version of REMARK standard used
-references: # required for replications; optional for reproductions; BibTex data from original paper
-  - type: article
-    authors: # required
-      -
-        family-names: "Bayer"
-        given-names: "Christian"
-        # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-      -
-        family-names: "Luetticke"
-        given-names: "Ralph"
-        # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-    title: "Solving heterogeneous agent models in discrete time with many idiosyncratic states by perturbation methods" # required
-    date: 2018-07-14 # required
-    
-# Econ-ARK website fields
-github_repo_url: https://github.com/econ-ark/BayerLuetticke # required
-remark-name: BayerLuetticke # required 
-
-tags: # Use the relavent tags
-  - REMARK
-  - Reproduction
+cff-version: 1.1.0
+authors:
+- family-names: Lee
+  given-names: Seungcheol
+- family-names: Park
+  given-names: Seungmoon
+title: Solving heterogeneous agent models in discrete time with many idiosyncratic
+  states by perturbation methods
+abstract: Code that solves models from the paper of Bayer and Luetikke, "Solving heterogeneous
+  agent models in discrete time with many idiosyncratic states by perturbation methods".
+date-released: 2021-02-02
+remark-version: 1.0
+references:
+- type: article
+  authors:
+  - family-names: Bayer
+    given-names: Christian
+  - family-names: Luetticke
+    given-names: Ralph
+  title: Solving heterogeneous agent models in discrete time with many idiosyncratic
+    states by perturbation methods
+  date: 2018-07-14
+github_repo_url: https://github.com/econ-ark/BayerLuetticke
+remark-name: BayerLuetticke
+tags:
+- REMARK
+- Reproduction
+redirects_from:
+- /materials/BayerLuetticke
+- /materials/Bayerluetticke
+- /materials/bayerLuetticke
+- /materials/bayerluetticke
 ---
 
 # Bayer Luetticke (2018)

@@ -1,20 +1,26 @@
 ---
 tags:
-  - REMARK
-  - Replication
+- REMARK
+- Replication
 name: cstwMPC-RHetero
-title: Can Persistent Unobserved Heterogeneity in Returns-to-Wealth Explain Wealth Inequality?
+title: Can Persistent Unobserved Heterogeneity in Returns-to-Wealth Explain Wealth
+  Inequality?
 remark_title: cstwMPC-RHetero
 summary: ''
 abstract: ''
 notebook: ''
 authors:
-  - 
+- null
 remark_authors:
-  - Derin Aksit
-paper_url: 
+- Derin Aksit
+paper_url: null
 github_url: https://github.com/econ-ark/cstwMPC-RHetero
 DOI: ''
+redirects_from:
+- /materials/cstwMPC-RHetero
+- /materials/cstwMPC-rhetero
+- /materials/cstwmpc-RHetero
+- /materials/cstwmpc-rhetero
 ---
 
 #AksitRHetero is a Reproduction 

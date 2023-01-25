@@ -1,42 +1,32 @@
 ---
-# CFF required fields
-cff-version: 1.1.0 # required (don't change)
-authors: # required
-  -
-    family-names: "Huang"
-    given-names: "Zixuan" 
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX" 
-  -
-    family-names: "Sun"
-    given-names: "Mingzuo" 
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX" 
-title: AiyagariIdiosyncratic # required
-abstract: Aiyagari (1994) Replication # optional
-
-# REMARK required fields
-remark-version: 1.0 # required - specify version of REMARK standard used
-reference: # required for replications; optional for reproductions; BibTex data from original paper
-  - type: article
-    authors: # required
-      -
-        family-names: "Aiyagari"
-        given-names: "S. Rao"
-        # orcid: https://orcid.org/XXXX-XXXX-XXXX-XXXX
-    title: "Uninsured Idiosyncratic Risk and Aggregate Saving"
-    doi: https://doi.org/10.2307/2118417
-    date: 1994
-    publisher: The Quarterly Journal of Economics
-
-# Econ-ARK website fields
-github_repo_url: https://github.com/econ-ark/REMARK/tree/master/REMARKs/AiyagariIdiosyncratic # required 	
-remark-name: AiyagariIdiosyncratic # required 
-notebooks: # path to any notebooks within the repo - optional
-  - 
-    Aiyagari1994QJE.ipynb
-
-tags: # Use the relavent tag
-  - REMARK
-  - Notebook
+cff-version: 1.1.0
+authors:
+- family-names: Huang
+  given-names: Zixuan
+- family-names: Sun
+  given-names: Mingzuo
+title: AiyagariIdiosyncratic
+abstract: Aiyagari (1994) Replication
+remark-version: 1.0
+reference:
+- type: article
+  authors:
+  - family-names: Aiyagari
+    given-names: S. Rao
+  title: Uninsured Idiosyncratic Risk and Aggregate Saving
+  doi: https://doi.org/10.2307/2118417
+  date: 1994
+  publisher: The Quarterly Journal of Economics
+github_repo_url: https://github.com/econ-ark/REMARK/tree/master/REMARKs/AiyagariIdiosyncratic
+remark-name: AiyagariIdiosyncratic
+notebooks:
+- Aiyagari1994QJE.ipynb
+tags:
+- REMARK
+- Notebook
+redirects_from:
+- /materials/Aiyagari
+- /materials/aiyagari
 ---
 
 
