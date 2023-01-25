@@ -1,45 +1,49 @@
 ---
-# CFF required fields
-cff-version: 1.1.0 # required (don't change)
-authors: # required
-  -
-    family-names: "Carroll"
-    given-names: "Christopher D."
-    orcid: "https://orcid.org/0000-0003-3732-9312"
-  - 
-    family-names: "Yusuf"
-    given-names: "Suha Kulu"
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-  - 
-    family-names: "Son"
-    given-names: "Jeongwon (John)"
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
-title: BufferStock-LifeCycle # required
-
-# REMARK required fields
-remark-version: 1.0 # required - specify version of REMARK standard used
+cff-version: 1.1.0
+authors:
+- family-names: Carroll
+  given-names: Christopher D.
+  orcid: https://orcid.org/0000-0003-3732-9312
+- family-names: Yusuf
+  given-names: Suha Kulu
+- family-names: Son
+  given-names: Jeongwon (John)
+title: BufferStock-LifeCycle
+remark-version: 1.0
 references:
-  - type: article
-    authors: # required
-      -
-        family-names: "Carroll"
-        given-names: "Christopher D."
-        orcid: "https://orcid.org/0000-0003-3732-9312"
-    title: "Buffer-Stock Saving and the Life Cycle/Permanent Income Hypothesis" # required
-    doi: "https://doi.org/10.1162/003355397555109" # optional
-    date: 1997-02-01 # required
-    publisher: "The Quarterly Journal of Economics"
-
-# Econ-ARK website fields
-github_repo_url: https://github.com/econ-ark/BufferStock-LifeCycle # required 
-remark-name: BufferStock-LifeCycle # required 
-notebooks: # path to any notebooks within the repo - optional
-  - 
-    Code/Python/BufferStock-LifeCycle.ipynb
-
-tags: # Use the relavent tags
-  - REMARK
-  - Notebook
+- type: article
+  authors:
+  - family-names: Carroll
+    given-names: Christopher D.
+    orcid: https://orcid.org/0000-0003-3732-9312
+  title: Buffer-Stock Saving and the Life Cycle/Permanent Income Hypothesis
+  doi: https://doi.org/10.1162/003355397555109
+  date: 1997-02-01
+  publisher: The Quarterly Journal of Economics
+github_repo_url: https://github.com/econ-ark/BufferStock-LifeCycle
+remark-name: BufferStock-LifeCycle
+notebooks:
+- Code/Python/BufferStock-LifeCycle.ipynb
+tags:
+- REMARK
+- Notebook
+redirects_from:
+- /materials/BufferStock-LifeCycle
+- /materials/BufferStock-Lifecycle
+- /materials/BufferStock-lifeCycle
+- /materials/BufferStock-lifecycle
+- /materials/Bufferstock-LifeCycle
+- /materials/Bufferstock-Lifecycle
+- /materials/Bufferstock-lifeCycle
+- /materials/Bufferstock-lifecycle
+- /materials/bufferStock-LifeCycle
+- /materials/bufferStock-Lifecycle
+- /materials/bufferStock-lifeCycle
+- /materials/bufferStock-lifecycle
+- /materials/bufferstock-LifeCycle
+- /materials/bufferstock-Lifecycle
+- /materials/bufferstock-lifeCycle
+- /materials/bufferstock-lifecycle
 ---
 
 # BufferStock-LifeCycle

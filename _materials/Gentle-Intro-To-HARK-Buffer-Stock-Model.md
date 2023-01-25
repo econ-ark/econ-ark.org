@@ -1,22 +1,149 @@
 ---
 name: Gentle-Intro-To-HARK-Buffer-Stock-Model
 tags:
-  - DemARK
-  - Demonstration
-  - Tutorial
-  - Teaching
-  - Notebook
-abstract: 'A Gentle Introduction to Buffer Stock Saving'
+- DemARK
+- Demonstration
+- Tutorial
+- Teaching
+- Notebook
+abstract: A Gentle Introduction to Buffer Stock Saving
 authors:
-  -
-    family-names: Carroll
-    given-names: "Christopher D."
-    orcid: "https://orcid.org/0000-0003-3732-9312"
+- family-names: Carroll
+  given-names: Christopher D.
+  orcid: https://orcid.org/0000-0003-3732-9312
 github_repo_url: https://github.com/econ-ark/DemARK
 notebooks:
-  - 
-    notebooks/Gentle-Intro-To-HARK-Buffer-Stock-Model.ipynb
-dashboards:
+- notebooks/Gentle-Intro-To-HARK-Buffer-Stock-Model.ipynb
+dashboards: null
+redirects_from:
+- /materials/Gentle-Intro-To-HARK-Buffer-Stock-Model
+- /materials/Gentle-Intro-To-HARK-Buffer-Stock-model
+- /materials/Gentle-Intro-To-HARK-Buffer-stock-Model
+- /materials/Gentle-Intro-To-HARK-Buffer-stock-model
+- /materials/Gentle-Intro-To-HARK-buffer-Stock-Model
+- /materials/Gentle-Intro-To-HARK-buffer-Stock-model
+- /materials/Gentle-Intro-To-HARK-buffer-stock-Model
+- /materials/Gentle-Intro-To-HARK-buffer-stock-model
+- /materials/Gentle-Intro-To-hark-Buffer-Stock-Model
+- /materials/Gentle-Intro-To-hark-Buffer-Stock-model
+- /materials/Gentle-Intro-To-hark-Buffer-stock-Model
+- /materials/Gentle-Intro-To-hark-Buffer-stock-model
+- /materials/Gentle-Intro-To-hark-buffer-Stock-Model
+- /materials/Gentle-Intro-To-hark-buffer-Stock-model
+- /materials/Gentle-Intro-To-hark-buffer-stock-Model
+- /materials/Gentle-Intro-To-hark-buffer-stock-model
+- /materials/Gentle-Intro-to-HARK-Buffer-Stock-Model
+- /materials/Gentle-Intro-to-HARK-Buffer-Stock-model
+- /materials/Gentle-Intro-to-HARK-Buffer-stock-Model
+- /materials/Gentle-Intro-to-HARK-Buffer-stock-model
+- /materials/Gentle-Intro-to-HARK-buffer-Stock-Model
+- /materials/Gentle-Intro-to-HARK-buffer-Stock-model
+- /materials/Gentle-Intro-to-HARK-buffer-stock-Model
+- /materials/Gentle-Intro-to-HARK-buffer-stock-model
+- /materials/Gentle-Intro-to-hark-Buffer-Stock-Model
+- /materials/Gentle-Intro-to-hark-Buffer-Stock-model
+- /materials/Gentle-Intro-to-hark-Buffer-stock-Model
+- /materials/Gentle-Intro-to-hark-Buffer-stock-model
+- /materials/Gentle-Intro-to-hark-buffer-Stock-Model
+- /materials/Gentle-Intro-to-hark-buffer-Stock-model
+- /materials/Gentle-Intro-to-hark-buffer-stock-Model
+- /materials/Gentle-Intro-to-hark-buffer-stock-model
+- /materials/Gentle-intro-To-HARK-Buffer-Stock-Model
+- /materials/Gentle-intro-To-HARK-Buffer-Stock-model
+- /materials/Gentle-intro-To-HARK-Buffer-stock-Model
+- /materials/Gentle-intro-To-HARK-Buffer-stock-model
+- /materials/Gentle-intro-To-HARK-buffer-Stock-Model
+- /materials/Gentle-intro-To-HARK-buffer-Stock-model
+- /materials/Gentle-intro-To-HARK-buffer-stock-Model
+- /materials/Gentle-intro-To-HARK-buffer-stock-model
+- /materials/Gentle-intro-To-hark-Buffer-Stock-Model
+- /materials/Gentle-intro-To-hark-Buffer-Stock-model
+- /materials/Gentle-intro-To-hark-Buffer-stock-Model
+- /materials/Gentle-intro-To-hark-Buffer-stock-model
+- /materials/Gentle-intro-To-hark-buffer-Stock-Model
+- /materials/Gentle-intro-To-hark-buffer-Stock-model
+- /materials/Gentle-intro-To-hark-buffer-stock-Model
+- /materials/Gentle-intro-To-hark-buffer-stock-model
+- /materials/Gentle-intro-to-HARK-Buffer-Stock-Model
+- /materials/Gentle-intro-to-HARK-Buffer-Stock-model
+- /materials/Gentle-intro-to-HARK-Buffer-stock-Model
+- /materials/Gentle-intro-to-HARK-Buffer-stock-model
+- /materials/Gentle-intro-to-HARK-buffer-Stock-Model
+- /materials/Gentle-intro-to-HARK-buffer-Stock-model
+- /materials/Gentle-intro-to-HARK-buffer-stock-Model
+- /materials/Gentle-intro-to-HARK-buffer-stock-model
+- /materials/Gentle-intro-to-hark-Buffer-Stock-Model
+- /materials/Gentle-intro-to-hark-Buffer-Stock-model
+- /materials/Gentle-intro-to-hark-Buffer-stock-Model
+- /materials/Gentle-intro-to-hark-Buffer-stock-model
+- /materials/Gentle-intro-to-hark-buffer-Stock-Model
+- /materials/Gentle-intro-to-hark-buffer-Stock-model
+- /materials/Gentle-intro-to-hark-buffer-stock-Model
+- /materials/Gentle-intro-to-hark-buffer-stock-model
+- /materials/gentle-Intro-To-HARK-Buffer-Stock-Model
+- /materials/gentle-Intro-To-HARK-Buffer-Stock-model
+- /materials/gentle-Intro-To-HARK-Buffer-stock-Model
+- /materials/gentle-Intro-To-HARK-Buffer-stock-model
+- /materials/gentle-Intro-To-HARK-buffer-Stock-Model
+- /materials/gentle-Intro-To-HARK-buffer-Stock-model
+- /materials/gentle-Intro-To-HARK-buffer-stock-Model
+- /materials/gentle-Intro-To-HARK-buffer-stock-model
+- /materials/gentle-Intro-To-hark-Buffer-Stock-Model
+- /materials/gentle-Intro-To-hark-Buffer-Stock-model
+- /materials/gentle-Intro-To-hark-Buffer-stock-Model
+- /materials/gentle-Intro-To-hark-Buffer-stock-model
+- /materials/gentle-Intro-To-hark-buffer-Stock-Model
+- /materials/gentle-Intro-To-hark-buffer-Stock-model
+- /materials/gentle-Intro-To-hark-buffer-stock-Model
+- /materials/gentle-Intro-To-hark-buffer-stock-model
+- /materials/gentle-Intro-to-HARK-Buffer-Stock-Model
+- /materials/gentle-Intro-to-HARK-Buffer-Stock-model
+- /materials/gentle-Intro-to-HARK-Buffer-stock-Model
+- /materials/gentle-Intro-to-HARK-Buffer-stock-model
+- /materials/gentle-Intro-to-HARK-buffer-Stock-Model
+- /materials/gentle-Intro-to-HARK-buffer-Stock-model
+- /materials/gentle-Intro-to-HARK-buffer-stock-Model
+- /materials/gentle-Intro-to-HARK-buffer-stock-model
+- /materials/gentle-Intro-to-hark-Buffer-Stock-Model
+- /materials/gentle-Intro-to-hark-Buffer-Stock-model
+- /materials/gentle-Intro-to-hark-Buffer-stock-Model
+- /materials/gentle-Intro-to-hark-Buffer-stock-model
+- /materials/gentle-Intro-to-hark-buffer-Stock-Model
+- /materials/gentle-Intro-to-hark-buffer-Stock-model
+- /materials/gentle-Intro-to-hark-buffer-stock-Model
+- /materials/gentle-Intro-to-hark-buffer-stock-model
+- /materials/gentle-intro-To-HARK-Buffer-Stock-Model
+- /materials/gentle-intro-To-HARK-Buffer-Stock-model
+- /materials/gentle-intro-To-HARK-Buffer-stock-Model
+- /materials/gentle-intro-To-HARK-Buffer-stock-model
+- /materials/gentle-intro-To-HARK-buffer-Stock-Model
+- /materials/gentle-intro-To-HARK-buffer-Stock-model
+- /materials/gentle-intro-To-HARK-buffer-stock-Model
+- /materials/gentle-intro-To-HARK-buffer-stock-model
+- /materials/gentle-intro-To-hark-Buffer-Stock-Model
+- /materials/gentle-intro-To-hark-Buffer-Stock-model
+- /materials/gentle-intro-To-hark-Buffer-stock-Model
+- /materials/gentle-intro-To-hark-Buffer-stock-model
+- /materials/gentle-intro-To-hark-buffer-Stock-Model
+- /materials/gentle-intro-To-hark-buffer-Stock-model
+- /materials/gentle-intro-To-hark-buffer-stock-Model
+- /materials/gentle-intro-To-hark-buffer-stock-model
+- /materials/gentle-intro-to-HARK-Buffer-Stock-Model
+- /materials/gentle-intro-to-HARK-Buffer-Stock-model
+- /materials/gentle-intro-to-HARK-Buffer-stock-Model
+- /materials/gentle-intro-to-HARK-Buffer-stock-model
+- /materials/gentle-intro-to-HARK-buffer-Stock-Model
+- /materials/gentle-intro-to-HARK-buffer-Stock-model
+- /materials/gentle-intro-to-HARK-buffer-stock-Model
+- /materials/gentle-intro-to-HARK-buffer-stock-model
+- /materials/gentle-intro-to-hark-Buffer-Stock-Model
+- /materials/gentle-intro-to-hark-Buffer-Stock-model
+- /materials/gentle-intro-to-hark-Buffer-stock-Model
+- /materials/gentle-intro-to-hark-Buffer-stock-model
+- /materials/gentle-intro-to-hark-buffer-Stock-Model
+- /materials/gentle-intro-to-hark-buffer-Stock-model
+- /materials/gentle-intro-to-hark-buffer-stock-Model
+- /materials/gentle-intro-to-hark-buffer-stock-model
 ---
 
 A Gentle Introduction to Buffer Stock Saving
