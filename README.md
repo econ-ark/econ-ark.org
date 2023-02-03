@@ -19,7 +19,7 @@ https://econ-ark.org/materials/distributionofwealthmpc
 (note that our convention is that the name of the "material" should be all lower case)
 
 - Updated SolvingMicroDSOPs.md to point to llorracc/SolvingMicroDSOPS/SolvingMicroDSOPS.ipynb
-
+- Fixed path in REMARKs/DurableConsumerType.md
 
 ## Local Build Instructions
 
