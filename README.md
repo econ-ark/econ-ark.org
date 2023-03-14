@@ -20,6 +20,7 @@ https://econ-ark.org/materials/distributionofwealthmpc
 
 - Updated SolvingMicroDSOPs.md to point to llorracc/SolvingMicroDSOPS/SolvingMicroDSOPS.ipynb
 - Fixed path in REMARKs/DurableConsumerType.md
+- 2023-03-14: Updated LucasAssetPrice.md on DemARK
 
 ## Local Build Instructions
 
