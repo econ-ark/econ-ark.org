@@ -30,4 +30,4 @@ You can find [HARK on GitHub](https://github.com/econ-ark/HARK) and reach the de
 
 HARK is an open source project. We welcome contributions.
 
-Please check out our [Contribution](https://hark.readthedocs.io/en/latest/CONTRIBUTING.html) guide.
+Please check out our [Contribution](https://hark.readthedocs.io/en/latest/contributing/CONTRIBUTING.html) guide.
