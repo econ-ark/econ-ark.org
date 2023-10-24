@@ -1,7 +1,7 @@
 ---
 name: Sebastian Benthall
 image: sebastian-benthall.png
-link: https://github.com/sbrice
-role:
+link: https://github.com/sbenthall
+role: 'Core Developer'
 order:
 ---
