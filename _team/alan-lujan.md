@@ -1,7 +1,10 @@
 ---
 name: Alan Lujan
-image: alan-lujan.jpg
-link: https://github.com/alanlujan91
+image: https://avatars.githubusercontent.com/u/5382704
+github: https://github.com/alanlujan91
+website: https://www.linkedin.com/in/alanlujan91
 role: 'Core Developer'
-order: 
+order: 7
 ---
+
+Visiting Assistant Research Professor, Department of Economics, Johns Hopkins University.

@@ -3,11 +3,39 @@ layout: default
 ---
 
 {{ content }}
-
+<!-- 
 <ul class="team-members">
 	{% assign team-members = site.team | sort:"order" %}
 
 	{% for team-member in team-members %}
-	<li><img alt="" src="/assets/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a> {% if team-member.role %}— {{ team-member.role }}{% endif %} {{ team-member.content }}</li>
+	<li><img alt="" src="/assets/team/{{ team-member.image }}" style="width: 100px; height: 100px;"><a href="{{ team-member.link }}">{{ team-member.name }}</a>  </li>
 {% endfor %}
-</ul>
+</ul> -->
+
+
+
+<div class="team-listing row  gx-4">
+	{% assign team-members = site.team | sort:"order" %}
+
+	{% for team-member in team-members %}
+
+	<div class="col-lg-6"> 
+		<div class="d-flex align-items-start p-5">
+			<div class="pic"><img src="{{ team-member.image }}" alt="Avatar for {{ team-member.name }}"></div>
+			<div class="member-info p-3">
+				<h3>{{ team-member.name }}</h3>
+				<p><strong>{% if team-member.role %}{{ team-member.role }}{% endif %}</strong></p>
+				{% if team-member.website or team-member.github %}
+				<p>
+					{% if team-member.github %}<i class="fa-brands fa-github"></i> <a href="{{ team-member.github }}">GitHub</a> {% endif %} &nbsp;
+					{% if team-member.website %}<i class="fa-solid fa-link"></i> <a href="{{ team-member.website }}">Website</a> {% endif %}
+				</p>
+				{% endif %}
+				<div>{{ team-member.content }}</div>
+			</div>
+		</div>
+	</div>
+
+	{% endfor %}
+
+</div>

@@ -1,9 +1,10 @@
 ---
 name: Andrij Stachurski
-image: andrij-stachurski.jpg
-link: http://drdrij.com/
+image: https://avatars.githubusercontent.com/u/5886045?v=4
+github: https://github.com/drdrij
+website: http://drdrij.com/
 role: 'Web Developer'
-order:
+order: 8
 ---
 
 Andrij Stachurski is a consultant and full-stack web developer who enjoys working remotely from different parts of the globe.
