@@ -610,6 +610,21 @@ a.action-button {
     }
   }
 
+  @media (max-width: 1023px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    .form-group {
+      width: 100%;
+      margin: 0 0 2rem 0;
+      .choices {
+        width: 100%;
+        margin: 0;
+      }
+      .input-search {
+        width: 100%;
+      }
+    }
+  }
 
   ::-webkit-input-placeholder {
 		color: #aaa;
