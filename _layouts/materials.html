@@ -5,37 +5,24 @@ layout: default
 {{ content }}
 
 <p class="visuallyhidden">
-  The following list of links filter and update content in the table below.
+  The following form filters and update content in the table below.
 </p>
 
-<div class="display-controls">
+<form class="tag-filter">
+  <div class="form-group">
+    <label for="tagSelect">Tags</label>
+    <select name="tagSelect" id="tagSelect" placeholder="Select tags" multiple>
+    </select>
+  </div>
 
-  <p class="controls-label">
-    Show materials:
-  </p>
-
-  <ul class="tabs-toggles">
-    <li><a id="toggle-all" class="active">All</a></li>
-    <li><a id="toggle-remark">REMARK</a></li>
-    <li><a id="toggle-demark">DemARK</a></li>
-    <li><a id="toggle-example">Example</a></li>
-    <li><a id="toggle-documentation">Documentation</a></li>
-  </ul>
-
-</div>
+  <div class="form-group">
+    <label for="search" class="visuallyhidden">Search</label>
+    <button class="submit-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <input name="search" id="search" placeholder="Search" class="input-search"></input>    
+  </div>
+</form>
 
 <div class="materials-panel">
-
-  <form class="tag-filter">
-      <label for="tagSelect">Tags:</label>
-      <select name="tagSelect" id="tagSelect" placeholder="Select tags" multiple>
-      </select>
-
-      <label for="search">Search:</label>
-      <input name="search" id="search"></input>
-
-      <input class="btn submit-btn" type="submit"></input>
-  </form>
 
   <table class="materials" id="materialsList">
     <thead>
