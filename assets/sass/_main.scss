@@ -355,11 +355,12 @@ a.action-button {
 .materials-panel {
   position: relative;
   min-height: 600px;
+  max-width: 800px;
   margin:10px 0 1rem 0;
-  background:#fff;
-  border:1px solid #ccc;
+  //background:#fff;
+  //border:1px solid #ccc;
   overflow: hidden;
-  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+  //box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .materials {
@@ -368,18 +369,19 @@ a.action-button {
   overflow: hidden;
   text-align: left;
   tr {
-      border-bottom:1px solid  #e2e8ec;
+      //border-bottom:1px solid  #e2e8ec;
       &.hideMaterial {
         display: none;
       }
   }
   td, th {
-      padding: 1rem 1rem;
+      padding: 1.25rem 2rem;
+      //padding: 1.25rem 0;
       &:first-child {
-          padding-left: 2rem;
+          //padding-left: 2rem;
       }
       &:last-child {
-          padding-right: 2rem;
+          //padding-right: 2rem;
       }
   }
   thead {
@@ -398,11 +400,13 @@ a.action-button {
   }
   tbody {
       tr {
+          border-top:1px solid  #e2e8ec;
           &:last-child {
-              border:0;
+              //border:0;
           }
           &:nth-child(even) {
               background:  #f7fafb;
+              
           }
           td {
               &:last-child {
@@ -421,15 +425,6 @@ a.action-button {
         display:flex;
         flex-direction: column;
         td, th {
-          &:first-child {
-            padding-left: 1rem;
-          }
-          &:last-child {
-            padding-right: 1rem;
-          }
-          &.material__authors {
-            padding:0 1rem;
-          }
         } 
       }
     }
@@ -441,15 +436,26 @@ a.action-button {
     display: flex;
   }
   .title {
+    font-family: $font;
+    font-weight: normal;
+    font-size: 1.4rem;
+    a {
+      text-decoration: none;
+      color: $ark-blue;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     margin:0;
-    font-size:0.9rem;
-    display: inline-block;
+    //font-size:0.9rem;
+    //display: inline-block;
     white-space: wrap;
     @media (max-width: 1023px) {
       white-space: normal;
     }
   }
   .authors {
+    display: flex;
     list-style: none;
     margin:0;
     padding:0;
@@ -457,47 +463,54 @@ a.action-button {
     //flex-direction: column;
     //flex-shrink: 0;
     li {
-      display: block;
       white-space: nowrap;
+      margin:0 0.5rem 0 0;
       &:after {
-        //content: "; ";
+        content: "; ";
       }
       &:last-child {
-        //content: '';
+        &:after {
+          content: '';
+        }
       }
     }
     //margin:0 0 0 2rem;
-    font-size: 0.9rem;
+    //font-size: 0.9rem;
+    //font-weight: bold;
+    font-family: $font-alt;
     color: #8a8a8a;
+    font-size: 1.2rem;
   }
   .summary {
-    margin:0;
-    color: #8a8a8a;
-    font-size:0.9rem;
-    display: inline-block;
+    margin:0.5rem 0 0 0;
+    font-size: 1.1rem;
+    //color: #8a8a8a;
+    //font-size:0.9rem;
+    //display: inline-block;
     //margin:0 0 0 2rem;
     //max-width: 500px;
   }
   .tags {
     list-style: none;
-    margin:0.5rem 0 0 0;
+    margin:1rem 0 0 0;
     padding:0;
     display:flex;
     flex-wrap: wrap;
-    opacity: 0.7;
+    //opacity: 0.7;
     //justify-content: flex-end;
     //flex-direction: column;
     li {
-      margin:0 0.25rem 0.25rem 0;
+      margin:0 0.5rem 0.25rem 0;
       font-size: 0.8rem;
       padding: 0.25rem 1rem 0.25rem 1rem;
       //min-width: 100px;
       text-align: center;
       line-height: 1;
-      display: inline-block;
-      background-color: #e2eef1;
+      background: $ark-blue;
+      //background-color: #e2eef1;
       border-radius: 5px;
       font-weight: 500;
+      color: #fff;
     }
     @media (max-width: 1023px) {
       flex-wrap: wrap;
@@ -594,19 +607,18 @@ a.action-button {
     text-align: center;
     line-height: 1;
     display: inline-block;
-    background-color: #e2eef1;
+    background-color: $ark-blue;
     border-radius: 5px;
     font-weight: 500;
-    color: #444;
+    color: #fff;
     border:0;
-    opacity: 0.7;
     &.is-highlighted {
-      background-color: #e2eef1;
+      background-color: $ark-blue;
     }
     .choices__button {
-      color: #444;
-      border-left: 1px solid #444;
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg height='329pt' viewBox='0 0 329.26933 329' width='329pt' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0'/%3E%3C/svg%3E");
+      color: #fff;
+      border-left: 1px solid #fff;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='white' height='329pt' viewBox='0 0 329.26933 329' width='329pt' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0'/%3E%3C/svg%3E");
     }
   }
 
