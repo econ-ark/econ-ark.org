@@ -516,80 +516,64 @@ a.action-button {
   }
 }
 
-.display-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  .controls-label {
-    display: none;
-  }
-}
-
-.tabs-toggles {
-  position: relative;
-  z-index: 1;
-  top: 11px;
-  left: -5px;
-  list-style: none;
-  padding:0;
-  margin:0;
-  display: flex;
-  li {
-    margin: 0;
-    display: block;
-    overflow: hidden;
-    padding: 5px 5px 0px 5px;
-    a {
-      display: block;
-      padding: 1rem 2rem;
-      //color: #da291c;
-      //font-weight: 700;
-      //font-size: 1.3rem;
-      text-decoration: none;
-      outline: none !important;
-      cursor: pointer;
-      &.active {
-        background: #fff;
-        color: #444;
-        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
-        border: 1px solid #ccc;
-        border-width: 1px 1px 0 1px;
-        border-radius: 10px 10px 0 0;
-      }
-      &:hover {
-        color: #444;
-      }
-    }
-  }
-}
-
 .tag-filter {
   display: flex;
-  flex-direction: column;
-  //justify-content: flex-end;
-  align-items: left;
-  margin: 2rem 2rem;
-  > label {
-    font-weight: bold;
-    color: $ark-blue;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 2rem 0;
+  .form-group {
+    display: flex;
+    align-items: center;
+    //width: 400px;
   }
-  > input {
-    padding: 6.5px 7.5px 6.5px 7.5px;
-    min-height: auto;
-    box-sizing: border-box;
+  label {
+    font-family: $font-alt;
+    margin: 0 1rem 0 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .input-search {
     border: 1px solid $ark-blue;
-    border-radius: 2.5px;
-    margin-bottom: 24px;
+    border-radius: 0 5px 5px 0;
+    padding: 0 0.75rem;
+    font-size: 1.1rem;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
   }
   .submit-btn {
-    margin-bottom: 0px;
-    max-width: 100px;
+    border: 1px solid $ark-blue;
+    border-radius: 5px 0 0 5px;
+    font-size: 1.2rem;
+    border-width: 1px 0 1px 1px;
+    background: none;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    padding:0 0.75rem;
   }
-  .choices[data-type*='select-multiple'] .choices__inner {
-    padding: 0 7.5px;
-    min-height: auto;
-    box-sizing: border-box;
-    border-color: $ark-blue;
+  .choices[data-type*='select-multiple'] {
+    width: 400px;
+    margin: 0 50px 0 0;
+    //max-width: 400px;
+    .choices__inner {
+      display: flex;
+      //align-items: center;
+      //padding: 0 1rem;
+      //min-height: auto;
+      box-sizing: border-box;
+      //border-color: ;
+      border: 1px solid $ark-blue;
+      border-radius: 5px;
+      //padding-top: 0.75rem;
+      height: 45px;
+      background: #fff;
+      align-items: center;
+    }
+  }
+  .choices__input {
+    background: none;
   }
    .choices__list--dropdown {
      box-sizing: border-box;
@@ -625,6 +609,39 @@ a.action-button {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg height='329pt' viewBox='0 0 329.26933 329' width='329pt' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0'/%3E%3C/svg%3E");
     }
   }
+
+  @media (max-width: 1023px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    .form-group {
+      width: 100%;
+      margin: 0 0 2rem 0;
+      .choices {
+        width: 100%;
+        margin: 0;
+      }
+      .input-search {
+        width: 100%;
+      }
+    }
+  }
+
+  ::-webkit-input-placeholder {
+		color: #aaa;
+	}
+
+	:-moz-placeholder {
+		color: #aaa;
+	}
+
+	::-moz-placeholder {
+		color: #aaa;
+	}
+
+	:-ms-input-placeholder {
+		color: #aaa;
+	}
+
 }
 
 .material-actions {
