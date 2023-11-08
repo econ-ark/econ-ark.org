@@ -5,8 +5,22 @@ layout: default
 {{ content }}
 
 <p class="visuallyhidden">
-  The following list of links filter and update content in the table below.
+  The following form filters and update content in the table below.
 </p>
+
+<form class="tag-filter">
+  <div class="form-group">
+    <label for="tagSelect">Tags</label>
+    <select name="tagSelect" id="tagSelect" placeholder="Select tags" multiple>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="search" class="visuallyhidden">Search</label>
+    <button class="submit-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <input name="search" id="search" placeholder="Search" class="input-search"></input>    
+  </div>
+</form>
 
 <div class="materials-panel">
 
