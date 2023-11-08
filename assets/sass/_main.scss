@@ -375,8 +375,8 @@ a.action-button {
       }
   }
   td, th {
-      //padding: 1rem 1rem;
-      padding: 1.25rem 0;
+      padding: 1.25rem 2rem;
+      //padding: 1.25rem 0;
       &:first-child {
           //padding-left: 2rem;
       }
@@ -400,11 +400,13 @@ a.action-button {
   }
   tbody {
       tr {
+          border-top:1px solid  #e2e8ec;
           &:last-child {
-              border:0;
+              //border:0;
           }
           &:nth-child(even) {
-              //background:  #f7fafb;
+              background:  #f7fafb;
+              
           }
           td {
               &:last-child {
@@ -440,6 +442,9 @@ a.action-button {
     a {
       text-decoration: none;
       color: $ark-blue;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     margin:0;
     //font-size:0.9rem;
@@ -495,17 +500,17 @@ a.action-button {
     //justify-content: flex-end;
     //flex-direction: column;
     li {
-      margin:0 0.25rem 0.25rem 0;
+      margin:0 0.5rem 0.25rem 0;
       font-size: 0.8rem;
       padding: 0.25rem 1rem 0.25rem 1rem;
       //min-width: 100px;
       text-align: center;
       line-height: 1;
-      display: inline-block;
-      border: 1px solid $ark-blue;
+      background: $ark-blue;
       //background-color: #e2eef1;
       border-radius: 5px;
       font-weight: 500;
+      color: #fff;
     }
     @media (max-width: 1023px) {
       flex-wrap: wrap;
