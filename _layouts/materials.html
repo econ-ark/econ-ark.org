@@ -100,7 +100,7 @@ layout: default
 
     table_rows.forEach(function (row) {
       const row_tags = new Set([...row.querySelectorAll("ul.tags li")].map((v) => { return v.innerText }));
-      const row_title = row.querySelector("p.title").innerText;
+      const row_title = row.querySelector("h2.title").innerText;
       const row_authors = [...row.querySelectorAll("ul.authors li")]
       const row_abstract = row.querySelector("p.summary").innerText;
 
@@ -110,7 +110,7 @@ layout: default
         return li.innerText.toLowerCase().includes(formData.get("search"))
       });
       const abstract_matches = row_abstract.toLowerCase().includes(formData.get("search").toLowerCase());
-      console.log(title_matches, author_matches, abstract_matches);
+      //console.log(title_matches, author_matches, abstract_matches);
       if (tag_matches && (title_matches || author_matches || abstract_matches)) {
         row.style.display = '';
       } else {
@@ -142,7 +142,7 @@ layout: default
 
         if (this.innerText != 'All') {
           choices.setChoiceByValue(this.innerText);
-          console.log(this)
+          //console.log(this)
         }
         let evt = document.createEvent("Event");
         evt.initEvent("change", true, true);
