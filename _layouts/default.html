@@ -40,49 +40,33 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         
     </head>
-    <body class="language-python">
-
-{% if page.layout == "home" %}
-
-        <header class="home-header">
-
-{% else %}
+    <body class="language-python{% if page.layout == 'home' %} home{% endif %}">
 
         <header class="header">
-
-{% endif %}
 
             <a title="Toggle navigation" id="toggleNav" class="toggle-nav"><i class="fas fa-bars"></i></a>
 
             <div class="container">
 
-                <div class="site-branding">
-
-{% if page.layout == "home" %}
-                    <p class="site-logo"><a href="/"><img src="{{ '/assets/img/econ-ark-logo.png' | relative_url }}"></a></p>
-{% else %}
-                    <p class="site-logo"><a href="/"><img src="{{ '/assets/img/econ-ark-logo-white.png' | relative_url }}"></a></p>
-{% endif %}
-
-                    <p class="site-tagline">{{ site.description }}</p>
-
-                </div>
+                <p class="site-logo"><a href="/"><img src="{{ '/assets/img/econ-ark-logo-white.png' | relative_url }}"></a></p>
 
                 <nav class="navigation">
 
-                      <ul>
+                    <ul>
 {% assign pages = site.pages | where: "menu_item", "true" | sort:"order" %}
 {% for node in pages %}
-                        <li class="{% if page.url == node.url %}active{% endif %}"><a href="{{ node.url | relative_url }}">{{ node.title }}</a></li>
+                      <li class="{% if page.url == node.url %}active{% endif %}"><a href="{{ node.url | relative_url }}">{{ node.title }}</a></li>
 {% endfor %}
-                      </ul>
+
+                        <li><a href="https://docs.econ-ark.org">Docs</a></li>
+                        <li><a href="https://github.com/econ-ark">GitHub</a></li>
+                    </ul>
 
                 </nav>
 
             </div>
 
         </header>
-
 
         <main>
 
@@ -102,6 +86,35 @@
 
             <div class="container">
 
+                <div class="row gx-5">
+
+                    <div class="col-md-7">
+
+                        <p>Econ-ARK is headed by <a href="http://www.econ2.jhu.edu/people/ccarroll/">Christopher D. Carroll</a>, Professor of Economics at the Johns Hopkins University.</p>
+
+                        <p>The project is a recipient of grants from the <a href="https://sloan.org/">Sloan foundation</a> and the <a href="https://www.thinkforwardinitiative.com/">Think Forward Initiative</a>, and is under the umbrella of projects with fiscal sponsorship by <a href="https://www.numfocus.org/">NumFocus</a>.</p>
+                        
+                        <p>Please remember to <a href="acknowledging">acknowledge and cite</a> the use of Econ-ARK.</p>
+                        
+                        <p>We are very grateful for any <a href="https://numfocus.salsalabs.org/donate-to-econ-ark/">donations</a> towards the Econ-ARK project.</p>                        
+
+                    </div>
+
+                    <div class="offset-md-1 col-md-3">
+
+                        <p><a href="https://www.numfocus.org/"><img src="{{ '/assets/img/numfocus.png' | relative_url }}" alt="NumFOCUS logo" height="60"></a></p>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <p>&copy; 2023 &ndash; <a href="https://econ-ark.org/">Econ-ARK</a>. Hosted with <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+
+                </div>
+
+<!-- 
                 <div class="links">
 
                     <ul>
@@ -110,13 +123,7 @@
                         <li><a href="https://github.com/econ-ark"><img src="{{ '/assets/img/github.svg' | relative_url }}" alt="GitHub logo" height="60"></a></li>
                     </ul>
 
-                </div>
-
-                <div class="copy">
-
-                    <p>&copy; 2019 &ndash; <a href="https://econ-ark.org/">Econ-ARK</a>. Hosted with <a href="https://pages.github.com/">GitHub Pages</a>.</p>
-
-                </div>
+                </div> -->
 
             </div>
 
