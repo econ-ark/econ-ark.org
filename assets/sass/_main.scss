@@ -75,29 +75,44 @@ a, a:link, body a {
 a:hover {
   color: $ark-blue;
   border-color: $ark-blue;
+  text-decoration: none;
 }
 
-.btn {
-  display: inline-block;
-  padding: .25rem 1.5rem .26rem 1.5rem;
-  border-radius: 5px;
-  line-height: 1rem;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #FFF;
-  background-color: $ark-lightblue;
-  transition: all 0.2s linear;
-  cursor: pointer;
-  &.btn-alt {
-      background-color: #444;
-  }
-  &:hover {
-      background-color: $ark-blue;
-      color:#fff;
-      text-decoration: none;
+.link {
+  a {
+    color: inherit;
+    color: $ark-lightblue;
+    text-decoration: none;
+    border: 2px solid $ark-lightblue;
+    padding: 0.25rem 0.5rem;
+    &:hover {
+      background-color: $ark-lightblue;
+      color: #fff !important;
+    }
   }
 }
+
+// .btn {
+//   display: inline-block;
+//   padding: .25rem 1.5rem .26rem 1.5rem;
+//   border-radius: 5px;
+//   line-height: 1rem;
+//   text-decoration: none;
+//   font-weight: 500;
+//   font-size: 0.9rem;
+//   color: #FFF;
+//   background-color: $ark-lightblue;
+//   transition: all 0.2s linear;
+//   cursor: pointer;
+//   &.btn-alt {
+//       background-color: #444;
+//   }
+//   &:hover {
+//       background-color: $ark-blue;
+//       color:#fff;
+//       text-decoration: none;
+//   }
+// }
 
 .button {
   display: inline-block;
@@ -261,6 +276,10 @@ a.action-button {
   a {
     color: #fff;
     border-color: #fff;
+    &:hover {
+      background: #fff;
+      color: $ark-blue;
+    }
   }
   ul {
     list-style: none;
@@ -290,7 +309,7 @@ a.action-button {
       border-color: $ark-pink;
       color: $ark-pink;
       .title {
-        padding:1.5rem 0 0.25rem 0;
+        padding:0 0 0.25rem 0;
         border-bottom-width: 2px;
         border-bottom-style: solid;
         border-color: inherit;
@@ -304,7 +323,7 @@ a.action-button {
         padding: 0.25rem 0 0 0;
       }
       .desc {
-        padding: 1.5rem 0 0 0;
+        padding: 1.5rem 0;
         color: #898989;
       }
       .link {
@@ -312,8 +331,12 @@ a.action-button {
           color: inherit;
           color: $ark-pink;
           text-decoration: none;
-          border-bottom: 2px solid $ark-pink;
-          padding: 0 0 0.25rem 0;
+          border: 2px solid $ark-pink;
+          padding: 0.25rem 0.5rem;
+          &:hover {
+            background-color: $ark-pink;
+            color: #fff !important;
+          }
         }
       }
       &:nth-child(2) {
@@ -322,6 +345,9 @@ a.action-button {
         .link a {
           color: $ark-lightblue;
           border-color: $ark-lightblue;
+          &:hover {
+            background-color: $ark-lightblue;
+          }
         }
       }
       &:nth-child(3) {
@@ -330,9 +356,27 @@ a.action-button {
         .link a {
           color: $ark-green;
           border-color: $ark-green;
+          &:hover {
+            background-color: $ark-green;
+          }
         }
       }
     }
+  }
+}
+
+.home-hark {
+  h2 a {
+    //color: $ark-blue;
+    color: $ark-lightblue;
+    border-color: $ark-lightblue;
+  }
+}
+
+.home-materials {
+  h2 a {
+    color: $ark-lightblue;
+    border-color: $ark-lightblue;
   }
 }
 
@@ -499,10 +543,10 @@ a.action-button {
     font-size: 1.4rem;
     line-height: 1.5;
     a {
-      text-decoration: none;
+      //text-decoration: none;
       color: $ark-blue;
       &:hover {
-        text-decoration: underline;
+        //text-decoration: underline;
       }
     }
     margin:0;
