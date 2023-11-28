@@ -1,4 +1,4 @@
-// Econ-ARK main.js v1.0
+// Econ-ARK main.js v1.1
 
 const nav = document.querySelector('.navigation');
 const navToggle = document.getElementById('toggleNav');
@@ -50,12 +50,6 @@ if ( urlParams.has('dashboard') ) {
   var href = document.getElementsByClassName('launch-link')[0].href;
   window.location = href;  
 }
-
-// Show/Hide Notebook launching help
-$('.how-to-toggle').click(function () {
-  $(this).siblings('.how-to-copy').slideToggle();
-});
-
 
 // Actions accordion
 if ( document.getElementsByClassName('actions')[0] ) {
