@@ -66,3 +66,33 @@ if ( document.getElementsByClassName('actions')[0] ) {
   });
   $('.actions .action__header')[0].click();
 }
+
+// myBinder launch link animation
+function delayLinkOpening(event) {
+  event.preventDefault(); // Prevent the default link behavior
+
+  var clickedLink = this;
+  var overlay = document.querySelector('.mybinder-overlay');
+
+  // Add a class to the clicked link
+  overlay.classList.add('show');
+
+  // Get the href attribute of the clicked link
+  var linkHref = clickedLink.getAttribute('href');
+
+  // Delay the link opening by 3 seconds
+  setTimeout(function () {
+    // Navigate to the link after the delay
+    window.open(linkHref);
+
+    // Remove the class after the link is opened
+    overlay.classList.remove('show');
+  }, 3000);
+}
+
+// Attach the delayLinkOpening function to all links with the class 'mybinder-overlay'
+var delayedLinks = document.querySelectorAll('.animate-overlay');
+delayedLinks.forEach(function (link) {
+  link.addEventListener('click', delayLinkOpening);
+});
+
