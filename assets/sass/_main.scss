@@ -41,7 +41,7 @@ h3,
 h4,
 h5 {
   //font-family: $font-alt;
-  margin:0;
+  margin: 0;
   margin-bottom: 2em;
 }
 
@@ -50,13 +50,15 @@ pre {
   padding: 0.5rem;
 }
 
-a, a:link, body a {
+a,
+a:link,
+body a {
   color: $ark-blue;
   transition: all 0.2s linear;
   text-decoration: none;
   font-weight: 500;
   border-bottom: 2px solid $ark-blue;
-  padding-bottom:0.1rem;
+  padding-bottom: 0.1rem;
 }
 
 a:hover {
@@ -66,6 +68,7 @@ a:hover {
 }
 
 .link {
+  margin:0;
   a {
     display: inline-block;
     color: inherit;
@@ -73,33 +76,25 @@ a:hover {
     text-decoration: none;
     border: 2px solid $ark-blue;
     padding: 0.25rem 0.5rem;
+
     &:hover {
       background-color: $ark-blue;
       color: #fff !important;
     }
   }
-
-  &:hover {
-    background-color: $ark-blue;
-    color: #fff;
-    text-decoration: none;
-  }
 }
 
-a.action-button {
+a.button {
   display: inline-block;
-  text-align: center;
-  background: $ark-blue;
-  padding: 0.4rem 1rem 0.3rem 1rem;
-  color: #fff;
-  border-radius: 4px;
-  line-height: 1;
-  font-size: 0.8rem;
+  color: inherit;
+  color: $ark-lightblue;
+  text-decoration: none;
+  border: 2px solid $ark-lightblue;
+  padding: 0.25rem 0.5rem;
 
   &:hover {
-    text-decoration: none;
-    color: #fff;
-    background: $ark-grey;
+    background-color: $ark-lightblue;
+    color: #fff !important;
   }
 }
 
@@ -118,11 +113,13 @@ a.action-button {
     justify-content: space-between;
     align-items: center;
   }
+
   .site-logo {
-    margin:0;
+    margin: 0;
+
     a {
       img {
-        width:150px;
+        width: 150px;
       }
     }
   }
@@ -133,6 +130,7 @@ a.action-button {
       padding: 0;
       margin: 0;
       display: flex;
+
       li {
         margin: 0 0.3rem;
 
@@ -146,6 +144,7 @@ a.action-button {
           outline: 0;
           border-bottom: 2px solid transparent;
           color: #fff;
+
           &:hover {
             border-bottom: 2px solid #fff;
           }
@@ -160,27 +159,33 @@ a.action-button {
     }
   }
 }
+
 .home .header {
   background: none;
   color: inherit;
   margin: 0 0 0 0;
+
   .container {
     align-items: flex-start;
   }
+
   .site-logo {
     visibility: hidden;
-    height:50px;
+    height: 50px;
   }
+
   .navigation {
     ul {
       li {
         a {
           color: $ark-blue;
           border-bottom: 2px solid transparent;
+
           &:hover {
             border-bottom: 2px solid $ark-blue;
           }
         }
+
         &.active {
           a {
             border-bottom: 2px solid $ark-blue;
@@ -194,12 +199,14 @@ a.action-button {
 .hero {
   .hero-logo {
     a {
-      border:0;
+      border: 0;
+
       img {
         width: 100%;
       }
     }
   }
+
   .hero-desc {
     font-size: 1.4rem;
     // color: #898989;
@@ -210,31 +217,37 @@ a.action-button {
 
 .ark-parts {
   padding: 2rem 0;
+
   .container {
     display: flex;
     justify-content: space-between;
+
     .part {
       font-size: 1.2rem;
       border-color: $ark-lightblue;
       color: $ark-lightblue;
+
       .title {
-        padding:0 0 0.25rem 0;
+        padding: 0 0 0.25rem 0;
         border-bottom-width: 2px;
         border-bottom-style: solid;
         border-color: inherit;
-        margin:0;
+        margin: 0;
       }
+
       .subtitle {
         text-transform: uppercase;
-        margin:0;
+        margin: 0;
         font-size: 1.1rem;
         font-weight: bold;
         padding: 0.25rem 0 0 0;
       }
+
       .desc {
         padding: 1.5rem 0;
         color: #898989;
       }
+
       .link {
         a {
           color: inherit;
@@ -242,29 +255,36 @@ a.action-button {
           text-decoration: none;
           border: 2px solid $ark-lightblue;
           padding: 0.25rem 0.5rem;
+
           &:hover {
             background-color: $ark-lightblue;
             color: #fff !important;
           }
         }
       }
+
       &:nth-child(2) {
         border-color: $ark-pink;
         color: $ark-pink;
+
         .link a {
           color: $ark-pink;
           border-color: $ark-pink;
+
           &:hover {
             background-color: $ark-pink;
           }
         }
       }
+
       &:nth-child(3) {
         border-color: $ark-green;
         color: $ark-green;
+
         .link a {
           color: $ark-green;
           border-color: $ark-green;
+
           &:hover {
             background-color: $ark-green;
           }
@@ -278,17 +298,21 @@ a.action-button {
   border-top: 1px solid #999;
   font-size: 1.2rem;
   background-color: #fff;
+
   a {
     //color: $ark-blue;
     color: $ark-lightblue;
     border-color: $ark-lightblue;
   }
+
   .link {
     margin-bottom: 0;
+
     a {
       margin-top: 1rem;
       color: $ark-lightblue;
       border-color: $ark-lightblue;
+
       &:hover {
         background-color: $ark-lightblue;
       }
@@ -299,10 +323,12 @@ a.action-button {
 .home-materials {
   border-top: 1px solid #999;
   font-size: 1.2rem;
+
   h2 a {
     //color: $ark-lightblue;
     //border-color: $ark-lightblue;
   }
+
   .link {
     margin-bottom: 0;
   }
@@ -313,9 +339,11 @@ a.action-button {
   background-color: #1f476b0f;
   margin: 4rem 0 0 0;
   border-top: 1px solid $ark-blue;
+
   .sponsor {
     a {
       border: 0 !important;
+
       img {
         max-width: 100%;
       }
@@ -327,8 +355,11 @@ a.action-button {
   position: relative;
   min-height: 600px;
   max-width: 800px;
-  margin:10px 0 1rem 0;
+  margin: 10px 0 1rem 0;
+  //background:#fff;
+  //border:1px solid #ccc;
   overflow: hidden;
+  //box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .materials {
@@ -338,46 +369,50 @@ a.action-button {
   text-align: left;
 
   tr {
-      &.hideMaterial {
-        display: none;
-      }
+
+    //border-bottom:1px solid  #e2e8ec;
+    &.hideMaterial {
+      display: none;
+    }
   }
-  td, th {
-      padding: 1.25rem 2rem;
-      &:first-child {
-      }
-      &:last-child {
-      }
+
+  td,
+  th {
+    padding: 1.25rem 2rem;
+
+    //padding: 1.25rem 0;
+    &:first-child {
+      //padding-left: 2rem;
+    }
+
+    &:last-child {
+      //padding-right: 2rem;
+    }
   }
 
   thead {
-      border-top:1px solid  #e2e8ec;
-      background:  #f7fafb;
-      tr {
-          th {
-              font-weight: 700;
-              padding:0.5rem 1rem;
-              color:  rgb(138, 138, 138);
-              &:last-child {
-              }
-          }
+    border-top: 1px solid #e2e8ec;
+    background: #f7fafb;
+
+    tr {
+      th {
+        font-weight: 700;
+        padding: 0.5rem 1rem;
+        color: rgb(138, 138, 138);
+
+        &:last-child {
+          //text-align: right;
+        }
       }
     }
   }
 
   tbody {
-      tr {
-          border-top:1px solid  #e2e8ec;
-          &:last-child {
-          }
-          &:nth-child(even) {
-              background:  #f7fafb;
-              
-          }
-          td {
-              &:last-child {
-              }
-          }
+    tr {
+      border-top: 1px solid #e2e8ec;
+
+      &:last-child {
+        //border:0;
       }
 
       &:nth-child(even) {
@@ -423,7 +458,7 @@ a.action-button {
     font-size: 1.4rem;
     line-height: 1.5;
     a {
-      //text-decoration: none;
+      text-decoration: none;
       color: $ark-blue;
 
       &:hover {
@@ -432,6 +467,8 @@ a.action-button {
     }
 
     margin:0;
+    //font-size:0.9rem;
+    //display: inline-block;
     white-space: wrap;
 
     @media (max-width: 1023px) {
@@ -442,8 +479,12 @@ a.action-button {
   .authors {
     display: flex;
     list-style: none;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+
+    //display: flex;
+    //flex-direction: column;
+    //flex-shrink: 0;
     li {
       white-space: nowrap;
       margin: 0 0.5rem 0 0;
@@ -458,6 +499,10 @@ a.action-button {
         }
       }
     }
+
+    //margin:0 0 0 2rem;
+    //font-size: 0.9rem;
+    //font-weight: bold;
     font-family: $font-alt;
     color: #8a8a8a;
     font-size: 1.2rem;
@@ -466,9 +511,11 @@ a.action-button {
   .summary {
     margin: 0.5rem 0 0 0;
     font-size: 1.1rem;
-    @media (max-width: 575px) {
-      display: none;
-    }
+    //color: #8a8a8a;
+    //font-size:0.9rem;
+    //display: inline-block;
+    //margin:0 0 0 2rem;
+    //max-width: 500px;
   }
 
   .tags {
@@ -485,10 +532,12 @@ a.action-button {
       margin: 0 0.5rem 0.25rem 0;
       font-size: 0.8rem;
       padding: 0.25rem 1rem 0.25rem 1rem;
+      //min-width: 100px;
       text-align: center;
       line-height: 1;
       background: $ark-blue;
-      //border-radius: 5px;
+      //background-color: #e2eef1;
+      border-radius: 5px;
       font-weight: 500;
       color: #fff;
     }
@@ -519,6 +568,7 @@ a.action-button {
   .form-group {
     display: flex;
     align-items: center;
+    //width: 400px;
   }
 
   label {
@@ -554,11 +604,18 @@ a.action-button {
   .choices[data-type*='select-multiple'] {
     width: 400px;
     margin: 0 50px 0 0;
+
+    //max-width: 400px;
     .choices__inner {
       display: flex;
+      //align-items: center;
+      //padding: 0 1rem;
+      //min-height: auto;
       box-sizing: border-box;
+      //border-color: ;
       border: 1px solid $ark-blue;
       border-radius: 5px;
+      //padding-top: 0.75rem;
       height: 45px;
       background: #fff;
       align-items: center;
@@ -660,7 +717,8 @@ a.action-button {
   .pic {
     overflow: hidden;
     flex-shrink: 0;
-    width:75px;
+    width: 75px;
+    //height:75px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
       0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 
@@ -669,12 +727,11 @@ a.action-button {
     }
   }
   .member-name {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     margin:0;
   }
   .role {
-    font-size: 1.2rem;
-    margin:0.5rem 0;
+    margin: 0.5rem 0;
   }
 }
 
@@ -729,6 +786,8 @@ a.action-button {
       display: flex;
 
       li {
+
+        //margin: 0 1rem 0 0;
         &:after {
           content: ', ';
           margin: 0 0.5rem 0 0;
@@ -809,6 +868,7 @@ a.action-button {
           color: $ark-blue;
 
           i {
+            //width: 15px;
             margin: 0 10px 0 0;
             font-size: 19px;
           }
@@ -819,6 +879,8 @@ a.action-button {
 
           &:hover {
             background-color: #efefef;
+            //border-color: darken($ark-blue, 10%);
+            //color: #fff;
             text-decoration: none;
           }
         }
@@ -1045,9 +1107,11 @@ a.action-button {
     margin: 1rem 0;
     display: block;
   }
+
   .home .header .site-logo {
     height: 0;
   }
+
   .home .header .toggle-nav {
     display: none;
   }
@@ -1057,16 +1121,20 @@ a.action-button {
       max-width: 100%;
     }
   }
+
   .home .header .container {
     padding: 0 !important;
   }
+
   .home .header .navigation {
     display: block;
-    width:100%;
+    width: 100%;
+
     ul {
       //display: flex;
       //flex-wrap: wrap;
       justify-content: space-around;
+
       li {
         //width: 50%;
         //margin: 0;
@@ -1241,4 +1309,3 @@ a.action-button {
     page-break-after: avoid;
   }
 }
-
