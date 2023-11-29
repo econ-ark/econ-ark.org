@@ -6,6 +6,24 @@ layout: default
 {% assign github_repo = github_parts[0] %}
 {% assign github_user = github_parts[1] %}
 
+{% if page.remark-name %}
+    {% assign edit_href = 'https://github.com/econ-ark/REMARK/edit/master/REMARKs/' | append: page.remark-name | append: '.md' %}
+    {% assign edit_href = edit_href | replace: ' ', '-' %}
+{% endif %}
+
+{% if page.github_repo_url contains 'HARK' %}
+    {% assign edit_href = 'https://github.com/econ-ark/econ-ark.org/edit/master/_materials/' | append: page.name | append: '.md' %}
+    {% assign edit_href = edit_href | replace: ' ', '-' %}
+{% endif %}
+
+{% if page.github_repo_url contains 'DemARK' %}
+    {% assign edit_href = 'https://github.com/econ-ark/DemARK/edit/master/markdown/' | append: page.name | append: '.md' %}
+    {% assign edit_href = edit_href | replace: ' ', '-' %}
+{% endif %} 
+
+
+<!-- https://github.com/econ-ark/DemARK/edit/master/markdown/Chinese-Growth.md -->
+<!-- https://github.com/econ-ark/REMARK/edit/master/REMARKs/Aiyagari.md -->
 
 <script type="text/javascript">
     if (top.location!= self.location){
@@ -290,6 +308,10 @@ layout: default
     <div class="panel-head">
 
         <h2 class="heading">Metadata</h2>
+        
+{% if edit_href %}
+        <p class="altheading"><a href="{{ edit_href }}">Edit metadata</a></p>
+{% endif %}
 
     </div>
 
