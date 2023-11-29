@@ -11,9 +11,6 @@ body {
   font-size: 1rem;
 }
 
-
-
-
 em,
 i,
 .italic {
@@ -44,20 +41,9 @@ h3,
 h4,
 h5 {
   //font-family: $font-alt;
-  margin-bottom: 2em;;
+  margin:0;
+  margin-bottom: 2em;
 }
-
-// h1 {
-//   font-size: 3rem;
-// }
-
-// h2 {
-//   font-size: 2.4rem;
-// }
-
-// h3 {
-//   font-size: 1.4rem;
-// }
 
 pre {
   background: #f5f2f0;
@@ -80,39 +66,18 @@ a:hover {
 
 .link {
   a {
+    display: inline-block;
     color: inherit;
-    color: $ark-lightblue;
+    color: $ark-blue;
     text-decoration: none;
-    border: 2px solid $ark-lightblue;
+    border: 2px solid $ark-blue;
     padding: 0.25rem 0.5rem;
     &:hover {
-      background-color: $ark-lightblue;
+      background-color: $ark-blue;
       color: #fff !important;
     }
   }
 }
-
-// .btn {
-//   display: inline-block;
-//   padding: .25rem 1.5rem .26rem 1.5rem;
-//   border-radius: 5px;
-//   line-height: 1rem;
-//   text-decoration: none;
-//   font-weight: 500;
-//   font-size: 0.9rem;
-//   color: #FFF;
-//   background-color: $ark-lightblue;
-//   transition: all 0.2s linear;
-//   cursor: pointer;
-//   &.btn-alt {
-//       background-color: #444;
-//   }
-//   &:hover {
-//       background-color: $ark-blue;
-//       color:#fff;
-//       text-decoration: none;
-//   }
-// }
 
 .button {
   display: inline-block;
@@ -234,68 +199,19 @@ a.action-button {
 }
 
 .hero {
-  display: flex;
-  align-items: flex-end;
-  text-align: left;
-  margin: 0 auto;
-  padding: 0 0 2rem 0;
   .hero-logo {
-    flex-shrink: 0;
-    padding-right: 4rem;
-    margin: 0;
     a {
-      border:0 !important;
-    }
-    img {
-      width: 100%;
+      border:0;
+      img {
+        width: 100%;
+      }
     }
   }
   .hero-desc {
-    font-size: 1.2rem;
-    position: relative;
-    bottom: 46px;
-  }
-  @media (max-width: 1023px) {
-    display: block;
-    .hero-logo {
-      padding: 0;
-      margin: 0 0 2rem 0;
-    }
-    .hero-desc {
-      position: static;
-    }
-  }
-}
-
-.home-about {
-  font-size: 1.2rem;
-  margin:3rem 0 4rem 0;
-  padding: 5rem 0;
-  background-color: $ark-blue;
-  color: #fff;
-  a {
-    color: #fff;
-    border-color: #fff;
-    &:hover {
-      background: #fff;
-      color: $ark-blue;
-    }
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin:0;
-    li {
-      margin: 0 0 1rem 0;
-      a {
-        display: block;
-        text-decoration: none;
-        border-bottom:2px solid $ark-blue;
-        padding:0.25rem 2rem;
-        border-radius: 4px;
-        color: $ark-blue;
-      }
-    }
+    font-size: 1.4rem;
+    // color: #898989;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -306,8 +222,8 @@ a.action-button {
     justify-content: space-between;
     .part {
       font-size: 1.2rem;
-      border-color: $ark-pink;
-      color: $ark-pink;
+      border-color: $ark-lightblue;
+      color: $ark-lightblue;
       .title {
         padding:0 0 0.25rem 0;
         border-bottom-width: 2px;
@@ -318,7 +234,7 @@ a.action-button {
       .subtitle {
         text-transform: uppercase;
         margin:0;
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: bold;
         padding: 0.25rem 0 0 0;
       }
@@ -329,24 +245,24 @@ a.action-button {
       .link {
         a {
           color: inherit;
-          color: $ark-pink;
+          color: $ark-lightblue;
           text-decoration: none;
-          border: 2px solid $ark-pink;
+          border: 2px solid $ark-lightblue;
           padding: 0.25rem 0.5rem;
           &:hover {
-            background-color: $ark-pink;
+            background-color: $ark-lightblue;
             color: #fff !important;
           }
         }
       }
       &:nth-child(2) {
-        border-color: $ark-lightblue;
-        color: $ark-lightblue;
+        border-color: $ark-pink;
+        color: $ark-pink;
         .link a {
-          color: $ark-lightblue;
-          border-color: $ark-lightblue;
+          color: $ark-pink;
+          border-color: $ark-pink;
           &:hover {
-            background-color: $ark-lightblue;
+            background-color: $ark-pink;
           }
         }
       }
@@ -366,86 +282,36 @@ a.action-button {
 }
 
 .home-hark {
-  h2 a {
+  border-top: 1px solid #999;
+  font-size: 1.2rem;
+  background-color: #fff;
+  a {
     //color: $ark-blue;
     color: $ark-lightblue;
     border-color: $ark-lightblue;
   }
-}
-
-.home-materials {
-  h2 a {
-    color: $ark-lightblue;
-    border-color: $ark-lightblue;
-  }
-}
-
-.home-welcome {
-  padding: 4rem 0;
-  line-height: 2;
-  h2,
-  .heading {
-    margin: 0 0 3rem 0;
-    font-size: 2rem;
-  }
-  a {
-    text-decoration: underline;
-  }
-}
-
-.home-actions {
-  font-family: $font-alt;
-  padding: 4rem 0 0 0;
-  text-align: center;
-  h2,
-  .heading {
-    margin: 0;
-    font-size: 2rem;
-  }
-  .subheading {
-    font-size: 1.6em;
-    color: rgba(0, 0, 0, 0.6);
-    margin: 0 0 4rem 0;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    li {
-      margin: 0 1rem;
-      width: 20%;
-      a {
-        display: block;
-        color: #444;
-        i {
-          color: $ark-blue;
-          //color: rgba(0, 0, 0, 0.6);
-          font-size: 2.8rem;
-          margin: 0 0 1rem 0;
-        }
-        .desc {
-          font-size: 0.9rem;
-          line-height: 1.5;
-          min-height: 3em;
-        }
-        .button {
-        }
-        &:hover {
-          text-decoration: none;
-        }
+  .link {
+    margin-bottom: 0;
+    a {
+      margin-top: 1rem;
+      color: $ark-lightblue;
+      border-color: $ark-lightblue;
+      &:hover {
+        background-color: $ark-lightblue;
       }
     }
   }
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1024px;
-  padding: 0 20px;
-  @media (max-width: 575px) {
-    padding: 0 2rem !important;
+.home-materials {
+  border-top: 1px solid #999;
+  font-size: 1.2rem;
+  h2 a {
+    //color: $ark-lightblue;
+    //border-color: $ark-lightblue;
+  }
+  .link {
+    margin-bottom: 0;
   }
 }
 
@@ -596,7 +462,7 @@ a.action-button {
       text-align: center;
       line-height: 1;
       background: $ark-blue;
-      border-radius: 5px;
+      //border-radius: 5px;
       font-weight: 500;
       color: #fff;
     }
@@ -757,6 +623,14 @@ a.action-button {
     img {
       width: 100%;
     }
+  }
+  .member-name {
+    font-size: 1.75rem;
+    margin:0;
+  }
+  .role {
+    font-size: 1.2rem;
+    margin:0.5rem 0;
   }
 }
 
@@ -1201,4 +1075,3 @@ a.action-button {
     page-break-after: avoid;
   }
 }
-
