@@ -6,7 +6,6 @@ body {
   font-family: $font;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-  //background-color: #ffffff;
   background-color: #f7fafb;
   color: #444;
   font-size: 1rem;
@@ -41,97 +40,61 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: $font-alt;
+  //font-family: $font-alt;
+  margin: 0;
+  margin-bottom: 2em;
 }
-
-// h1 {
-//   font-size: 3rem;
-// }
-
-// h2 {
-//   font-size: 2.4rem;
-// }
-
-// h3 {
-//   font-size: 1.4rem;
-// }
 
 pre {
   background: #f5f2f0;
   padding: 0.5rem;
 }
 
-a {
-  color: $ark-lightblue;
-  //color: $ark-blue;
+a,
+a:link,
+body a {
+  color: $ark-blue;
   transition: all 0.2s linear;
   text-decoration: none;
   font-weight: 500;
+  border-bottom: 2px solid $ark-blue;
+  padding-bottom: 0.1rem;
 }
 
 a:hover {
-  text-decoration: underline;
   color: $ark-blue;
-}
-
-.button {
-  display: inline-block;
-  padding: .25rem 1.5rem .26rem 1.5rem;
-  border-radius: 5px;
-  line-height: 1rem;
+  border-color: $ark-blue;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #FFF;
-  background-color: $ark-lightblue;
-  transition: all 0.2s linear;
-  cursor: pointer;
+}
 
-  &.button-alt {
-    background-color: #444;
-  }
-
-  &:hover {
-    background-color: $ark-blue;
-    color: #fff;
+.link {
+  margin:0;
+  a {
+    display: inline-block;
+    color: inherit;
+    color: $ark-blue;
     text-decoration: none;
+    border: 2px solid $ark-blue;
+    padding: 0.25rem 0.5rem;
+
+    &:hover {
+      background-color: $ark-blue;
+      color: #fff !important;
+    }
   }
 }
 
-// .button {
-//   display: inline-block;
-//   padding: 0.6rem 1.2rem;
-//   border-radius: 4px;
-//   line-height: 1.6rem;
-//   text-decoration: none;
-//   font-weight: 400;
-//   font-size: 1.1rem;
-//   border: 1px solid $ark-blue;
-//   color: $ark-blue;
-//   background: #fff;
-//   transition: all 0.2s linear;
-//   &:hover {
-//     background: $ark-blue;
-//     color: #fff;
-//     text-decoration: none;
-//   }
-// }
-
-a.action-button {
+a.button {
   display: inline-block;
-  text-align: center;
-  background: $ark-blue;
-  //border: 1px solid $ark-blue;
-  padding: 0.4rem 1rem 0.3rem 1rem;
-  color: #fff;
-  border-radius: 4px;
-  line-height: 1;
-  font-size: 0.8rem;
+  color: inherit;
+  color: $ark-lightblue;
+  text-decoration: none;
+  border: 2px solid $ark-lightblue;
+  padding: 0.25rem 0.5rem;
 
   &:hover {
-    text-decoration: none;
-    color: #fff;
-    background: $ark-grey;
+    background-color: $ark-lightblue;
+    color: #fff !important;
   }
 }
 
@@ -140,7 +103,6 @@ a.action-button {
 }
 
 .header {
-  font-family: $font-alt;
   background: $ark-blue;
   color: #fff;
   padding: 0.5rem 0;
@@ -152,17 +114,13 @@ a.action-button {
     align-items: center;
   }
 
-  .site-branding {
-    .site-logo {
-      margin: 0;
+  .site-logo {
+    margin: 0;
 
+    a {
       img {
         width: 150px;
       }
-    }
-
-    .site-tagline {
-      display: none;
     }
   }
 
@@ -171,34 +129,30 @@ a.action-button {
       list-style: none;
       padding: 0;
       margin: 0;
-      text-align: center;
+      display: flex;
 
       li {
-        display: inline-block;
         margin: 0 0.3rem;
 
         a {
-          display: inline-block;
+          display: block;
           padding: 0.6rem 1.2rem;
           font-weight: 400;
-          text-transform: uppercase;
-          letter-spacing: 0.2rem;
           text-decoration: none;
-          font-size: 0.8rem;
+          font-size: 1.2rem;
           line-height: 1;
           outline: 0;
+          border-bottom: 2px solid transparent;
           color: #fff;
-          border: 1px solid transparent;
-          border-radius: 4px;
 
           &:hover {
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 2px solid #fff;
           }
         }
 
         &.active {
           a {
-            border: 1px solid #fff;
+            border-bottom: 2px solid #fff;
           }
         }
       }
@@ -206,183 +160,194 @@ a.action-button {
   }
 }
 
-.home-header {
-  font-family: $font-alt;
-  padding: 1rem 0 1rem 0;
-}
+.home .header {
+  background: none;
+  color: inherit;
+  margin: 0 0 0 0;
 
-.home-header .site-branding {
-  text-align: center;
+  .container {
+    align-items: flex-start;
+  }
 
   .site-logo {
-    img {
-      width: 280px;
-    }
+    visibility: hidden;
+    height: 50px;
   }
 
-  .site-tagline {
-    color: #888;
-    font-size: 1.2rem;
-  }
-}
-
-.home-header .navigation {
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 4rem 0 2rem 0;
-    text-align: center;
-
-    li {
-      display: inline-block;
-      margin: 0 0.5rem;
-
-      a {
-        display: inline-block;
-        padding: 0.6rem 1.2rem 0.4rem 1.2rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 0.2rem;
-        text-decoration: none;
-        font-size: 0.9rem;
-        line-height: 1;
-        outline: 0;
-        color: #444;
-        border: 1px solid transparent;
-        border-radius: 4px;
-
-        &:hover {
-          border: 1px solid rgba(0, 0, 0, 0.15);
-        }
-      }
-
-      &.active {
+  .navigation {
+    ul {
+      li {
         a {
-          border: 1px solid #444;
+          color: $ark-blue;
+          border-bottom: 2px solid transparent;
+
+          &:hover {
+            border-bottom: 2px solid $ark-blue;
+          }
+        }
+
+        &.active {
+          a {
+            border-bottom: 2px solid $ark-blue;
+          }
         }
       }
     }
   }
 }
 
-.home-welcome {
-  font-family: $font-alt;
-  background: $ark-blue;
-  color: rgba(255, 255, 255, 0.7);
-  padding: 4rem 0;
-  text-align: center;
-  line-height: 2;
+.hero {
+  .hero-logo {
+    a {
+      border: 0;
 
-  h2,
-  .heading {
-    color: #fff;
-    margin: 0 0 3rem 0;
-    font-size: 2rem;
+      img {
+        width: 100%;
+      }
+    }
   }
+
+  .hero-desc {
+    font-size: 1.4rem;
+    // color: #898989;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.ark-parts {
+  padding: 2rem 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .part {
+      font-size: 1.2rem;
+      border-color: $ark-lightblue;
+      color: $ark-lightblue;
+
+      .title {
+        padding: 0 0 0.25rem 0;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-color: inherit;
+        margin: 0;
+      }
+
+      .subtitle {
+        text-transform: uppercase;
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 0.25rem 0 0 0;
+      }
+
+      .desc {
+        padding: 1.5rem 0;
+        color: #898989;
+      }
+
+      .link {
+        a {
+          color: inherit;
+          color: $ark-lightblue;
+          text-decoration: none;
+          border: 2px solid $ark-lightblue;
+          padding: 0.25rem 0.5rem;
+
+          &:hover {
+            background-color: $ark-lightblue;
+            color: #fff !important;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        border-color: $ark-pink;
+        color: $ark-pink;
+
+        .link a {
+          color: $ark-pink;
+          border-color: $ark-pink;
+
+          &:hover {
+            background-color: $ark-pink;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        border-color: $ark-green;
+        color: $ark-green;
+
+        .link a {
+          color: $ark-green;
+          border-color: $ark-green;
+
+          &:hover {
+            background-color: $ark-green;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home-hark {
+  border-top: 1px solid #999;
+  font-size: 1.2rem;
+  background-color: #fff;
 
   a {
-    color: #fff;
-    text-decoration: underline;
-  }
-}
-
-.home-actions {
-  font-family: $font-alt;
-  padding: 4rem 0 0 0;
-  text-align: center;
-
-  h2,
-  .heading {
-    margin: 0;
-    font-size: 2rem;
+    //color: $ark-blue;
+    color: $ark-lightblue;
+    border-color: $ark-lightblue;
   }
 
-  .subheading {
-    font-size: 1.6em;
-    color: rgba(0, 0, 0, 0.6);
-    margin: 0 0 4rem 0;
-  }
+  .link {
+    margin-bottom: 0;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
+    a {
+      margin-top: 1rem;
+      color: $ark-lightblue;
+      border-color: $ark-lightblue;
 
-    li {
-      margin: 0 1rem;
-      width: 20%;
-
-      a {
-        display: block;
-        color: #444;
-
-        i {
-          color: $ark-blue;
-          //color: rgba(0, 0, 0, 0.6);
-          font-size: 2.8rem;
-          margin: 0 0 1rem 0;
-        }
-
-        .desc {
-          font-size: 0.9rem;
-          line-height: 1.5;
-          min-height: 3em;
-        }
-
-        .button {}
-
-        &:hover {
-          text-decoration: none;
-        }
+      &:hover {
+        background-color: $ark-lightblue;
       }
     }
   }
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1024px;
-  padding: 0 20px;
+.home-materials {
+  border-top: 1px solid #999;
+  font-size: 1.2rem;
+
+  h2 a {
+    //color: $ark-lightblue;
+    //border-color: $ark-lightblue;
+  }
+
+  .link {
+    margin-bottom: 0;
+  }
 }
 
 .footer {
-  font-family: $font-alt;
-  font-size: 0.9rem;
+  padding: 5rem 0 4.5rem 0;
+  background-color: #1f476b0f;
   margin: 4rem 0 0 0;
-  background: #222;
-  border-top: 1px solid #efefef;
-  padding: 2rem 0;
-  color: rgba(255, 255, 255, 0.4);
-  text-align: center;
+  border-top: 1px solid $ark-blue;
 
-  a {
-    color: rgba(255, 255, 255, 0.8);
+  .sponsor {
+    a {
+      border: 0 !important;
 
-    &:hover {
-      color: rgba(255, 255, 255, 1);
-      text-decoration: none;
-    }
-  }
-
-  .links {
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        display: inline-block;
-        margin: 0 2rem;
+      img {
+        max-width: 100%;
       }
     }
-  }
-
-  .copy {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 1rem 0 0 0;
-    margin: 1rem 0 0 0;
   }
 }
 
@@ -491,13 +456,13 @@ a.action-button {
     font-family: $font;
     font-weight: normal;
     font-size: 1.4rem;
-
+    line-height: 1.5;
     a {
       text-decoration: none;
       color: $ark-blue;
 
       &:hover {
-        text-decoration: underline;
+        //text-decoration: underline;
       }
     }
 
@@ -761,6 +726,13 @@ a.action-button {
       width: 100%;
     }
   }
+  .member-name {
+    font-size: 1.6rem;
+    margin:0;
+  }
+  .role {
+    margin: 0.5rem 0;
+  }
 }
 
 .material-title {
@@ -959,7 +931,6 @@ a.action-button {
       a {
         min-height: 120px;
         display: block;
-        //box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
         border: 1px solid #d0cece;
         background: #ffffff;
         border-radius: 5px;
@@ -978,7 +949,6 @@ a.action-button {
           color: #b1b1b1;
           font-size: 0.8rem;
           margin: 0 0 0.5rem 0;
-          //font-family: 'Varela Round', sans-serif;
         }
 
         .desc {
@@ -1138,7 +1108,11 @@ a.action-button {
     display: block;
   }
 
-  .home-header .toggle-nav {
+  .home .header .site-logo {
+    height: 0;
+  }
+
+  .home .header .toggle-nav {
     display: none;
   }
 
@@ -1148,14 +1122,22 @@ a.action-button {
     }
   }
 
-  .home-header .navigation {
+  .home .header .container {
+    padding: 0 !important;
+  }
+
+  .home .header .navigation {
+    display: block;
+    width: 100%;
+
     ul {
-      display: flex;
-      flex-wrap: wrap;
+      //display: flex;
+      //flex-wrap: wrap;
+      justify-content: space-around;
 
       li {
-        width: 50%;
-        margin: 0;
+        //width: 50%;
+        //margin: 0;
       }
     }
   }
@@ -1197,22 +1179,6 @@ a.action-button {
 
   .tabs-toggles {
     display: none;
-    //flex-direction: column;
-    // flex-wrap: wrap;
-    // align-items: center;
-    // justify-content: center;
-    // border: 0;
-    // margin: 0;
-    // li {
-    //   margin: 0.2rem 0;
-    //   a {
-    //     padding: 0.5rem 1rem;
-    //     &.active {
-    //       border-width: 1px;
-    //       border-radius: 4px;
-    //     }
-    //   }
-    // }
   }
 }
 
@@ -1343,4 +1309,3 @@ a.action-button {
     page-break-after: avoid;
   }
 }
-
