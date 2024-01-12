@@ -27,7 +27,7 @@ exclude:
 collections:
   materials:
     output: true
-    permalink: /materials/:name
+    permalink: /materials/:name/
   team:
 
 defaults:
