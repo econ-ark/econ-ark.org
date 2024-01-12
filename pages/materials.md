@@ -1,6 +1,6 @@
 ---
 title: Materials
-permalink: materials
+permalink: /materials/
 layout: materials
 menu_item: true
 order: 5
