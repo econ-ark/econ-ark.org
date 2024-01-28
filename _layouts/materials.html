@@ -8,7 +8,7 @@ layout: default
   The following form filters and update content in the table below.
 </p>
 
-<form class="tag-filter">
+<form class="tag-filter" id="tag-filter">
   <div class="form-group">
     <label for="tagSelect">Tags</label>
     <select name="tagSelect" id="tagSelect" placeholder="Select tags" multiple>
@@ -17,8 +17,8 @@ layout: default
 
   <div class="form-group">
     <label for="search" class="visuallyhidden">Search</label>
-    <button class="submit-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-    <input name="search" id="search" placeholder="Search" class="input-search"></input>    
+    <button class="submit-btn" id="submit-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <input name="search" type="search" id="search" placeholder="Search" class="input-search" />
   </div>
 </form>
 
@@ -104,11 +104,16 @@ layout: default
       const row_authors = [...row.querySelectorAll("ul.authors li")]
       const row_abstract = row.querySelector("p.summary").innerText;
 
+      //console.log(row_authors);
+
       const tag_matches = isSuperset(row_tags, formData.getAll("tagSelect"));
       const title_matches = row_title.toLowerCase().includes(formData.get("search").toLowerCase());
       const author_matches = row_authors.some((li) => {
-        return li.innerText.toLowerCase().includes(formData.get("search"))
+        return li.innerText.toLowerCase().includes(formData.get("search").toLowerCase())
       });
+
+      console.log(author_matches);
+
       const abstract_matches = row_abstract.toLowerCase().includes(formData.get("search").toLowerCase());
       //console.log(title_matches, author_matches, abstract_matches);
       if (tag_matches && (title_matches || author_matches || abstract_matches)) {
@@ -117,7 +122,19 @@ layout: default
         row.style.display = 'none';
       }
     });
+    document.documentElement.scrollTop = 0;
     return false;
+  });
+
+  function insertTextAndSubmit(event) {
+    var textValue = event.target.textContent;
+    document.getElementById('search').value = textValue;
+    document.getElementById('submit-btn').click();
+  }
+
+  var listItems = document.querySelectorAll('.authors li');
+  listItems.forEach(function(li) {
+    li.addEventListener('click', insertTextAndSubmit);
   });
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -130,25 +147,6 @@ layout: default
       removeItemButton: true,
     });
 
-    const tabLinks = document.querySelectorAll('.tabs-toggles li a');
-    for (var i = 0; i < tabLinks.length; i++) {
-      tabLinks[i].addEventListener('click', function (e) {
-        e.preventDefault();
-        for (var j = 0; j < tabLinks.length; j++) {
-          tabLinks[j].classList.remove('active');
-          choices.removeActiveItemsByValue(tabLinks[j].innerText);
-        }
-        this.classList.add('active');
-
-        if (this.innerText != 'All') {
-          choices.setChoiceByValue(this.innerText);
-          //console.log(this)
-        }
-        let evt = document.createEvent("Event");
-        evt.initEvent("change", true, true);
-        tagSelect.dispatchEvent(evt)
-      });
-    }
   });
 
 </script>
