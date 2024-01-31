@@ -147,6 +147,19 @@ layout: default
       removeItemButton: true,
     });
 
+    function addTagToFilter(event) {
+      var textValue = event.target.textContent;
+      choices.setChoiceByValue(textValue);
+      let evt = document.createEvent("Event");
+      evt.initEvent("change", true, true);
+      tagSelect.dispatchEvent(evt)
+    }
+
+    var tagPills = document.querySelectorAll('.tags li');
+    tagPills.forEach(function(li) {
+      li.addEventListener('click', addTagToFilter);
+    });
+
   });
 
 </script>
