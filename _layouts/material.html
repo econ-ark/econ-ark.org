@@ -259,16 +259,14 @@ layout: default
 
                     <div class="action">
                         <div class="action__header">
-                            <h3 class="heading">How to Execute this Notebook</h3>
+                            <h3 class="heading">How to Execute this Notebook (with conda)</h3>
                             <div class="status status-go"><i class="fas fa-chevron-right"></i></div>
                         </div>
                         <div class="action__details">
 
-                            <p class="desc">Install <a href="http://github.com/econ-ark">econ-ark</a> on your computer
-                                (<a href="https://github.com/econ-ark/HARK/blob/master/README.md">Quick Start Guide</a>
-                                then follow these instructions:</p>
-
+                            <p class="desc">Install <a href="https://docs.anaconda.com/free/miniconda/index.html">miniconda</a> on your computer
                             <ol class="instructions">
+                                <li>Open a Terminal (MacOS) or the Anaconda Prompt (Windows)</li>
                                 <li>At a command line, change the working directory to the one where you want to install
                                     <ul>
                                         <li>On MacOS/unix, if you install in the <code>/tmp</code> directory, the
@@ -278,7 +276,15 @@ layout: default
                                 </li>
                                 <li><code>git clone {{ page.github_repo_url }} --recursive</code></li>
                                 <li><code>cd {{ github_repo }}</code></li>
-                                <li><code>jupyter notebook {{ page.notebooks[0] }}</code></li>
+                                <li><code>conda env create -f ./binder/environment.yml --prefix ./condaenv</code></li>
+                                    <ul>
+                                      <li>This creates a folder called <code>./condaenv</code> inside the cloned repository. This folder contains all of the files for your conda environment.</li>
+                                    </ul>
+                                <li><code>conda run --prefix ./condaenv pip install jupyterlab</code></li>
+                                <li><code>conda run --prefix ./condaenv jupyter-lab</code></li>
+
+                                <li>To remove the environment from your computer you can use <code>conda env remove --prefix ./condaenv</code></li>
+
                             </ol>
 
                         </div>
