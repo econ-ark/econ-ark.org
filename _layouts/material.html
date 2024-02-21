@@ -278,12 +278,12 @@ layout: default
                                 <li><code>cd {{ github_repo }}</code></li>
                                 <li><code>conda env create -f ./binder/environment.yml --prefix ./condaenv</code></li>
                                     <ul>
-                                      <li>This creates a folder called <code>./condaenv</code> inside the cloned repository. This folder contains all of the files for your conda environment.</li>
+                                      <li>This creates <code>./condaenv</code> inside your clone of the repo, containing dependencies.</li>
                                     </ul>
                                 <li><code>conda run --prefix ./condaenv pip install jupyterlab</code></li>
                                 <li><code>conda run --prefix ./condaenv jupyter-lab</code></li>
 
-                                <li>To remove the environment from your computer you can use <code>conda env remove --prefix ./condaenv</code></li>
+<!--                                <li>To remove the environment from your computer you can use <code>conda env remove --prefix ./condaenv</code></li> -->
 
                             </ol>
 
