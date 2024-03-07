@@ -7,4 +7,4 @@ role: Founder
 order: 1
 ---
 
-Christopher Carroll is Professor of Economics at the Johns Hopkins University.
+Christopher Carroll is a Professor of Economics at Johns Hopkins University.

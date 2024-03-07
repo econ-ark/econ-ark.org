@@ -488,6 +488,11 @@ a.button {
     li {
       white-space: nowrap;
       margin: 0 0.5rem 0 0;
+      &:hover {
+        //border-bottom: 1px solid $ark-grey;
+        text-decoration: underline;
+        cursor: pointer;
+      }
 
       &:after {
         content: "; ";
@@ -540,6 +545,7 @@ a.button {
       border-radius: 5px;
       font-weight: 500;
       color: #fff;
+      cursor: pointer;
     }
 
     @media (max-width: 1023px) {
@@ -587,7 +593,12 @@ a.button {
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    -webkit-appearance: searchfield;
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: searchfield-cancel-button;
+    }
   }
+
 
   .submit-btn {
     border: 1px solid $ark-blue;
