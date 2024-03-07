@@ -73,12 +73,24 @@ layout: default
 </div>
 
 <script>
-  const table_rows = document.querySelectorAll("tr.material")
-  const form = document.querySelector("form")
-  const tags = [...document.querySelectorAll("ul.tags li")].map((v) => { return v.innerText });
+  const materials = {};
+  {% for mat in site.materials %}
+    materials["{{ mat.url }}"] = {
+      title: "{{ mat.title  | normalize_whitespace | replace: '"', "'" }}",
+      abstract: "{{ mat.abstract | normalize_whitespace | replace: '"', "'" }}",
+      name: "{{ mat.name | normalize_whitespace | replace: '"', "'" }}",
+      "remark-name": "{{ mat.remark-name | normalize_whitespace | replace: '"', "'" }}",
+      content: "{{ mat.content | normalize_whitespace | replace: '"', "'" }}",
+      authors: [{% for auth in mat.authors %}"{{ auth.given-names }} {{ auth.family-names }}",{% endfor %}],
+      tags: [{% for t in mat.tags %}"{{ t }}",{% endfor %}],
+  }
+  {% endfor %}
+
 
   const tagSelect = document.getElementById('tagSelect');
+  const tags = [...document.querySelectorAll("ul.tags li")].map((v) => { return v.innerText });
 
+  const form = document.querySelector("form")
   form.addEventListener("change", (e) => {
     let evt = document.createEvent("Event");
     evt.initEvent("submit", true, true);
@@ -97,33 +109,27 @@ layout: default
   form.addEventListener("submit", function (e) {
     e.preventDefault()
     const formData = new FormData(form);
+    const searchstr = formData.get("search").toLowerCase();
+    for (let [key, entry] of Object.entries(materials)) {
+      const textMatches = [
+        entry.title.toLowerCase().includes(searchstr),
+        entry.abstract.toLowerCase().includes(searchstr),
+        entry.name.toLowerCase().includes(searchstr),
+        entry["remark-name"].toLowerCase().includes(searchstr),
+        entry.content.toLowerCase().includes(searchstr),
+        entry.authors.some((name) => { return name.toLowerCase().includes(searchstr) }),
+      ];
 
-    table_rows.forEach(function (row) {
-      const row_tags = new Set([...row.querySelectorAll("ul.tags li")].map((v) => { return v.innerText }));
-      const row_title = row.querySelector("h2.title").innerText;
-      const row_authors = [...row.querySelectorAll("ul.authors li")]
-      const row_abstract = row.querySelector("p.summary").innerText;
-
-      //console.log(row_authors);
-
-      const tag_matches = isSuperset(row_tags, formData.getAll("tagSelect"));
-      const title_matches = row_title.toLowerCase().includes(formData.get("search").toLowerCase());
-      const author_matches = row_authors.some((li) => {
-        return li.innerText.toLowerCase().includes(formData.get("search").toLowerCase())
-      });
-
-      console.log(author_matches);
-
-      const abstract_matches = row_abstract.toLowerCase().includes(formData.get("search").toLowerCase());
-      //console.log(title_matches, author_matches, abstract_matches);
-      if (tag_matches && (title_matches || author_matches || abstract_matches)) {
-        row.style.display = '';
+      const tagMatches = isSuperset(new Set(entry.tags), tagSelect)
+      // accounts for accidental duplicate documents
+      let rows = [...document.querySelectorAll(`a[href="${key}"]`)].map((s) => s.closest('tr'));
+      if (tagMatches && textMatches.some((x) => x)) {
+        rows.forEach((elem) => elem.style.display = '');
       } else {
-        row.style.display = 'none';
+        rows.forEach((elem) => elem.style.display = 'none');
       }
-    });
+    }
     document.documentElement.scrollTop = 0;
-    return false;
   });
 
   function insertTextAndSubmit(event) {
