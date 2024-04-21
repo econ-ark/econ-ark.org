@@ -9,6 +9,7 @@ body {
   background-color: #f7fafb;
   color: #444;
   font-size: 1rem;
+  background-color: $ark-footer;
 }
 
 em,
@@ -53,18 +54,26 @@ pre {
 a,
 a:link,
 body a {
-  color: $ark-blue;
+  color: $ark-darkblue;
   transition: all 0.2s linear;
   text-decoration: none;
   font-weight: 500;
-  border-bottom: 2px solid $ark-blue;
+  border-bottom: 2px solid $ark-darkblue;
   padding-bottom: 0.1rem;
 }
 
 a:hover {
-  color: $ark-blue;
-  border-color: $ark-blue;
+  color: $ark-darkblue;
+  border-color: $ark-darkblue;
   text-decoration: none;
+}
+
+.btn {
+  background-color: $ark-darkblue;
+  &:hover {
+    background-color: $ark-blue;
+    border-color: $ark-blue;
+  }
 }
 
 .link {
@@ -72,13 +81,14 @@ a:hover {
   a {
     display: inline-block;
     color: inherit;
-    color: $ark-blue;
+    color: $ark-darkblue;
     text-decoration: none;
-    border: 2px solid $ark-blue;
+    border: 2px solid $ark-darkblue;
     padding: 0.25rem 0.5rem;
 
     &:hover {
       background-color: $ark-blue;
+      border-color: $ark-blue;
       color: #fff !important;
     }
   }
@@ -87,13 +97,13 @@ a:hover {
 a.button {
   display: inline-block;
   color: inherit;
-  color: $ark-lightblue;
+  color: $ark-blue;
   text-decoration: none;
-  border: 2px solid $ark-lightblue;
+  border: 2px solid $ark-blue;
   padding: 0.25rem 0.5rem;
 
   &:hover {
-    background-color: $ark-lightblue;
+    background-color: $ark-blue;
     color: #fff !important;
   }
 }
@@ -103,7 +113,7 @@ a.button {
 }
 
 .header {
-  background: $ark-blue;
+  background: $ark-darkblue;
   color: #fff;
   padding: 0.5rem 0;
   margin: 0 0 4rem 0;
@@ -118,6 +128,7 @@ a.button {
     margin: 0;
 
     a {
+      text-decoration: none;
       img {
         width: 150px;
       }
@@ -178,17 +189,17 @@ a.button {
     ul {
       li {
         a {
-          color: $ark-blue;
+          color: $ark-darkblue;
           border-bottom: 2px solid transparent;
 
           &:hover {
-            border-bottom: 2px solid $ark-blue;
+            border-bottom: 2px solid $ark-darkblue;
           }
         }
 
         &.active {
           a {
-            border-bottom: 2px solid $ark-blue;
+            border-bottom: 2px solid $ark-darkblue;
           }
         }
       }
@@ -213,6 +224,8 @@ a.button {
     display: flex;
     align-items: center;
   }
+
+
 }
 
 .ark-parts {
@@ -224,15 +237,29 @@ a.button {
 
     .part {
       font-size: 1.2rem;
-      border-color: $ark-lightblue;
-      color: $ark-lightblue;
+      border-color: $ark-pink;
+      color: $ark-pink;
 
       .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
         padding: 0 0 0.25rem 0;
         border-bottom-width: 2px;
         border-bottom-style: solid;
         border-color: inherit;
         margin: 0;
+        .heading {
+          margin:0;
+          padding:0;
+          line-height: 1;
+        }
+        .resource {
+          margin: 0;
+          padding:0;
+          text-transform: uppercase;
+        }
       }
 
       .subtitle {
@@ -244,35 +271,35 @@ a.button {
       }
 
       .desc {
-        padding: 1.5rem 0;
+        padding: 0 0;
         color: #898989;
       }
 
       .link {
         a {
           color: inherit;
-          color: $ark-lightblue;
+          color: $ark-pink;
           text-decoration: none;
-          border: 2px solid $ark-lightblue;
+          border: 2px solid $ark-pink;
           padding: 0.25rem 0.5rem;
 
           &:hover {
-            background-color: $ark-lightblue;
+            background-color: $ark-pink;
             color: #fff !important;
           }
         }
       }
 
       &:nth-child(2) {
-        border-color: $ark-pink;
-        color: $ark-pink;
+        border-color: $ark-blue;
+        color: $ark-blue;
 
         .link a {
-          color: $ark-pink;
-          border-color: $ark-pink;
+          color: $ark-blue;
+          border-color: $ark-blue;
 
           &:hover {
-            background-color: $ark-pink;
+            background-color: $ark-blue;
           }
         }
       }
@@ -300,9 +327,12 @@ a.button {
   background-color: #fff;
 
   a {
-    //color: $ark-blue;
-    color: $ark-lightblue;
-    border-color: $ark-lightblue;
+    color: $ark-blue;
+    border-color: $ark-blue;
+    &:hover {
+      color: $ark-darkblue;
+      border-color: $ark-darkblue;
+    }
   }
 
   .link {
@@ -310,23 +340,35 @@ a.button {
 
     a {
       margin-top: 1rem;
-      color: $ark-lightblue;
-      border-color: $ark-lightblue;
+      color: $ark-blue;
+      border-color: $ark-blue;
 
       &:hover {
-        background-color: $ark-lightblue;
+        background-color: $ark-blue;
       }
     }
   }
 }
 
+.home-search {
+  .form-label {
+    font-size: 1.5rem;
+  }
+
+}
+
 .home-materials {
+  background-color: #ffffff;
   border-top: 1px solid #999;
   font-size: 1.2rem;
 
-  h2 a {
-    //color: $ark-lightblue;
-    //border-color: $ark-lightblue;
+  h2 {
+    a {
+      &:hover {
+        color: $ark-blue;
+        border-color: $ark-blue;
+      }
+    }
   }
 
   .link {
@@ -335,10 +377,17 @@ a.button {
 }
 
 .footer {
-  padding: 5rem 0 4.5rem 0;
-  background-color: #1f476b0f;
-  margin: 4rem 0 0 0;
-  border-top: 1px solid $ark-blue;
+  padding: 6rem 0 4.5rem 0;
+  background-color: $ark-footer;
+  //margin: 4rem 0 0 0;
+  border-top: 1px solid $ark-grey;
+  a {
+    &:hover {
+      color: $ark-blue;
+      border-color: $ark-blue;
+      transition: all 0.2s linear;
+    }
+  }
 
   .sponsor {
     a {
@@ -459,10 +508,13 @@ a.button {
     line-height: 1.5;
     a {
       text-decoration: none;
-      color: $ark-blue;
+      color: $ark-darkblue;
+      border-color: $ark-darkblue;
 
       &:hover {
         //text-decoration: underline;
+        color: $ark-blue;
+        border-color: $ark-blue;
       }
     }
 
@@ -540,12 +592,16 @@ a.button {
       //min-width: 100px;
       text-align: center;
       line-height: 1;
-      background: $ark-blue;
+      background: $ark-darkblue;
       //background-color: #e2eef1;
       border-radius: 5px;
       font-weight: 500;
       color: #fff;
       cursor: pointer;
+      &:hover {
+        background-color: $ark-blue;
+        transition: all 0.2s linear;
+      }
     }
 
     @media (max-width: 1023px) {
@@ -1009,7 +1065,7 @@ a.button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #1f476be6;
+  background-color: $ark-darkblue;
   animation: fadeIn 0.5s;
 
   &.show {
@@ -1320,3 +1376,34 @@ a.button {
     page-break-after: avoid;
   }
 }
+
+
+
+
+
+.bd-example {
+  font-size: 1.2rem;
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: 1px;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  margin: 1rem -.75rem 0;
+  border: 2px solid $ark-darkblue;
+  background: #fff;
+  //box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  //box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
+  //border-left: 0.25rem #FCB040 solid;
+  border-radius: 10px;
+  .form-title {
+    color: $ark-darkblue;
+  }
+
+}
+
+
+
+

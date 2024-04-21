@@ -1,16 +1,46 @@
 ---
 layout: default
 ---
-<div class="hero py-5">
+<div class="hero py-2">
   <div class="container">
     <div class="row">
       <div class="col-md-5 px-5">
-          <p class="hero-logo"><a href="/"><img src="{{ '/assets/img/econ-ark-logo.png' | relative_url }}"></a></p>
+        <p class="hero-logo"><a href="/"><img src="{{ '/assets/img/econ-ark-logo.png' | relative_url }}"></a></p>
       </div>
       <div class="hero-desc col-md-7 col-offset-1 px-5">
-            <p>The primary goals of Econ-ARK are to make entry into the world of economic modeling easy; to accelerate
-              the development of this kind of modeling for policy-making and academic research; and to increase the
-              openness, replicability, and interoperability of modeling tools.</p>
+
+
+        <div class="home-hark" style="font-size:1.2rem; background-color: transparent; border-top:0;">
+          <div class="container my-5">
+            <div class="row">
+              <div class="offset-md-1 col-md-10">
+                <h2 style="display:none;"><a href="https://docs.econ-ark.org/">Welcome to Econ-ARK</a></h2>
+                <p>The heart of Econ-ARK is making reproducible papers. The <a
+                    href="https://docs.econ-ark.org/overview/ARKitecture.html">ARKitecture of Econ-ARK</a> consists of a
+                  code toolkit (HARK), demonstrations of using the toolkit (DemARK), and a <a
+                    href="/materials/">App Library</a> replicating modeling results of published papers (REMARK).
+                </p>
+                <p>Read through the <a href="https://docs.econ-ark.org/guides/quick_start.html">Quick Start Guide</a> to
+                  get up and running with HARK, or for developers the <a
+                    href="https://docs.econ-ark.org/guides/contributing.html">Contributing Guidelines</a>.</p>
+                <p>
+                  <img src="https://badgen.net/github/last-commit/econ-ark/hark">
+                  <img src="https://badgen.net/github/commits/econ-ark/hark">
+                  <img src="https://badgen.net/github/release/econ-ark/hark">
+                  <img src="https://badgen.net/github/contributors/econ-ark/hark">
+                  <img src="https://badgen.net/github/forks/econ-ark/hark">
+                </p>
+                <p class="link" style="display:none;">
+                  <a href="https://docs.econ-ark.org/">Econ-ARK Documentation</a>
+                  <a href="https://docs.econ-ark.org/example_notebooks/Gentle-Intro-To-HARK.html">A Gentle Introduction
+                    to HARK</a>
+                  <a href="https://github.com/econ-ark/HARK">HARK GitHub</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -18,77 +48,97 @@ layout: default
 
 <h1 class="visuallyhidden">Econ-ARK</h1>
 
-<div class="ark-parts py-5">
+<div class="home-search">
+
+  <div class="container">
+    <div class="row px-5 py-2 col-md-10 offset-md-1">
+
+
+      <div class="bd-example">
+        <label for="homeSearchInput" class="form-label form-title">Econ-ARK Materials App Library</label>
+        <div class="row">
+          <div class="col-md-10">
+            <div>
+              <input type="text" id="homeSearchInput" class="form-control" aria-describedby="searchHelpBlock">
+
+<!-- here -->
+
+            </div>
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">View all</button>
+          </div>
+        </div>
+        
+        
+        <div class="demo">
+
+        </div>
+        <div id="searchHelpBlock" class="form-text hidden">
+          Search the Econ-ARK Appl library Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+<div class="ark-parts px-5 py-5">
   <div class="container">
     <div class="row gx-5">
       <div class="part col-md-4 px-5 my-5">
-        <h2 class="title">HARK</h2>
+        <div class="title">
+          <h2 class="heading">HARK</h2>
+          <p class="resource">Toolkit</p>
+        </div>
         <p class="subtitle">Heterogeneous Agents Resources and toolKit</p>
         <div class="desc">
-          <p>HARK is a toolkit for simplifying and speeding up the development of solutions and estimation methods for
-            new
-            models.</p>
-          <p>Econ-ARK has developed an open source repository of highly modular, easily interoperable code for solving,
-            simulating, and estimating dynamic economic models with heterogeneous agents.</p>
+          <p>Econ-ARK developed a highly modular &amp; interoperable open source toolkit for
+            simulating, estimating and solving dynamic economic models with heterogeneous agents.</p>
         </div>
         <p class="link"><a href="https://docs.econ-ark.org/overview/introduction.html">Introduction to HARK</a></p>
       </div>
       <div class="part col-md-4 px-5 my-5">
-        <h2 class="title">DemARK</h2>
-        <p class="subtitle">Demonstrations of tools, AgentTypes, and ModelClasses</p>
-        <div class="desc">
-          <p>DemARK contains a collection of code demonstrations to give you a feeling for how the code works and what
-            you
-            can do with it.</p>
-          <p>These demonstrations form a repository produced by Econ-ARK containing a series of Jupyter Notebooks for
-            demonstrating how to use material in the Econ-ARK.</p>
+        <div class="title">
+          <h2 class="heading">REMARK</h2>
+          <p class="resource">App Library</p>
         </div>
-        <p class="link"><a href="https://github.com/econ-ark/DemARK">DemARK Repository</a></p>
-      </div>
-      <div class="part col-md-4 px-5 my-5">
-        <h2 class="title">REMARK</h2>
         <p class="subtitle">R[eplications/eproductions] and Explorations Made using ARK</p>
         <div class="desc">
-          <p>REMARKs are self-contained and complete projects that can be executed by anyone.</p>
-          <p>They include Explorations using HARK to demonstrate modelling ideas, Replications of important results of
-            published papers written using other tools, and Reproductions of all the code within a paper. </p>
+          <p>REMARKs are self-contained code repositories that utilize HARK to reproduce calculations from papers and
+            projects.</p>
         </div>
-        <p class="link"><a href="/materials/">Materials Library</a></p>
+        <p class="link"><a href="/materials/remark/">REMARKs</a></p>
+      </div>
+      <div class="part col-md-4 px-5 my-5">
+        <div class="title">
+          <h2 class="heading">OTHER</h2>
+          <p class="resource">Teaching</p>
+        </div>
+        <p class="subtitle">Demonstrations of tools, AgentTypes, and ModelClasses</p>
+        <div class="desc">
+          <p>View the complete collection of our tools, materials, demonstrations, tutorials, blogs, assignments,
+            documentation, and teaching.</p>
+        </div>
+        <p class="link"><a href="/materials/">DemARK</a></p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="home-hark py-5 px-5">
-  <div class="container my-5">
-    <div class="row">
-      <div class="offset-md-1 col-md-10">
-        <h2><a href="https://docs.econ-ark.org/">Welcome to Econ-ARK</a></h2>
-        <p>The heart of Econ-ARK is making reproducible papers. The <a href="https://docs.econ-ark.org/overview/ARKitecture.html">ARKitecture of Econ-ARK</a> consists of a code toolkit (HARK), demonstrations of using the toolkit (DemARK), and a <a href="/materials/">Materials Library</a> replicating modeling results of published papers (REMARK).</p>
-        <p>Read through the <a href="https://docs.econ-ark.org/guides/quick_start.html">Quick Start Guide</a> to get up and running with HARK, or for developers the <a href="https://docs.econ-ark.org/guides/contributing.html">Contributing Guidelines</a>.</p>
-          <p>
-            <img src="https://badgen.net/github/last-commit/econ-ark/hark">
-            <img src="https://badgen.net/github/commits/econ-ark/hark">
-            <img src="https://badgen.net/github/release/econ-ark/hark">
-            <img src="https://badgen.net/github/contributors/econ-ark/hark">
-            <img src="https://badgen.net/github/forks/econ-ark/hark">
-          </p>
-        <p class="link">
-          <a href="https://docs.econ-ark.org/">Econ-ARK Documentation</a>
-          <a href="https://docs.econ-ark.org/example_notebooks/Gentle-Intro-To-HARK.html">A Gentle Introduction to HARK</a>
-          <a href="https://github.com/econ-ark/HARK">HARK GitHub</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <div class="home-materials py-5 px-5">
-  <div class="container mt-5">
+  <div class="container mt-5 mb-5">
     <div class="row">
       <div class="offset-md-1 col-md-10 text-center">
-        <h2><a href="/materials/">Materials Library</a></h2>
-        <p>The Materials Library is a single-source-of-truth for all Econ-ARK published and working materials. These include reproducible papers, examples, demonstrations, documentation, notebooks and teaching material.</p>
+        <h2><a href="/materials/">Materials App Library</a></h2>
+        <p>The Materials Library is a single-source-of-truth for all Econ-ARK published and working materials. These
+          include reproducible papers, examples, demonstrations, documentation, notebooks and teaching material.</p>
       </div>
     </div>
     <div class="row gx-5">
@@ -98,7 +148,9 @@ layout: default
             <li>Carroll</li>
           </ul>
           <h3 class="title"><a href="/materials/bufferstocktheory">BufferStockTheory</a></h3>
-          <p class="summary">This paper builds foundations for rigorous and intuitive understanding of 'buffer stock' saving models (Bewley (1977)-like models with a wealth target), pairing each theoretical result with quantitative illustrations. After describing...</p>
+          <p class="summary">This paper builds foundations for rigorous and intuitive understanding of 'buffer stock'
+            saving models (Bewley (1977)-like models with a wealth target), pairing each theoretical result with
+            quantitative illustrations. After describing...</p>
           <ul class="tags">
             <li>REMARK</li>
             <li>Reproduction</li>
@@ -112,7 +164,9 @@ layout: default
             <li>Carroll</li>
           </ul>
           <h3 class="title"><a href="/materials/beyond-the-streetlight">Beyond the streetlight</a></h3>
-          <p class="summary">This repository provides an analysis of the trend in forecast errors made by the Tealbook/Greenbook(GB) and the Survey of Professional Forecasters(SPF) for measures of the unemployment rate and real growth...</p>
+          <p class="summary">This repository provides an analysis of the trend in forecast errors made by the
+            Tealbook/Greenbook(GB) and the Survey of Professional Forecasters(SPF) for measures of the unemployment rate
+            and real growth...</p>
           <ul class="tags">
             <li>REMARK</li>
             <li>Notebook</li>
@@ -125,8 +179,10 @@ layout: default
             <li>Ganong</li>
             <li>Noel</li>
           </ul>
-          <h3 class="title"><a href="/materials/ganongnoelui">Consumer Spending during Unemployment: Positive and Normative Implications</a></h3>
-          <p class="summary">Analysis of Models for "Consumer Spending During Unemployment- Positive and Normative Implications"</p>
+          <h3 class="title"><a href="/materials/ganongnoelui">Consumer Spending during Unemployment: Positive and
+              Normative Implications</a></h3>
+          <p class="summary">Analysis of Models for "Consumer Spending During Unemployment- Positive and Normative
+            Implications"</p>
           <ul class="tags">
             <li>REMARK</li>
             <li>Replication</li>
@@ -136,7 +192,7 @@ layout: default
     </div>
     <div class="row pt-5">
       <div class="offset-md-1 col-md-10 text-center">
-        <p class="link"><a href="/materials/">View all Materials</a></p>
+        <p class="link"><a href="/materials/">View all Apps</a></p>
       </div>
     </div>
   </div>
