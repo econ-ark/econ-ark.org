@@ -1382,6 +1382,7 @@ a.button {
 
 
 .bd-example {
+  position: relative;
   font-size: 1.2rem;
   padding: 1.5rem;
   margin-right: 0;
@@ -1401,9 +1402,44 @@ a.button {
   .form-title {
     color: $ark-darkblue;
   }
+  .inputs {
+    
+  }
 
 }
 
 
+//** DEMO HOME BROWSER **//
 
+.homeSearchInput {
+  position: relative;
+  .app-browser {
+    z-index: 999;
+    position: absolute;
+    left:0;
+    top:30px;
+  }
+}
 
+.app-browser {
+  
+  background:#ffffff;
+  padding: 1rem 2rem;
+  position: absolute;
+  bottom:0;
+  left:0;
+  .app-item {
+    border:1px solid red;
+    .app-item-details {
+      .title {
+
+      }
+      .abstract {
+
+      }
+      .authors {
+        
+      }
+    }
+  }
+}
