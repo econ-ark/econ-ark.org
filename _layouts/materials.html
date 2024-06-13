@@ -120,7 +120,7 @@ layout: default
         entry.authors.some((name) => { return name.toLowerCase().includes(searchstr) }),
       ];
 
-      const tagMatches = isSuperset(new Set(entry.tags), tagSelect)
+      const tagMatches = isSuperset(new Set(entry.tags), formData.getAll("tagSelect"))
       // accounts for accidental duplicate documents
       let rows = [...document.querySelectorAll(`a[href="${key}"]`)].map((s) => s.closest('tr'));
       if (tagMatches && textMatches.some((x) => x)) {
