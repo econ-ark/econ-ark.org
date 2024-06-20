@@ -228,11 +228,24 @@ a.button {
       color: $ark-lightblue;
 
       .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
         padding: 0 0 0.25rem 0;
         border-bottom-width: 2px;
         border-bottom-style: solid;
         border-color: inherit;
         margin: 0;
+        .heading {
+          margin: 0;
+          padding: 0;
+          line-height: 1
+        }
+        .resource {
+          margin: 0;
+          padding: 0;
+        }
       }
 
       .subtitle {
@@ -244,7 +257,7 @@ a.button {
       }
 
       .desc {
-        padding: 1.5rem 0;
+        padding: 0 0;
         color: #898989;
       }
 
