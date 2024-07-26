@@ -14,8 +14,8 @@ authors:
     orcid: "https://orcid.org/0000-0003-3732-9312"
 github_repo_url: https://github.com/econ-ark/HARK
 notebooks:
-  - 
-    examples/ConsPortfolioModel/ConsPortfolioModel.ipynb
+  -
+    examples/ConsPortfolioModel/example_ConsPortfolioModel.ipynb
 dashboards:
 ---
 
