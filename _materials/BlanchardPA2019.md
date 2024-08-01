@@ -25,10 +25,10 @@ references:  # required for replications; optional for reproductions; BibTex dat
 
 # Econ-ARK website fields?
 github_repo_url: https://github.com/econ-ark/BlanchardPA2019 # required
-remark-name: BlanchardPA2019 # required
+remark-name: BlanchardPA2019 # required 
 notebooks: # path to any notebooks within the repo - optional
-  -
-    Code/BlanchardPA2019.ipynb
+  - 
+    Code/Python/BlanchardPA2019.ipynb
 
 tags: # Use the relavent tags
   - REMARK
@@ -43,5 +43,5 @@ This notebook fully replicates the analysis of the stochastic overlapping genera
 ## References
 
 Blanchard, O. (2019). Public debt and low interest rates. American Economic Review, 109(4), 1197-1229.
-
+ 
 
