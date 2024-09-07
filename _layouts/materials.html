@@ -166,6 +166,47 @@ layout: default
       li.addEventListener('click', addTagToFilter);
     });
 
+
+    // Get the already initialized Choices.js instance
+    //const selectElement = document.getElementById('mySelect');
+    //const choicesInstance = choices;
+
+    // Function to get the value from query string or anchor hash
+    function getSelectionFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const hash = window.location.hash.substring(1);
+
+        // Check for query string parameter 'select' first
+        if (urlParams.has('select')) {
+            return urlParams.get('select');
+        }
+        // If not found, check for hash value
+        else if (hash) {
+            return hash;
+        }
+        return null;
+    }
+
+    // Auto-select the option based on the URL
+    function autoSelectOption() {
+        const selection = getSelectionFromUrl();
+        if (selection) {
+            const option = choices.setChoiceByValue(selection);
+
+            let evt = document.createEvent("Event");
+            evt.initEvent("change", true, true);
+            tagSelect.dispatchEvent(evt);
+
+            // Check if the option exists
+            if (!option) {
+                console.warn(`Option with value "${selection}" not found.`);
+            }
+        }
+    }
+
+    // Call the autoSelectOption function on page load
+    autoSelectOption();
+
   });
 
 </script>
