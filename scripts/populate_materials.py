@@ -1,10 +1,27 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from io import StringIO
+from itertools import product
+from re import finditer
 from subprocess import run
 from tempfile import TemporaryDirectory
 
 from yaml import safe_load, dump as yaml_dump
+
+def generate_case_combinations(name):
+    # Find all uppercase letters and their positions
+    uppercase_positions = [
+        (m.start(), m.group()) for m in finditer(r'[A-Z]', name)
+    ]
+
+    # Generate all combinations of keeping the letter uppercase or converting to lowercase
+    variations = product(*([ch.lower(), ch] for _, ch in uppercase_positions))
+
+    for variation in variations:
+        name_list = list(name)
+        for (pos, _), replacement in zip(uppercase_positions, variation):
+            name_list[pos] = replacement
+        yield ''.join(name_list)
 
 def parse_yaml_header(f):
     metadata = StringIO()
@@ -36,8 +53,8 @@ with TemporaryDirectory() as d:
     with ThreadPoolExecutor(4) as pool:
         for name, uri in remotes.items():
             futures[name] = pool.submit(
-                lambda name, uri: run(['git', 'clone', '--sparse', uri], cwd=tmpdir),
-                name=name, uri=uri
+                lambda uri: run(['git', 'clone', '--sparse', uri], cwd=tmpdir),
+                uri=uri
             )
 
     for name, result in futures.items():
@@ -56,6 +73,10 @@ with TemporaryDirectory() as d:
 
         with open(repo_root / '_materials' / f'{name}.md', 'w') as f:
             f.write('---\n')
+            remark_data.setdefault('redirect_from', [])
+            remark_data['redirect_from'] += [
+                n for n in generate_case_combinations(name) if n != name
+            ]
             yaml_dump(remark_data, f, default_flow_style=False)
             f.write('---\n')
             f.write(body)

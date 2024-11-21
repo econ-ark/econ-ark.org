@@ -41,3 +41,9 @@ defaults:
       type: 'team'
     values:
       order: 99
+
+plugins:
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
