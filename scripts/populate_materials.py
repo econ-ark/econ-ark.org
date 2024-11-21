@@ -1,10 +1,10 @@
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+from io import StringIO
 from subprocess import run
 from tempfile import TemporaryDirectory
-from pathlib import Path
-from time import sleep
+
 from yaml import safe_load, dump as yaml_dump
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from io import StringIO
 
 def parse_yaml_header(f):
     metadata = StringIO()
