@@ -23,7 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pyyaml==6.0.0
       - name: copy REMARK metadata
-        run: python scripts/populate_materials.py
+        run: python scripts/populate_remarks.py
       - name: case insensitive redirects
         run: python scripts/caseinsensitive_redirects.py
       - name: update gh-pages branch
