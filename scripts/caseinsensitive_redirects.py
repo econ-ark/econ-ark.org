@@ -37,11 +37,13 @@ if __name__ == '__main__':
     repo_root = Path(__file__).parents[1]
 
     for path in repo_root.glob('_materials/*.md'):
+        path_parent = path.relative_to(repo_root).parent
         with open(path) as f:
             metadata, f = parse_yaml_header(f)
             metadata.setdefault('redirect_from', [])
             metadata['redirect_from'] += [
-                n for n in generate_case_combinations(path.stem)
+                f'/{path_parent / path.with_name(n).stem}'
+                for n in generate_case_combinations(path.stem)
                 if n != path.stem
             ]
             body = f.read()
