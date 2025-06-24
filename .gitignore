@@ -4,3 +4,5 @@ really-simple*.gem
 Gemfile.lock
 vendor
 .bundle
+.specstory
+.cursorindexingignore
