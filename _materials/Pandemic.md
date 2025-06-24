@@ -54,6 +54,13 @@ remark-name: Pandemic # required
 dashboards: # path to any dahsboards within the repo - optional
   - 
     Code/Python/dashboard.ipynb
+identifiers-paper: # required for Replications; optional for Reproductions
+   - 
+      type: url 
+      value: https://www.nber.org/papers/w27876
+   - 
+      type: doi
+      value: "https://doi.org/10.3386/w27876"
 
 tags: # Use the relavent tags
   - REMARK
