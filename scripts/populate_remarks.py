@@ -27,7 +27,7 @@ repo_root = Path(__file__).parents[1]
 if __name__ == '__main__':
     with TemporaryDirectory() as d:
         tmpdir = Path(d)
-        run(['git', 'clone', '--filter=tree:0', 'https://github.com/econ-ark/REMARK'], cwd=tmpdir)
+        run(['git', 'clone', '--depth', '1', '--filter=tree:0', 'https://github.com/econ-ark/REMARK'], cwd=tmpdir)
 
         remotes = {}
         for yml_path in tmpdir.glob('REMARK/REMARKs/*yml'):
@@ -39,20 +39,22 @@ if __name__ == '__main__':
         with ThreadPoolExecutor(4) as pool:
             for name, uri in remotes.items():
                 futures[name] = pool.submit(
-                    lambda uri: run(['git', 'clone', '--sparse', uri], cwd=tmpdir),
+                    lambda uri: run(['git', 'clone', '--depth', '1', uri], cwd=tmpdir),
                     uri=uri
                 )
 
         for name, result in futures.items():
             result.result()
-            cff = tmpdir / name / 'CITATION.cff'
+            repo_path = tmpdir / name
+            cff = repo_path / 'CITATION.cff'
             if not cff.exists():
                 continue
             with open(cff) as f:
                 remark_data = safe_load(f)
 
-            if (tmpdir / name / 'REMARK.md').exists():
-                with open(tmpdir / name / 'REMARK.md') as f:
+            remark_md = repo_path / 'REMARK.md'
+            if remark_md.exists():
+                with open(remark_md) as f:
                     mdata, f = parse_yaml_header(f)
                     body = f.read()
                     remark_data.update(mdata)
