@@ -27,16 +27,16 @@ references:
   date: 2023-10-24
   publisher: R&S Centennial Conference
   title: '100 years of Economic Measurement in the Division of Research & Statistics:
-    Beyond the streetlight'
+    Beyond the Streetlight'
   type: article
 remark-name: beyond-the-streetlight
 repository-code: https://github.com/econ-ark/beyond-the-streetlight
 tags:
 - REMARK
 - Notebook
-title: Beyond the streetlight
+title: Beyond the Streetlight
 title-original-paper: '100 years of Economic Measurement in the Division of Research
-  & Statistics: Beyond the streetlight'
+  & Statistics: Beyond the Streetlight'
 version: 1.0.5
 ---
 
