@@ -1,6 +1,6 @@
 ---
 # CFF required fields
-cff-version: 1.1.0 # required (don't change)
+cff-version: 1.2.0 # required (don't change)
 message: If you use this software, please cite it as below. # optional
 authors: # required
   - family-names: Holmes

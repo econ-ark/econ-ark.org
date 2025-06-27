@@ -30,14 +30,14 @@ references:
     Beyond the streetlight'
   type: article
 remark-name: beyond-the-streetlight
-repository-code: https://github.com/dedwar65/beyond-the-streetlight
+repository-code: https://github.com/econ-ark/beyond-the-streetlight
 tags:
 - REMARK
 - Notebook
 title: Beyond the streetlight
 title-original-paper: '100 years of Economic Measurement in the Division of Research
   & Statistics: Beyond the streetlight'
-version: 1.0.4
+version: 1.0.5
 ---
 
 # Abstract

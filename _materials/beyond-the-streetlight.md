@@ -37,7 +37,7 @@ tags:
 title: Beyond the streetlight
 title-original-paper: '100 years of Economic Measurement in the Division of Research
   & Statistics: Beyond the streetlight'
-version: 1.0.4
+version: 1.0.5
 ---
 
 # Abstract
