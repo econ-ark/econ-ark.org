@@ -397,6 +397,21 @@
             border: 2px solid #fff;
             color: #fff;
         }
+
+        /* Fade-in on scroll animation */
+        @media (prefers-reduced-motion: no-preference) {
+            .fade-in-section {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                will-change: opacity, transform;
+            }
+
+            .fade-in-section.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -433,20 +448,12 @@
 
             <!-- Main Content -->
             <main class="col-span-9 space-y-12">
-                <!-- NEW Hero Section -->
-                <section class="hero-hank text-center -mx-10 -mt-10 mb-10">
-                  <div class="container mx-auto">
-                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">Central Bank Journey</h1>
-                    <p class="mt-4 text-xl leading-relaxed text-slate-300 max-w-3xl mx-auto">A guided tour of Heterogeneous Agent New Keynesian models.</p>
-                    <div class="mt-8 flex justify-center gap-4">
-                      <a class="btn-pill primary" href="#interactive-dashboards">Interactive Dashboards</a>
-                      <a class="btn-pill secondary" href="#notebooks">Journey Notebook</a>
-                    </div>
-                  </div>
+                <!-- Section 1: Introduction (Roadmap) -->
+                <section id="introduction" class="space-y-4 fade-in-section">
                 </section>
 
-                <!-- Section 1: Overview -->
-                <section id="overview" class="space-y-8">
+                <!-- Section 2: Overview -->
+                <section id="overview" class="space-y-8 fade-in-section">
                     <div class="max-w-4xl mb-12">
                         <span class="text-sm font-semibold uppercase tracking-wider text-[#005B8F]">Econ-ARK Journey Roadmap</span>
                         <div id="overview-content" class="mt-4">
@@ -458,23 +465,6 @@
                         <div class="lg:col-span-2">
                             <div id="overview-main-text" class="space-y-4 text-lg text-slate-600">
                                 <!-- Main text will be loaded from markdown -->
-                            </div>
-                            <div class="bg-sky-50 border border-sky-200 rounded-lg p-6 text-base mt-6">
-                                <h3 class="font-semibold text-sky-900 mb-3">Featured Econ-ARK Content</h3>
-                                <ul class="list-none space-y-3 text-sky-800 text-sm">
-                                    <li class="flex items-center">
-                                        <i class="fas fa-book-open fa-fw mr-2 text-sky-600"></i>
-                                        <a href="/materials/SolvingMicroDSOPs" class="hover:underline">Notebook: Solving Microeconomic Models</a>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-chart-line fa-fw mr-2 text-sky-600"></i>
-                                        <a href="#interactive-dashboards" class="hover:underline">Tool: Interactive Pandemic Dashboard</a>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-file-alt fa-fw mr-2 text-sky-600"></i>
-                                        <a href="http://econ-ark.github.io/Pandemic" class="hover:underline">Paper: The CARES Act Response</a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                         
@@ -526,8 +516,8 @@
                     </div>
                 </section>
 
-                <!-- Section 2: Bewley Model Basics -->
-                <section id="bewley-basics" class="space-y-8 py-8">
+                <!-- Section 3: Bewley Model Basics -->
+                <section id="bewley-basics" class="space-y-8 py-8 fade-in-section">
                     <h2 class="section-title text-3xl font-bold tracking-tight text-slate-900">Bewley Model Basics</h2>
                     <p class="text-slate-600 mb-12 max-w-3xl">This section covers the foundational concepts of the model: the core economic structure and the historical breakthroughs that made it possible.</p>
                     
@@ -630,8 +620,8 @@
                     </div>
                 </section>
 
-                <!-- Section 3: Interactive Dashboards -->
-                <section id="interactive-dashboards" class="space-y-8 py-8">
+                <!-- Section 4: Interactive Dashboards -->
+                <section id="interactive-dashboards" class="space-y-8 py-8 fade-in-section">
                     <h2 class="section-title text-3xl font-bold tracking-tight text-slate-900">Interactive Dashboards</h2>
                     <p class="text-slate-600 mb-6 max-w-3xl">Explore pandemic policy responses and heterogeneous agent models interactively. The pandemic dashboard shows how different policy parameters affect unemployment, consumption, and economic recovery during crisis periods.</p>
                     
@@ -777,8 +767,8 @@
                     </div>
                 </section>
 
-                <!-- Section 4: Notebooks -->
-                <section id="notebooks" class="space-y-6 py-8">
+                <!-- Section 5: Notebooks -->
+                <section id="notebooks" class="space-y-6 py-8 fade-in-section">
                     <div id="notebooks-content">
                         <!-- Content will be loaded from markdown -->
                     </div>
@@ -787,15 +777,15 @@
                     </div>
                 </section>
 
-                <!-- Section 5: Tools -->
-                <section id="tools" class="space-y-6 py-8">
+                <!-- Section 6: Tools -->
+                <section id="tools" class="space-y-6 py-8 fade-in-section">
                     <div id="tools-content">
                         <!-- Content will be loaded from markdown -->
                     </div>
                 </section>
 
-                <!-- Section 6: Replications -->
-                <section id="replications" class="space-y-6 py-8">
+                <!-- Section 7: Replications -->
+                <section id="replications" class="space-y-6 py-8 fade-in-section">
                     <div id="replications-content">
                         <!-- Content will be loaded from markdown -->
                     </div>
@@ -810,8 +800,8 @@
             <div class="row gx-5">
                 <div class="col-md-7">
                     <p>Econ-ARK is headed by <a href="http://www.econ2.jhu.edu/people/ccarroll/">Christopher D. Carroll</a>, Professor of Economics at the Johns Hopkins University.</p>
-                    <p>The project is currently the recepient of a generous corporate sponsorship from <a href="https://www.troweprice.com/">T. Rowe Price</a> through <a href="https://www.numfocus.org/">NumFocus</a>.</p>
-                    <p>The project has been a recipient of grants from the <a href="https://sloan.org/">Sloan foundation</a> and the <a href="https://www.thinkforwardinitiative.com/">Think Forward Initiative</a>, and is under the umbrella of projects with fiscal sponsorship by <a href="https://www.numfocus.org/">NumFocus</a>.</p>
+                    <p>The project is currently the recepient of a generous corporate sponsorship from <a href="https://www.troweprice.com/">T. Rowe Price</a> through <a href="https://www.numfocus.org/">NumFOCUS</a>.</p>
+                    <p>The project has been a recipient of grants from the <a href="https://sloan.org/">Sloan foundation</a> and the <a href="https://www.thinkforwardinitiative.com/">Think Forward Initiative</a>, and is under the umbrella of projects with fiscal sponsorship by <a href="https://www.numfocus.org/">NumFOCUS</a>.</p>
                     <p>Please remember to <a href="/acknowledging">acknowledge and cite</a> the use of Econ-ARK.</p>
                     <p>We are very grateful for any <a href="https://numfocus.salsalabs.org/donate-to-econ-ark/">donations</a> towards the Econ-ARK project.</p>
                 </div>
@@ -841,6 +831,7 @@
                     this.initScrollspy();
                     this.initTimeline();
                     this.initDashboards();
+                    this.initFadeInScroll();
                 },
                 
                 // Load markdown content from external files
@@ -1459,6 +1450,31 @@
                     document.getElementById('pandemic-peak-unemp').textContent = peakUnemp.toFixed(1);
                     document.getElementById('pandemic-consumption-drop').textContent = consumptionDrop.toFixed(1);
                     document.getElementById('pandemic-policy-effect').textContent = policyEffect.toFixed(1);
+                },
+
+                // Fade-in sections on scroll
+                initFadeInScroll() {
+                    const sections = document.querySelectorAll('.fade-in-section');
+                    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('is-visible');
+                                    observer.unobserve(entry.target);
+                                }
+                            });
+                        }, {
+                            threshold: 0.1
+                        });
+
+                        sections.forEach(section => {
+                            observer.observe(section);
+                        });
+                    } else {
+                        sections.forEach(section => {
+                            section.classList.add('is-visible');
+                        });
+                    }
                 }
             };
             
