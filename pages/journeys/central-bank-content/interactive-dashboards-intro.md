@@ -1,0 +1,1 @@
+Explore pandemic policy responses and heterogeneous agent models interactively. The pandemic dashboard shows how different policy parameters affect unemployment, consumption, and economic recovery during crisis periods. 

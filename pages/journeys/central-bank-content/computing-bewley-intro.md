@@ -1,0 +1,1 @@
+A Bewley model couples many heterogeneous households—each facing income risk and saving in a simple asset—with markets that set wages and interest rates.  Solving it means cycling between (i) household problems that deliver policy rules and (ii) an aggregation step that updates the whole wealth distribution until prices and decisions line up. 
