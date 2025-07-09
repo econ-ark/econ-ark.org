@@ -4,7 +4,7 @@
 
 <p>This journey guides policymakers, researchers and analysts through Econ‑ARK tools and resources to build and apply Bewley or "heterogeneous agent" models to analyze the macroeconomy and monetary policy.</p>
 
-<p class="mt-4">This journey overview page below is targeted to a general audience, while the companion technical notebooks are aimed at researchers as a detailed guide to using Econ-ARK tools.</p>
+<p class="mt-4">The journey overview below is targeted to a general audience, while the companion technical notebooks are aimed at researchers as a detailed guide to using Econ-ARK tools.</p>
 
 <div class="mt-6">
     <p class="mb-4">Together, the aim of this journey is to:</p>
