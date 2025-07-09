@@ -22,80 +22,16 @@ https://econ-ark.org/materials/distributionofwealthmpc
 - Fixed path in REMARKs/DurableConsumerType.md
 - 2023-03-14: Updated LucasAssetPrice.md on DemARK
 
-## Local Development
+## Local Build Instructions
 
-### Option 1: Docker (Recommended)
-
-The easiest way to run the site locally is using Docker:
-
-```bash
-# Build and start the Jekyll server
-docker-compose up --build
-
-# Or run in detached mode (background)
-docker-compose up --build -d
-
-# View logs
-docker-compose logs jekyll
-
-# Stop the server
-docker-compose down
+1. Install Ruby 3.0.4
+2. Run the following commands:
 ```
-
-The site will be available at http://localhost:4000 with live reload enabled.
-
-### Option 2: Native Ruby Setup
-
-If you prefer to run Jekyll natively:
-
-**Prerequisites:**
-- Ruby 3.0.4+ (recommended to use rbenv for version management)
-- Bundler gem
-
-**Setup:**
-```bash
-# Install rbenv (if not already installed)
-brew install rbenv ruby-build
-
-# Install and set Ruby version
-rbenv install 3.1.2
-rbenv local 3.1.2
-
-# Install bundler
-gem install bundler
-
-# Install Jekyll dependencies
-bundle config set --local path 'vendor/bundle'
-bundle install
-
-# Start the Jekyll server
-bundle exec jekyll serve --livereload
-```
-
-The site will be available at http://localhost:4000
-
-## Development Notes
-
-- **Live Reload**: Both Docker and native setups include live reload functionality
-- **Port**: The site runs on port 4000 by default
-- **Content Changes**: Markdown files will auto-regenerate when saved
-- **Configuration Changes**: Restart the server after modifying `_config.yml`
-
-## Troubleshooting
-
-### Ruby Version Issues
-If you encounter Ruby version conflicts, use the Docker setup which ensures a consistent environment.
-
-### Permission Errors
-On macOS, if you get permission errors with native Ruby, use rbenv instead of system Ruby.
-
-### Port Conflicts
-If port 4000 is already in use:
-```bash
-# For Docker
-docker-compose down
-
-# For native Jekyll
-bundle exec jekyll serve --port 4001
+gem install bundler  # installs bundler gem
+git clone ...        # clone repo
+cd path/to/repo      # navigate to repo top level
+bundle config set --local path 'vendor/bundle'  # set bundler output directory
+bundle install       # bundle your jekyll application
+bundle exec jekyll serve  # begin serving your site locally
 ```
 
