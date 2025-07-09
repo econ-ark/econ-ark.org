@@ -26,4 +26,4 @@ Krusell and Smith developed methods to solve heterogeneous agent models with agg
 
 ## 2010s
 ### Modern HANK
-The development of HANK (Heterogeneous Agent New Keynesian) models and computational tools like sequence-space Jacobians has made these models central to policy analysis at central banks worldwide. 
+The development of HANK (Heterogeneous Agent New Keynesian) models and computational tools like sequence-space Jacobians has made these models central our modern understanding of macroeconomics. 
