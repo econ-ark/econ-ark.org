@@ -1,8 +1,8 @@
 # Bewley Models for Central Banks
 
-** Micro  (heterogenous agent) models for macroeconomic analysis **
+** Micro  (heterogeneous agent) models for macroeconomic analysis **
 
-<p>This journey guides policymakers, researchers and analysts through Econ‑ARK tools and resources to build and apply Bewley or "heterogenous agent" models to analyze the macroeconomy and monetary policy.</p>
+<p>This journey guides policymakers, researchers and analysts through Econ‑ARK tools and resources to build and apply Bewley or "heterogeneous agent" models to analyze the macroeconomy and monetary policy.</p>
 
 <p class="mt-4">This journey overview page below is targeted to a general audience, while the companion technical notebooks are aimed at researchers as a detailed guide to using Econ-ARK tools.</p>
 
