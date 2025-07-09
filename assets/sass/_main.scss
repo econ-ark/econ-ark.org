@@ -303,6 +303,20 @@ a.button {
           }
         }
       }
+
+      &:nth-child(4) {
+        border-color: $journey-accent;
+        color: $journey-accent;
+
+        .link a {
+          color: $journey-accent;
+          border-color: $journey-accent;
+
+          &:hover {
+            background-color: $journey-accent;
+          }
+        }
+      }
     }
   }
 }
@@ -346,6 +360,10 @@ a.button {
     margin-bottom: 0;
   }
 }
+
+
+
+
 
 .footer {
   padding: 5rem 0 4.5rem 0;

@@ -1,0 +1,85 @@
+<style>
+  .journey-card.coming-soon {
+    position: relative;
+    cursor: not-allowed;
+  }
+  .journey-card.coming-soon img,
+  .journey-card.coming-soon .journey-content > *:not(.btn) {
+    filter: grayscale(90%);
+    opacity: 0.5;
+  }
+  .journey-card.coming-soon .btn {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+    pointer-events: none;
+  }
+  .journey-card.journey-accent i {
+      color: #7d6e86;
+  }
+</style>
+
+<section id="journeys" class="journeys">
+  <div class="container">
+    <h2 class="section-title">YOUR Econ-ARK JOURNEY</h2>
+    <p class="section-sub">Tailored paths for learning, applications, and policy analysis</p>
+
+    <div class="journey-grid">
+
+    <!-- ▶ CARD 1 — POLICY -->
+    <article class="journey-card policy">
+      <img src="/assets/img/journey-policy.jpg"
+           alt="Central bankers reviewing economic data"
+           loading="lazy">
+      <div class="journey-content">
+        <header><i class="fas fa-landmark"></i></header>
+        <h3>Central Banker / Policy</h3>
+        <p>Use New‑Keynesian HANK notebooks and SSJ tools for rapid
+           monetary‑policy analysis.</p>
+        <a class="btn" href="/journeys/central-bank/">Start Journey</a>
+      </div>
+    </article>
+
+    <!-- ▶ CARD 2 — STUDENT -->
+    <article class="journey-card student">
+      <img src="/assets/img/journey-student.jpg"
+           alt="Students collaborating in a lecture hall"
+           loading="lazy">
+      <div class="journey-content">
+        <header><i class="fas fa-user-graduate"></i></header>
+        <h3>PhD Student</h3>
+        <p>A step-by-step guide to using HARK, from basic consumption-saving models to advanced HANK applications.</p>
+        <a class="btn" href="https://docs.econ-ark.org/examples/Journeys/Journey-PhD.html" target="_blank">Start Journey</a>
+      </div>
+    </article>
+
+    <!-- ▶ CARD 3 — FINPLAN -->
+    <article class="journey-card finplan coming-soon">
+      <img src="/assets/img/journey-finplan-new.jpg"
+           alt="Person planning household finances at home"
+           loading="lazy">
+      <div class="journey-content">
+        <header><i class="fas fa-piggy-bank"></i></header>
+        <h3>Financial Planning</h3>
+        <p>Use lifecycle & portfolio‑choice models for household‑finance
+           planning and research.</p>
+        <a class="btn">Coming Soon</a>
+      </div>
+    </article>
+
+    <!-- ▶ CARD 4 — CONTRIBUTOR -->
+    <article class="journey-card contrib coming-soon journey-accent">
+      <img src="/assets/img/journey-contrib.jpg"
+           alt="Developers collaborating on open‑source code"
+           loading="lazy">
+      <div class="journey-content">
+        <header><i class="fas fa-code-branch"></i></header>
+        <h3>Contributor / Developer</h3>
+        <p>Set up HARK locally, add examples, & join the community.</p>
+        <a class="btn">Coming Soon</a>
+      </div>
+    </article>
+
+    </div>
+  </div>
+</section> 

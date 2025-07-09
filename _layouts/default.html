@@ -54,6 +54,10 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/main.css?v=1.1">
 
+    {% if page.layout == 'journey_spiffy' %}
+    {% include bewley_assets.html %}
+    {% endif %}
+
 </head>
 
 <body class="language-python{% if page.layout == 'home' %} home{% endif %}">
@@ -164,6 +168,10 @@
 
     <script src="{{ '/assets/js/prism.js' | relative_url }}"></script>
     <script src="/assets/js/main.js?v=1.0"></script>
+
+    {% if page.layout == 'journey_spiffy' %}
+    {% include bewley_assets.html %}
+    {% endif %}
 
 </body>
 
