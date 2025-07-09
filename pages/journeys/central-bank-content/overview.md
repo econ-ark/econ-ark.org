@@ -1,10 +1,10 @@
-# Bewley for Modern Monetary Policy
+# Bewley Models for Central Banks
 
-** Solving, estimating and simulating heterogeneous agent macroeconomic models**
+** Micro  (heterogenous agent) models for macroeconomic analysis **
 
-<p>This journey guides policymakers, researchers and analysts through Econ‑ARK tools and resources to build and apply Bewley (`heterogenous agent`) models to analyze the macroeconomy and monetary policy.</p>
+<p>This journey guides policymakers, researchers and analysts through Econ‑ARK tools and resources to build and apply Bewley or "heterogenous agent" models to analyze the macroeconomy and monetary policy.</p>
 
-<p class="mt-4">The journey overview below is targeted to a general audience, while the companion technical notebooks are aimed at researchers as a detailed guide to using Econ-ARK tools.</p>
+<p class="mt-4">The journey is targeted to a general audience, while the companion technical notebooks are aimed at researchers as a detailed guide to using Econ-ARK tools.</p>
 
 <div class="mt-6">
     <p class="mb-4">Together, the aim of this journey is to:</p>
@@ -19,19 +19,12 @@
         </li>
         <li class="flex items-start">
             <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-sky-100 text-sky-800 font-bold text-sm mr-3">3</span>
-            <span><strong>Deploy open-source  Econ‑ARK tools to implement Bewley models</strong> for in your research or policy-analysis workflow.</span>
+            <span><strong>Build your own micro models and use them for macro analysis</strong>—deploy Econ‑ARK's open-source tools to create heterogeneous agent models that connect household-level behavior to economy-wide outcomes and policy impacts.</span>
         </li>
     </ul>
 </div>
 
-<div class="mt-8 p-4 bg-gray-50 border-l-4 border-gray-400">
-  <p class="text-gray-800">
-    <strong>Get in touch</strong><br>
-    Email Chris Carroll: <a href="mailto:ccarroll@llorracc.org" class="text-blue-600 hover:underline">ccarroll@llorracc.org</a>
-    Econ-ARK code repo. issues. 
-    Disccusion forum. 
-  </p>
-</div>
+
 
 
 

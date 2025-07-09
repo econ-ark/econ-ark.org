@@ -1,3 +1,21 @@
+<style>
+  .journey-card.coming-soon {
+    position: relative;
+    cursor: not-allowed;
+  }
+  .journey-card.coming-soon img,
+  .journey-card.coming-soon .journey-content > *:not(.btn) {
+    filter: grayscale(90%);
+    opacity: 0.5;
+  }
+  .journey-card.coming-soon .btn {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+    pointer-events: none;
+  }
+</style>
+
 <section id="journeys" class="journeys">
   <div class="container">
     <h2 class="section-title">YOUR Econ-ARK JOURNEY</h2>
@@ -26,16 +44,15 @@
            loading="lazy">
       <div class="journey-content">
         <header><i class="fas fa-user-graduate"></i></header>
-        <h3>Student / Educator</h3>
-        <p>Gentle introductory tutorials that teach heterogeneous‑agent
-           models from scratch.</p>
-        <a class="btn" href="/journeys/student/">Start Journey</a>
+        <h3>PhD Student</h3>
+        <p>A step-by-step guide to using HARK, from basic consumption-saving models to advanced HANK applications.</p>
+        <a class="btn" href="https://docs.econ-ark.org/examples/Journeys/Journey-PhD.html" target="_blank">Start Journey</a>
       </div>
     </article>
 
     <!-- ▶ CARD 3 — FINPLAN -->
-    <article class="journey-card finplan">
-      <img src="/assets/img/journey-finplan.webp"
+    <article class="journey-card finplan coming-soon">
+      <img src="/assets/img/journey-finplan-new.jpg"
            alt="Person planning household finances at home"
            loading="lazy">
       <div class="journey-content">
@@ -43,12 +60,12 @@
         <h3>Financial Planning</h3>
         <p>Use lifecycle & portfolio‑choice models for household‑finance
            planning and research.</p>
-        <a class="btn" href="/journeys/finplan/">Start Journey</a>
+        <a class="btn">Coming Soon</a>
       </div>
     </article>
 
     <!-- ▶ CARD 4 — CONTRIBUTOR -->
-    <article class="journey-card contrib">
+    <article class="journey-card contrib coming-soon">
       <img src="/assets/img/journey-contrib.jpg"
            alt="Developers collaborating on open‑source code"
            loading="lazy">
@@ -56,7 +73,7 @@
         <header><i class="fas fa-code-branch"></i></header>
         <h3>Contributor / Developer</h3>
         <p>Set up HARK locally, add examples, & join the community.</p>
-        <a class="btn" href="/journeys/contributor/">Start Journey</a>
+        <a class="btn">Coming Soon</a>
       </div>
     </article>
 

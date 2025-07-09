@@ -561,8 +561,8 @@
 
         /* Enhanced section polishing with more spacing */
         main.col-span-9 > section {
-            padding-top: 6rem;
-            padding-bottom: 6rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
             padding-left: 3rem;
             padding-right: 3rem;
         }
@@ -764,6 +764,11 @@
             color: #00aeef !important;
         }
         
+        #remarks .section-title,
+        #remarks h2 {
+            color: #ff8a00 !important;
+        }
+        
         #building-bewley .section-title {
             color: #ff8a00 !important;
         }
@@ -838,12 +843,10 @@
             <nav class="col-span-3 sidebar">
                 <div class="space-y-2">
                     <a href="#overview" class="block px-4 py-2 text-sm font-medium">Overview</a>
-                    <a href="#bewley-basics" class="block px-4 py-2 text-sm font-medium">Bewley Model Basics</a>
+                    <a href="#bewley-basics" class="block px-4 py-2 text-sm font-medium">Why Heterogeneity Matters</a>
                     <a href="#interactive-dashboards" class="block px-4 py-2 text-sm font-medium">Interactive Dashboards</a>
-                    <a href="#building-bewley" class="block px-4 py-2 text-sm font-medium">Build with Econ-ARK</a>
-                    <a href="#notebooks" class="block px-4 py-2 text-sm font-medium">Notebooks</a>
-                    <a href="#tools" class="block px-4 py-2 text-sm font-medium">Tools</a>
-                    <a href="#replications" class="block px-4 py-2 text-sm font-medium">Replications</a>
+                    <a href="#building-bewley" class="block px-4 py-2 text-sm font-medium">Build with Econ-ARK and learning path</a>
+                    <a href="#further-resources" class="block px-4 py-2 text-sm font-medium">Further Resources</a>
                 </div>
             </nav>
 
@@ -900,7 +903,7 @@
                                         </li>
                                         <li class="flex items-center">
                                             <i class="fas fa-code fa-fw mr-3" style="color: var(--ark-orange);"></i>
-                                            <a href="#building-bewley" class="text-slate-600 hover:underline">Build with Econ-ARK</a>
+                                            <a href="#building-bewley" class="text-slate-600 hover:underline">Build with Econ-ARK and learning path</a>
                                         </li>
                                         <li class="flex items-center">
                                             <i class="fas fa-tools fa-fw mr-3" style="color: var(--journey-accent);"></i>
@@ -920,7 +923,7 @@
                 <!-- Section 3: Bewley Model Basics -->
                 <section id="bewley-basics" class="py-8 fade-in-section">
                     <div class="max-w-4xl mx-auto text-center">
-                        <h2 class="section-title text-3xl font-bold tracking-tight text-slate-900" style="text-align: left;">Bewley Model Basics</h2>
+                        <h2 class="section-title text-3xl font-bold tracking-tight text-slate-900" style="text-align: left;">Micro for Macro</h2>
                         <div id="bewley-basics-intro" class="text-justify mt-8">
                             <!-- Content will be loaded from markdown -->
                         </div>
@@ -943,7 +946,7 @@
                                     </div>
                                 </div>
                                 <div class="bg-sky-50 border border-sky-200 rounded-lg p-6 flex flex-col">
-                                    <h4 class="font-bold text-sky-800 mb-4 text-center">Monetary Policy in a Heterogeneous-Agent Model</h4>
+                                    <h4 class="font-bold text-sky-800 mb-4 text-center">Monetary Policy in a simple Heterogeneous-Agent (HANK) Model</h4>
                                     <div class="flex-grow flex flex-col items-center justify-center space-y-3">
                                         <div class="text-4xl text-sky-600"><i class="fas fa-landmark"></i></div>
                                         <div class="text-xl text-sky-400">&darr;</div>
@@ -1058,7 +1061,7 @@
                         </div>
                     </div>
 
-                    <!-- Computing Bewley Models -->
+                    <!-- Circular flow of income -->
                     <div class="space-y-8 pt-8 fade-in-subsection">
                         <h3 class="text-2xl font-bold tracking-tight text-slate-800">Computing Bewley Models</h3>
                         
@@ -1079,64 +1082,88 @@
 
                                 <!-- Main Flow with Feedback -->
                                 <div class="relative pb-16">
-                                    <div class="grid grid-cols-[1fr_auto_120px_auto_0.8fr_auto_0.8fr] items-center gap-x-2 gap-y-10">
+                                    <div class="grid grid-cols-[1fr_auto_130px_auto_1fr_auto_1fr] items-center gap-x-2 gap-y-10">
                                         <!-- Households -->
-                                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 text-center" id="households-box">
-                                            <div class="text-3xl text-sky-600 mb-2"><i class="fas fa-home"></i></div>
+                                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 text-center h-32 flex flex-col justify-center" id="households-box">
+                                            <div class="mb-2 h-12 flex flex-col justify-center items-center space-y-1">
+                                                <!-- Top row - 3 houses -->
+                                                <div class="flex justify-center items-baseline space-x-1">
+                                                    <i class="fas fa-home" style="color: #00aeef; font-size: 1.2rem;"></i>
+                                                    <i class="fas fa-home" style="color: #39b54a; font-size: 1.6rem;"></i>
+                                                    <i class="fas fa-home" style="color: #ed217c; font-size: 0.9rem;"></i>
+                                                </div>
+                                                <!-- Bottom row - 4 houses -->
+                                                <div class="flex justify-center items-baseline space-x-1">
+                                                    <i class="fas fa-home" style="color: #ff8a00; font-size: 1.1rem;"></i>
+                                                    <i class="fas fa-home" style="color: #00aeef; font-size: 1.4rem;"></i>
+                                                    <i class="fas fa-home" style="color: #ed217c; font-size: 1.0rem;"></i>
+                                                    <i class="fas fa-home" style="color: #39b54a; font-size: 1.3rem;"></i>
+                                                </div>
+                                            </div>
                                             <h4 class="font-bold text-slate-800 mb-1">Households</h4>
                                             <p class="text-xs text-slate-500">Optimize<br />consume &amp; save</p>
                                         </div>
 
                                         <!-- Arrow → -->
-                                        <svg class="w-14 h-6 mx-auto" viewBox="0 0 48 24">
-                                            <line x1="0" y1="12" x2="48" y2="12" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead-flow)" />
+                                        <svg class="w-14 h-6 mx-auto" viewBox="0 0 48 24" style="z-index: 10; position: relative;">
+                                            <line x1="4" y1="12" x2="44" y2="12" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead-flow)" />
                                         </svg>
 
                                         <!-- Distributions -->
                                         <div class="flex flex-col items-center">
-                                            <svg width="120" height="70" viewBox="0 0 120 70" aria-hidden="true">
-                                                <!-- Distribution 1: Earliest time period -->
-                                                <path d="M5 65 Q 20 65, 28 45 T 44 25 Q 52 15, 60 20 T 76 35 Q 84 45, 92 55 T 108 65 L 5 65 Z" 
-                                                      fill="rgba(0,91,143,0.1)" />
-                                                
-                                                <!-- Distribution 2: Shifting right -->
-                                                <path d="M8 65 Q 24 65, 34 48 T 50 28 Q 58 18, 66 22 T 82 37 Q 90 47, 100 57 T 112 65 L 8 65 Z" 
-                                                      fill="rgba(0,91,143,0.15)" />
-                                                
-                                                <!-- Distribution 3: Further shift -->
-                                                <path d="M12 65 Q 28 65, 38 50 T 54 30 Q 62 20, 70 25 T 86 40 Q 94 50, 105 60 T 115 65 L 12 65 Z" 
-                                                      fill="rgba(0,91,143,0.2)" />
-                                                
-                                                <!-- Distribution 4: More concentration in tail -->
-                                                <path d="M16 65 Q 32 65, 42 52 T 58 32 Q 66 22, 74 27 T 90 42 Q 98 52, 110 61 T 118 65 L 16 65 Z" 
-                                                      fill="rgba(0,91,143,0.25)" />
-                                                
-                                                <!-- Distribution 5: Current period with longest tail -->
-                                                <path d="M20 65 Q 36 65, 44 54 T 60 34 Q 68 24, 76 29 T 92 44 Q 100 54, 113 62 T 120 65 L 20 65 Z" 
-                                                      fill="rgba(0,91,143,0.3)" />
+                                            <svg width="130" height="80" viewBox="0 0 145 85" aria-hidden="true" class="mx-auto">
+                                                <!--
+                                                Recreating a 3D plot of distributions over time.
+                                                - Order: Drawn from back to front for correct occlusion.
+                                                - Styling: Filled with shades of blue, with a subtle stroke for definition.
+                                                - Paths: Each path is a different shape and closed to be fillable.
+                                                - Positioning: `translate` is used to create a 3D perspective effect.
+                                                -->
+                                                <g stroke="rgba(37, 99, 235, 0.4)" stroke-width="0.75" stroke-linejoin="round">
+                                                    <!-- Curve 1 (farthest back) -->
+                                                    <g transform="translate(32, 0)">
+                                                        <path d="M5 65 Q 20 65, 28 45 T 44 25 Q 52 15, 60 20 T 76 35 Q 84 45, 92 55 T 108 65 L 5 65 Z" fill="rgba(96,165,250,0.3)"/>
+                                                    </g>
+                                                    <!-- Curve 2 -->
+                                                    <g transform="translate(24, 4)">
+                                                        <path d="M8 65 Q 24 65, 34 48 T 50 28 Q 58 18, 66 22 T 82 37 Q 90 47, 100 57 T 112 65 L 8 65 Z" fill="rgba(96,165,250,0.4)"/>
+                                                    </g>
+                                                    <!-- Curve 3 -->
+                                                    <g transform="translate(16, 8)">
+                                                        <path d="M12 65 Q 28 65, 38 50 T 54 30 Q 62 20, 70 25 T 86 40 Q 94 50, 105 60 T 115 65 L 12 65 Z" fill="rgba(96,165,250,0.5)"/>
+                                                    </g>
+                                                    <!-- Curve 4 -->
+                                                    <g transform="translate(8, 12)">
+                                                        <path d="M16 65 Q 32 65, 42 52 T 58 32 Q 66 22, 74 27 T 90 42 Q 98 52, 110 61 T 118 65 L 16 65 Z" fill="rgba(96,165,250,0.6)"/>
+                                                    </g>
+                                                    <!-- Curve 5 (front-most) -->
+                                                    <g transform="translate(0, 16)">
+                                                        <path d="M20 65 Q 36 65, 44 54 T 60 34 Q 68 24, 76 29 T 92 44 Q 100 54, 113 62 T 120 65 L 20 65 Z" fill="rgba(96,165,250,0.7)"/>
+                                                    </g>
+                                                </g>
                                             </svg>
-                                            <span class="text-xs text-slate-500 mt-1 font-medium">Distributions of<br/>savings, labour, consumption</span>
+                                            <span class="text-xs text-slate-500 mt-1 font-medium text-center">Distributions over Time<br/>(savings, labour, etc.)</span>
                                         </div>
 
                                         <!-- Arrow → -->
-                                        <svg class="w-14 h-6 mx-auto" viewBox="0 0 48 24">
-                                            <line x1="0" y1="12" x2="48" y2="12" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead-flow)" />
+                                        <svg class="w-14 h-6 mx-auto" viewBox="0 0 48 24" style="z-index: 10; position: relative;">
+                                            <line x1="4" y1="12" x2="44" y2="12" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead-flow)" />
                                         </svg>
 
                                         <!-- Markets -->
-                                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 text-center" id="markets-box">
+                                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 text-center h-32 flex flex-col justify-center" id="markets-box">
                                             <div class="text-3xl text-orange-500 mb-2"><i class="fas fa-chart-line"></i></div>
                                             <h4 class="font-bold text-slate-800 mb-1">Markets</h4>
                                             <p class="text-xs text-slate-500">Aggregate<br />wages &amp; prices</p>
                                         </div>
 
                                         <!-- Arrow → -->
-                                        <svg class="w-14 h-6 mx-auto" viewBox="0 0 48 24">
-                                            <line x1="0" y1="12" x2="48" y2="12" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead-flow)" />
+                                        <svg class="w-14 h-6 mx-auto" viewBox="0 0 48 24" style="z-index: 10; position: relative;">
+                                            <line x1="4" y1="12" x2="44" y2="12" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead-flow)" />
                                         </svg>
 
                                         <!-- Firms -->
-                                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 text-center">
+                                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 text-center h-32 flex flex-col justify-center">
                                             <div class="text-3xl text-emerald-600 mb-2"><i class="fas fa-industry"></i></div>
                                             <h4 class="font-bold text-slate-800 mb-1">Firms</h4>
                                             <p class="text-xs text-slate-500">Invest &amp; hire</p>
@@ -1152,10 +1179,9 @@
                                                 </marker>
                                             </defs>
                                             <!-- Text label "Prices" -->
-                                            <text x="350" y="40" text-anchor="middle" font-size="10" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" class="text-xs font-medium">Prices</text>
-                                            <!-- Path from Markets (at ~571) down and back to Households (at ~143) -->
-                                            <!-- Extended outward: Markets to 650, Households to 100 -->
-                                            <path d="M 650 10 L 650 55 L 100 55 L 100 10" 
+                                            <text x="350" y="40" text-anchor="middle" font-size="10" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" class="text-xs font-medium">Prices & Interest Rates</text>
+                                            <!-- Path from Markets (center ~630) down and back to Households (center ~120) -->
+                                            <path d="M 630 10 L 630 55 L 120 55 L 120 10" 
                                                   stroke="#334155" 
                                                   stroke-width="2" 
                                                   fill="none"
@@ -1168,38 +1194,35 @@
                         
                         <!-- Description of Econ-ARK tools -->
                         <p class="text-justify text-slate-600 mt-12 max-w-3xl mx-auto">
-                            Econ-ARK provides modular, open-source implementations of each component in this circular flow, from household optimization algorithms to market aggregation methods. 
-                            The toolkit's computational efficiency enables researchers to solve complex heterogeneous agent models where distributions of wealth and income matter for aggregate outcomes.
+                            The goal of Econ-ARK is to provide cutting-edge, modular, open-source implementations of each component in this circular flow, from household optimization algorithms to market aggregation methods.
                         </p>
 
-                        <!-- Interactive Solver Component -->
+                        <!--
                         <div id="interactive-solver" class="mt-8">
                             <div class="solver-tabs">
                                 <div class="solver-tab active" data-tab="micro-problem">Dynamic Micro Problem</div>
-                                <div class="solver-tab" data-tab="micro-simulation">Micro Simulation</div>
-                                <div class="solver-tab" data-tab="estimation">Estimation</div>
+                                <div class="solver-tab" data-tab="micro-simulation">Micro Simulation & Estimation</div>
                                 <div class="solver-tab" data-tab="ge-solver">General Equilibrium</div>
                             </div>
 
-                            <!-- Panes -->
                             <div class="mt-6">
                                 <div class="solver-pane active" id="micro-problem">
-                                    <p class="text-center text-sm text-slate-600 mb-6 italic">First, solve the household's dynamic optimization problem using one of Econ-ARK's industry-standard methods:</p>
+                                    <p class="text-center text-sm text-slate-600 mb-6 italic">First, solve the household's dynamic optimization problem using one of Econ-ARK's or your own methods:</p>
                                     <div class="grid md:grid-cols-3 gap-6 text-center">
                                         <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
                                             <i class="fas fa-arrow-right text-2xl text-sky-600 mb-3"></i>
                                             <h4 class="font-bold">Endogenous Grid Method</h4>
-                                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">An efficient and accurate method for consumption problems with liquidity constraints.</p>
+                                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">An efficient and accurate method for consumption problems that analytically inverts the Euler equation.</p>
                                         </div>
                                         <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
                                             <i class="fas fa-chart-line text-2xl text-sky-600 mb-3"></i>
                                             <h4 class="font-bold">Value Function Iteration</h4>
-                                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">A robust and general-purpose method for solving dynamic programming problems.</p>
+                                            <p class="text-xs text-slate-500 mt-2 leading-relaxed"> Traditional general-purpose method for solving dynamic programming problems.</p>
                                         </div>
                                         <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
                                             <i class="fas fa-cogs text-2xl text-sky-600 mb-3"></i>
                                             <h4 class="font-bold">Coleman-Reffett Operator</h4>
-                                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">An approach that iterates on the policy rule itself, often using interpolation.</p>
+                                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Numerical solutions of the Euler equation.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1212,8 +1235,7 @@
                                             <p class="text-xs text-slate-500 mt-2">Generate a time series of aggregate variables (C, S, L) from the microeconomic decisions.</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="solver-pane" id="estimation">
+                                    <hr class="my-8 border-slate-200">
                                     <p class="text-center text-sm text-slate-600 mb-6 italic">The toolkit's speed unlocks modern estimation techniques, allowing models to be disciplined with rich micro-data:</p>
                                     <div class="grid md:grid-cols-3 gap-6 text-center">
                                         <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
@@ -1234,7 +1256,7 @@
                                     </div>
                                 </div>
                                 <div class="solver-pane" id="ge-solver">
-                                    <p class="text-center text-sm text-slate-600 mb-6 italic">Finally, find the general equilibrium using one of Econ-ARK's modular solvers:</p>
+                                    <p class="text-center text-sm text-slate-600 mb-6 italic">Finally, simulate the general equilibrium solution:</p>
                                     <div class="grid md:grid-cols-3 gap-6 text-center">
                                         <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
                                             <i class="fas fa-bolt text-2xl text-sky-600 mb-3"></i>
@@ -1249,12 +1271,13 @@
                                         <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
                                             <i class="fas fa-cogs text-2xl text-sky-600 mb-3"></i>
                                             <h4 class="font-bold">Direct Iteration</h4>
-                                            <p class="text-xs text-slate-500 mt-2">A fully non-linear benchmark method.</p>
+                                            <p class="text-xs text-slate-500 mt-2">Fully non-linear benchmark methods.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        -->
                     </div>
                 </section>
 
@@ -1265,72 +1288,21 @@
                         <!-- Content will be loaded from markdown -->
                     </div>
                     
-                    <!-- Tabs -->
+                    <!-- Tabs - Only Pandemic Dashboard -->
                     <div class="border-b border-gray-200">
                         <nav class="flex space-x-8">
-                            <button class="tab px-4 py-2 font-medium border-b-2 border-transparent" data-tab="pandemic-modeling">
+                            <button class="tab px-4 py-2 font-medium border-b-2 border-transparent active" data-tab="pandemic-modeling">
                                 Pandemic Policy Response
-                            </button>
-                            <button class="tab px-4 py-2 font-medium border-b-2 border-transparent" data-tab="impulse-response">
-                                Impulse Response
-                            </button>
-                            <button class="tab px-4 py-2 font-medium border-b-2 border-transparent" data-tab="wealth-distribution">
-                                Wealth Distribution
                             </button>
                         </nav>
                     </div>
                     
-                    <!-- Dashboard 2: Impulse Response -->
-                    <div id="impulse-response" class="dashboard hidden">
-                        <div class="grid grid-cols-2 gap-8">
-                            <div>
-                                <canvas id="impulse-chart" width="400" height="300"></canvas>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="block text-sm font-medium mb-2">Fiscal Shock Size</label>
-                                        <input type="range" id="shock-size" class="slider w-full" min="0.1" max="2" step="0.1" value="1">
-                                        <div class="text-xs text-gray-500 mt-1">Current: <span id="shock-value">1.0</span></div>
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium mb-2">Household Impatience</label>
-                                        <input type="range" id="impatience" class="slider w-full" min="0.8" max="0.99" step="0.01" value="0.95">
-                                        <div class="text-xs text-gray-500 mt-1">Current: <span id="impatience-value">0.95</span></div>
-                                    </div>
-                                </div>
-                                <div class="p-4 border rounded-lg" style="border-color: var(--econ-ark-blue);">
-                                    <h4 class="font-bold mb-2" style="color: var(--econ-ark-blue);">Key Result</h4>
-                                    <p class="text-sm">Peak Response: <span id="peak-response" class="font-bold">-</span>%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     
-                    <!-- Dashboard 3: Wealth Distribution -->
-                    <div id="wealth-distribution" class="dashboard hidden">
-                        <div class="grid grid-cols-2 gap-8">
-                            <div>
-                                <canvas id="wealth-chart" width="400" height="300"></canvas>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="block text-sm font-medium mb-2">Wealth Inequality (Gini)</label>
-                                        <input type="range" id="gini" class="slider w-full" min="0.2" max="0.8" step="0.01" value="0.5">
-                                        <div class="text-xs text-gray-500 mt-1">Current: <span id="gini-value">0.50</span></div>
-                                    </div>
-                                </div>
-                                <div class="p-4 border rounded-lg" style="border-color: var(--econ-ark-orange);">
-                                    <h4 class="font-bold mb-2" style="color: var(--econ-ark-orange);">Key Result</h4>
-                                    <p class="text-sm">Top 10% Share: <span id="top-10-share" class="font-bold">-</span>%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     
                     <!-- Dashboard 1: Pandemic Policy Response -->
-                    <div id="pandemic-modeling" class="dashboard hidden">
+                    <div id="pandemic-modeling" class="dashboard">
                         <div class="grid grid-cols-2 gap-8">
                             <!-- Charts Column -->
                             <div class="space-y-8">
@@ -1409,17 +1381,18 @@
 
                 <!-- Section: Building with Econ-ARK -->
                 <section id="building-bewley" class="space-y-8 py-8 fade-in-section">
-                    <h2 class="section-title text-3xl font-bold tracking-tight">Build with Econ-ARK</h2>
+                    <h2 class="section-title text-3xl font-bold tracking-tight">Build with Econ-ARK and learning path</h2>
                     <p class="text-slate-600 max-w-3xl mx-auto text-justify">
-                        Econ-ARK streamlines the workflow for building Bewley models: define heterogeneous agents, compute the steady state, then use sequence-space Jacobians to analyze policy transmission. The code below shows how to go from model specification to quantitative policy analysis in a single script.
+                        The goal of Econ-ARK is to provide cutting-edge, modular, open-source implementations of each component in this circular flow, from household optimization algorithms to market aggregation methods. %Econ-ARK tools allow you to connect your own existing workflow 
+                        %The toolkit's computational efficiency enables researchers to solve complex heterogeneous agent models where distributions of wealth and income matter for aggregate outcomes.
                     </p>
 
                     <!-- Stylised code snippet -->
                     <div class="relative max-w-5xl mx-auto">
                         <!-- Border wrapper with gradient -->
-                        <div class="p-1 rounded-xl bg-gradient-to-r from-sky-400 to-blue-600">
+                        <div class="p-1 bg-gradient-to-r from-sky-400 to-blue-600">
                             <!-- Code block with lighter background -->
-                            <div class="bg-slate-800 text-slate-100 text-sm rounded-lg overflow-hidden">
+                            <div class="bg-slate-800 text-slate-100 text-sm overflow-hidden">
                                 <!-- Header bar -->
                                 <div class="bg-slate-700 px-4 py-2 flex items-center justify-between border-b border-slate-600">
                                     <div class="flex items-center space-x-2">
@@ -1445,7 +1418,7 @@
                         </p>
                     
                     <div class="grid gap-6 max-w-5xl mx-auto">
-                        <!-- Notebook 1: SSJ Explanation -->
+                        <!-- Step 1: Perfect Foresight Consumer -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
@@ -1455,177 +1428,218 @@
                                 </div>
                                 <div class="flex-grow">
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/SSJ_explanation.ipynb" 
+                                        <a href="https://docs.econ-ark.org/examples/ConsIndShockModel/PerfForesightConsumerType.html" 
                                            class="hover:text-sky-600 transition-colors" target="_blank">
-                                            Understanding Sequence-Space Jacobians
+                                            Perfect Foresight Consumption-Saving Model
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">
-                                        Learn the mathematical foundations of SSJ methods and why they revolutionize solving heterogeneous agent models. 
-                                        This notebook introduces the core concepts needed for all subsequent analysis.
-                                    </p>
-                                    <div class="flex items-center space-x-4 text-sm text-slate-500">
-                                        <span><i class="fas fa-clock"></i> 30 min</span>
-                                        <span><i class="fas fa-signal"></i> Beginner</span>
-                                        <span><i class="fas fa-tag"></i> Theory, SSJ</span>
-                                    </div>
+                                    <p class="text-slate-600 mb-3">A simple consumption-saving model with no income uncertainty. This notebook introduces the baseline HARK consumer (`PerfForesightConsumerType`) who faces deterministic income and solves for a closed-form linear consumption function under CRRA preferences. It serves as the building block for adding income risk in more complex models.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Notebook 2: Jacobian Example -->
+                        <!-- Step 2: Buffer-Stock Saving with Idiosyncratic Risk -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
-                                    <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center">
-                                        <span class="text-sky-600 font-bold text-lg">2</span>
+                                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-emerald-600 font-bold text-lg">2</span>
                                     </div>
                                 </div>
                                 <div class="flex-grow">
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/Jacobian_Example.ipynb" 
-                                           class="hover:text-sky-600 transition-colors" target="_blank">
-                                            Computing Your First Jacobian
+                                        <a href="https://docs.econ-ark.org/examples/ConsIndShockModel/IndShockConsumerType.html" 
+                                           class="hover:text-emerald-600 transition-colors" target="_blank">
+                                            Consumption-Saving with Idiosyncratic Income Shocks (Buffer-Stock Model)
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">
-                                        Hands-on tutorial computing Jacobians for a simple heterogeneous agent model. 
-                                        See how shocks propagate through the economy and learn to interpret impulse responses.
-                                    </p>
-                                    <div class="flex items-center space-x-4 text-sm text-slate-500">
-                                        <span><i class="fas fa-clock"></i> 45 min</span>
-                                        <span><i class="fas fa-signal"></i> Intermediate</span>
-                                        <span><i class="fas fa-tag"></i> Computation, IRFs</span>
-                                    </div>
+                                    <p class="text-slate-600 mb-3">This notebook extends the consumer model to include idiosyncratic income uncertainty (`IndShockConsumerType`).</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Notebook 3: Transition Matrix -->
-                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center">
-                                        <span class="text-sky-600 font-bold text-lg">3</span>
-                                    </div>
-                                </div>
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/Transition_Matrix_Example.ipynb" 
-                                           class="hover:text-sky-600 transition-colors" target="_blank">
-                                            Transition Dynamics and Distribution Evolution
-                                        </a>
-                                    </h3>
-                                    <p class="text-slate-600 mb-3">
-                                        Explore how wealth and income distributions evolve over time. Master transition matrices 
-                                        and understand the dynamics that drive inequality in heterogeneous agent models.
-                                    </p>
-                                    <div class="flex items-center space-x-4 text-sm text-slate-500">
-                                        <span><i class="fas fa-clock"></i> 60 min</span>
-                                        <span><i class="fas fa-signal"></i> Intermediate</span>
-                                        <span><i class="fas fa-tag"></i> Distributions, Dynamics</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Notebook 4: KS-HARK -->
+                        <!-- Step 3: Solving the Incomplete Markets Model (Technical) -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                                        <span class="text-orange-600 font-bold text-lg">4</span>
+                                        <span class="text-orange-600 font-bold text-lg">3</span>
                                     </div>
                                 </div>
                                 <div class="flex-grow">
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/KS-HARK-presentation.ipynb" 
+                                        <a href="https://docs.econ-ark.org/examples/HowWeSolveIndShockConsumerType/HowWeSolveIndShockConsumerType.html" 
                                            class="hover:text-orange-600 transition-colors" target="_blank">
-                                            The Krusell-Smith Method in HARK
+                                            How HARK Solves the Incomplete Markets Model
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">
-                                        Implement the classic Krusell-Smith algorithm for solving models with aggregate uncertainty. 
-                                        Compare computational methods and understand when to use each approach.
-                                    </p>
-                                    <div class="flex items-center space-x-4 text-sm text-slate-500">
-                                        <span><i class="fas fa-clock"></i> 90 min</span>
-                                        <span><i class="fas fa-signal"></i> Advanced</span>
-                                        <span><i class="fas fa-tag"></i> Krusell-Smith, Aggregation</span>
-                                    </div>
+                                    <p class="text-slate-600 mb-3">A technical walkthrough of HARK's solution algorithm for the heterogeneous agent consumption-saving problem. </p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Notebook 5: HANK Fiscal -->
+                        <!-- Step 4: Transition Matrix for Distribution Dynamics -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-purple-600 font-bold text-lg">4</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/Transition_Matrix_Example.html" 
+                                           class="hover:text-purple-600 transition-colors" target="_blank">
+                                            Transition Matrix and Steady-State Distribution
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">This notebook demonstrates how to use HARK to construct the transition matrix for an economy of heterogeneous consumers.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Computing Heterogeneous-Agent Jacobians -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-pink-600 font-bold text-lg">5</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/Jacobian_Example.html" 
+                                           class="hover:text-pink-600 transition-colors" target="_blank">
+                                            Computing Jacobians for Heterogeneous Agent Models
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">In this notebook, we compute <strong>sequence-space Jacobians</strong> for a heterogeneous agent model.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 6: Sequence-Space Jacobian Method (Theory) -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-sky-600 font-bold text-lg">6</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/SSJ_explanation.html" 
+                                           class="hover:text-sky-600 transition-colors" target="_blank">
+                                            Sequence-Space Jacobian Method Explained
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">This notebook provides a conceptual overview of the sequence-space Jacobian (SSJ) approach for generating general equilibrium responses to aggregate shocks.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 7: HANK Model with Fiscal Policy (HARK + SSJ) -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                                        <span class="text-red-600 font-bold text-lg">5</span>
+                                        <span class="text-red-600 font-bold text-lg">7</span>
                                     </div>
                                 </div>
                                 <div class="flex-grow">
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/HANKFiscal_example.ipynb" 
+                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/HANKFiscal_example.html" 
                                            class="hover:text-red-600 transition-colors" target="_blank">
-                                            HANK Models with Fiscal Policy
+                                            Solving a HANK Model – Fiscal Policy Experiment
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">
-                                        Build a full HANK model with fiscal and monetary policy. Analyze the interaction between 
-                                        government spending, taxes, and monetary policy in a heterogeneous agent framework.
-                                    </p>
-                                    <div class="flex items-center space-x-4 text-sm text-slate-500">
-                                        <span><i class="fas fa-clock"></i> 2 hours</span>
-                                        <span><i class="fas fa-signal"></i> Advanced</span>
-                                        <span><i class="fas fa-tag"></i> HANK, Policy Analysis</span>
-                                    </div>
+                                    <p class="text-slate-600 mb-3">Combines HARK and the SSJ toolkit to analyze simple fiscal policy in a full Heterogeneous Agent New Keynesian (HANK) model.</p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Estimation Notebooks -->
-                        <div class="mt-8 p-6 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg">
-                            <h3 class="text-xl font-bold text-purple-800 mb-3">
-                                <i class="fas fa-chart-line mr-2"></i>Advanced: Model Estimation
-                            </h3>
-                            <p class="text-purple-700 mb-4">
-                                Ready to estimate HANK models with real data? Explore our 
-                                <a href="https://github.com/econ-ark/HARK/tree/master/examples/ConsNewKeynesianModel/estimation" 
-                                   class="font-semibold underline hover:text-purple-900" target="_blank">
-                                    estimation notebooks
-                                </a> 
-                                for cutting-edge techniques in calibrating heterogeneous agent models to match empirical moments.
-                            </p>
-                        </div>
                     </div>
                     </div>
                 </section>
 
-                <!-- Section 5: Notebooks -->
-                <section id="notebooks" class="space-y-6 py-8 fade-in-section">
-                    <div id="notebooks-content">
-                        <!-- Content will be loaded from markdown -->
-                    </div>
-                    <div id="notebooks-cards" class="grid grid-cols-2 gap-6">
-                        <!-- Cards will be generated from markdown content -->
-                    </div>
-                </section>
+<!-- ====================== RESOURCES ====================== -->
+<section id="further-resources" class="space-y-6 py-8 fade-in-section">
+  <h2 class="section-title text-3xl font-bold tracking-tight text-slate-900">
+    Further Resources
+  </h2>
+  
+    <!-- Aiyagari steady‑state solver -->
+    <article class="bg-white border border-slate-200 rounded-lg p-5 mb-6">
+      <h3 class="text-lg font-semibold text-slate-800">
+        Aiyagari Steady‑State Notebook
+      </h3>
+      <p class="text-slate-600">
+        Walk‑through of computing the stationary equilibrium in an
+        incomplete‑markets Aiyagari model
+        (<code>ConsAggShockModel/AiyagariSteadyState.ipynb</code>).  
+        Shows how to iterate on the capital‑labor ratio and verify market
+        clearing with a heterogeneous household block solved in HARK.  
+        Useful as a micro foundation for RBC–style general‑equilibrium
+        explorations or as a warm‑up before adding nominal rigidities.
+      </p>
+      <a class="underline text-sky-700 hover:text-sky-900"
+         href="https://econ-ark.org/materials/aiyagari/"
+         target="_blank">View notebook</a>
+    </article>
 
-                <!-- Section 6: Tools -->
-                <section id="tools" class="space-y-6 py-8 fade-in-section">
-                    <div id="tools-content">
-                        <!-- Content will be loaded from markdown -->
-                    </div>
-                </section>
 
-                <!-- Section 7: Replications -->
-                <section id="replications" class="space-y-6 py-8 fade-in-section">
-                    <div id="replications-content">
-                        <!-- Content will be loaded from markdown -->
-                    </div>
-                </section>
+    <!-- Distribution of Wealth & MPC -->
+    <article class="bg-white border border-slate-200 rounded-lg p-5 mb-6">
+      <h3 class="text-lg font-semibold text-slate-800">
+        Distribution of Wealth &amp; Marginal Propensity to Consume
+      </h3>
+      <p class="text-slate-600">
+        Full reproduction of Carroll, Slacalek, Tokuoka &amp; White (2017)
+        using HARK (<code>econ-ark/DistributionOfWealth</code>).  
+        Matches the cross‑section of U.S. wealth and delivers the high MPCs
+        that are essential for evaluating temporary fiscal transfers.
+      </p>
+      <a class="underline text-sky-700 hover:text-sky-900"
+         href="https://econ-ark.org/materials/distributionofwealthmpc/" target="_blank">
+         Repository
+      </a>
+    </article>
+
+    <!-- Krusell–Smith -->
+    <article class="bg-white border border-slate-200 rounded-lg p-5 mb-6">
+      <h3 class="text-lg font-semibold text-slate-800">
+        Krusell–Smith Incomplete‑Markets RBC Model
+      </h3>
+      <p class="text-slate-600">
+        Classic aggregate‑shock benchmark recreated in
+        <code>econ-ark/KrusellSmith</code>.  
+        Demonstrates law‑of‑motion iteration for the mean of the wealth
+        distribution and provides a baseline for Elyesian policy experiments
+        under real rigidities.
+      </p>
+      <a class="underline text-sky-700 hover:text-sky-900"
+         href="https://github.com/econ-ark/KrusellSmith" target="_blank">
+         Repository
+      </a>
+    </article>
+
+    <!-- Life‑Cycle Portfolio Choice -->
+    <article class="bg-white border border-slate-200 rounded-lg p-5">
+      <h3 class="text-lg font-semibold text-slate-800">
+        Consumption &amp; Portfolio Choice over the Life Cycle
+      </h3>
+      <p class="text-slate-600">
+        Replication of Cocco, Gomes &amp; Maenhout (2005) in
+        <code>econ-ark/CGMPortfolio</code>.  
+        Useful for stress‑testing calibrations of risk aversion and
+        portfolio‑rebalancing costs before embedding a life‑cycle block
+        inside a larger HANK framework.
+      </p>
+      <a class="underline text-sky-700 hover:text-sky-900"
+         href="https://github.com/econ-ark/CGMPortfolio" target="_blank">
+         Repository
+      </a>
+    </article>
+</section>
             </main>
         </div>
     </div>
@@ -1860,8 +1874,6 @@
                 // Dashboard components
                 initDashboards() {
                     this.initTabs();
-                    this.initImpulseResponse();
-                    this.initWealthDistribution();
                     this.initPandemicModeling();
                 },
 
@@ -1884,8 +1896,10 @@
                         });
                     });
                     
-                    // Activate first tab by default
-                    tabs[0].click();
+                    // Activate first tab by default (if tabs exist)
+                    if (tabs.length > 0) {
+                        tabs[0].click();
+                    }
                 },
 
                 initImpulseResponse() {
@@ -2382,96 +2396,131 @@
                     });
                 },
                 
-                // Live-typewriter effect for the Build with Econ-ARK code box
+                // Elegant "human-like" code typing animation
                 initTypewriter() {
                     const pre = document.getElementById('typed-code');
                     if (!pre) return;
 
-                    // Full raw python code (no HTML)
-                    const raw = `# Step 1: Define the heterogeneous agent economy
-from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
-from HARK.distribution import DiscreteDistribution
+                    const rawCode = `# Building a HANK Model with Fiscal Policy
+from HARK.ConsumptionSaving.ConsNewKeynesianModel import NewKeynesianConsumerType
+import sequence_jacobian as sj
 import numpy as np
 
-# Create heterogeneous agents with different discount factors
-agent_types = []
-for beta in np.linspace(0.92, 0.98, 5):
-    agent = IndShockConsumerType(
-        DiscFac=beta, CRRA=2.0, Rfree=1.01,
-        PermShkStd=[0.06], TranShkStd=[0.2]
-    )
-    agent_types.append(agent)
+# Step 1: Calibrate steady state values
+r_ss = 0.03   # Interest rate
+G_ss = 0.2    # Government spending  
+B_ss = 0.2    # Government debt
+Y_ss = 1.0    # Output
 
-# Step 2: Solve for the steady state
-for agent in agent_types:
-    agent.solve()          # Solve individual problem
-    agent.initialize_sim() # Initialize simulation
-    agent.simulate()       # Find stationary distribution
+# Step 2: Create heterogeneous households
+HANK_dict = {
+    "Rfree": [1.0 + r_ss],
+    "tax_rate": [0.0],
+    "labor": [Y_ss - G_ss - r_ss*B_ss],  # After-tax income
+}
 
-# Step 3: Compute steady-state aggregates
-C_ss = sum([agent.state_now['cNrm'].mean() for agent in agent_types])
-A_ss = sum([agent.state_now['aNrm'].mean() for agent in agent_types])
+# Find equilibrium discount factor to match target debt level
+def find_beta(B_target):
+    # Binary search for beta that generates B_target assets
+    return optimize.brentq(asset_gap, 0.85, 0.99)
 
-# Step 4: Build sequence-space Jacobians for policy analysis
-from sequence_jacobian import het_block, simple_block, create_model
+Agent_GE = NewKeynesianConsumerType(DiscFac=find_beta(B_ss), **HANK_dict)
+A_ss, C_ss = Agent_GE.compute_steady_state()
 
-@het_block(exogenous=['r','w'], policy=['a'], backward=['Va'])
-def household(Va_p, a_grid, e_grid, r, w, beta, eis):
-    # Backward step: consumption from Euler equation
-    c_p = (beta*(1+r)*Va_p)**(-eis)
-    # Forward step: update value function
-    Va  = (1+r)*c_p**(-1/eis)
-    return Va, c_p
+# Step 3: Compute sequence-space Jacobians
+# How consumption and assets respond to future shocks
+dCdR, dAdR = Agent_GE.calc_jacobian("Rfree", 300)  # Response to interest rates
+dCdZ, dAdZ = Agent_GE.calc_jacobian("labor", 300)  # Response to income
 
-G = household.jacobian(ss, ['r','w'], ['C','A'])
-print(f"Impact of 1% rate cut on consumption: {G['C','r'][0]:.3f}%")`;
+# Step 4: Define government and market clearing
+@sj.simple
+def fiscal(B, r, G, Y):
+    T = (1 + r) * B(-1) + G - B  # Government budget constraint
+    Z = Y - T                     # After-tax income
+    deficit = G - T
+    return T, Z, deficit
 
-                    // Prism highlight to HTML
-                    const highlighted = Prism.highlight(raw, Prism.languages.python, 'python');
-                    
-                    // Pre-fill with invisible text to establish box size
-                    pre.innerHTML = `<span style="opacity: 0.1;">${highlighted}</span>`;
+@sj.simple
+def mkt_clearing(A, B, Y, C, G):
+    asset_mkt = A - B      # Asset market clearing
+    goods_mkt = Y - C - G  # Goods market clearing
+    return asset_mkt, goods_mkt
 
-                    // Typewriter variables
-                    let idx = 0;
-                    const speed = 15; // ms per char
+# Step 5: Combine blocks into HANK model
+het_household = sj.JacobianDict({"C": {"Z": dCdZ}, "A": {"Z": dAdZ}})
+HANK = sj.create_model([het_household, fiscal, mkt_clearing])
 
-                    // Observer to trigger once in view
-                    const obs = new IntersectionObserver(entries => {
-                        entries.forEach(e => {
-                            if (e.isIntersecting) {
-                                obs.unobserve(pre);
-                                // Clear and start typing
-                                pre.innerHTML = '';
-                                setTimeout(type, 500); // Small delay before typing starts
-                            }
-                        });
-                    }, {threshold: 0.4});
-                    obs.observe(pre);
+# Step 6: Analyze fiscal policy transmission
+# Deficit-financed government spending shock
+dG = 0.01 * 0.8**np.arange(300)         # G shock with persistence 0.8
+dB = np.cumsum(dG) * 0.9**np.arange(300) # Debt follows fiscal rule
+
+irfs = HANK.solve_impulse_linear(
+    steady_state, unknowns=["Y"], targets=["asset_mkt"], 
+    shocks={"G": dG, "B": dB}
+)
+
+print(f"Output multiplier: {irfs['Y'][0]/dG[0]:.2f}")
+print(f"Consumption response: {irfs['C'][0]/dG[0]:.2f}`;
+
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .typing-cursor {
+                            display: inline-block;
+                            width: 9px;
+                            height: 1.2em;
+                            background-color: #0ea5e9;
+                            border-radius: 1px;
+                            animation: blink 1.1s step-end infinite;
+                            vertical-align: text-bottom;
+                        }
+                        @keyframes blink { 50% { background-color: transparent; } }
+                    `;
+                    document.head.appendChild(style);
+
+                    const highlightedHTML = Prism.highlight(rawCode, Prism.languages.python, 'python');
+                    let i = 0;
 
                     function type() {
-                        if (idx <= highlighted.length) {
-                            pre.innerHTML = highlighted.slice(0, idx) + '<span class="type-cursor">|</span>';
+                        if (i < highlightedHTML.length) {
+                            const cursor = pre.querySelector('.typing-cursor');
+                            if (!cursor) return;
+
+                            let char = highlightedHTML.charAt(i);
                             
-                            // Auto-scroll to keep cursor in view
-                            const container = pre.parentElement;
-                            const cursor = pre.querySelector('.type-cursor');
-                            if (cursor) {
-                                const cursorBottom = cursor.offsetTop + cursor.offsetHeight;
-                                const containerBottom = container.scrollTop + container.clientHeight;
-                                if (cursorBottom > containerBottom - 50) {
-                                    container.scrollTop = cursorBottom - container.clientHeight + 50;
+                            // If we are at the start of a tag, type the whole tag at once
+                            if (char === '<') {
+                                let tagEnd = highlightedHTML.indexOf('>', i);
+                                if (tagEnd !== -1) {
+                                    cursor.insertAdjacentHTML('beforebegin', highlightedHTML.substring(i, tagEnd + 1));
+                                    i = tagEnd;
                                 }
+                            } else {
+                                cursor.insertAdjacentHTML('beforebegin', char);
                             }
                             
-                            idx++;
-                            setTimeout(type, speed);
+                            i++;
+
+                            const container = pre.parentElement;
+                            container.scrollTop = container.scrollHeight;
+                            
+                            const delay = Math.random() * 35 + 10;
+                            setTimeout(type, delay);
                         } else {
-                            // Keep cursor blinking for a bit, then remove
-                            setTimeout(() => {
-                                pre.innerHTML = highlighted;
-                            }, 1000);
+                            pre.querySelector('.typing-cursor')?.remove();
                         }
+                    }
+
+                    const observer = new IntersectionObserver(entries => {
+                        if (entries[0].isIntersecting) {
+                            observer.unobserve(pre);
+                            pre.innerHTML = '<span class="typing-cursor"></span>';
+                            setTimeout(type, 500);
+                        }
+                    }, { threshold: 0.6 });
+
+                    if (pre) {
+                        observer.observe(pre);
                     }
                 }
             };

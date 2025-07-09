@@ -6,7 +6,7 @@ Click on any year in the timeline to explore the key developments in heterogeneo
 
 ## 1950s
 ### Foundations: PIH & LCH
-The Permanent Income Hypothesis (Friedman) and Life-Cycle Hypothesis (Modigliani) laid the groundwork for understanding consumption behavior, but assumed homogeneous agents.
+The Permanent Income Hypothesis (Friedman) and Life-Cycle Hypothesis (Modigliani) laid the groundwork for understanding consumption behavior, but without income uncertainty. 
 
 ## 1977
 ### The Bewley Model
