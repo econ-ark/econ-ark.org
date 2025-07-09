@@ -1,2 +1,2 @@
-Live demonstrations of policy simulations of heterogenous agent models using
+Live demonstrations of policy simulations of heterogeneous agent models using
 Econ-ARK tools. 
