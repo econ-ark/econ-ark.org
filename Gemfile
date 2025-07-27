@@ -26,6 +26,6 @@ gem 'wdm', '~> 0.1.1', :platforms => [:mingw, :x64_mingw, :mswin]
 # Lock JRuby to 2.5 branch
 gem 'http_parser.rb', '~> 0.6.0', :platforms => [:jruby]
 
-gem 'github-pages', group: :jekyll_plugins
+# gem 'github-pages', group: :jekyll_plugins # Commented out due to version conflict
 gem 'webrick' # needed to build locally
 
