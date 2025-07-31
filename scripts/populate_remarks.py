@@ -52,12 +52,15 @@ if __name__ == '__main__':
             with open(cff) as f:
                 remark_data = safe_load(f)
 
+            body = ''  # Default to empty body
             remark_md = repo_path / 'REMARK.md'
             if remark_md.exists():
                 with open(remark_md) as f:
                     mdata, f = parse_yaml_header(f)
                     body = f.read()
                     remark_data.update(mdata)
+            else:
+                print(f"WARNING: {name} has CITATION.cff but no REMARK.md file")
 
             with open(repo_root / '_materials' / f'{name}.md', 'w') as f:
                 f.write('---\n')
