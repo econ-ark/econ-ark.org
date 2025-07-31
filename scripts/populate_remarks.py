@@ -60,7 +60,7 @@ if __name__ == '__main__':
                     body = f.read()
                     remark_data.update(mdata)
             else:
-                print(f"WARNING: {name} has CITATION.cff but no REMARK.md file")
+                print(f"WARNING: {name} has CITATION.cff but no REMARK.md file - using empty content for body")
 
             with open(repo_root / '_materials' / f'{name}.md', 'w') as f:
                 f.write('---\n')
