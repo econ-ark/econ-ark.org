@@ -117,12 +117,7 @@ jobs:
           TOTAL_COUNT=$((TOTAL_COUNT + 1))
           
           # Extract repository URL
-          REPO_URL=$(python -c "
-import yaml
-with open('$project_file', 'r') as f:
-    data = yaml.safe_load(f)
-    print(data.get('remote', ''))
-")
+          REPO_URL=$(python -c "import yaml; f = open('$project_file', 'r'); data = yaml.safe_load(f); print(data.get('remote', '')); f.close()")
           
           if [ -z "$REPO_URL" ]; then
             echo "⚠️  No remote URL in $(basename $project_file)"
@@ -194,12 +189,7 @@ with open('$project_file', 'r') as f:
         
         # Test research taxonomy
         if [ -f "_data/research_taxonomy.yml" ]; then
-          python -c "
-import yaml
-with open('_data/research_taxonomy.yml', 'r') as f:
-    taxonomy = yaml.safe_load(f)
-    print(f'✅ Research taxonomy loaded: {len(taxonomy.get(\"domains\", []))} domains')
-"
+          python -c "import yaml; f = open('_data/research_taxonomy.yml', 'r'); taxonomy = yaml.safe_load(f); print(f'✅ Research taxonomy loaded: {len(taxonomy.get(\"domains\", []))} domains'); f.close()"
         else
           echo "⚠️  Research taxonomy missing"
         fi
