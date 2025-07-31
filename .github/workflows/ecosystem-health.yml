@@ -1,4 +1,5 @@
 name: Ecosystem Health Check
+# This workflow monitors the health of the Econ-ARK ecosystem
 
 on:
   schedule:
