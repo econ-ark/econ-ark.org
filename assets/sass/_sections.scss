@@ -103,16 +103,76 @@ $journey-contrib:  #2e7d32;  /* dev green */
 .finplan { @include journey-accent($journey-finplan); }
 .contrib { @include journey-accent($journey-contrib); }
 
-/* responsive tweak: stack image above text on narrow screens */
+/* responsive: mobile optimization */
 @media (max-width: 640px) {
+  #journeys {
+    padding: 2rem 0;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .section-sub {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .journey-grid {
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+  
   .journey-card { 
     flex-direction: column; 
   }
+  
   .journey-card img { 
     width: 100%; 
-    height: 200px; 
+    height: 180px;
+    object-position: center top;
   }
+  
   .journey-content { 
-    text-align: center; 
+    text-align: center;
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .journey-content .journey-header {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .journey-content h3 {
+    font-size: 1.1rem;
+    margin: 0.25rem 0 0.75rem;
+  }
+  
+  .journey-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+  
+  .journey-content .btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+    width: auto;
+    min-width: 140px;
+  }
+}
+
+/* Small mobile devices (≤390px) adjustments */
+@media (max-width: 390px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .journey-content {
+    padding: 1.25rem 1rem;
+  }
+  
+  .journey-card img {
+    height: 160px;
   }
 } 
