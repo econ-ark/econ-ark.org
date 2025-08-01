@@ -1,4 +1,5 @@
 name: Ecosystem Health Check
+# This workflow monitors the health of the Econ-ARK ecosystem
 
 on:
   schedule:
@@ -22,7 +23,7 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VERSION }}
         
@@ -116,12 +117,7 @@ jobs:
           TOTAL_COUNT=$((TOTAL_COUNT + 1))
           
           # Extract repository URL
-          REPO_URL=$(python -c "
-          import yaml
-          with open('$project_file', 'r') as f:
-            data = yaml.safe_load(f)
-            print(data.get('remote', ''))
-          ")
+          REPO_URL=$(python -c "import yaml; f = open('$project_file', 'r'); data = yaml.safe_load(f); print(data.get('remote', '')); f.close()")
           
           if [ -z "$REPO_URL" ]; then
             echo "⚠️  No remote URL in $(basename $project_file)"
@@ -148,8 +144,9 @@ jobs:
       run: |
         echo "Testing website functionality..."
         
-        # Start Jekyll server in background
-        bundle exec jekyll serve --detach --port 4000
+        # Start Jekyll server in background - force detachment
+        nohup bundle exec jekyll serve --detach --port 4000 --host 0.0.0.0 --no-watch > jekyll.log 2>&1 &
+        JEKYLL_PID=$!
         
         # Wait for server to start
         sleep 10
@@ -177,6 +174,9 @@ jobs:
         
         echo "✅ Website functionality tests passed"
         
+        # Kill the Jekyll server
+        kill $JEKYLL_PID || pkill -f jekyll || true
+        
     - name: Test structured data
       run: |
         echo "Testing structured data generation..."
@@ -193,12 +193,7 @@ jobs:
         
         # Test research taxonomy
         if [ -f "_data/research_taxonomy.yml" ]; then
-          python -c "
-          import yaml
-          with open('_data/research_taxonomy.yml', 'r') as f:
-            taxonomy = yaml.safe_load(f)
-            print(f'✅ Research taxonomy loaded: {len(taxonomy.get(\"domains\", []))} domains')
-          "
+          python -c "import yaml; f = open('_data/research_taxonomy.yml', 'r'); taxonomy = yaml.safe_load(f); print(f'✅ Research taxonomy loaded: {len(taxonomy.get(\"domains\", []))} domains'); f.close()"
         else
           echo "⚠️  Research taxonomy missing"
         fi
@@ -268,7 +263,7 @@ jobs:
         
     - name: Upload health report
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ecosystem-health-report
         path: health-report.md
