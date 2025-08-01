@@ -162,7 +162,7 @@ $journey-contrib:  #2e7d32;  /* dev green */
   }
 }
 
-/* iPhone-specific adjustments */
+/* Small mobile devices (≤390px) adjustments */
 @media (max-width: 390px) {
   .section-title {
     font-size: 1.5rem;
