@@ -837,8 +837,44 @@
             color: #39b54a !important;
         }
         
+        /* Tailwind responsive overrides for mobile */
+        @media (max-width: 1024px) {
+            /* Force grid columns to stack on tablets and below */
+            .grid-cols-12 > .col-span-5,
+            .grid-cols-12 > .col-span-7,
+            .grid-cols-12 > .col-span-3,
+            .grid-cols-12 > .col-span-9 {
+                grid-column: span 12 !important;
+            }
+            
+            /* Fix the lg:grid-cols-3 to stack */
+            .lg\\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .lg\\:col-span-2 {
+                grid-column: span 1 !important;
+            }
+        }
+        
         /* Mobile responsive styles */
         @media (max-width: 768px) {
+            /* Container width fixes */
+            .container,
+            .max-w-7xl,
+            .max-w-6xl,
+            .max-w-5xl,
+            .max-w-4xl {
+                max-width: 100% !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            /* Remove horizontal scrolling */
+            body {
+                overflow-x: hidden !important;
+            }
+            
             /* Header adjustments */
             .header .container {
                 padding: 0.5rem 1rem;
@@ -911,13 +947,35 @@
             
             /* Grid adjustments */
             .grid {
-                gap: 1rem;
+                gap: 1rem !important;
             }
             
-            .col-span-12,
-            .col-span-9,
-            .col-span-3 {
-                grid-column: span 12;
+            /* Force ALL grid items to full width on mobile */
+            [class*="col-span-"] {
+                grid-column: span 12 !important;
+            }
+            
+            /* Fix specific Tailwind grid classes */
+            .md\\:grid-cols-2,
+            .md\\:grid-cols-3,
+            .grid-cols-2,
+            .grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Image panel in roadmap section */
+            .journey-image-panel {
+                display: none !important; /* Hide decorative images on mobile */
+            }
+            
+            /* Wealth group grid */
+            .wealth-group {
+                margin-bottom: 1rem;
+            }
+            
+            /* Fix padding for nested grids */
+            .grid .grid {
+                gap: 0.5rem !important;
             }
             
             /* Solver tabs */
@@ -965,12 +1023,52 @@
             /* Tables */
             table {
                 font-size: 0.85rem;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
             }
             
             /* List items */
             ul li, ol li {
                 font-size: 0.95rem;
                 margin-bottom: 0.5rem;
+            }
+            
+            /* Fix flex layouts */
+            .flex {
+                flex-wrap: wrap !important;
+            }
+            
+            .flex > * {
+                min-width: 0; /* Prevent flex items from overflowing */
+            }
+            
+            /* Specific fixes for wealth group sections */
+            .wealth-group-details {
+                display: none; /* Hide detailed lists on mobile */
+            }
+            
+            /* Fix any absolutely positioned elements */
+            [class*="absolute"],
+            [class*="fixed"] {
+                position: relative !important;
+            }
+            
+            /* Ensure images don't overflow */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* Fix padding on all sections */
+            section {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            section > * {
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
         }
         
