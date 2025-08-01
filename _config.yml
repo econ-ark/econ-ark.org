@@ -19,7 +19,7 @@ google_analytics: UA-118130489-1
 baseurl:
 
 sass:
-  sass_dir: /assets/sass
+  sass_dir: assets/sass
   style: :compressed
 
 repository:
