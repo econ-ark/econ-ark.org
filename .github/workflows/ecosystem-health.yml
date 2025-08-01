@@ -173,6 +173,9 @@ jobs:
         
         echo "✅ Website functionality tests passed"
         
+        # Kill the Jekyll server
+        pkill -f jekyll || true
+        
     - name: Test structured data
       run: |
         echo "Testing structured data generation..."
