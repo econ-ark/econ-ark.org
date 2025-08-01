@@ -144,8 +144,8 @@ jobs:
       run: |
         echo "Testing website functionality..."
         
-        # Start Jekyll server in background
-        bundle exec jekyll serve --detach --port 4000
+        # Start Jekyll server in background - bind to all interfaces
+        bundle exec jekyll serve --detach --port 4000 --host 0.0.0.0 --no-watch
         
         # Wait for server to start
         sleep 10
