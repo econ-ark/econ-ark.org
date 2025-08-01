@@ -1,0 +1,8 @@
+_site
+.DS_Store
+really-simple*.gem
+Gemfile.lock
+vendor
+.bundle
+.specstory
+.cursorindexingignore
