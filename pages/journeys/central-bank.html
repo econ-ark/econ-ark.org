@@ -837,6 +837,11 @@
             color: #39b54a !important;
         }
         
+        /* Hide mobile navigation by default */
+        .mobile-nav-dropdown {
+            display: none;
+        }
+        
         /* Tailwind responsive overrides for mobile */
         @media (max-width: 1024px) {
             /* Force grid columns to stack on tablets and below */
@@ -1015,9 +1020,16 @@
                 max-height: 300px !important;
             }
             
-            /* Sidebar navigation */
+            /* Sidebar navigation - the actual sidebar element */
+            .sidebar,
+            nav.sidebar,
             .sidebar-nav {
-                display: none;
+                display: none !important;
+            }
+            
+            /* Adjust main content to full width when sidebar is hidden */
+            main.col-span-9 {
+                grid-column: span 12 !important;
             }
             
             /* Tables */
@@ -1069,6 +1081,24 @@
             section > * {
                 padding-left: 1rem;
                 padding-right: 1rem;
+            }
+            
+            /* Mobile navigation dropdown */
+            .mobile-nav-dropdown {
+                display: block !important;
+                background: #f8f9fa;
+                border: 1px solid #e2e8f0;
+                border-radius: 0.5rem;
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .mobile-nav-dropdown select {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #e2e8f0;
+                border-radius: 0.25rem;
+                font-size: 1rem;
             }
         }
         
