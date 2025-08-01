@@ -151,22 +151,22 @@ jobs:
         sleep 10
         
         # Test key endpoints
-        curl -f http://localhost:4000/ || {
+        curl -f http://127.0.0.1:4000/ || {
           echo "❌ Homepage not accessible"
           exit 1
         }
         
-        curl -f http://localhost:4000/materials/ || {
+        curl -f http://127.0.0.1:4000/materials/ || {
           echo "❌ Materials page not accessible"
           exit 1
         }
         
-        curl -f http://localhost:4000/sitemap.xml || {
+        curl -f http://127.0.0.1:4000/sitemap.xml || {
           echo "❌ Sitemap not accessible"
           exit 1
         }
         
-        curl -f http://localhost:4000/feed.xml || {
+        curl -f http://127.0.0.1:4000/feed.xml || {
           echo "❌ RSS feed not accessible"
           exit 1
         }
