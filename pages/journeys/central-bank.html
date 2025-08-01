@@ -836,6 +836,176 @@
         i.text-emerald-600 {
             color: #39b54a !important;
         }
+        
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            /* Header adjustments */
+            .header .container {
+                padding: 0.5rem 1rem;
+            }
+            
+            .navigation {
+                display: none;
+            }
+            
+            .toggle-nav {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 1.5rem;
+                color: #fff;
+                cursor: pointer;
+            }
+            
+            /* Hero section mobile */
+            .hero-hank {
+                padding: 2rem 1rem;
+            }
+            
+            .hero-hank h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-hank p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Main content padding */
+            main.col-span-9 > section {
+                padding: 2rem 1rem;
+            }
+            
+            /* Typography adjustments */
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+            
+            h4 {
+                font-size: 1.1rem;
+            }
+            
+            /* Cards and boxes */
+            .bg-white.rounded-lg {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            /* Buttons */
+            .btn-pill {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 0.75rem;
+            }
+            
+            /* Grid adjustments */
+            .grid {
+                gap: 1rem;
+            }
+            
+            .col-span-12,
+            .col-span-9,
+            .col-span-3 {
+                grid-column: span 12;
+            }
+            
+            /* Solver tabs */
+            .solver-tabs {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .solver-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                flex: 1;
+                text-align: center;
+                min-width: auto;
+            }
+            
+            /* Dashboard cards */
+            .insights-card {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .insights-card h4 {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            /* Code blocks */
+            pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+                overflow-x: auto;
+            }
+            
+            /* Charts */
+            canvas {
+                max-height: 300px !important;
+            }
+            
+            /* Sidebar navigation */
+            .sidebar-nav {
+                display: none;
+            }
+            
+            /* Tables */
+            table {
+                font-size: 0.85rem;
+            }
+            
+            /* List items */
+            ul li, ol li {
+                font-size: 0.95rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        /* iPhone specific adjustments */
+        @media (max-width: 390px) {
+            .hero-hank h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-hank p {
+                font-size: 0.9rem;
+            }
+            
+            main.col-span-9 > section {
+                padding: 1.5rem 0.75rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            h3 {
+                font-size: 1.1rem;
+            }
+            
+            .btn-pill {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .solver-tab {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
