@@ -327,11 +327,11 @@ def generate_bibtex(material_data):
         f"{a.get('name', '')}" for a in material_data.get('author', [])
     ])
     
-    bibtex = f"""@misc{{{material_data.get('name', '').lower()},
-    title={{{material_data.get('name', '')}}},
-    author={{{authors}}},
-    year={{{material_data.get('datePublished', '')[:4]}}},
-    url={{{material_data.get('codeRepository', '')}}},
+    bibtex = f"""@misc{% raw %}{{{material_data.get('name', '').lower()},
+    title={% raw %}{{{material_data.get('name', '')}}}{% endraw %},
+    author={% raw %}{{{authors}}}{% endraw %},
+    year={% raw %}{{{material_data.get('datePublished', '')[:4]}}}{% endraw %},
+    url={% raw %}{{{material_data.get('codeRepository', '')}}}{% endraw %},
     note={{Computational Economics Research Archive}}
 }}"""
     return bibtex
