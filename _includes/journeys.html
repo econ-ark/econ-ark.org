@@ -17,6 +17,20 @@
   .journey-card.journey-accent i {
       color: #7d6e86;
   }
+  
+  /* Mobile touch-friendly improvements */
+  @media (max-width: 640px) {
+    .journey-card {
+      transition: transform 0.2s ease;
+    }
+    .journey-card:active {
+      transform: scale(0.98);
+    }
+    .journey-content .btn {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+  }
 </style>
 
 <section id="journeys" class="journeys">

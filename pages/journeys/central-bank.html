@@ -606,6 +606,25 @@
             display: block;
         }
         
+        /* Dashboard tabs styling */
+        .tab {
+            position: relative;
+            transition: all 0.2s ease;
+            color: #6b7280; /* Gray color for inactive tabs */
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .tab:hover {
+            color: #1f476b; /* Darker blue on hover */
+            background-color: rgba(31, 71, 107, 0.05);
+        }
+        .tab.active {
+            color: #1f476b; /* Dark blue for active tab */
+            border-bottom-color: #1f476b;
+            font-weight: 600;
+        }
+        
         /* Hover effect for wealth group details */
         .wealth-group {
             position: relative;
@@ -817,6 +836,304 @@
         i.text-emerald-600 {
             color: #39b54a !important;
         }
+        
+        /* Hide mobile navigation by default */
+        .mobile-nav-dropdown {
+            display: none;
+        }
+        
+        /* Tailwind responsive overrides for mobile */
+        @media (max-width: 1024px) {
+            /* Force grid columns to stack on tablets and below */
+            .grid-cols-12 > .col-span-5,
+            .grid-cols-12 > .col-span-7,
+            .grid-cols-12 > .col-span-3,
+            .grid-cols-12 > .col-span-9 {
+                grid-column: span 12 !important;
+            }
+            
+            /* Fix the lg:grid-cols-3 to stack */
+            .lg\\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .lg\\:col-span-2 {
+                grid-column: span 1 !important;
+            }
+        }
+        
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            /* Container width fixes */
+            .container,
+            .max-w-7xl,
+            .max-w-6xl,
+            .max-w-5xl,
+            .max-w-4xl {
+                max-width: 100% !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            /* Remove horizontal scrolling */
+            body {
+                overflow-x: hidden !important;
+            }
+            
+            /* Header adjustments */
+            .header .container {
+                padding: 0.5rem 1rem;
+            }
+            
+            .navigation {
+                display: none;
+            }
+            
+            .toggle-nav {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 1.5rem;
+                color: #fff;
+                cursor: pointer;
+            }
+            
+            /* Hero section mobile */
+            .hero-hank {
+                padding: 2rem 1rem;
+            }
+            
+            .hero-hank h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-hank p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Main content padding */
+            main.col-span-9 > section {
+                padding: 2rem 1rem;
+            }
+            
+            /* Typography adjustments */
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+            
+            h4 {
+                font-size: 1.1rem;
+            }
+            
+            /* Cards and boxes */
+            .bg-white.rounded-lg {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            /* Buttons */
+            .btn-pill {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 0.75rem;
+            }
+            
+            /* Grid adjustments */
+            .grid {
+                gap: 1rem !important;
+            }
+            
+            /* Force ALL grid items to full width on mobile */
+            [class*="col-span-"] {
+                grid-column: span 12 !important;
+            }
+            
+            /* Fix specific Tailwind grid classes */
+            .md\\:grid-cols-2,
+            .md\\:grid-cols-3,
+            .grid-cols-2,
+            .grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Image panel in roadmap section */
+            .journey-image-panel {
+                display: none !important; /* Hide decorative images on mobile */
+            }
+            
+            /* Wealth group grid */
+            .wealth-group {
+                margin-bottom: 1rem;
+            }
+            
+            /* Fix padding for nested grids */
+            .grid .grid {
+                gap: 0.5rem !important;
+            }
+            
+            /* Solver tabs */
+            .solver-tabs {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .solver-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                flex: 1;
+                text-align: center;
+                min-width: auto;
+            }
+            
+            /* Dashboard cards */
+            .insights-card {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .insights-card h4 {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            /* Code blocks */
+            pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+                overflow-x: auto;
+            }
+            
+            /* Charts */
+            canvas {
+                max-height: 300px !important;
+            }
+            
+            /* Sidebar navigation - the actual sidebar element */
+            .sidebar,
+            nav.sidebar,
+            .sidebar-nav {
+                display: none !important;
+            }
+            
+            /* Adjust main content to full width when sidebar is hidden */
+            main.col-span-9 {
+                grid-column: span 12 !important;
+            }
+            
+            /* Tables */
+            table {
+                font-size: 0.85rem;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            /* List items */
+            ul li, ol li {
+                font-size: 0.95rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* Fix flex layouts */
+            .flex {
+                flex-wrap: wrap !important;
+            }
+            
+            .flex > * {
+                min-width: 0; /* Prevent flex items from overflowing */
+            }
+            
+            /* Specific fixes for wealth group sections */
+            .wealth-group-details {
+                display: none; /* Hide detailed lists on mobile */
+            }
+            
+            /* Fix any absolutely positioned elements */
+            [class*="absolute"],
+            [class*="fixed"] {
+                position: relative !important;
+            }
+            
+            /* Ensure images don't overflow */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* Fix padding on all sections */
+            section {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            section > * {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Mobile navigation dropdown */
+            .mobile-nav-dropdown {
+                display: block !important;
+                background: #f8f9fa;
+                border: 1px solid #e2e8f0;
+                border-radius: 0.5rem;
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .mobile-nav-dropdown select {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #e2e8f0;
+                border-radius: 0.25rem;
+                font-size: 1rem;
+            }
+        }
+        
+        /* iPhone specific adjustments */
+        @media (max-width: 390px) {
+            .hero-hank h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-hank p {
+                font-size: 0.9rem;
+            }
+            
+            main.col-span-9 > section {
+                padding: 1.5rem 0.75rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            h3 {
+                font-size: 1.1rem;
+            }
+            
+            .btn-pill {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .solver-tab {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -845,7 +1162,7 @@
                     <a href="#overview" class="block px-4 py-2 text-sm font-medium">Overview</a>
                     <a href="#bewley-basics" class="block px-4 py-2 text-sm font-medium">Why Heterogeneity Matters</a>
                     <a href="#interactive-dashboards" class="block px-4 py-2 text-sm font-medium">Interactive Dashboards</a>
-                    <a href="#building-bewley" class="block px-4 py-2 text-sm font-medium">Build with Econ-ARK and learning path</a>
+                    <a href="#building-bewley" class="block px-4 py-2 text-sm font-medium">Central Banker Learning Path</a>
                     <a href="#further-resources" class="block px-4 py-2 text-sm font-medium">Further Resources</a>
                 </div>
             </nav>
@@ -899,7 +1216,7 @@
                                         </li>
                                         <li class="flex items-center">
                                             <i class="fas fa-code fa-fw mr-3" style="color: var(--ark-orange);"></i>
-                                            <a href="#building-bewley" class="text-slate-600 hover:underline">Build with Econ-ARK and Learning Path</a>
+                                            <a href="#building-bewley" class="text-slate-600 hover:underline">Central Banker Learning Path</a>
                                         </li>
                                         <li class="flex items-center">
                                             <i class="fas fa-book-open fa-fw mr-3" style="color: var(--ark-green);"></i>
@@ -1280,10 +1597,13 @@
                         <!-- Content will be loaded from markdown -->
                     </div>
                     
-                    <!-- Tabs - Only Pandemic Dashboard -->
+                    <!-- Dashboard Tabs -->
                     <div class="border-b border-gray-200">
                         <nav class="flex space-x-8">
-                            <button class="tab px-4 py-2 font-medium border-b-2 border-transparent active" data-tab="pandemic-modeling">
+                            <button class="tab px-4 py-2 font-medium border-b-2 border-transparent active" data-tab="fiscal-hank">
+                                Fiscal Policy with HANK
+                            </button>
+                            <button class="tab px-4 py-2 font-medium border-b-2 border-transparent" data-tab="pandemic-modeling">
                                 Pandemic Policy Response
                             </button>
                         </nav>
@@ -1294,7 +1614,7 @@
 
                     
                     <!-- Dashboard 1: Pandemic Policy Response -->
-                    <div id="pandemic-modeling" class="dashboard">
+                    <div id="pandemic-modeling" class="dashboard" style="display: none;">
                         <div class="grid grid-cols-2 gap-8">
                             <!-- Charts Column -->
                             <div class="space-y-8">
@@ -1357,7 +1677,7 @@
                                     <div class="text-center mt-6">
                                         <a href="https://mriduls.github.io/pandemic-voici/voici/render/dashboard.html" 
                                            target="_blank"
-                                           class="btn-pill text-white hover:bg-opacity-90"
+                                           class="btn-pill text-white hover:bg-opacity-90 inline-flex items-center justify-center"
                                            style="background-color: var(--econ-ark-blue); border-color: var(--econ-ark-blue);">
                                             Full Interactive Dashboard
                                             <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -1369,13 +1689,85 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Dashboard 2: Fiscal Policy with HANK -->
+                    <div id="fiscal-hank" class="dashboard">
+                        <div class="max-w-4xl mx-auto">
+                            <!-- Model Description -->
+                            <div class="bg-sky-50 border border-sky-200 rounded-lg p-6 mb-8">
+                                <h4 class="font-semibold text-sky-900 mb-3 text-lg">Fiscal Policy in a HANK Model with Search Frictions</h4>
+                                <p class="text-sm text-sky-800 text-justify mb-4">
+                                    This dashboard explores fiscal multipliers in a Heterogeneous Agent New Keynesian (HANK) model with Search and Matching frictions. To capture the distributional effects of fiscal policy, the model features households with heterogeneous preferences facing idiosyncratic income risk, unemployment dynamics, and endogenous job creation.
+                                </p>
+                                <p class="text-sm text-sky-800 text-justify">
+                                    <strong>Key insight:</strong> UI extensions typically generate the highest multipliers due to targeting unemployed households with high marginal propensities to consume.
+                                </p>
+                            </div>
+                            
+                            <!-- Key Features -->
+                            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                <div class="bg-slate-50 rounded-lg p-4">
+                                    <i class="fas fa-users text-2xl text-sky-600 mb-2"></i>
+                                    <h4 class="font-semibold text-slate-800">Heterogeneous Agents</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Captures distributional effects across wealth and employment status</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-4">
+                                    <i class="fas fa-briefcase text-2xl text-emerald-600 mb-2"></i>
+                                    <h4 class="font-semibold text-slate-800">Search & Matching</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Endogenous job creation and unemployment dynamics</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-4">
+                                    <i class="fas fa-chart-bar text-2xl text-orange-600 mb-2"></i>
+                                    <h4 class="font-semibold text-slate-800">Policy Multipliers</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Compare effectiveness of UI, transfers, and government spending</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Links Section -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <!-- Dashboard Link -->
+                                <div class="text-center">
+                                    <a href="https://hafiscal.econ-ark.org/" 
+                                       target="_blank"
+                                       class="btn-pill text-white hover:bg-opacity-90 inline-flex items-center justify-center"
+                                       style="background-color: var(--econ-ark-blue); border-color: var(--econ-ark-blue);">
+                                        Full Interactive Dashboard
+                                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                
+                                <!-- GitHub Repository Link -->
+                                <div class="text-center">
+                                    <a href="https://github.com/econ-ark/HAFiscal" 
+                                       target="_blank"
+                                       class="btn-pill text-slate-700 bg-white border-2 hover:bg-slate-50 inline-flex items-center justify-center"
+                                       style="border-color: var(--econ-ark-gunmetal);">
+                                        <i class="fab fa-github mr-2"></i>
+                                        View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <!-- Section: Building with Econ-ARK -->
+                <!-- Section: Central Banker Learning Path -->
                 <section id="building-bewley" class="space-y-8 py-8 fade-in-section">
-                    <h2 class="section-title text-3xl font-bold tracking-tight">Build with Econ-ARK and learning path</h2>
+                    <h2 class="section-title text-3xl font-bold tracking-tight">Central Banker Learning Path</h2>
                     <p class="text-slate-600 max-w-3xl mx-auto text-justify">
-                        Econ-ARK streamlines the workflow for building Bewley models: define agent optimization problems, compute the steady state, then use sequence-space Jacobians to analyze policy transmission. The code below shows how to go from model specification to quantitative policy analysis in a single script.                    </p>
+                        The notebooks below are ordered in a "bottom up" fashion to show you what HARK can do as quickly as possible. It begins with an introduction to the absolute basics of HARK's core framework for representing populations of heterogeneous agents, the <code>AgentType</code> superclass, including our workhorse example <code>IndShockConsumerType</code>; the second notebook on the path provides details of that model and its implementation in HARK.
+                    </p>
+                    <p class="text-slate-600 max-w-3xl mx-auto text-justify mt-4">
+                        Next, we explain how information about the agent's problem (parameters, etc) is structured conditional on which <code>AgentType</code> subclass is used, with a focus on how HARK's flexible time structure allows for both finite and infinite horizon problems. The fourth notebook on this path offers a tutorial on how to generate simulated data after solving an <code>AgentType</code> instance's problem.
+                    </p>
+                    <p class="text-slate-600 max-w-3xl mx-auto text-justify mt-4">
+                        The last three notebooks give instruction on the "sequence-space Jacobian method" for computing impulse responses to so-called MIT shocks in heterogeneous agents macroeconomic models. The first of these gives and overview of the method itself, including the computational motivation and the mathematics that the method uses. We then provide a tutorial on HARK's syntax for constructing HA-SSJs for (almost) all <code>AgentType</code> subclasses. Finally, we put it all together and show how those HA-SSJs can be used with the <code>sequence_jacobian</code> toolkit to specify a macroeconomic framework in which the microeconomic agents live, and compute impulse responses to unexpected macroeconomic shocks.
+                    </p>
+                    <p class="text-slate-600 max-w-3xl mx-auto text-justify mt-4">
+                        If you are an ambitious (or impatient!) reader, feel free to jump ahead to the final notebook and "start at the end" to get to the most macroeconomically substantive material first. You can then work backward through the notebooks to learn more about what was happening in each layer.
+                    </p>
 
                     <!-- Stylised code snippet -->
                     <div class="relative max-w-5xl mx-auto">
@@ -1403,12 +1795,9 @@
                     <!-- Step-by-Step Notebooks subsection -->
                     <div class="mt-16">
                         <h3 class="text-2xl font-bold tracking-tight text-slate-800 mb-4">Step-by-Step Learning Path</h3>
-                        <p class="text-slate-600 max-w-3xl mx-auto text-justify mb-8">
-                            Master HANK modeling through our comprehensive notebook series. Each notebook builds on the previous one, taking you from basic concepts to advanced policy analysis with sequence-space Jacobians.
-                        </p>
                     
                     <div class="grid gap-6 max-w-5xl mx-auto">
-                        <!-- Step 1: Perfect Foresight Consumer -->
+                        <!-- Step 1: Gentle Intro to HARK -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
@@ -1418,17 +1807,17 @@
                                 </div>
                                 <div class="flex-grow">
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://docs.econ-ark.org/examples/ConsIndShockModel/PerfForesightConsumerType.html" 
+                                        <a href="https://docs.econ-ark.org/examples/Gentle-Intro/Gentle-Intro-To-HARK.html" 
                                            class="hover:text-sky-600 transition-colors" target="_blank">
-                                            Perfect Foresight Consumption-Saving Model
+                                            Gentle Introduction to HARK
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">A simple consumption-saving model with no income uncertainty. This notebook introduces the baseline HARK consumer (`PerfForesightConsumerType`) who faces deterministic income and solves for a closed-form linear consumption function under CRRA preferences. It serves as the building block for adding income risk in more complex models.</p>
+                                    <p class="text-slate-600 mb-3">The entry point for the HARK package, providing syntax and basic examples of its fundamental <code>AgentType</code> representation.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 2: Buffer-Stock Saving with Idiosyncratic Risk -->
+                        <!-- Step 2: IndShockConsumerType -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
@@ -1440,15 +1829,15 @@
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
                                         <a href="https://docs.econ-ark.org/examples/ConsIndShockModel/IndShockConsumerType.html" 
                                            class="hover:text-emerald-600 transition-colors" target="_blank">
-                                            Consumption-Saving with Idiosyncratic Income Shocks (Buffer-Stock Model)
+                                            IndShockConsumerType Documentation
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">This notebook extends the consumer model to include idiosyncratic income uncertainty (`IndShockConsumerType`).</p>
+                                    <p class="text-slate-600 mb-3">Documentation for the workhorse <code>IndShockConsumerType</code> model of consumption-saving under permanent and transitory income risk, which is used by the notebooks to follow.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 3: Solving the Incomplete Markets Model (Technical) -->
+                        <!-- Step 3: Cycles Tutorial -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
@@ -1458,17 +1847,17 @@
                                 </div>
                                 <div class="flex-grow">
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://docs.econ-ark.org/examples/HowWeSolveIndShockConsumerType/HowWeSolveIndShockConsumerType.html" 
+                                        <a href="https://docs.econ-ark.org/examples/LifecycleModel/Cycles_tutorial.html" 
                                            class="hover:text-orange-600 transition-colors" target="_blank">
-                                            How HARK Solves the Incomplete Markets Model
+                                            Cycles Tutorial
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">A technical walkthrough of HARK's solution algorithm for the heterogeneous agent consumption-saving problem. </p>
+                                    <p class="text-slate-600 mb-3">An explanation for how problem data is structured for <code>AgentType</code> instances, and how to use HARK's flexible timing structure.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 4: Transition Matrix for Distribution Dynamics -->
+                        <!-- Step 4: Simulation Introduction -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
@@ -1478,17 +1867,17 @@
                                 </div>
                                 <div class="flex-grow">
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/Transition_Matrix_Example.html" 
+                                        <a href="https://docs.econ-ark.org/examples/Gentle-Intro/Simulation-Intro.html" 
                                            class="hover:text-purple-600 transition-colors" target="_blank">
-                                            Transition Matrix and Steady-State Distribution
+                                            Simulation Introduction
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">This notebook demonstrates how to use HARK to construct the transition matrix for an economy of heterogeneous consumers.</p>
+                                    <p class="text-slate-600 mb-3">Detailed documentation and examples for how simulation works for our <code>AgentType</code> subclasses, including both the legacy system and a new model-file based system.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 5: Computing Heterogeneous-Agent Jacobians -->
+                        <!-- Step 5: SSJ Explanation -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
@@ -1498,17 +1887,17 @@
                                 </div>
                                 <div class="flex-grow">
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/Jacobian_Example.html" 
+                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/SSJ_explanation.html" 
                                            class="hover:text-pink-600 transition-colors" target="_blank">
-                                            Computing Jacobians for Heterogeneous Agent Models
+                                            SSJ Explanation
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">In this notebook, we compute <strong>sequence-space Jacobians</strong> for a heterogeneous agent model.</p>
+                                    <p class="text-slate-600 mb-3">An overview of the mathematics of the sequence-space Jacobian method.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 6: Sequence-Space Jacobian Method (Theory) -->
+                        <!-- Step 6: SSJ Tutorial -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
@@ -1518,17 +1907,17 @@
                                 </div>
                                 <div class="flex-grow">
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
-                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/SSJ_explanation.html" 
+                                        <a href="https://docs.econ-ark.org/examples/SequenceSpaceJacobians/SSJ-tutorial.html" 
                                            class="hover:text-sky-600 transition-colors" target="_blank">
-                                            Sequence-Space Jacobian Method Explained
+                                            SSJ Tutorial
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">This notebook provides a conceptual overview of the sequence-space Jacobian (SSJ) approach for generating general equilibrium responses to aggregate shocks.</p>
+                                    <p class="text-slate-600 mb-3">A tutorial for the syntax and scope of HARK's HA-SSJ constructor tool.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 7: HANK Model with Fiscal Policy (HARK + SSJ) -->
+                        <!-- Step 7: HANK Fiscal Example -->
                         <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
                             <div class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
@@ -1540,10 +1929,10 @@
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">
                                         <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/HANKFiscal_example.html" 
                                            class="hover:text-red-600 transition-colors" target="_blank">
-                                            Solving a HANK Model – Fiscal Policy Experiment
+                                            HANK Fiscal Example
                                         </a>
                                     </h3>
-                                    <p class="text-slate-600 mb-3">Combines HARK and the SSJ toolkit to analyze simple fiscal policy in a full Heterogeneous Agent New Keynesian (HANK) model.</p>
+                                    <p class="text-slate-600 mb-3">An example application that combines HA-SSJs constructed from a HARK <code>AgentType</code> instance with the <code>sequence_jacobian</code> toolkit to compute impulse response functions to an unexpected macroeconomic shock. Includes a discussion of how the inclusion of heterogeneous agents in a new Keynesian model (HANK) matters substantively for the predictions of a macroeconomic model, relative to a traditional representative agent (RANK) or two-agent framework (TANK).</p>
                                 </div>
                             </div>
                         </div>
@@ -2042,6 +2431,34 @@
                     updateChart();
                 },
 
+                initDashboards() {
+                    // Initialize tab functionality
+                    const tabs = document.querySelectorAll('.tab');
+                    const dashboards = document.querySelectorAll('.dashboard');
+                    
+                    tabs.forEach(tab => {
+                        tab.addEventListener('click', () => {
+                            // Remove active class from all tabs
+                            tabs.forEach(t => t.classList.remove('active'));
+                            // Add active class to clicked tab
+                            tab.classList.add('active');
+                            
+                            // Hide all dashboards
+                            dashboards.forEach(d => d.style.display = 'none');
+                            
+                            // Show the selected dashboard
+                            const targetId = tab.getAttribute('data-tab');
+                            const targetDashboard = document.getElementById(targetId);
+                            if (targetDashboard) {
+                                targetDashboard.style.display = 'block';
+                            }
+                        });
+                    });
+                    
+                    // Initialize the pandemic modeling dashboard
+                    this.initPandemicModeling();
+                },
+
                 initPandemicModeling() {
                     // Initialize pandemic dashboard with three key charts
                     this.initUnemploymentChart();
@@ -2087,6 +2504,7 @@
                                 y: { 
                                     grid: { color: 'rgba(44, 64, 83, 0.1)', drawBorder: false },
                                     beginAtZero: true, 
+                                    min: 0,
                                     max: 20, 
                                     title: { display: true, text: 'Unemployment Rate (%)' } 
                                 }
@@ -2160,6 +2578,8 @@
                                 x: { grid: { display: false } },
                                 y: {
                                     grid: { color: 'rgba(44, 64, 83, 0.1)', drawBorder: false },
+                                    min: 2.0,
+                                    max: 3.2,
                                     title: {
                                         display: true,
                                         text: 'Aggregate Consumption (Trillion $)'
@@ -2215,6 +2635,8 @@
                                 y: {
                                     grid: { color: 'rgba(44, 64, 83, 0.1)', drawBorder: false },
                                     beginAtZero: true,
+                                    min: 0,
+                                    max: 100,
                                     title: {
                                         display: true,
                                         text: 'Consumption Response (%)'
