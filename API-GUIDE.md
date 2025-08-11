@@ -46,7 +46,6 @@ curl -H "Accept: application/ld+json" \
 **Format**: HTML with embedded structured data for all projects
 
 **Programmatic Access**:
-{% raw %}
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -60,7 +59,6 @@ soup = BeautifulSoup(response.content, 'html.parser')
 scripts = soup.find_all('script', type='application/ld+json')
 projects = [json.loads(script.string) for script in scripts]
 ```
-{% endraw %}
 
 ### 2. Data Files API
 
@@ -70,7 +68,6 @@ projects = [json.loads(script.string) for script in scripts]
 **Content**: Structured topic hierarchy, keywords, methodologies
 
 **Usage Example**:
-{% raw %}
 ```python
 import requests
 import yaml
@@ -85,7 +82,6 @@ for domain in taxonomy['domains']:
     for subdomain in domain['subdomains']:
         print(f"  - {subdomain['name']}: {subdomain['concepts']}")
 ```
-{% endraw %}
 
 #### Site Configuration
 **URL**: `https://econ-ark.org/_config.yml`
@@ -100,7 +96,6 @@ for domain in taxonomy['domains']:
 **Content**: Recent site updates and new materials
 
 **Consumption**:
-{% raw %}
 ```python
 import feedparser
 
@@ -108,7 +103,6 @@ feed = feedparser.parse('https://econ-ark.org/feed.xml')
 for entry in feed.entries:
     print(f"{entry.title}: {entry.published}")
 ```
-{% endraw %}
 
 #### Sitemap
 **URL**: `/sitemap.xml`
@@ -131,7 +125,6 @@ for entry in feed.entries:
 ```
 
 **Programmatic Interface**:
-{% raw %}
 ```javascript
 // Access search functionality
 const materials = window.materialsData; // Embedded JSON data
@@ -140,12 +133,11 @@ const filtered = materials.filter(m =>
   m.keywords.some(k => k.includes('consumption'))
 );
 ```
-{% endraw %}
 
 ## Data Extraction Patterns
 
 ### 1. Comprehensive Catalog Scraping
-{% raw %}
+
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -196,10 +188,9 @@ scraper = EconArkScraper()
 all_materials = scraper.get_all_materials()
 taxonomy = scraper.get_taxonomy()
 ```
-{% endraw %}
 
 ### 2. Repository Integration
-{% raw %}
+
 ```python
 import git
 from pathlib import Path
@@ -250,10 +241,9 @@ class EconArkIntegrator:
                     
         return repos
 ```
-{% endraw %}
 
 ### 3. Content Analysis and Mining
-{% raw %}
+
 ```python
 import nltk
 from collections import Counter
@@ -325,12 +315,11 @@ class EconArkAnalyzer:
         df = pd.DataFrame(data)
         return df.groupby(['date', 'keyword']).size().unstack(fill_value=0)
 ```
-{% endraw %}
 
 ## Integration Examples
 
 ### 1. Bibliography Generator
-{% raw %}
+
 ```python
 def generate_bibtex(material_data):
     """Generate BibTeX entry from material metadata"""
@@ -338,19 +327,18 @@ def generate_bibtex(material_data):
         f"{a.get('name', '')}" for a in material_data.get('author', [])
     ])
     
-    bibtex = f"""@misc{{{material_data.get('name', '').lower()}},
-    title={{{material_data.get('name', '')}}},
-    author={{{authors}}},
-    year={{{material_data.get('datePublished', '')[:4]}}},
-    url={{{material_data.get('codeRepository', '')}}},
+    bibtex = f"""@misc{% raw %}{{{material_data.get('name', '').lower()},
+    title={% raw %}{{{material_data.get('name', '')}}}{% endraw %},
+    author={% raw %}{{{authors}}}{% endraw %},
+    year={% raw %}{{{material_data.get('datePublished', '')[:4]}}}{% endraw %},
+    url={% raw %}{{{material_data.get('codeRepository', '')}}}{% endraw %},
     note={{Computational Economics Research Archive}}
 }}"""
     return bibtex
 ```
-{% endraw %}
 
 ### 2. Research Discovery Tool
-{% raw %}
+
 ```python
 def find_related_research(query_keywords, materials_data, threshold=0.3):
     """Find materials related to query keywords"""
@@ -380,10 +368,9 @@ def find_related_research(query_keywords, materials_data, threshold=0.3):
     relevant_indices = [i for i, sim in enumerate(similarities) if sim > threshold]
     return [(materials_data[i], similarities[i]) for i in relevant_indices]
 ```
-{% endraw %}
 
 ### 3. Educational Content Aggregator
-{% raw %}
+
 ```python
 def create_learning_path(topic, materials_data):
     """Create ordered learning path for specific topic"""
@@ -416,7 +403,6 @@ def create_learning_path(topic, materials_data):
         'complexity': complexity_score(material)
     } for material in topic_materials]
 ```
-{% endraw %}
 
 ## Rate Limiting and Best Practices
 
@@ -427,7 +413,6 @@ def create_learning_path(topic, materials_data):
 - **Error Handling**: Implement exponential backoff for failed requests
 
 ### Example Implementation
-{% raw %}
 ```python
 import time
 import requests
@@ -458,7 +443,6 @@ def fetch_material(material_name):
     )
     return response
 ```
-{% endraw %}
 
 ## Support and Contributing
 
