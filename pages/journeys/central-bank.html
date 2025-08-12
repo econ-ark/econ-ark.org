@@ -272,15 +272,25 @@
         .tab {
             transition: all 0.2s ease;
             cursor: pointer;
+            color: var(--econ-ark-body-text);
+            border-bottom-color: transparent;
+            background-color: transparent;
+            border-radius: 0.25rem 0.25rem 0 0;
         }
         
         .tab.active {
             background-color: var(--econ-ark-blue);
-            color: var(--econ-ark-white);
+            color: var(--econ-ark-white) !important;
+            border-bottom-color: var(--econ-ark-blue) !important;
+        }
+        
+        .tab:not(.active) {
+            border-bottom-color: transparent;
         }
         
         .tab:not(.active):hover {
-            background-color: var(--econ-ark-light-gray);
+            color: var(--econ-ark-blue);
+            border-bottom-color: var(--econ-ark-blue);
         }
         
         /* Cards */
@@ -419,21 +429,7 @@
             color: #fff !important;
         }
         
-        /* Pill button styles from brand guide */
-        .btn-pill {
-            border-radius: 9999px;
-            padding: 0.75rem 1.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            transition: all 0.2s ease;
-            border: 2px solid;
-        }
-        .btn-pill:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
+        /* Removed btn-pill class - using inline styles instead */
 
         /* Hero section styles from the brand guide */
         .hero-hank {
@@ -1431,23 +1427,23 @@
                                                 <g stroke="rgba(37, 99, 235, 0.4)" stroke-width="0.75" stroke-linejoin="round">
                                                     <!-- Curve 1 (farthest back) -->
                                                     <g transform="translate(32, 0)">
-                                                        <path d="M5 65 Q 20 65, 28 45 T 44 25 Q 52 15, 60 20 T 76 35 Q 84 45, 92 55 T 108 65 L 5 65 Z" fill="rgba(96,165,250,0.3)"/>
+                                                        <path d="M5 65 Q 20 65, 28 45 T 44 25 Q 52 15, 60 20 T 76 35 Q 84 45, 92 55 L 108 65 L 5 65 Z" fill="rgba(96,165,250,0.3)"/>
                                                     </g>
                                                     <!-- Curve 2 -->
                                                     <g transform="translate(24, 4)">
-                                                        <path d="M8 65 Q 24 65, 34 48 T 50 28 Q 58 18, 66 22 T 82 37 Q 90 47, 100 57 T 112 65 L 8 65 Z" fill="rgba(96,165,250,0.4)"/>
+                                                        <path d="M8 65 Q 24 65, 34 48 T 50 28 Q 58 18, 66 22 T 82 37 Q 90 47, 100 57 L 112 65 L 8 65 Z" fill="rgba(96,165,250,0.4)"/>
                                                     </g>
                                                     <!-- Curve 3 -->
                                                     <g transform="translate(16, 8)">
-                                                        <path d="M12 65 Q 28 65, 38 50 T 54 30 Q 62 20, 70 25 T 86 40 Q 94 50, 105 60 T 115 65 L 12 65 Z" fill="rgba(96,165,250,0.5)"/>
+                                                        <path d="M12 65 Q 28 65, 38 50 T 54 30 Q 62 20, 70 25 T 86 40 Q 94 50, 105 60 L 115 65 L 12 65 Z" fill="rgba(96,165,250,0.5)"/>
                                                     </g>
                                                     <!-- Curve 4 -->
                                                     <g transform="translate(8, 12)">
-                                                        <path d="M16 65 Q 32 65, 42 52 T 58 32 Q 66 22, 74 27 T 90 42 Q 98 52, 110 61 T 118 65 L 16 65 Z" fill="rgba(96,165,250,0.6)"/>
+                                                        <path d="M16 65 Q 32 65, 42 52 T 58 32 Q 66 22, 74 27 T 90 42 Q 98 52, 110 61 L 118 65 L 16 65 Z" fill="rgba(96,165,250,0.6)"/>
                                                     </g>
                                                     <!-- Curve 5 (front-most) -->
                                                     <g transform="translate(0, 16)">
-                                                        <path d="M20 65 Q 36 65, 44 54 T 60 34 Q 68 24, 76 29 T 92 44 Q 100 54, 113 62 T 120 65 L 20 65 Z" fill="rgba(96,165,250,0.7)"/>
+                                                        <path d="M20 65 Q 36 65, 44 54 T 60 34 Q 68 24, 76 29 T 92 44 Q 100 54, 113 62 L 120 65 L 20 65 Z" fill="rgba(96,165,250,0.7)"/>
                                                     </g>
                                                 </g>
                                             </svg>
@@ -1488,7 +1484,7 @@
                                                 </marker>
                                             </defs>
                                             <!-- Text label "Prices" -->
-                                            <text x="350" y="40" text-anchor="middle" font-size="10" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" class="text-xs font-medium">Prices & Interest Rates</text>
+                                            <text x="375" y="40" text-anchor="middle" font-size="10" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" class="text-xs font-medium">Prices & Interest Rates</text>
                                             <!-- Path from Markets (center ~630) down and back to Households (center ~120) -->
                                             <path d="M 630 10 L 630 55 L 120 55 L 120 10" 
                                                   stroke="#334155" 
@@ -1600,10 +1596,10 @@
                     <!-- Dashboard Tabs -->
                     <div class="border-b border-gray-200">
                         <nav class="flex space-x-8">
-                            <button class="tab px-4 py-2 font-medium border-b-2 border-transparent active" data-tab="fiscal-hank">
+                            <button class="tab px-4 py-2 font-medium border-b-2 active" data-tab="fiscal-hank">
                                 Fiscal Policy with HANK
                             </button>
-                            <button class="tab px-4 py-2 font-medium border-b-2 border-transparent" data-tab="pandemic-modeling">
+                            <button class="tab px-4 py-2 font-medium border-b-2" data-tab="pandemic-modeling">
                                 Pandemic Policy Response
                             </button>
                         </nav>
@@ -1677,13 +1673,7 @@
                                     <div class="text-center mt-6">
                                         <a href="https://mriduls.github.io/pandemic-voici/voici/render/dashboard.html" 
                                            target="_blank"
-                                           class="btn-pill text-white hover:bg-opacity-90 inline-flex items-center justify-center"
-                                           style="background-color: var(--econ-ark-blue); border-color: var(--econ-ark-blue);">
-                                            Full Interactive Dashboard
-                                            <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </a>
+                                           style="background: #1f476b; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-block;">Full Interactive Dashboard →</a>
                                     </div>
                                 </div>
                             </div>
@@ -1729,24 +1719,14 @@
                                 <div class="text-center">
                                     <a href="https://hafiscal.econ-ark.org/" 
                                        target="_blank"
-                                       class="btn-pill text-white hover:bg-opacity-90 inline-flex items-center justify-center"
-                                       style="background-color: var(--econ-ark-blue); border-color: var(--econ-ark-blue);">
-                                        Full Interactive Dashboard
-                                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </a>
+                                       style="background: #1f476b; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-block;">Full Interactive Dashboard →</a>
                                 </div>
                                 
                                 <!-- GitHub Repository Link -->
                                 <div class="text-center">
                                     <a href="https://github.com/econ-ark/HAFiscal" 
                                        target="_blank"
-                                       class="btn-pill text-slate-700 bg-white border-2 hover:bg-slate-50 inline-flex items-center justify-center"
-                                       style="border-color: var(--econ-ark-gunmetal);">
-                                        <i class="fab fa-github mr-2"></i>
-                                        View on GitHub
-                                    </a>
+                                       style="background: #1f476b; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-block;"><i class="fab fa-github" style="margin-right: 8px;"></i>View on GitHub →</a>
                                 </div>
                             </div>
                         </div>
