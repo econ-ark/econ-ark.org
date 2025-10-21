@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+{{ content }}
+
+
+<div class="team-listing row  gx-4">
+	{% assign team-members = site.team | sort:"order" %}
+
+	{% for team-member in team-members %}
+
+	<div class="col-lg-6"> 
+		<div class="d-flex align-items-start px-5 py-3">
+			<div class="pic"><img src="{{ team-member.image }}" alt="Avatar for {{ team-member.name }}"></div>
+			<div class="member-info p-3">
+				<h2 class="member-name">{{ team-member.name }}</h2>
+				<p class="role"><strong>{% if team-member.role %}{{ team-member.role }}{% endif %}</strong></p>
+				{% if team-member.website or team-member.github %}
+				<p>
+					{% if team-member.github %}<i class="fa-brands fa-github"></i> <a href="{{ team-member.github }}">GitHub</a> {% endif %} &nbsp;
+					{% if team-member.website %}<i class="fa-solid fa-link"></i> <a href="{{ team-member.website }}">Website</a> {% endif %}
+				</p>
+				{% endif %}
+				<div>{{ team-member.content }}</div>
+			</div>
+		</div>
+	</div>
+
+	{% endfor %}
+
+</div>
