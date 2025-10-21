@@ -40,6 +40,8 @@ if __name__ == '__main__':
         path_parent = path.relative_to(repo_root).parent
         with open(path) as f:
             metadata, f = parse_yaml_header(f)
+            if metadata is None:
+                continue
             metadata.setdefault('redirect_from', [])
             metadata['redirect_from'] += [
                 f'/{path_parent / path.with_name(n).stem}'
