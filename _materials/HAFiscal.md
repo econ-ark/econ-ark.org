@@ -13,7 +13,7 @@ authors:
   given-names: Hakon
 cff-version: 1.2.0
 dashboards:
-- HAFiscal-dashboard.ipynb
+- dashboard/app.ipynb
 doi: 10.5281/zenodo.17861977
 github_repo_url: https://github.com/econ-ark/HAFiscal
 keywords:
@@ -23,7 +23,7 @@ keywords:
 - Welfare
 message: If you use this software, please cite it using the metadata from this file.
 notebooks:
-- HAFiscal-dashboard.ipynb
+- HAFiscal-HANK-and-SAM.ipynb
 remark-name: HAFiscal
 repository-code: https://github.com/econ-ark/HAFiscal
 tags:
