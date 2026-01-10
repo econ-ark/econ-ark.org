@@ -12,6 +12,8 @@ authors:
 - family-names: Tretvoll
   given-names: Hakon
 cff-version: 1.2.0
+dashboards:
+- HAFiscal-dashboard.ipynb
 doi: 10.5281/zenodo.17861977
 github_repo_url: https://github.com/econ-ark/HAFiscal
 keywords:
