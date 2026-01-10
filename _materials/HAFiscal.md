@@ -23,7 +23,7 @@ keywords:
 - Welfare
 message: If you use this software, please cite it using the metadata from this file.
 notebooks:
-- HAFiscal-HANK-and-SAM.ipynb
+- HANK-and-SAM-tutorial.ipynb
 remark-name: HAFiscal
 repository-code: https://github.com/econ-ark/HAFiscal
 tags:
