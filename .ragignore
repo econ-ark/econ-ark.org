@@ -180,3 +180,33 @@ careful_processing:
     import_threshold: 0.8
     skip_generated: true
     skip_templates: false
+
+# Additional patterns based on HARK repository analysis
+ignore_patterns:
+  # Test files (major noise reduction)
+  - "*/tests/"
+  - "test_*.py"
+  - "*_test.py"
+
+  # GitHub/CI files
+  - ".github/"
+  - ".pre-commit-config.yaml"
+
+  # Large calibration data
+  - "*/Calibration/*/life_tables/"
+  - "*/Calibration/*/SCF/"
+  - "*/Calibration/*/cpi/"
+  - "large_data/"
+  - "calibration_data/"
+
+  # Documentation build
+  - "Makefile"
+  - "make.bat"
+  - "conf.py"
+
+# Enhanced notebook processing
+careful_processing:
+  large_notebooks:
+    patterns: ["*.ipynb"]
+    max_size_mb: 2
+    strip_outputs: true
