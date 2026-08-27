@@ -1,0 +1,36 @@
+name: Preprocessing to build website
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - name: set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11.x'
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml==6.0.0
+      - name: copy REMARK metadata
+        run: python scripts/populate_remarks.py
+      - name: case insensitive redirects
+        run: python scripts/caseinsensitive_redirects.py
+      - name: update gh-pages branch
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+          git checkout --orphan gh-pages
+          git add .
+          git commit -m "autopull REMARKs $(date)"
+          git push --force origin gh-pages

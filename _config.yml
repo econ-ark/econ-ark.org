@@ -1,0 +1,60 @@
+title: Econ-ARK
+url: https://econ-ark.org/
+author: Econ-ARK
+keywords: computational economics, reproducible research, economic modeling, heterogeneous agents, dynamic programming, macroeconomics, consumption theory, portfolio choice, wealth distribution, Python, Jupyter notebooks, HARK, buffer stock theory, life cycle models
+description: 'Structural modeling of economic choices of heterogeneous agents - Open source toolkit for computational economics research with reproducible, interactive models and analysis'
+logo: /assets/img/econ-ark-logo.png
+social:
+  name: Econ-ARK
+  links:
+    - https://github.com/econ-ark
+
+custom_launcher: false
+
+custom_launcher_domain: 'http://35.239.158.93/'
+
+timezone: America/New_York
+google_analytics: UA-118130489-1
+
+baseurl:
+
+sass:
+  sass_dir: assets/sass
+  style: :compressed
+
+repository:
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle
+
+collections:
+  materials:
+    output: true
+    permalink: /materials/:name/
+  team:
+
+defaults:
+  - scope:
+      path: ''
+      type: 'materials'
+    values:
+      layout: material
+      published: ''
+  - scope:
+      type: 'team'
+    values:
+      order: 99
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+whitelist:
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed

@@ -1,0 +1,2931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANK Journey for Central Banks - Econ-ARK</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Varela+Round&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/8281de4b75.js" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap CSS (matching main site) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Marked.js for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    
+    <style>
+        :root {
+            --econ-ark-gunmetal: #2c4053;
+            --econ-ark-blue: #1f476b;
+            --econ-ark-red: #c41230;
+            --econ-ark-orange: #f05a28;
+            --econ-ark-body-text: #495057;
+            --econ-ark-heading-text: #212529;
+            --econ-ark-light-gray: #f8f9fa;
+            --econ-ark-border-gray: #e9ecef;
+            --econ-ark-white: #ffffff;
+        }
+        
+        /* Typography - matching main site */
+        body { 
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            text-rendering: optimizeLegibility;
+            background-color: #f7fafb; 
+            color: #444;
+            font-size: 1rem;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .heading-font {
+            font-family: 'Roboto', sans-serif;
+            color: var(--econ-ark-heading-text);
+            margin: 0;
+            margin-bottom: 2em;
+        }
+        
+        .mono-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Link styles - matching main site */
+        a,
+        a:link,
+        body a {
+            color: var(--econ-ark-blue);
+            transition: all 0.2s linear;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid var(--econ-ark-blue);
+            padding-bottom: 0.1rem;
+        }
+        
+        a:hover {
+            color: var(--econ-ark-blue);
+            border-color: var(--econ-ark-blue);
+            text-decoration: none;
+        }
+        
+        /* Special link styles */
+        .sidebar a,
+        .header a,
+        .btn-pill,
+        .card a {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        /* Header - matching main site exactly */
+        .toggle-nav {
+            display: none;
+        }
+        
+        .header {
+            background: var(--econ-ark-blue);
+            color: #fff;
+            padding: 0.5rem 0;
+            margin: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header .site-logo {
+            margin: 0;
+        }
+        
+        .header .site-logo a {
+            border: 0 !important;
+            padding: 0;
+        }
+        
+        .header .site-logo img {
+            width: 150px;
+        }
+        
+        .header .navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        .header .navigation ul li {
+            margin: 0 0.3rem;
+        }
+        
+        .header .navigation ul li a {
+            display: block;
+            padding: 0.6rem 1.2rem;
+            font-weight: 400;
+            text-decoration: none;
+            font-size: 1.2rem;
+            line-height: 1;
+            outline: 0;
+            border-bottom: 2px solid transparent;
+            color: #fff;
+        }
+        
+        .header .navigation ul li a:hover {
+            border-bottom: 2px solid #fff;
+        }
+        
+        .header .navigation ul li.active a {
+            border-bottom: 2px solid #fff;
+        }
+        
+        /* Mobile navigation styles */
+        @media (max-width: 768px) {
+            .toggle-nav {
+                display: block;
+                color: #fff;
+                font-size: 1.5rem;
+                text-decoration: none;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+            
+            .header .navigation {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--econ-ark-blue);
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .header .navigation.show {
+                display: block;
+            }
+            
+            .header .navigation ul {
+                flex-direction: column;
+            }
+            
+            .header .navigation ul li {
+                margin: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .header .navigation ul li:last-child {
+                border-bottom: none;
+            }
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            z-index: 10;
+        }
+        
+        .sidebar a {
+            color: #898989;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            font-weight: 400;
+        }
+        
+        .sidebar a:hover,
+        .sidebar a.active {
+            color: var(--econ-ark-blue);
+            border-left-color: var(--econ-ark-blue);
+            background-color: var(--econ-ark-light-gray);
+        }
+        
+        /* Section styling */
+        .section-title {
+            color: var(--econ-ark-blue);
+            border-bottom: 2px solid var(--econ-ark-blue);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Interactive elements */
+        .flow-node {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .flow-node:hover {
+            transform: scale(1.05);
+            border-color: var(--econ-ark-blue);
+            box-shadow: 0 4px 20px rgba(31, 71, 107, 0.3);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .timeline-item {
+            transition: all 0.2s ease;
+        }
+        
+        .timeline-item:hover .timeline-dot,
+        .timeline-item.active .timeline-dot {
+            background-color: var(--econ-ark-blue);
+            border-color: var(--econ-ark-blue);
+            transform: translateX(-50%) scale(1.2);
+        }
+        
+        .timeline-item:hover,
+        .timeline-item.active {
+            color: var(--econ-ark-blue);
+        }
+        
+        .timeline-dot {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 0 var(--econ-ark-blue);
+        }
+        
+        .timeline-item:hover .timeline-dot,
+        .timeline-item.active .timeline-dot {
+            box-shadow: 0 0 0 4px rgba(31, 71, 107, 0.2);
+        }
+        
+        /* Tabs */
+        .tab {
+            transition: all 0.2s ease;
+            cursor: pointer;
+            color: var(--econ-ark-body-text);
+            border-bottom-color: transparent;
+            background-color: transparent;
+            border-radius: 0.25rem 0.25rem 0 0;
+        }
+        
+        .tab.active {
+            background-color: var(--econ-ark-blue);
+            color: var(--econ-ark-white) !important;
+            border-bottom-color: var(--econ-ark-blue) !important;
+        }
+        
+        .tab:not(.active) {
+            border-bottom-color: transparent;
+        }
+        
+        .tab:not(.active):hover {
+            color: var(--econ-ark-blue);
+            border-bottom-color: var(--econ-ark-blue);
+        }
+        
+        /* Cards */
+        .card {
+            transition: all 0.2s ease;
+            border: 1px solid var(--econ-ark-border-gray);
+        }
+        
+        .card:hover {
+            border-color: var(--econ-ark-blue);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover .card-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+        
+        .card-arrow {
+            opacity: 0;
+            transition: all 0.2s ease;
+            color: var(--econ-ark-blue);
+        }
+        
+        /* Footer - matching main site */
+        .footer {
+            padding: 5rem 0 4.5rem 0;
+            background-color: #1f476b0f;
+            margin: 4rem 0 0 0;
+            border-top: 1px solid var(--econ-ark-blue);
+        }
+        
+        .footer .sponsor a {
+            border: 0 !important;
+        }
+        
+        .footer .sponsor img {
+            max-width: 100%;
+        }
+        
+        /* Custom slider styling */
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: var(--econ-ark-border-gray);
+            outline: none;
+        }
+        
+        /* Section title styling */
+        .section-title { 
+            position: relative; 
+            padding-bottom: 0.75rem; 
+            margin-bottom: 2rem;
+            border-bottom: 3px solid currentColor;
+            color: #1e293b;
+        }
+
+
+        /* Markdown content styling */
+        .markdown-content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--econ-ark-heading-text);
+        }
+        
+        .markdown-content h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: var(--ark-lightblue);
+        }
+        
+        .markdown-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--ark-green);
+        }
+        
+        .markdown-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content li {
+            margin-bottom: 0.25rem;
+        }
+        
+        .markdown-content em {
+            font-style: italic;
+            color: var(--econ-ark-body-text);
+            font-size: 0.9rem;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--econ-ark-blue);
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--econ-ark-blue);
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Button/link styles from main site */
+        .link {
+            margin: 0;
+        }
+        
+        .link a,
+        a.button {
+            display: inline-block;
+            color: var(--econ-ark-blue);
+            text-decoration: none;
+            border: 2px solid var(--econ-ark-blue);
+            padding: 0.25rem 0.5rem;
+            font-weight: 500;
+        }
+        
+        .link a:hover,
+        a.button:hover {
+            background-color: var(--econ-ark-blue);
+            color: #fff !important;
+        }
+        
+        /* Removed btn-pill class - using inline styles instead */
+
+        /* Hero section styles from the brand guide */
+        .hero-hank {
+            background: linear-gradient(135deg, #1f476b 0%, #005b8f 100%); /* Softer, linear gradient */
+            color: #fff;
+            padding: 3rem 1.5rem; /* Reduced padding */
+        }
+        .btn-pill.primary {
+            background: #22d3ee; /* A bright cyan */
+            color: #0f172a; /* A dark blue for text */
+        }
+        .btn-pill.secondary {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        /* Enhanced fade-in on scroll animation with more prominent effect */
+        @media (prefers-reduced-motion: no-preference) {
+            .fade-in-section {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+                will-change: opacity, transform;
+            }
+
+            .fade-in-section.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* Staggered animations for subsections */
+            .fade-in-subsection {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                will-change: opacity, transform;
+            }
+            
+            .fade-in-subsection.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* Delay for sequential fade-ins */
+            .fade-in-subsection:nth-child(1) { transition-delay: 0.1s; }
+            .fade-in-subsection:nth-child(2) { transition-delay: 0.2s; }
+            .fade-in-subsection:nth-child(3) { transition-delay: 0.3s; }
+            .fade-in-subsection:nth-child(4) { transition-delay: 0.4s; }
+            .fade-in-subsection:nth-child(5) { transition-delay: 0.5s; }
+        }
+
+        /* Styles for the new insights graphic */
+        .insights-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+        .insights-card h4 {
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        .transmission-path {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        .transmission-path .icon {
+            color: #005b8f;
+            font-size: 1.25rem;
+            width: 30px;
+            text-align: center;
+        }
+        .transmission-path .arrow {
+            color: #94a3b8;
+            margin: 0 0.5rem;
+        }
+        .transmission-path .label {
+            color: #475569;
+        }
+
+        /* Animated channels cards */
+        .channels-diagram .grid > div {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        #bewley-basics.is-visible .channels-diagram .grid > div {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        #bewley-basics.is-visible .channels-diagram .grid > div:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+        #bewley-basics.is-visible .channels-diagram .grid > div:nth-child(2) {
+            transition-delay: 0.4s;
+        }
+
+        /* Styling for implications list loaded from markdown */
+        #implications-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--econ-ark-heading-text);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        #implications-content ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        #implications-content li {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--econ-ark-body-text);
+        }
+        #implications-content li i.fa-fw {
+            color: var(--econ-ark-blue);
+            margin-right: 0.5rem;
+        }
+
+        /* Enhanced section polishing with more spacing */
+        main.col-span-9 > section {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+        main.col-span-9 > section:nth-of-type(even) {
+            background-color: #fff;
+        }
+        
+        /* Remove top blank space above main title */
+        main.col-span-9 > section:first-child {
+            padding-top: 0;
+        }
+
+        /* Interactive Solver Component */
+        .solver-tabs {
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid var(--econ-ark-border-gray);
+            margin-bottom: 2rem;
+        }
+        .solver-tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--econ-ark-body-text);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+            margin-bottom: -2px; /* Overlap with container border */
+        }
+        .solver-tab:hover {
+            color: var(--econ-ark-blue);
+            background-color: var(--econ-ark-light-gray);
+        }
+        .solver-tab.active {
+            color: var(--econ-ark-blue);
+            border-bottom-color: var(--econ-ark-blue);
+        }
+        .solver-pane {
+            display: none;
+        }
+        .solver-pane.active {
+            display: block;
+        }
+        
+        /* Dashboard tabs styling */
+        .tab {
+            position: relative;
+            transition: all 0.2s ease;
+            color: #6b7280; /* Gray color for inactive tabs */
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .tab:hover {
+            color: #1f476b; /* Darker blue on hover */
+            background-color: rgba(31, 71, 107, 0.05);
+        }
+        .tab.active {
+            color: #1f476b; /* Dark blue for active tab */
+            border-bottom-color: #1f476b;
+            font-weight: 600;
+        }
+        
+        /* Hover effect for wealth group details */
+        .wealth-group {
+            position: relative;
+        }
+        
+        .wealth-group-details {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            background: white;
+            border: 1px solid #e0f2fe;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            margin-top: 0.5rem;
+            white-space: nowrap;
+        }
+        
+        .wealth-group:hover .wealth-group-details {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Timeline styling */
+        .timeline-item.active .timeline-dot {
+            background-color: #0284c7;
+            border-color: #0284c7;
+            transform: translateX(-50%) scale(1.5);
+        }
+        
+        .timeline-item.active {
+            transform: translateX(4px);
+        }
+        
+        .timeline-item.active .font-bold {
+            color: #0284c7;
+        }
+        
+        /* Details/Summary styling */
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        /* Typing cursor for code animation */
+        .type-cursor {
+            animation: blink 1s step-end infinite;
+            color: #38bdf8;
+            font-weight: bold;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        /* Code block animations */
+        @keyframes fadeInLine {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        .code-line {
+            opacity: 0;
+            animation: fadeInLine 0.5s ease-out forwards;
+        }
+        
+        .code-highlight {
+            position: relative;
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.1) 0%, rgba(56, 189, 248, 0) 100%);
+            animation: highlightSweep 0.8s ease-out;
+        }
+        
+        @keyframes highlightSweep {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        
+        /* Typing cursor effect */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #38bdf8;
+            font-weight: bold;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        details[open] summary {
+            color: #0284c7;
+        }
+        
+        details summary::before {
+            content: '\f0da';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 0.5rem;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        
+        /* Section-specific heading colors using Econ-ARK palette */
+        #bewley-basics .section-title,
+        #bewley-basics h2,
+        #bewley-basics h3 {
+            color: #00aeef !important;
+        }
+        
+        #interactive-dashboards .section-title,
+        #interactive-dashboards h2 {
+            color: #ed217c !important;
+        }
+        
+        #notebooks .section-title,
+        #notebooks h2,
+        #notebooks h3 {
+            color: #39b54a !important;
+        }
+        
+        #tools .section-title,
+        #tools h2 {
+            color: #ff8a00 !important;
+        }
+        
+        #replications .section-title,
+        #replications h2 {
+            color: #00aeef !important;
+        }
+        
+        #remarks .section-title,
+        #remarks h2 {
+            color: #ff8a00 !important;
+        }
+        
+        #building-bewley .section-title {
+            color: #ff8a00 !important;
+        }
+        
+        #building-bewley h3 {
+            color: #ff8a00 !important;
+        }
+        
+        /* Special styling for key subheadings */
+        h3.text-2xl.font-bold {
+            color: #39b54a !important;
+        }
+        
+        /* Timeline heading */
+        #timeline-content h4 {
+            color: #00aeef !important;
+        }
+        
+        /* Dashboard key results */
+        .font-bold[style*="color: var(--econ-ark-blue)"] {
+            color: var(--ark-lightblue) !important;
+        }
+        
+        .font-bold[style*="color: var(--econ-ark-orange)"] {
+            color: var(--journey-accent) !important;
+        }
+        
+        .font-bold[style*="color: var(--econ-ark-red)"] {
+            color: var(--ark-pink) !important;
+        }
+        
+        /* Icon colors to match */
+        .fas.text-sky-600,
+        i.text-sky-600 {
+            color: #00aeef !important;
+        }
+        
+        .fas.text-orange-500,
+        .fas.text-orange-600,
+        i.text-orange-500,
+        i.text-orange-600 {
+            color: #ff8a00 !important;
+        }
+        
+        .fas.text-emerald-600,
+        i.text-emerald-600 {
+            color: #39b54a !important;
+        }
+        
+        /* Hide mobile navigation by default */
+        .mobile-nav-dropdown {
+            display: none;
+        }
+        
+        /* Tailwind responsive overrides for mobile */
+        @media (max-width: 1024px) {
+            /* Force grid columns to stack on tablets and below */
+            .grid-cols-12 > .col-span-5,
+            .grid-cols-12 > .col-span-7,
+            .grid-cols-12 > .col-span-3,
+            .grid-cols-12 > .col-span-9 {
+                grid-column: span 12 !important;
+            }
+            
+            /* Fix the lg:grid-cols-3 to stack */
+            .lg\\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .lg\\:col-span-2 {
+                grid-column: span 1 !important;
+            }
+        }
+        
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            /* Container width fixes */
+            .container,
+            .max-w-7xl,
+            .max-w-6xl,
+            .max-w-5xl,
+            .max-w-4xl {
+                max-width: 100% !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            /* Remove horizontal scrolling */
+            body {
+                overflow-x: hidden !important;
+            }
+            
+            /* Header adjustments */
+            .header .container {
+                padding: 0.5rem 1rem;
+            }
+            
+            .navigation {
+                display: none;
+            }
+            
+            .toggle-nav {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 1.5rem;
+                color: #fff;
+                cursor: pointer;
+            }
+            
+            /* Hero section mobile */
+            .hero-hank {
+                padding: 2rem 1rem;
+            }
+            
+            .hero-hank h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-hank p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Main content padding */
+            main.col-span-9 > section {
+                padding: 2rem 1rem;
+            }
+            
+            /* Typography adjustments */
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+            
+            h4 {
+                font-size: 1.1rem;
+            }
+            
+            /* Cards and boxes */
+            .bg-white.rounded-lg {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            /* Buttons */
+            .btn-pill {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 0.75rem;
+            }
+            
+            /* Grid adjustments */
+            .grid {
+                gap: 1rem !important;
+            }
+            
+            /* Force ALL grid items to full width on mobile */
+            [class*="col-span-"] {
+                grid-column: span 12 !important;
+            }
+            
+            /* Fix specific Tailwind grid classes */
+            .md\\:grid-cols-2,
+            .md\\:grid-cols-3,
+            .grid-cols-2,
+            .grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Image panel in roadmap section */
+            .journey-image-panel {
+                display: none !important; /* Hide decorative images on mobile */
+            }
+            
+            /* Wealth group grid */
+            .wealth-group {
+                margin-bottom: 1rem;
+            }
+            
+            /* Fix padding for nested grids */
+            .grid .grid {
+                gap: 0.5rem !important;
+            }
+            
+            /* Solver tabs */
+            .solver-tabs {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .solver-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                flex: 1;
+                text-align: center;
+                min-width: auto;
+            }
+            
+            /* Dashboard cards */
+            .insights-card {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .insights-card h4 {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            /* Code blocks */
+            pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+                overflow-x: auto;
+            }
+            
+            /* Charts */
+            canvas {
+                max-height: 300px !important;
+            }
+            
+            /* Sidebar navigation - the actual sidebar element */
+            .sidebar,
+            nav.sidebar,
+            .sidebar-nav {
+                display: none !important;
+            }
+            
+            /* Adjust main content to full width when sidebar is hidden */
+            main.col-span-9 {
+                grid-column: span 12 !important;
+            }
+            
+            /* Tables */
+            table {
+                font-size: 0.85rem;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            /* List items */
+            ul li, ol li {
+                font-size: 0.95rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* Fix flex layouts */
+            .flex {
+                flex-wrap: wrap !important;
+            }
+            
+            .flex > * {
+                min-width: 0; /* Prevent flex items from overflowing */
+            }
+            
+            /* Specific fixes for wealth group sections */
+            .wealth-group-details {
+                display: none; /* Hide detailed lists on mobile */
+            }
+            
+            /* Fix any absolutely positioned elements */
+            [class*="absolute"],
+            [class*="fixed"] {
+                position: relative !important;
+            }
+            
+            /* Ensure images don't overflow */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* Fix padding on all sections */
+            section {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            section > * {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Mobile navigation dropdown */
+            .mobile-nav-dropdown {
+                display: block !important;
+                background: #f8f9fa;
+                border: 1px solid #e2e8f0;
+                border-radius: 0.5rem;
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .mobile-nav-dropdown select {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #e2e8f0;
+                border-radius: 0.25rem;
+                font-size: 1rem;
+            }
+        }
+        
+        /* iPhone specific adjustments */
+        @media (max-width: 390px) {
+            .hero-hank h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-hank p {
+                font-size: 0.9rem;
+            }
+            
+            main.col-span-9 > section {
+                padding: 1.5rem 0.75rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            h3 {
+                font-size: 1.1rem;
+            }
+            
+            .btn-pill {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .solver-tab {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="header">
+        <a title="Toggle navigation" id="toggleNav" class="toggle-nav"><i class="fas fa-bars"></i></a>
+        <div class="container">
+            <p class="site-logo"><a href="/"><img src="/assets/img/econ-ark-logo-white.png"></a></p>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/journeys/">Journeys</a></li>
+                    <li><a href="/materials/">Materials</a></li>
+                    <li><a href="/team">Team</a></li>
+                    <li><a href="https://docs.econ-ark.org">Docs</a></li>
+                    <li><a href="https://github.com/econ-ark">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 pt-2 pb-8" style="max-width: 1200px;">
+        <div class="grid grid-cols-12 gap-8">
+            <!-- Sidebar Navigation -->
+            <nav class="col-span-3 sidebar">
+                <div class="space-y-2">
+                    <a href="#overview" class="block px-4 py-2 text-sm font-medium">Overview</a>
+                    <a href="#bewley-basics" class="block px-4 py-2 text-sm font-medium">Why Heterogeneity Matters</a>
+                    <a href="#interactive-dashboards" class="block px-4 py-2 text-sm font-medium">Interactive Dashboards</a>
+                    <a href="#building-bewley" class="block px-4 py-2 text-sm font-medium">Central Banker Learning Path</a>
+                    <a href="#further-resources" class="block px-4 py-2 text-sm font-medium">Further Resources</a>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-span-9">
+                <!-- Section 2: Overview -->
+                <section id="overview" class="space-y-8 fade-in-section">
+                    <div class="max-w-4xl mb-12">
+                        <span class="text-sm font-semibold uppercase tracking-wider text-[#005B8F]">Econ-ARK Journey</span>
+                        <div id="overview-content" class="mt-4">
+                            <!-- Content will be loaded from markdown -->
+                        </div>
+                    </div>
+                    
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2">
+                            <div id="overview-main-text" class="space-y-4 text-lg text-slate-600">
+                                <!-- Main text will be loaded from markdown -->
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-[#F8FAFC] border border-slate-200 p-6 rounded-lg">
+                                <div id="bewley-model-content">
+                                    <!-- Bewley model content will be loaded from markdown -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 mt-8">
+                        <div class="bg-[#F8FAFC] border border-slate-200 rounded-lg overflow-hidden">
+                            <div class="grid grid-cols-12">
+                                <div class="col-span-5">
+                                    <img src="/assets/img/journeys/delphi1.jpg" 
+                                         alt="The Athenian Treasury at Delphi, an ancient Greek temple with Doric columns representing foundational economic models." 
+                                         class="journey-image-panel w-full" 
+                                         style="display: block; min-height: 200px; height: 100%; object-fit: cover; filter: saturate(0.5) contrast(1.1);">
+                                </div>
+                                <div class="col-span-7 p-6">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-4">Sections in the Roadmap</h3>
+                                    <ul class="list-none space-y-3">
+                                        <li class="flex items-center">
+                                            <i class="fas fa-sitemap fa-fw mr-3" style="color: var(--ark-lightblue);"></i>
+                                            <a href="#bewley-basics" class="text-slate-600 hover:underline">Why Heterogeneity Matters</a>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-tachometer-alt fa-fw mr-3" style="color: var(--ark-pink);"></i>
+                                            <a href="#interactive-dashboards" class="text-slate-600 hover:underline">Interactive Dashboards</a>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-code fa-fw mr-3" style="color: var(--ark-orange);"></i>
+                                            <a href="#building-bewley" class="text-slate-600 hover:underline">Central Banker Learning Path</a>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-book-open fa-fw mr-3" style="color: var(--ark-green);"></i>
+                                            <a href="#further-resources" class="text-slate-600 hover:underline">Further Resources</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Bewley Model Basics -->
+                <section id="bewley-basics" class="py-8 fade-in-section">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="section-title text-3xl font-bold tracking-tight text-slate-900" style="text-align: left;">Micro for Macro</h2>
+                        <div id="bewley-basics-intro" class="text-justify mt-8">
+                            <!-- Content will be loaded from markdown -->
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-8 mt-12">
+                        <!-- Channels Diagram -->
+                        <div class="channels-diagram fade-in-subsection">
+                            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                                <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 text-center flex flex-col">
+                                    <h4 class="font-bold text-slate-800 mb-4">Monetary Policy in a Representative-Agent Model</h4>
+                                    <div class="flex-grow flex flex-col items-center justify-center space-y-3">
+                                        <div class="text-4xl text-slate-600"><i class="fas fa-landmark"></i></div>
+                                        <div class="text-xl text-slate-400">&darr;</div>
+                                        <div class="font-mono text-sm bg-slate-200 px-2 py-1 rounded">Interest Rate &darr;</div>
+                                        <div class="text-xl text-slate-400">&darr;</div>
+                                        <div class="text-4xl text-slate-600"><i class="fas fa-user"></i></div>
+                                        <p class="mt-2 text-slate-600 font-semibold">Intertemporal Substitution</p>
+                                        <p class="text-xs text-slate-500">One agent saves more.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-sky-50 border border-sky-200 rounded-lg p-6 flex flex-col">
+                                    <h4 class="font-bold text-sky-800 mb-4 text-center">Monetary Policy in a simple Heterogeneous-Agent (HANK) Model</h4>
+                                    <div class="flex-grow flex flex-col items-center justify-center space-y-3">
+                                        <div class="text-4xl text-sky-600"><i class="fas fa-landmark"></i></div>
+                                        <div class="text-xl text-sky-400">&darr;</div>
+                                        <div class="font-mono text-sm bg-sky-200 px-2 py-1 rounded">Interest Rate &darr;</div>
+                                        <div class="text-xl text-sky-400">&darr;</div>
+                                        <div class="grid md:grid-cols-3 gap-4 w-full pt-4 items-stretch">
+                                            <div class="text-center flex flex-col wealth-group">
+                                                <div class="flex-grow">
+                                                    <div class="text-3xl text-sky-600"><i class="fas fa-user-clock"></i></div>
+                                                    <p class="mt-2 font-semibold text-sky-900">Low-Wealth</p>
+                                                    <p class="text-xs text-slate-500 mb-3">High MPC; respond to income</p>
+                                                </div>
+                                                <ul class="space-y-1 text-left text-xs text-sky-900 inline-block wealth-group-details">
+                                                    <li class="flex items-center"><i class="fas fa-briefcase w-4 text-center text-sky-500 mr-2"></i>Labour Income</li>
+                                                    <li class="flex items-center"><i class="fas fa-hand-holding-usd w-4 text-center text-sky-500 mr-2"></i>Cash-Flow</li>
+                                                </ul>
+                                            </div>
+                                            <div class="text-center flex flex-col wealth-group">
+                                                <div class="flex-grow">
+                                                    <div class="text-3xl text-sky-600"><i class="fas fa-user-shield"></i></div>
+                                                    <p class="mt-2 font-semibold text-sky-900">Middle-Wealth</p>
+                                                    <p class="text-xs text-slate-500 mb-3">Precautionary motive stifles response</p>
+                                                </div>
+                                                <ul class="space-y-1 text-left text-xs text-sky-900 inline-block wealth-group-details">
+                                                    <li class="flex items-center"><i class="fas fa-piggy-bank w-4 text-center text-sky-500 mr-2"></i>Buffer-Stock Savings</li>
+                                                </ul>
+                                            </div>
+                                            <div class="text-center flex flex-col wealth-group">
+                                                <div class="flex-grow">
+                                                    <div class="text-3xl text-sky-600"><i class="fas fa-user-plus"></i></div>
+                                                    <p class="mt-2 font-semibold text-sky-900">High-Wealth</p>
+                                                    <p class="text-xs text-slate-500 mb-3">Low MPC; respond to prices</p>
+                                                </div>
+                                                <ul class="space-y-1 text-left text-xs text-sky-900 inline-block wealth-group-details">
+                                                    <li class="flex items-center"><i class="fas fa-coins w-4 text-center text-sky-500 mr-2"></i>Interest Income</li>
+                                                    <li class="flex items-center"><i class="fas fa-chart-line w-4 text-center text-sky-500 mr-2"></i>Asset Prices</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="implications-content" class="mt-8 fade-in-subsection">
+                            <!-- Content will be loaded from markdown -->
+                        </div>
+                        <!-- Historical Perspective -->
+                        <div class="bg-slate-50 rounded-lg mt-8 fade-in-subsection" style="box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+                            <details>
+                                <summary class="cursor-pointer p-8 font-bold text-slate-800 hover:text-sky-700 transition-colors">
+                                    <i class="fas fa-history mr-3 text-sky-600"></i>Historical Perspective
+                                </summary>
+                                <div class="px-8 pb-8">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="relative bg-white rounded-lg p-6" style="box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+                                            <!-- Timeline Line -->
+                                            <div class="absolute left-8 top-10 bottom-10 w-0.5 bg-sky-200"></div>
+                                            <div class="space-y-8">
+                                                <div class="timeline-item relative flex items-start cursor-pointer hover:translate-x-1 transition-transform" data-year="1950s">
+                                                    <div class="timeline-dot absolute left-8 w-4 h-4 rounded-full bg-white border-2 border-sky-400 transform -translate-x-1/2 mt-0.5 hover:scale-125 transition-transform"></div>
+                                                    <div class="ml-14">
+                                                        <div class="font-bold text-slate-800">1950s</div>
+                                                        <div class="text-sm text-slate-600">Foundations: PIH & LCH</div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-item relative flex items-start cursor-pointer hover:translate-x-1 transition-transform" data-year="1977">
+                                                    <div class="timeline-dot absolute left-8 w-4 h-4 rounded-full bg-white border-2 border-sky-400 transform -translate-x-1/2 mt-0.5 hover:scale-125 transition-transform"></div>
+                                                    <div class="ml-14">
+                                                        <div class="font-bold text-slate-800">1977</div>
+                                                        <div class="text-sm text-slate-600">The Bewley Model</div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-item relative flex items-start cursor-pointer hover:translate-x-1 transition-transform" data-year="1989-1992">
+                                                    <div class="timeline-dot absolute left-8 w-4 h-4 rounded-full bg-white border-2 border-sky-400 transform -translate-x-1/2 mt-0.5 hover:scale-125 transition-transform"></div>
+                                                    <div class="ml-14">
+                                                        <div class="font-bold text-slate-800">1989-92</div>
+                                                        <div class="text-sm text-slate-600">First Quantitative Models</div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-item relative flex items-start cursor-pointer hover:translate-x-1 transition-transform" data-year="1994">
+                                                    <div class="timeline-dot absolute left-8 w-4 h-4 rounded-full bg-white border-2 border-sky-400 transform -translate-x-1/2 mt-0.5 hover:scale-125 transition-transform"></div>
+                                                    <div class="ml-14">
+                                                        <div class="font-bold text-slate-800">1994</div>
+                                                        <div class="text-sm text-slate-600">General Equilibrium</div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-item relative flex items-start cursor-pointer hover:translate-x-1 transition-transform" data-year="1998">
+                                                    <div class="timeline-dot absolute left-8 w-4 h-4 rounded-full bg-white border-2 border-sky-400 transform -translate-x-1/2 mt-0.5 hover:scale-125 transition-transform"></div>
+                                                    <div class="ml-14">
+                                                        <div class="font-bold text-slate-800">1998</div>
+                                                        <div class="text-sm text-slate-600">Krusell-Smith</div>
+                                                    </div>
+                                                </div>
+                                                <div class="timeline-item relative flex items-start cursor-pointer hover:translate-x-1 transition-transform" data-year="2010s">
+                                                    <div class="timeline-dot absolute left-8 w-4 h-4 rounded-full bg-white border-2 border-sky-400 transform -translate-x-1/2 mt-0.5 hover:scale-125 transition-transform"></div>
+                                                    <div class="ml-14">
+                                                        <div class="font-bold text-slate-800">2010s-Now</div>
+                                                        <div class="text-sm text-slate-600">Modern HANK</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-8 flex items-center" style="box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+                                            <div id="timeline-content" class="w-full">
+                                                <h4 class="font-bold mb-4 text-xl text-sky-700">Select a milestone to learn more</h4>
+                                                <p class="text-sm text-slate-600 leading-relaxed text-justify">Click on any year in the timeline to explore the key developments in heterogeneous agent modeling that led to today's powerful HANK frameworks.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Circular flow of income -->
+                    <div class="space-y-8 pt-8 fade-in-subsection">
+                        <h3 class="text-2xl font-bold tracking-tight text-slate-800">Computing Bewley Models</h3>
+                        
+                        <div id="computing-bewley-intro" class="text-slate-600 max-w-3xl mt-4 mx-auto text-justify">
+                            <!-- Content will be loaded from markdown -->
+                        </div>
+
+                                                    <!-- Circular Flow Diagram -->
+                            <div class="mt-16 mb-8 max-w-5xl mx-auto">
+                                <!-- Arrowhead definition -->
+                                <svg class="absolute w-0 h-0" aria-hidden="true">
+                                    <defs>
+                                        <marker id="arrowhead-flow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                                            <path d="M0 0L10 5L0 10Z" fill="#334155" />
+                                        </marker>
+                                    </defs>
+                                </svg>
+
+                                <!-- Main Flow with Feedback -->
+                                <div class="relative pb-16">
+                                    <div class="grid grid-cols-[1fr_auto_130px_auto_1fr_auto_1fr] items-center gap-x-2 gap-y-10">
+                                        <!-- Households -->
+                                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 text-center h-32 flex flex-col justify-center" id="households-box">
+                                            <div class="mb-2 h-12 flex flex-col justify-center items-center space-y-1">
+                                                <!-- Top row - 3 houses -->
+                                                <div class="flex justify-center items-baseline space-x-1">
+                                                    <i class="fas fa-home" style="color: #00aeef; font-size: 1.2rem;"></i>
+                                                    <i class="fas fa-home" style="color: #39b54a; font-size: 1.6rem;"></i>
+                                                    <i class="fas fa-home" style="color: #ed217c; font-size: 0.9rem;"></i>
+                                                </div>
+                                                <!-- Bottom row - 4 houses -->
+                                                <div class="flex justify-center items-baseline space-x-1">
+                                                    <i class="fas fa-home" style="color: #ff8a00; font-size: 1.1rem;"></i>
+                                                    <i class="fas fa-home" style="color: #00aeef; font-size: 1.4rem;"></i>
+                                                    <i class="fas fa-home" style="color: #ed217c; font-size: 1.0rem;"></i>
+                                                    <i class="fas fa-home" style="color: #39b54a; font-size: 1.3rem;"></i>
+                                                </div>
+                                            </div>
+                                            <h4 class="font-bold text-slate-800 mb-1">Households</h4>
+                                            <p class="text-xs text-slate-500">Optimize<br />consume &amp; save</p>
+                                        </div>
+
+                                        <!-- Arrow → -->
+                                        <svg class="w-14 h-6 mx-auto" viewBox="0 0 48 24" style="z-index: 10; position: relative;">
+                                            <line x1="4" y1="12" x2="44" y2="12" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead-flow)" />
+                                        </svg>
+
+                                        <!-- Distributions -->
+                                        <div class="flex flex-col items-center">
+                                            <svg width="130" height="80" viewBox="0 0 145 85" aria-hidden="true" class="mx-auto">
+                                                <!--
+                                                Recreating a 3D plot of distributions over time.
+                                                - Order: Drawn from back to front for correct occlusion.
+                                                - Styling: Filled with shades of blue, with a subtle stroke for definition.
+                                                - Paths: Each path is a different shape and closed to be fillable.
+                                                - Positioning: `translate` is used to create a 3D perspective effect.
+                                                -->
+                                                <g stroke="rgba(37, 99, 235, 0.4)" stroke-width="0.75" stroke-linejoin="round">
+                                                    <!-- Curve 1 (farthest back) -->
+                                                    <g transform="translate(32, 0)">
+                                                        <path d="M5 65 Q 20 65, 28 45 T 44 25 Q 52 15, 60 20 T 76 35 Q 84 45, 92 55 L 108 65 L 5 65 Z" fill="rgba(96,165,250,0.3)"/>
+                                                    </g>
+                                                    <!-- Curve 2 -->
+                                                    <g transform="translate(24, 4)">
+                                                        <path d="M8 65 Q 24 65, 34 48 T 50 28 Q 58 18, 66 22 T 82 37 Q 90 47, 100 57 L 112 65 L 8 65 Z" fill="rgba(96,165,250,0.4)"/>
+                                                    </g>
+                                                    <!-- Curve 3 -->
+                                                    <g transform="translate(16, 8)">
+                                                        <path d="M12 65 Q 28 65, 38 50 T 54 30 Q 62 20, 70 25 T 86 40 Q 94 50, 105 60 L 115 65 L 12 65 Z" fill="rgba(96,165,250,0.5)"/>
+                                                    </g>
+                                                    <!-- Curve 4 -->
+                                                    <g transform="translate(8, 12)">
+                                                        <path d="M16 65 Q 32 65, 42 52 T 58 32 Q 66 22, 74 27 T 90 42 Q 98 52, 110 61 L 118 65 L 16 65 Z" fill="rgba(96,165,250,0.6)"/>
+                                                    </g>
+                                                    <!-- Curve 5 (front-most) -->
+                                                    <g transform="translate(0, 16)">
+                                                        <path d="M20 65 Q 36 65, 44 54 T 60 34 Q 68 24, 76 29 T 92 44 Q 100 54, 113 62 L 120 65 L 20 65 Z" fill="rgba(96,165,250,0.7)"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <span class="text-xs text-slate-500 mt-1 font-medium text-center">Distributions over Time<br/>(savings, labour, etc.)</span>
+                                        </div>
+
+                                        <!-- Arrow → -->
+                                        <svg class="w-14 h-6 mx-auto" viewBox="0 0 48 24" style="z-index: 10; position: relative;">
+                                            <line x1="4" y1="12" x2="44" y2="12" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead-flow)" />
+                                        </svg>
+
+                                        <!-- Markets -->
+                                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 text-center h-32 flex flex-col justify-center" id="markets-box">
+                                            <div class="text-3xl text-orange-500 mb-2"><i class="fas fa-chart-line"></i></div>
+                                            <h4 class="font-bold text-slate-800 mb-1">Markets</h4>
+                                            <p class="text-xs text-slate-500">Aggregate<br />wages &amp; prices</p>
+                                        </div>
+
+                                        <!-- Arrow → -->
+                                        <svg class="w-14 h-6 mx-auto" viewBox="0 0 48 24" style="z-index: 10; position: relative;">
+                                            <line x1="4" y1="12" x2="44" y2="12" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead-flow)" />
+                                        </svg>
+
+                                        <!-- Firms -->
+                                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 text-center h-32 flex flex-col justify-center">
+                                            <div class="text-3xl text-emerald-600 mb-2"><i class="fas fa-industry"></i></div>
+                                            <h4 class="font-bold text-slate-800 mb-1">Firms</h4>
+                                            <p class="text-xs text-slate-500">Invest &amp; hire</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Feedback Arrow (Markets → Households) -->
+                                    <div class="absolute bottom-0 left-0 w-full" style="transform: translateY(10px);">
+                                        <svg class="w-full" height="80" viewBox="0 0 1000 80" preserveAspectRatio="none">
+                                            <defs>
+                                                <marker id="arrowhead-prices" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                                                    <path d="M0 0L10 5L0 10Z" fill="#334155" />
+                                                </marker>
+                                            </defs>
+                                            <!-- Text label "Prices" -->
+                                            <text x="375" y="40" text-anchor="middle" font-size="10" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" class="text-xs font-medium">Prices & Interest Rates</text>
+                                            <!-- Path from Markets (center ~630) down and back to Households (center ~120) -->
+                                            <path d="M 630 10 L 630 55 L 120 55 L 120 10" 
+                                                  stroke="#334155" 
+                                                  stroke-width="2" 
+                                                  fill="none"
+                                                  stroke-dasharray="4 4" 
+                                                  marker-end="url(#arrowhead-prices)" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <!-- Description of Econ-ARK tools -->
+                        <p class="text-justify text-slate-600 mt-12 max-w-3xl mx-auto">
+                            The goal of Econ-ARK is to provide cutting-edge, modular, open-source implementations of each component in this circular flow, from household optimization algorithms to aggregation and simulating general equilibrium solutions.
+                        </p>
+
+                        <!--
+                        <div id="interactive-solver" class="mt-8">
+                            <div class="solver-tabs">
+                                <div class="solver-tab active" data-tab="micro-problem">Dynamic Micro Problem</div>
+                                <div class="solver-tab" data-tab="micro-simulation">Micro Simulation & Estimation</div>
+                                <div class="solver-tab" data-tab="ge-solver">General Equilibrium</div>
+                            </div>
+
+                            <div class="mt-6">
+                                <div class="solver-pane active" id="micro-problem">
+                                    <p class="text-center text-sm text-slate-600 mb-6 italic">First, solve the household's dynamic optimization problem using one of Econ-ARK's or your own methods:</p>
+                                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                                            <i class="fas fa-arrow-right text-2xl text-sky-600 mb-3"></i>
+                                            <h4 class="font-bold">Endogenous Grid Method</h4>
+                                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">An efficient and accurate method for consumption problems that analytically inverts the Euler equation.</p>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                                            <i class="fas fa-chart-line text-2xl text-sky-600 mb-3"></i>
+                                            <h4 class="font-bold">Value Function Iteration</h4>
+                                            <p class="text-xs text-slate-500 mt-2 leading-relaxed"> Traditional general-purpose method for solving dynamic programming problems.</p>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                                            <i class="fas fa-cogs text-2xl text-sky-600 mb-3"></i>
+                                            <h4 class="font-bold">Coleman-Reffett Operator</h4>
+                                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Numerical solutions of the Euler equation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="solver-pane" id="micro-simulation">
+                                    <p class="text-center text-sm text-slate-600 mb-6 italic">Next, use the solved policy functions to simulate the decisions of a large population of households over time:</p>
+                                    <div class="grid md:grid-cols-1 gap-6 text-center">
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 max-w-md mx-auto">
+                                            <i class="fas fa-users-cog text-2xl text-orange-600 mb-3"></i>
+                                            <h4 class="font-bold">Simulate Distribution</h4>
+                                            <p class="text-xs text-slate-500 mt-2">Generate a time series of aggregate variables (C, S, L) from the microeconomic decisions.</p>
+                                        </div>
+                                    </div>
+                                    <hr class="my-8 border-slate-200">
+                                    <p class="text-center text-sm text-slate-600 mb-6 italic">The toolkit's speed unlocks modern estimation techniques, allowing models to be disciplined with rich micro-data:</p>
+                                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                                            <i class="fas fa-database text-2xl text-sky-600 mb-3"></i>
+                                            <h4 class="font-bold">Micro-data Calibration</h4>
+                                            <p class="text-xs text-slate-500 mt-2">Use moments from household surveys (e.g., HFCS, SCF) to calibrate model parameters.</p>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                                            <i class="fas fa-chart-pie text-2xl text-sky-600 mb-3"></i>
+                                            <h4 class="font-bold">Likelihood-Based Methods</h4>
+                                            <p class="text-xs text-slate-500 mt-2">Use SSJ for fast, formal estimation (SMM, MLE).</p>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                                            <i class="fas fa-file-invoice-dollar text-2xl text-sky-600 mb-3"></i>
+                                            <h4 class="font-bold">New Data Frontiers</h4>
+                                            <p class="text-xs text-slate-500 mt-2">Leverage high-frequency administrative data.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="solver-pane" id="ge-solver">
+                                    <p class="text-center text-sm text-slate-600 mb-6 italic">Finally, simulate the general equilibrium solution:</p>
+                                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                                            <i class="fas fa-bolt text-2xl text-sky-600 mb-3"></i>
+                                            <h4 class="font-bold">Sequence-Space Jacobian</h4>
+                                            <p class="text-xs text-slate-500 mt-2">A fast, linear solver for calculating impulse responses. <a href="https://github.com/econ-ark/SSJTOOLKIT" class="text-sky-600 hover:underline">[docs]</a></p>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                                            <i class="fas fa-project-diagram text-2xl text-sky-600 mb-3"></i>
+                                            <h4 class="font-bold">Krusell–Smith</h4>
+                                            <p class="text-xs text-slate-500 mt-2">A non-linear method that approximates the aggregate law of motion.</p>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                                            <i class="fas fa-cogs text-2xl text-sky-600 mb-3"></i>
+                                            <h4 class="font-bold">Direct Iteration</h4>
+                                            <p class="text-xs text-slate-500 mt-2">Fully non-linear benchmark methods.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </section>
+
+                <!-- Section 4: Interactive Dashboards -->
+                <section id="interactive-dashboards" class="space-y-8 py-8 fade-in-section">
+                    <h2 class="section-title text-3xl font-bold tracking-tight text-slate-900">Interactive Dashboards</h2>
+                    <div id="interactive-dashboards-intro" class="text-slate-600 mb-6 max-w-3xl text-justify">
+                        <!-- Content will be loaded from markdown -->
+                    </div>
+                    
+                    <!-- Dashboard Tabs -->
+                    <div class="border-b border-gray-200">
+                        <nav class="flex space-x-8">
+                            <button class="tab px-4 py-2 font-medium border-b-2 active" data-tab="fiscal-hank">
+                                Fiscal Policy with HANK
+                            </button>
+                            <button class="tab px-4 py-2 font-medium border-b-2" data-tab="pandemic-modeling">
+                                Pandemic Policy Response
+                            </button>
+                        </nav>
+                    </div>
+                    
+
+                    
+
+                    
+                    <!-- Dashboard 1: Pandemic Policy Response -->
+                    <div id="pandemic-modeling" class="dashboard" style="display: none;">
+                        <div class="grid grid-cols-2 gap-8">
+                            <!-- Charts Column -->
+                            <div class="space-y-8">
+                                <div>
+                                    <canvas id="unemployment-chart" width="400" height="250"></canvas>
+                                </div>
+                                <div>
+                                    <canvas id="consumption-chart" width="400" height="250"></canvas>
+                                </div>
+                                <div>
+                                    <canvas id="stimulus-chart" width="400" height="250"></canvas>
+                                </div>
+                            </div>
+                            
+                            <!-- Controls Column -->
+                            <div class="flex flex-col h-full space-y-6">
+                                <div> <!-- Top group -->
+                                    <div class="bg-sky-50 border border-sky-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-sky-900 mb-2">Pandemic Response Model</h4>
+                                        <p class="text-sm text-sky-800 text-justify">Based on <a href="http://econ-ark.github.io/Pandemic" class="text-sky-700 hover:text-sky-900 underline">Carroll et al. (2020)</a>. Adjust parameters to explore policy impacts.</p>
+                                    </div>
+                                
+                                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 mt-6">
+                                        <div class="space-y-4">
+                                            <div>
+                                                <label class="block text-sm font-medium mb-2">Spending Reduction During Lockdown</label>
+                                                <input type="range" id="pandemic-spending" class="slider w-full" min="0.8" max="1.0" step="0.01" value="0.89">
+                                                <div class="text-xs text-gray-500 mt-1">Current: <span id="pandemic-spending-value">0.89</span></div>
+                                            </div>
+                                            
+                                            <div>
+                                                <label class="block text-sm font-medium mb-2">Lockdown Duration (Quarters)</label>
+                                                <input type="range" id="pandemic-duration" class="slider w-full" min="1.0" max="4.0" step="0.2" value="2.0">
+                                                <div class="text-xs text-gray-500 mt-1">Current: <span id="pandemic-duration-value">2.0</span></div>
+                                            </div>
+                                            
+                                            <div>
+                                                <label class="block text-sm font-medium mb-2">Stimulus Amount ($1000s)</label>
+                                                <input type="range" id="pandemic-stimulus" class="slider w-full" min="0.5" max="2.5" step="0.1" value="1.2">
+                                                <div class="text-xs text-gray-500 mt-1">Current: <span id="pandemic-stimulus-value">1.2</span></div>
+                                            </div>
+                                            
+                                            <div>
+                                                <label class="block text-sm font-medium mb-2">Unemployment Benefits Bonus</label>
+                                                <input type="range" id="pandemic-benefits" class="slider w-full" min="3.0" max="8.0" step="0.2" value="5.2">
+                                                <div class="text-xs text-gray-500 mt-1">Current: <span id="pandemic-benefits-value">5.2</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-auto"> <!-- Bottom aligned group -->
+                                    <div class="p-4 border rounded-lg" style="border-color: var(--econ-ark-red);">
+                                        <h4 class="font-bold mb-2" style="color: var(--econ-ark-red);">Key Results</h4>
+                                        <p class="text-sm">Peak Unemployment: <span id="pandemic-peak-unemp" class="font-bold">-</span>%</p>
+                                        <p class="text-sm">Consumption Drop: <span id="pandemic-consumption-drop" class="font-bold">-</span>%</p>
+                                        <p class="text-sm">Policy Effectiveness: <span id="pandemic-policy-effect" class="font-bold">-</span>%</p>
+                                    </div>
+                                    
+                                    <div class="text-center mt-6">
+                                        <a href="https://mriduls.github.io/pandemic-voici/voici/render/dashboard.html" 
+                                           target="_blank"
+                                           style="background: #1f476b; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-block;">Full Interactive Dashboard →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dashboard 2: Fiscal Policy with HANK -->
+                    <div id="fiscal-hank" class="dashboard">
+                        <div class="max-w-4xl mx-auto">
+                            <!-- Model Description -->
+                            <div class="bg-sky-50 border border-sky-200 rounded-lg p-6 mb-8">
+                                <h4 class="font-semibold text-sky-900 mb-3 text-lg">Fiscal Policy in a HANK Model with Search Frictions</h4>
+                                <p class="text-sm text-sky-800 text-justify mb-4">
+                                    This dashboard explores fiscal multipliers in a Heterogeneous Agent New Keynesian (HANK) model with Search and Matching frictions. To capture the distributional effects of fiscal policy, the model features households with heterogeneous preferences facing idiosyncratic income risk, unemployment dynamics, and endogenous job creation.
+                                </p>
+                                <p class="text-sm text-sky-800 text-justify">
+                                    <strong>Key insight:</strong> UI extensions typically generate the highest multipliers due to targeting unemployed households with high marginal propensities to consume.
+                                </p>
+                            </div>
+                            
+                            <!-- Key Features -->
+                            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                <div class="bg-slate-50 rounded-lg p-4">
+                                    <i class="fas fa-users text-2xl text-sky-600 mb-2"></i>
+                                    <h4 class="font-semibold text-slate-800">Heterogeneous Agents</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Captures distributional effects across wealth and employment status</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-4">
+                                    <i class="fas fa-briefcase text-2xl text-emerald-600 mb-2"></i>
+                                    <h4 class="font-semibold text-slate-800">Search & Matching</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Endogenous job creation and unemployment dynamics</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-4">
+                                    <i class="fas fa-chart-bar text-2xl text-orange-600 mb-2"></i>
+                                    <h4 class="font-semibold text-slate-800">Policy Multipliers</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Compare effectiveness of UI, transfers, and government spending</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Links Section -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <!-- Dashboard Link -->
+                                <div class="text-center">
+                                    <a href="https://hafiscal.econ-ark.org/" 
+                                       target="_blank"
+                                       style="background: #1f476b; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-block;">Full Interactive Dashboard →</a>
+                                </div>
+                                
+                                <!-- GitHub Repository Link -->
+                                <div class="text-center">
+                                    <a href="https://github.com/econ-ark/HAFiscal" 
+                                       target="_blank"
+                                       style="background: #1f476b; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-block;"><i class="fab fa-github" style="margin-right: 8px;"></i>View on GitHub →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Central Banker Learning Path -->
+                <section id="building-bewley" class="space-y-8 py-8 fade-in-section">
+                    <h2 class="section-title text-3xl font-bold tracking-tight">Central Banker Learning Path</h2>
+                    <p class="text-slate-600 max-w-3xl mx-auto text-justify">
+                        The notebooks below are ordered in a "bottom up" fashion to show you what HARK can do as quickly as possible. It begins with an introduction to the absolute basics of HARK's core framework for representing populations of heterogeneous agents, the <code>AgentType</code> superclass, including our workhorse example <code>IndShockConsumerType</code>; the second notebook on the path provides details of that model and its implementation in HARK.
+                    </p>
+                    <p class="text-slate-600 max-w-3xl mx-auto text-justify mt-4">
+                        Next, we explain how information about the agent's problem (parameters, etc) is structured conditional on which <code>AgentType</code> subclass is used, with a focus on how HARK's flexible time structure allows for both finite and infinite horizon problems. The fourth notebook on this path offers a tutorial on how to generate simulated data after solving an <code>AgentType</code> instance's problem.
+                    </p>
+                    <p class="text-slate-600 max-w-3xl mx-auto text-justify mt-4">
+                        The last three notebooks give instruction on the "sequence-space Jacobian method" for computing impulse responses to so-called MIT shocks in heterogeneous agents macroeconomic models. The first of these gives and overview of the method itself, including the computational motivation and the mathematics that the method uses. We then provide a tutorial on HARK's syntax for constructing HA-SSJs for (almost) all <code>AgentType</code> subclasses. Finally, we put it all together and show how those HA-SSJs can be used with the <code>sequence_jacobian</code> toolkit to specify a macroeconomic framework in which the microeconomic agents live, and compute impulse responses to unexpected macroeconomic shocks.
+                    </p>
+                    <p class="text-slate-600 max-w-3xl mx-auto text-justify mt-4">
+                        If you are an ambitious (or impatient!) reader, feel free to jump ahead to the final notebook and "start at the end" to get to the most macroeconomically substantive material first. You can then work backward through the notebooks to learn more about what was happening in each layer.
+                    </p>
+
+                    <!-- Stylised code snippet -->
+                    <div class="relative max-w-5xl mx-auto">
+                        <!-- Border wrapper with gradient -->
+                        <div class="p-1 bg-gradient-to-r from-sky-400 to-blue-600">
+                            <!-- Code block with lighter background -->
+                            <div class="bg-slate-800 text-slate-100 text-sm overflow-hidden">
+                                <!-- Header bar -->
+                                <div class="bg-slate-700 px-4 py-2 flex items-center justify-between border-b border-slate-600">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                    </div>
+                                    <span class="text-xs text-slate-400 font-mono">bewley_workflow.py</span>
+                                </div>
+                                <!-- Code content -->
+                                <div class="p-6 font-mono text-sm leading-relaxed overflow-auto" style="height: 600px; max-height: 600px;">
+                                    <pre id="typed-code" class="language-python" style="margin: 0; min-height: 100%;"></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step-by-Step Notebooks subsection -->
+                    <div class="mt-16">
+                        <h3 class="text-2xl font-bold tracking-tight text-slate-800 mb-4">Step-by-Step Learning Path</h3>
+                    
+                    <div class="grid gap-6 max-w-5xl mx-auto">
+                        <!-- Step 1: Gentle Intro to HARK -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-sky-600 font-bold text-lg">1</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/Gentle-Intro/Gentle-Intro-To-HARK.html" 
+                                           class="hover:text-sky-600 transition-colors" target="_blank">
+                                            Gentle Introduction to HARK
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">The entry point for the HARK package, providing syntax and basic examples of its fundamental <code>AgentType</code> representation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: IndShockConsumerType -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-emerald-600 font-bold text-lg">2</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/ConsIndShockModel/IndShockConsumerType.html" 
+                                           class="hover:text-emerald-600 transition-colors" target="_blank">
+                                            IndShockConsumerType Documentation
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">Documentation for the workhorse <code>IndShockConsumerType</code> model of consumption-saving under permanent and transitory income risk, which is used by the notebooks to follow.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Cycles Tutorial -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-orange-600 font-bold text-lg">3</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/LifecycleModel/Cycles_tutorial.html" 
+                                           class="hover:text-orange-600 transition-colors" target="_blank">
+                                            Cycles Tutorial
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">An explanation for how problem data is structured for <code>AgentType</code> instances, and how to use HARK's flexible timing structure.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Simulation Introduction -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-purple-600 font-bold text-lg">4</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/Gentle-Intro/Simulation-Intro.html" 
+                                           class="hover:text-purple-600 transition-colors" target="_blank">
+                                            Simulation Introduction
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">Detailed documentation and examples for how simulation works for our <code>AgentType</code> subclasses, including both the legacy system and a new model-file based system.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: SSJ Explanation -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-pink-600 font-bold text-lg">5</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/SSJ_explanation.html" 
+                                           class="hover:text-pink-600 transition-colors" target="_blank">
+                                            SSJ Explanation
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">An overview of the mathematics of the sequence-space Jacobian method.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 6: SSJ Tutorial -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-sky-600 font-bold text-lg">6</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/SequenceSpaceJacobians/SSJ-tutorial.html" 
+                                           class="hover:text-sky-600 transition-colors" target="_blank">
+                                            SSJ Tutorial
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">A tutorial for the syntax and scope of HARK's HA-SSJ constructor tool.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 7: HANK Fiscal Example -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-red-600 font-bold text-lg">7</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        <a href="https://docs.econ-ark.org/examples/ConsNewKeynesianModel/HANKFiscal_example.html" 
+                                           class="hover:text-red-600 transition-colors" target="_blank">
+                                            HANK Fiscal Example
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-600 mb-3">An example application that combines HA-SSJs constructed from a HARK <code>AgentType</code> instance with the <code>sequence_jacobian</code> toolkit to compute impulse response functions to an unexpected macroeconomic shock. Includes a discussion of how the inclusion of heterogeneous agents in a new Keynesian model (HANK) matters substantively for the predictions of a macroeconomic model, relative to a traditional representative agent (RANK) or two-agent framework (TANK).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+<!-- ====================== RESOURCES ====================== -->
+<section id="further-resources" class="space-y-6 py-8 fade-in-section">
+  <h2 class="section-title text-3xl font-bold tracking-tight text-slate-900">
+    Further Resources
+  </h2>
+  
+    <!-- Aiyagari steady‑state solver -->
+    <article class="bg-white border border-slate-200 rounded-lg p-5 mb-6">
+      <h3 class="text-lg font-semibold text-slate-800">
+        Aiyagari Steady‑State Notebook
+      </h3>
+      <p class="text-slate-600">
+        Walk‑through of computing the stationary equilibrium in an
+        incomplete‑markets Aiyagari model
+        (<code>ConsAggShockModel/AiyagariSteadyState.ipynb</code>).  
+        Shows how to iterate on the capital‑labor ratio and verify market
+        clearing with a heterogeneous household block solved in HARK.  
+        Useful as a micro foundation for RBC–style general‑equilibrium
+        explorations or as a warm‑up before adding nominal rigidities.
+      </p>
+      <a class="underline text-sky-700 hover:text-sky-900"
+         href="https://econ-ark.org/materials/aiyagari/"
+         target="_blank">View notebook</a>
+    </article>
+
+
+    <!-- Distribution of Wealth & MPC -->
+    <article class="bg-white border border-slate-200 rounded-lg p-5 mb-6">
+      <h3 class="text-lg font-semibold text-slate-800">
+        Distribution of Wealth &amp; Marginal Propensity to Consume
+      </h3>
+      <p class="text-slate-600">
+        Full reproduction of Carroll, Slacalek, Tokuoka &amp; White (2017)
+        using HARK (<code>econ-ark/DistributionOfWealth</code>).  
+        Matches the cross‑section of U.S. wealth and delivers the high MPCs
+        that are essential for evaluating temporary fiscal transfers.
+      </p>
+      <a class="underline text-sky-700 hover:text-sky-900"
+         href="https://econ-ark.org/materials/distributionofwealthmpc/" target="_blank">
+         Repository
+      </a>
+    </article>
+
+    <!-- Krusell–Smith -->
+    <article class="bg-white border border-slate-200 rounded-lg p-5 mb-6">
+      <h3 class="text-lg font-semibold text-slate-800">
+        Krusell–Smith Incomplete‑Markets RBC Model
+      </h3>
+      <p class="text-slate-600">
+        Classic aggregate‑shock benchmark recreated in
+        <code>econ-ark/KrusellSmith</code>.  
+        Demonstrates law‑of‑motion iteration for the mean of the wealth
+        distribution and provides a baseline for Elyesian policy experiments
+        under real rigidities.
+      </p>
+      <a class="underline text-sky-700 hover:text-sky-900"
+         href="https://github.com/econ-ark/KrusellSmith" target="_blank">
+         Repository
+      </a>
+    </article>
+
+    <!-- Life‑Cycle Portfolio Choice -->
+    <article class="bg-white border border-slate-200 rounded-lg p-5">
+      <h3 class="text-lg font-semibold text-slate-800">
+        Consumption &amp; Portfolio Choice over the Life Cycle
+      </h3>
+      <p class="text-slate-600">
+        Replication of Cocco, Gomes &amp; Maenhout (2005) in
+        <code>econ-ark/CGMPortfolio</code>.  
+        Useful for stress‑testing calibrations of risk aversion and
+        portfolio‑rebalancing costs before embedding a life‑cycle block
+        inside a larger HANK framework.
+      </p>
+      <a class="underline text-sky-700 hover:text-sky-900"
+         href="https://github.com/econ-ark/CGMPortfolio" target="_blank">
+         Repository
+      </a>
+    </article>
+</section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer px-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-md-7">
+                    <p>Econ-ARK is headed by <a href="http://www.econ2.jhu.edu/people/ccarroll/">Christopher D. Carroll</a>, Professor of Economics at the Johns Hopkins University.</p>
+                    <p>The project is currently the recepient of a generous corporate sponsorship from <a href="https://www.troweprice.com/">T. Rowe Price</a> through <a href="https://www.numfocus.org/">NumFOCUS</a>.</p>
+                    <p>The project has been a recipient of grants from the <a href="https://sloan.org/">Sloan foundation</a> and the <a href="https://www.thinkforwardinitiative.com/">Think Forward Initiative</a>, and is under the umbrella of projects with fiscal sponsorship by <a href="https://www.numfocus.org/">NumFOCUS</a>.</p>
+                    <p>Please remember to <a href="/acknowledging">acknowledge and cite</a> the use of Econ-ARK.</p>
+                    <p>We are very grateful for any <a href="https://numfocus.salsalabs.org/donate-to-econ-ark/">donations</a> towards the Econ-ARK project.</p>
+                </div>
+                <div class="offset-md-1 col-md-3">
+                    <p class="sponsor"><a href="https://www.numfocus.org/"><img src="/assets/img/numfocus.png" alt="NumFOCUS logo" class="responsive"></a></p>
+                </div>
+            </div>
+            <div class="row">
+                <p>&copy; 2023 &ndash; <a href="https://econ-ark.org/">Econ-ARK</a>. Hosted with <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (matching main site) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const app = {
+                // Initialize all components
+                async init() {
+                    await this.loadMarkdownContent();
+                    this.initScrollspy();
+                    await this.initTimeline();
+                    this.initDashboards();
+                    this.initFadeInScroll();
+                    this.initSolverTabs();
+                    this.initTypewriter();
+                },
+                
+                // Load markdown content from external files
+                async loadMarkdownContent() {
+                    const contentMap = {
+                        'overview-content': 'overview.md',
+                        'bewley-model-content': 'bewley-model.md',
+                        'implications-content': 'implications.md',
+                        'bewley-basics-intro': 'bewley-basics-intro.md',
+                        'computing-bewley-intro': 'computing-bewley-intro.md',
+                        'interactive-dashboards-intro': 'interactive-dashboards-intro.md'
+                    };
+                    
+                    for (const [elementId, filename] of Object.entries(contentMap)) {
+                        try {
+                            const response = await fetch(`/pages/journeys/central-bank-content/${filename}`);
+                            if (response.ok) {
+                                const markdown = await response.text();
+                                const html = marked.parse(markdown);
+                                
+                                const element = document.getElementById(elementId);
+                                if (element) {
+                                    if (elementId === 'overview-content') {
+                                        // Special handling for overview to extract title and subtitle
+                                        const lines = markdown.split('\n');
+                                        const title = lines[0].replace('# ', '');
+                                        const subtitle = lines[2].replace('**', '').replace('**', '');
+                                        const content = lines.slice(4).join('\n');
+                                        
+                                        element.innerHTML = `
+                                            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">${title}</h1>
+                                        `;
+                                        
+                                        // Add subtitle as separate element with blue styling
+                                        const subtitleDiv = document.createElement('p');
+                                        subtitleDiv.className = 'text-xl leading-relaxed text-[#005B8F] mt-2';
+                                        subtitleDiv.textContent = subtitle;
+                                        element.appendChild(subtitleDiv);
+                                        
+                                        // Add main text to the overview-main-text div
+                                        const mainTextElement = document.getElementById('overview-main-text');
+                                        if (mainTextElement) {
+                                            mainTextElement.innerHTML = marked.parse(content);
+                                        }
+                                    } else {
+                                        element.innerHTML = html;
+                                        element.classList.add('markdown-content');
+                                        
+                                        // Add section-title class to h1 elements
+                                        const h1Elements = element.querySelectorAll('h1');
+                                        h1Elements.forEach(h1 => {
+                                            h1.classList.add('section-title', 'text-3xl', 'font-bold', 'tracking-tight', 'text-slate-900');
+                                        });
+                                    }
+
+                                    if (elementId === 'implications-content') {
+                                        const listItems = element.querySelectorAll('li');
+                                        const icons = ['fas fa-sitemap', 'fas fa-balance-scale-left', 'fas fa-database'];
+                                        listItems.forEach((li, index) => {
+                                            if (icons[index]) {
+                                                const icon = document.createElement('i');
+                                                icon.className = `fas ${icons[index]} fa-fw`;
+                                                li.prepend(icon);
+                                            }
+                                        });
+                                    }
+                                    
+                                    // Special formatting for bewley-basics-intro
+                                    if (elementId === 'bewley-basics-intro') {
+                                        const h2 = element.querySelector('h2');
+                                        if (h2) {
+                                            h2.className = 'text-2xl font-bold tracking-tight text-slate-800';
+                                        }
+                                        const p = element.querySelector('p');
+                                        if (p) {
+                                            p.className = 'text-slate-600 mt-4';
+                                        }
+                                    }
+                                }
+                            }
+                        } catch (error) {
+                            console.error(`Error loading ${filename}:`, error);
+                            // Fallback content
+                            if (elementId === 'overview-content') {
+                                document.getElementById(elementId).innerHTML = `
+                                    <h1 class="text-4xl font-bold mb-4 leading-tight">From Theory to Policy: A HANK Journey</h1>
+                                    <p class="text-xl leading-relaxed" style="color: var(--econ-ark-blue);">Master Heterogeneous Agent New Keynesian models for modern monetary policy</p>
+                                `;
+                            }
+                        }
+                    }
+                },
+
+                // Scrollspy for sidebar navigation
+                initScrollspy() {
+                    const sections = document.querySelectorAll('section[id]');
+                    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+                    
+                    function updateActiveLink() {
+                        let current = '';
+                        sections.forEach(section => {
+                            const sectionTop = section.offsetTop;
+                            if (scrollY >= (sectionTop - 100)) {
+                                current = section.getAttribute('id');
+                            }
+                        });
+                        
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${current}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                    
+                    window.addEventListener('scroll', updateActiveLink);
+                    updateActiveLink();
+                },
+
+                // Timeline component
+                async initTimeline() {
+                    // First, load timeline data from markdown
+                    let timelineData = {};
+                    try {
+                        const response = await fetch('/pages/journeys/central-bank-content/timeline-content.md');
+                        if (response.ok) {
+                            const markdown = await response.text();
+                            const sections = markdown.split('\n## ').slice(1);
+                            
+                            sections.forEach(section => {
+                                const lines = section.split('\n');
+                                const year = lines[0].trim();
+                                const titleLine = lines.find(line => line.startsWith('### '));
+                                const title = titleLine ? titleLine.replace('### ', '').trim() : '';
+                                const content = lines.slice(lines.indexOf(titleLine) + 1).join('\n').trim();
+                                
+                                timelineData[year] = {
+                                    title: title,
+                                    content: content
+                                };
+                            });
+                        }
+                    } catch (error) {
+                        console.error('Error loading timeline content:', error);
+                        // Fallback to hardcoded data
+                        timelineData = {
+                            'default': {
+                                title: "Select a milestone to learn more",
+                                content: "Click on any year in the timeline to explore the key developments in heterogeneous agent modeling that led to today's powerful HANK frameworks."
+                            }
+                        };
+                    }
+                    
+                    const items = document.querySelectorAll('.timeline-item');
+                    const content = document.getElementById('timeline-content');
+                    
+                    items.forEach(item => {
+                        item.addEventListener('click', () => {
+                            // Remove active class from all items
+                            items.forEach(i => i.classList.remove('active'));
+                            // Add active class to clicked item
+                            item.classList.add('active');
+                            
+                            const year = item.dataset.year;
+                            const data = timelineData[year];
+                            
+                            content.innerHTML = `
+                                <h4 class="font-bold mb-3 text-lg" style="color: var(--econ-ark-blue);">${data.title}</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">${data.content}</p>
+                            `;
+                        });
+                    });
+                    
+                    // Initialize with default content
+                    if (timelineData['default']) {
+                        const content = document.getElementById('timeline-content');
+                        content.innerHTML = `
+                            <h4 class="font-bold mb-3 text-lg" style="color: var(--econ-ark-blue);">${timelineData['default'].title}</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">${timelineData['default'].content}</p>
+                        `;
+                    }
+                },
+
+                // Dashboard components
+                initDashboards() {
+                    this.initTabs();
+                    this.initPandemicModeling();
+                },
+
+                initTabs() {
+                    const tabs = document.querySelectorAll('.tab');
+                    const dashboards = document.querySelectorAll('.dashboard');
+                    
+                    tabs.forEach(tab => {
+                        tab.addEventListener('click', () => {
+                            // Remove active class from all tabs
+                            tabs.forEach(t => t.classList.remove('active'));
+                            // Add active class to clicked tab
+                            tab.classList.add('active');
+                            
+                            // Hide all dashboards
+                            dashboards.forEach(d => d.classList.add('hidden'));
+                            // Show selected dashboard
+                            const targetDashboard = document.getElementById(tab.dataset.tab);
+                            targetDashboard.classList.remove('hidden');
+                        });
+                    });
+                    
+                    // Activate first tab by default (if tabs exist)
+                    if (tabs.length > 0) {
+                        tabs[0].click();
+                    }
+                },
+
+                initImpulseResponse() {
+                    const ctx = document.getElementById('impulse-chart').getContext('2d');
+                    const shockSlider = document.getElementById('shock-size');
+                    const impatienceSlider = document.getElementById('impatience');
+                    const shockValue = document.getElementById('shock-value');
+                    const impatienceValue = document.getElementById('impatience-value');
+                    const peakResponse = document.getElementById('peak-response');
+                    
+                    // Generate quarters (0 to 20)
+                    const quarters = Array.from({length: 21}, (_, i) => i);
+                    
+                    const chart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: quarters,
+                            datasets: [{
+                                label: '% Deviation from Steady State',
+                                data: [],
+                                borderColor: 'var(--econ-ark-red)',
+                                backgroundColor: 'var(--econ-ark-red)',
+                                fill: false,
+                                tension: 0.3
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Quarters After Shock'
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: '% Deviation from Steady State'
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            }
+                        }
+                    });
+                    
+                    function updateChart() {
+                        const shock = parseFloat(shockSlider.value);
+                        const impatience = parseFloat(impatienceSlider.value);
+                        
+                        shockValue.textContent = shock.toFixed(1);
+                        impatienceValue.textContent = impatience.toFixed(2);
+                        
+                        const impact = shock * 2; // Scale the impact
+                        const data = quarters.map(quarter => {
+                            if (quarter === 0) return 0;
+                            return impact * Math.pow(impatience * 0.8, quarter) * Math.cos(quarter * Math.PI / 8);
+                        });
+                        
+                        chart.data.datasets[0].data = data;
+                        chart.update();
+                        
+                        const peak = Math.max(...data.map(Math.abs));
+                        peakResponse.textContent = peak.toFixed(2);
+                    }
+                    
+                    shockSlider.addEventListener('input', updateChart);
+                    impatienceSlider.addEventListener('input', updateChart);
+                    
+                    // Initial update
+                    updateChart();
+                },
+
+                initWealthDistribution() {
+                    const ctx = document.getElementById('wealth-chart').getContext('2d');
+                    const giniSlider = document.getElementById('gini');
+                    const giniValue = document.getElementById('gini-value');
+                    const top10Share = document.getElementById('top-10-share');
+                    
+                    const deciles = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th'];
+                    
+                    const chart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: deciles,
+                            datasets: [{
+                                label: '% of Total Wealth',
+                                data: [],
+                                backgroundColor: 'var(--econ-ark-orange)',
+                                borderColor: 'var(--econ-ark-orange)',
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Wealth Decile'
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: '% of Total Wealth'
+                                    },
+                                    min: 0,
+                                    max: 50
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            }
+                        }
+                    });
+                    
+                    function updateChart() {
+                        const gini = parseFloat(giniSlider.value);
+                        giniValue.textContent = gini.toFixed(2);
+                        
+                        // Generate wealth distribution based on Gini coefficient
+                        // Simplified log-normal approximation
+                        const variance = (gini * 2) ** 2;
+                        const baseShares = [0.5, 1.0, 1.5, 2.5, 4.0, 6.0, 9.0, 13.0, 20.0, 42.5];
+                        
+                        // Adjust shares based on Gini coefficient
+                        const data = baseShares.map((share, i) => {
+                            if (i < 5) {
+                                return share * (1 - gini * 0.7); // Lower deciles get less
+                            } else {
+                                return share * (1 + gini * 0.8); // Upper deciles get more
+                            }
+                        });
+                        
+                        // Normalize to sum to 100
+                        const total = data.reduce((sum, val) => sum + val, 0);
+                        const normalizedData = data.map(val => (val / total) * 100);
+                        
+                        chart.data.datasets[0].data = normalizedData;
+                        chart.update();
+                        
+                        top10Share.textContent = normalizedData[9].toFixed(1);
+                    }
+                    
+                    giniSlider.addEventListener('input', updateChart);
+                    
+                    // Initial update
+                    updateChart();
+                },
+
+                initDashboards() {
+                    // Initialize tab functionality
+                    const tabs = document.querySelectorAll('.tab');
+                    const dashboards = document.querySelectorAll('.dashboard');
+                    
+                    tabs.forEach(tab => {
+                        tab.addEventListener('click', () => {
+                            // Remove active class from all tabs
+                            tabs.forEach(t => t.classList.remove('active'));
+                            // Add active class to clicked tab
+                            tab.classList.add('active');
+                            
+                            // Hide all dashboards
+                            dashboards.forEach(d => d.style.display = 'none');
+                            
+                            // Show the selected dashboard
+                            const targetId = tab.getAttribute('data-tab');
+                            const targetDashboard = document.getElementById(targetId);
+                            if (targetDashboard) {
+                                targetDashboard.style.display = 'block';
+                            }
+                        });
+                    });
+                    
+                    // Initialize the pandemic modeling dashboard
+                    this.initPandemicModeling();
+                },
+
+                initPandemicModeling() {
+                    // Initialize pandemic dashboard with three key charts
+                    this.initUnemploymentChart();
+                    this.initConsumptionChart();
+                    this.initStimulusChart();
+                    this.initPandemicControls();
+                },
+
+                initUnemploymentChart() {
+                    const ctx = document.getElementById('unemployment-chart').getContext('2d');
+                    const quarters = ["'20 Q1", "Q2", "Q3", "Q4", "'21 Q1", "Q2", "Q3", "Q4"];
+                    
+                    this.unemploymentChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: quarters,
+                            datasets: [
+                                {
+                                    label: 'Baseline (No Pandemic)',
+                                    data: [4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5],
+                                    borderColor: '#6b7280',
+                                    backgroundColor: '#6b7280',
+                                    fill: false,
+                                    tension: 0.3,
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: 'With Pandemic Response',
+                                    data: [],
+                                    borderColor: 'var(--econ-ark-red)',
+                                    backgroundColor: 'var(--econ-ark-red)',
+                                    fill: false,
+                                    tension: 0.3,
+                                    borderWidth: 2
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: { grid: { display: false } },
+                                y: { 
+                                    grid: { color: 'rgba(44, 64, 83, 0.1)', drawBorder: false },
+                                    beginAtZero: true, 
+                                    min: 0,
+                                    max: 20, 
+                                    title: { display: true, text: 'Unemployment Rate (%)' } 
+                                }
+                            },
+                            plugins: {
+                                title: { 
+                                    display: true, 
+                                    text: 'Unemployment Rate Response', 
+                                    font: { size: 16, weight: '600', family: "'Inter', sans-serif" }, 
+                                    color: '#005B8F' // HARK Baby Blue
+                                },
+                                legend: { 
+                                    position: 'bottom',
+                                    labels: { font: { family: "'Inter', sans-serif" }, boxWidth: 12 }
+                                },
+                                tooltip: {
+                                    backgroundColor: 'var(--econ-ark-blue)',
+                                    titleFont: { family: "'Inter', sans-serif" },
+                                    bodyFont: { family: "'Inter', sans-serif" },
+                                    padding: 10,
+                                    cornerRadius: 4
+                                }
+                            }
+                        }
+                    });
+                },
+
+                initConsumptionChart() {
+                    const ctx = document.getElementById('consumption-chart').getContext('2d');
+                    const quarters = ["'20 Q1", "Q2", "Q3", "Q4", "'21 Q1", "Q2", "Q3", "Q4"];
+                    
+                    this.consumptionChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: quarters,
+                            datasets: [
+                                {
+                                    label: 'Baseline',
+                                    data: [2.8, 2.8, 2.8, 2.8, 2.8, 2.8, 2.8, 2.8],
+                                    borderColor: '#6b7280',
+                                    backgroundColor: '#6b7280',
+                                    fill: false,
+                                    tension: 0.3,
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: 'No Policy Response',
+                                    data: [],
+                                    borderColor: 'var(--econ-ark-red)',
+                                    backgroundColor: 'var(--econ-ark-red)',
+                                    fill: false,
+                                    tension: 0.3,
+                                    borderWidth: 2,
+                                    borderDash: [5, 5]
+                                },
+                                {
+                                    label: 'With CARES Act',
+                                    data: [],
+                                    borderColor: 'var(--econ-ark-blue)',
+                                    backgroundColor: 'var(--econ-ark-blue)',
+                                    fill: false,
+                                    tension: 0.3,
+                                    borderWidth: 2
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: { grid: { display: false } },
+                                y: {
+                                    grid: { color: 'rgba(44, 64, 83, 0.1)', drawBorder: false },
+                                    min: 2.0,
+                                    max: 3.2,
+                                    title: {
+                                        display: true,
+                                        text: 'Aggregate Consumption (Trillion $)'
+                                    }
+                                }
+                            },
+                            plugins: {
+                                title: { 
+                                    display: true, 
+                                    text: 'Aggregate Consumption Response', 
+                                    font: { size: 16, weight: '600', family: "'Inter', sans-serif" }, 
+                                    color: '#005B8F' // HARK Baby Blue
+                                },
+                                legend: {
+                                    position: 'bottom',
+                                    labels: { font: { family: "'Inter', sans-serif" }, boxWidth: 12 }
+                                },
+                                tooltip: {
+                                    backgroundColor: 'var(--econ-ark-blue)',
+                                    titleFont: { family: "'Inter', sans-serif" },
+                                    bodyFont: { family: "'Inter', sans-serif" },
+                                    padding: 10,
+                                    cornerRadius: 4
+                                }
+                            }
+                        }
+                    });
+                },
+
+                initStimulusChart() {
+                    const ctx = document.getElementById('stimulus-chart').getContext('2d');
+                    const categories = ['Low Income', 'Middle Income', 'High Income'];
+                    
+                    this.stimulusChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: categories,
+                            datasets: [
+                                {
+                                    label: 'Consumption Response (%)',
+                                    data: [],
+                                    backgroundColor: 'var(--econ-ark-orange)',
+                                    borderColor: 'var(--econ-ark-orange)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: { grid: { display: false } },
+                                y: {
+                                    grid: { color: 'rgba(44, 64, 83, 0.1)', drawBorder: false },
+                                    beginAtZero: true,
+                                    min: 0,
+                                    max: 100,
+                                    title: {
+                                        display: true,
+                                        text: 'Consumption Response (%)'
+                                    }
+                                }
+                            },
+                            plugins: {
+                                title: { 
+                                    display: true, 
+                                    text: 'Policy Impact by Income Group', 
+                                    font: { size: 16, weight: '600', family: "'Inter', sans-serif" }, 
+                                    color: '#005B8F' // HARK Baby Blue
+                                },
+                                legend: { display: false },
+                                tooltip: {
+                                    backgroundColor: 'var(--econ-ark-blue)',
+                                    titleFont: { family: "'Inter', sans-serif" },
+                                    bodyFont: { family: "'Inter', sans-serif" },
+                                    padding: 10,
+                                    cornerRadius: 4,
+                                    displayColors: false
+                                }
+                            }
+                        }
+                    });
+                },
+
+                initPandemicControls() {
+                    // Initialize sliders and their event handlers
+                    const sliders = ['pandemic-spending', 'pandemic-duration', 'pandemic-stimulus', 'pandemic-benefits'];
+                    
+                    sliders.forEach(sliderId => {
+                        const slider = document.getElementById(sliderId);
+                        const valueSpan = document.getElementById(sliderId + '-value');
+                        
+                        if (slider && valueSpan) {
+                            slider.addEventListener('input', (e) => {
+                                const value = parseFloat(e.target.value);
+                                valueSpan.textContent = value.toFixed(2);
+                                this.updatePandemicCharts();
+                            });
+                        }
+                    });
+                    
+                    // Initial update
+                    this.updatePandemicCharts();
+                },
+
+                updatePandemicCharts() {
+                    // Get current parameter values
+                    const spendingReduction = parseFloat(document.getElementById('pandemic-spending').value);
+                    const lockdownDuration = parseFloat(document.getElementById('pandemic-duration').value);
+                    const stimulusAmount = parseFloat(document.getElementById('pandemic-stimulus').value);
+                    const benefitsBonus = parseFloat(document.getElementById('pandemic-benefits').value);
+                    
+                    // Calculate unemployment response
+                    const baseImpact = (1 - spendingReduction) * 30; // Scale factor
+                    const unemploymentData = [
+                        4.5, // Pre-pandemic
+                        4.5 + baseImpact * 0.3, // Q1 2020
+                        4.5 + baseImpact, // Q2 2020 - peak
+                        4.5 + baseImpact * Math.pow(0.8, lockdownDuration - 1), // Q3 2020
+                        4.5 + baseImpact * Math.pow(0.6, lockdownDuration), // Q4 2020
+                        4.5 + baseImpact * Math.pow(0.4, lockdownDuration), // Q1 2021
+                        4.5 + baseImpact * Math.pow(0.25, lockdownDuration), // Q2 2021
+                        4.5 + baseImpact * Math.pow(0.15, lockdownDuration)  // Q3 2021
+                    ];
+                    
+                    // Calculate consumption responses
+                    const consumptionImpact = (1 - spendingReduction) * 0.25;
+                    const policyBoost = (stimulusAmount + benefitsBonus * 0.1) * 0.05;
+                    const baselineConsumption = 2.8; // In trillions
+                    
+                    const consumptionNoPolicy = [baselineConsumption, baselineConsumption * (1 - consumptionImpact * 0.3), baselineConsumption * (1 - consumptionImpact), 
+                                                baselineConsumption * (1 - consumptionImpact * 0.8), baselineConsumption * (1 - consumptionImpact * 0.6),
+                                                baselineConsumption * (1 - consumptionImpact * 0.4), baselineConsumption * (1 - consumptionImpact * 0.25), baselineConsumption * (1 - consumptionImpact * 0.15)];
+                    
+                    const consumptionWithPolicy = consumptionNoPolicy.map((value, index) => {
+                        if (index >= 1 && index <= 4) { // Policy active Q1-Q4 2020
+                            return value + policyBoost * baselineConsumption * Math.pow(0.8, index - 1);
+                        }
+                        return value;
+                    });
+                    
+                    // Calculate stimulus effectiveness by income group
+                    const stimulusEffectiveness = [
+                        stimulusAmount * 8 + benefitsBonus * 2, // Low income - high MPC
+                        stimulusAmount * 4 + benefitsBonus * 1, // Middle income - medium MPC
+                        stimulusAmount * 1 + benefitsBonus * 0.2 // High income - low MPC
+                    ];
+                    
+                    // Update charts
+                    this.unemploymentChart.data.datasets[1].data = unemploymentData;
+                    this.unemploymentChart.update();
+                    
+                    this.consumptionChart.data.datasets[1].data = consumptionNoPolicy;
+                    this.consumptionChart.data.datasets[2].data = consumptionWithPolicy;
+                    this.consumptionChart.update();
+                    
+                    this.stimulusChart.data.datasets[0].data = stimulusEffectiveness;
+                    this.stimulusChart.update();
+                    
+                    // Update key results
+                    const peakUnemp = Math.max(...unemploymentData);
+                    const consumptionDrop = ((baselineConsumption - Math.min(...consumptionWithPolicy)) / baselineConsumption * 100);
+                    const policyEffect = ((Math.min(...consumptionWithPolicy) - Math.min(...consumptionNoPolicy)) / Math.min(...consumptionNoPolicy) * 100);
+                    
+                    document.getElementById('pandemic-peak-unemp').textContent = peakUnemp.toFixed(1);
+                    document.getElementById('pandemic-consumption-drop').textContent = consumptionDrop.toFixed(1);
+                    document.getElementById('pandemic-policy-effect').textContent = policyEffect.toFixed(1);
+                },
+
+                // Fade-in sections on scroll
+                initFadeInScroll() {
+                    const sections = document.querySelectorAll('.fade-in-section');
+                    const subsections = document.querySelectorAll('.fade-in-subsection');
+                    
+                    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('is-visible');
+                                    observer.unobserve(entry.target);
+                                }
+                            });
+                        }, {
+                            threshold: 0.1
+                        });
+
+                        sections.forEach(section => {
+                            observer.observe(section);
+                        });
+                        
+                        subsections.forEach(subsection => {
+                            observer.observe(subsection);
+                        });
+                    } else {
+                        sections.forEach(section => {
+                            section.classList.add('is-visible');
+                        });
+                        subsections.forEach(subsection => {
+                            subsection.classList.add('is-visible');
+                        });
+                    }
+                },
+
+                // Initialize solver tabs
+                initSolverTabs() {
+                    const tabs = document.querySelectorAll('.solver-tab');
+                    const panes = document.querySelectorAll('.solver-pane');
+
+                    tabs.forEach(tab => {
+                        tab.addEventListener('click', () => {
+                            // Deactivate all
+                            tabs.forEach(t => t.classList.remove('active'));
+                            panes.forEach(p => p.classList.remove('active'));
+
+                            // Activate clicked
+                            tab.classList.add('active');
+                            const targetPane = document.getElementById(tab.dataset.tab);
+                            if(targetPane) {
+                                targetPane.classList.add('active');
+                            }
+                        });
+                    });
+                },
+                
+                // Elegant "human-like" code typing animation
+                initTypewriter() {
+                    const pre = document.getElementById('typed-code');
+                    if (!pre) return;
+
+                    const rawCode = `# Building a HANK Model with Fiscal Policy
+from HARK.ConsumptionSaving.ConsNewKeynesianModel import NewKeynesianConsumerType
+import sequence_jacobian as sj
+import numpy as np
+
+# Step 1: Calibrate steady state values
+r_ss = 0.03   # Interest rate
+G_ss = 0.2    # Government spending  
+B_ss = 0.2    # Government debt
+Y_ss = 1.0    # Output
+
+# Step 2: Create heterogeneous households
+HANK_dict = {
+    "Rfree": [1.0 + r_ss],
+    "tax_rate": [0.0],
+    "labor": [Y_ss - G_ss - r_ss*B_ss],  # After-tax income
+}
+
+# Find equilibrium discount factor to match target debt level
+def find_beta(B_target):
+    # Binary search for beta that generates B_target assets
+    return optimize.brentq(asset_gap, 0.85, 0.99)
+
+Agent_GE = NewKeynesianConsumerType(DiscFac=find_beta(B_ss), **HANK_dict)
+A_ss, C_ss = Agent_GE.compute_steady_state()
+
+# Step 3: Compute sequence-space Jacobians
+# How consumption and assets respond to future shocks
+dCdR, dAdR = Agent_GE.calc_jacobian("Rfree", 300)  # Response to interest rates
+dCdZ, dAdZ = Agent_GE.calc_jacobian("labor", 300)  # Response to income
+
+# Step 4: Define government and market clearing
+@sj.simple
+def fiscal(B, r, G, Y):
+    T = (1 + r) * B(-1) + G - B  # Government budget constraint
+    Z = Y - T                     # After-tax income
+    deficit = G - T
+    return T, Z, deficit
+
+@sj.simple
+def mkt_clearing(A, B, Y, C, G):
+    asset_mkt = A - B      # Asset market clearing
+    goods_mkt = Y - C - G  # Goods market clearing
+    return asset_mkt, goods_mkt
+
+# Step 5: Combine blocks into HANK model
+het_household = sj.JacobianDict({"C": {"Z": dCdZ}, "A": {"Z": dAdZ}})
+HANK = sj.create_model([het_household, fiscal, mkt_clearing])
+
+# Step 6: Analyze fiscal policy transmission
+# Deficit-financed government spending shock
+dG = 0.01 * 0.8**np.arange(300)         # G shock with persistence 0.8
+dB = np.cumsum(dG) * 0.9**np.arange(300) # Debt follows fiscal rule
+
+irfs = HANK.solve_impulse_linear(
+    steady_state, unknowns=["Y"], targets=["asset_mkt"], 
+    shocks={"G": dG, "B": dB}
+)
+
+print(f"Output multiplier: {irfs['Y'][0]/dG[0]:.2f}")
+print(f"Consumption response: {irfs['C'][0]/dG[0]:.2f}`;
+
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .typing-cursor {
+                            display: inline-block;
+                            width: 9px;
+                            height: 1.2em;
+                            background-color: #0ea5e9;
+                            border-radius: 1px;
+                            animation: blink 1.1s step-end infinite;
+                            vertical-align: text-bottom;
+                        }
+                        @keyframes blink { 50% { background-color: transparent; } }
+                    `;
+                    document.head.appendChild(style);
+
+                    const highlightedHTML = Prism.highlight(rawCode, Prism.languages.python, 'python');
+                    let i = 0;
+
+                    function type() {
+                        if (i < highlightedHTML.length) {
+                            const cursor = pre.querySelector('.typing-cursor');
+                            if (!cursor) return;
+
+                            let char = highlightedHTML.charAt(i);
+                            
+                            // If we are at the start of a tag, type the whole tag at once
+                            if (char === '<') {
+                                let tagEnd = highlightedHTML.indexOf('>', i);
+                                if (tagEnd !== -1) {
+                                    cursor.insertAdjacentHTML('beforebegin', highlightedHTML.substring(i, tagEnd + 1));
+                                    i = tagEnd;
+                                }
+                            } else {
+                                cursor.insertAdjacentHTML('beforebegin', char);
+                            }
+                            
+                            i++;
+
+                            const container = pre.parentElement;
+                            container.scrollTop = container.scrollHeight;
+                            
+                            const delay = Math.random() * 35 + 10;
+                            setTimeout(type, delay);
+                        } else {
+                            pre.querySelector('.typing-cursor')?.remove();
+                        }
+                    }
+
+                    const observer = new IntersectionObserver(entries => {
+                        if (entries[0].isIntersecting) {
+                            observer.unobserve(pre);
+                            pre.innerHTML = '<span class="typing-cursor"></span>';
+                            setTimeout(type, 500);
+                        }
+                    }, { threshold: 0.6 });
+
+                    if (pre) {
+                        observer.observe(pre);
+                    }
+                }
+            };
+            
+            // Initialize the application
+            app.init();
+            
+            // Mobile navigation toggle (matching main site)
+            const toggleNav = document.getElementById('toggleNav');
+            const navigation = document.querySelector('.header .navigation');
+            
+            if (toggleNav && navigation) {
+                toggleNav.addEventListener('click', function() {
+                    navigation.classList.toggle('show');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
