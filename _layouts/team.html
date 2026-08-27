@@ -15,7 +15,7 @@ layout: default
 			<div class="pic"><img src="{{ team-member.image }}" alt="Avatar for {{ team-member.name }}"></div>
 			<div class="member-info p-3">
 				<h2 class="member-name">{{ team-member.name }}</h2>
-				<p class="role"><strong>{% if team-member.role %}{{ team-member.role }}{% endif %}</strong></p>
+				{% if team-member.role %}<p class="role"><strong>{{ team-member.role }}</strong></p>{% endif %}
 				{% if team-member.website or team-member.github %}
 				<p>
 					{% if team-member.github %}<i class="fa-brands fa-github"></i> <a href="{{ team-member.github }}">GitHub</a> {% endif %} &nbsp;
