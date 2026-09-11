@@ -24,13 +24,3 @@ cff-version: 1.2.0
 message: If you use this software, please cite it as below.
 title: "EGM\u207F: The Sequential Endogenous Grid Method"
 ---
-
-# TractableBufferStockModel
-
-This is a replication of the results of the paper ["A Tractable Model of Buffer Stock Saving"](http://www.econ2.jhu.edu/people/ccarroll/papers/ctDiscrete.pdf)  by Carroll and Toche
-
-
-## References
-
-Carroll, C. D., & Toche, P. (2009). A tractable model of buffer stock saving (No. w15265). National Bureau of Economic Research.
-

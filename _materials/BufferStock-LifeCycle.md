@@ -10,7 +10,6 @@ authors:
 - family-names: Son
   given-names: Jeongwon (John)
 cff-version: 1.2.0
-github_repo_url: null
 message: If you use this software, please cite it using these metadata.
 notebooks:
 - Code/Python/BufferStock-LifeCycle.ipynb
