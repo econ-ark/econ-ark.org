@@ -46,11 +46,15 @@ if __name__ == '__main__':
             if metadata is None:
                 continue
             # The page itself is at /materials/<slug>/ (the permalink in _config.yml), so
-            # redirect every other capitalization of the file name to it, its own included
+            # redirect every other capitalization of the file name to it, its own included.
+            # Each redirect is a folder, so it answers with or without a trailing slash; the
+            # site must therefore be built on a case-sensitive file system, as the workflow's
+            # Ubuntu runner is, since on a Mac /materials/LucasAssetPrice/ would overwrite
+            # /materials/lucasassetprice/
             page = slugify(path.stem)
             metadata.setdefault('redirect_from', [])
             metadata['redirect_from'] += [
-                f'/materials/{n}'
+                f'/materials/{n}/'
                 for n in generate_case_combinations(path.stem)
                 if n != page
             ]
