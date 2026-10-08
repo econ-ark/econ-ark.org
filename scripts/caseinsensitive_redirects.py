@@ -1,7 +1,7 @@
 from pathlib import Path
 from itertools import product
 from io import StringIO
-from re import fullmatch, split as re_split
+from re import fullmatch, split as re_split, sub
 
 from yaml import safe_load, dump as yaml_dump
 
@@ -33,20 +33,30 @@ def generate_case_combinations(name):
     # Create all combinations and join them back
     yield from (''.join(combo) for combo in product(*case_options))
 
+def slugify(name):
+    # Jekyll's default slugify, which turns a material's file name into the :name in its URL
+    return sub(r'[\W_]+', '-', name).strip('-').lower()
+
 if __name__ == '__main__':
     repo_root = Path(__file__).parents[1]
 
     for path in repo_root.glob('_materials/*.md'):
-        path_parent = path.relative_to(repo_root).parent
         with open(path) as f:
             metadata, f = parse_yaml_header(f)
             if metadata is None:
                 continue
+            # The page itself is at /materials/<slug>/ (the permalink in _config.yml), so
+            # redirect every other capitalization of the file name to it, its own included.
+            # Each redirect is a folder, so it answers with or without a trailing slash; the
+            # site must therefore be built on a case-sensitive file system, as the workflow's
+            # Ubuntu runner is, since on a Mac /materials/LucasAssetPrice/ would overwrite
+            # /materials/lucasassetprice/
+            page = slugify(path.stem)
             metadata.setdefault('redirect_from', [])
             metadata['redirect_from'] += [
-                f'/{path_parent / path.with_name(n).stem}'
+                f'/materials/{n}/'
                 for n in generate_case_combinations(path.stem)
-                if n != path.stem
+                if n != page
             ]
             body = f.read()
 
