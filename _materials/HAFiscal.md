@@ -15,7 +15,6 @@ cff-version: 1.2.0
 dashboards:
 - dashboard/app.ipynb
 doi: 10.5281/zenodo.17861977
-github_repo_url: https://github.com/econ-ark/HAFiscal
 keywords:
 - Consumption
 - Stimulus
@@ -30,6 +29,7 @@ tags:
 - REMARK
 - Notebook
 - Reproduction
+tier: 3
 title: Welfare and Spending Effects of Consumption Stimulus Policies
 type: software
 version: 1.0.7
