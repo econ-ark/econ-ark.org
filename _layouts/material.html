@@ -88,6 +88,15 @@ layout: default
                     {% endfor %}
                 </ul>
 
+                {% if page.doi %}
+                {% assign doi = page.doi | remove_first: 'https://doi.org/' %}
+                <h3 class="details__title">DOI</h3>
+
+                <p class="details__doi">
+                    <a href="https://doi.org/{{ doi }}">https://doi.org/{{ doi }}</a>
+                </p>
+                {% endif %}
+
                 {% if page.summary and page.summary.size > 2 %}
                 <h3 class="details__summary">Summary</h3>
 
