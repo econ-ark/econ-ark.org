@@ -1,20 +1,37 @@
 ---
-abstract: This repository provides an analysis of the trend in forecast errors made
-  by the Tealbook/Greenbook(GB) and the Survey of Professional Forecasters(SPF) for
-  measures of the unemployment rate and real growth in personal consumption expenditures
-  from 1982 to 2017.
+abstract: 'Materials for Christopher Carroll''s discussion of Corrado, Kennickell
+  and Cajner, "Beyond the Streetlight: Economic Measurement in the Division of Research
+  and Statistics at the Federal Reserve", at the Federal Reserve''s R&S Centennial
+  Conference (November 2023). The code analyzes the trend in the errors of the Tealbook/Greenbook
+  (GB) and Survey of Professional Forecasters (SPF) forecasts of the unemployment
+  rate and of real growth in personal consumption expenditures from 1982 to 2017.'
 authors:
-- family-names: Edwards
+- affiliation: Johns Hopkins University
+  family-names: Edwards
   given-names: Decory
-- family-names: Carroll
-  given-names: Christopher
+- affiliation: Johns Hopkins University
+  family-names: Carroll
+  given-names: Christopher D.
   orcid: https://orcid.org/0000-0003-3732-9312
+authors-original-paper:
+- Carol Corrado
+- Arthur Kennickell
+- Tomaz Cajner
 cff-version: 1.2.0
-date-released: 2023-11-06
+date-released: '2026-10-13'
+doi: 10.5281/zenodo.23352415
+github_repo_url: https://github.com/econ-ark/beyond-the-streetlight
+identifiers-paper:
+- type: doi
+  value: 10.17016/FEDS.2025.019
+- type: url
+  value: https://doi.org/10.17016/FEDS.2025.019
 keywords:
-- Econ-ARK
 - Greenbook
+- Survey of Professional Forecasters
 - Forecast errors
+- Economic measurement
+license: Apache-2.0
 message: If you use this software, please cite it as below.
 notebooks:
 - RS100_Discussion_Slides.ipynb
@@ -24,224 +41,94 @@ references:
     given-names: Carol
   - family-names: Kennickell
     given-names: Arthur
-  date: 2023-10-24
-  publisher: R&S Centennial Conference
-  title: '100 years of Economic Measurement in the Division of Research & Statistics:
-    Beyond the Streetlight'
-  type: article
+  - family-names: Cajner
+    given-names: Tomaz
+  collection-title: Finance and Economics Discussion Series
+  doi: 10.17016/FEDS.2025.019
+  institution:
+    name: Board of Governors of the Federal Reserve System
+  month: 3
+  notes: Prepared for the R&S Centennial Conference, November 8, 2023, where Christopher
+    Carroll was a discussant.
+  number: 2025-019
+  title: 'Beyond the Streetlight: Economic Measurement in the Division of Research
+    and Statistics at the Federal Reserve'
+  type: report
+  url: https://doi.org/10.17016/FEDS.2025.019
+  year: 2025
 remark-name: beyond-the-streetlight
 repository-code: https://github.com/econ-ark/beyond-the-streetlight
+summary: Christopher Carroll's discussion of Corrado, Kennickell and Cajner at the
+  Federal Reserve's R&S Centennial Conference (November 2023), with code showing that
+  the errors in Greenbook and SPF forecasts of real consumption growth have trended
+  down since 1983, while unemployment forecast errors show no trend.
 tags:
 - REMARK
+- Reproduction
 - Notebook
+tier: 3
 title: Beyond the Streetlight
-title-original-paper: '100 years of Economic Measurement in the Division of Research
-  & Statistics: Beyond the Streetlight'
-version: 1.0.5
+title-original-paper: 'Beyond the Streetlight: Economic Measurement in the Division
+  of Research and Statistics at the Federal Reserve'
+type: software
+url: https://econ-ark.github.io/beyond-the-streetlight/
+version: 1.1.2
 ---
 
-# Abstract
+# Beyond the Streetlight
 
-This repository provides an analysis of the trend in forecast errors made by the Tealbook/Greenbook(GB) and the Survey of Professional Forecasters(SPF) for measures of the unemployment rate and real growth in personal consumption expenditures from 1982 to 2017. The data on forecasts for unemployment and consumption made by the Federal Reserve (Tealbook/Greenbook) and the mean across private forecasters are provided by the Philadelphia Fed. Data on realized values of the forecasted variables are provided by the St. Louis Fed.
+This REMARK contains Christopher Carroll's discussion, at the Federal Reserve
+Board's R&S Centennial Conference on November 6-8, 2023, of the paper by Carol
+Corrado and Arthur Kennickell, together with the code and data behind the
+discussion's figures. The paper's final version, with Tomaz Cajner as a third
+author, is Corrado, Kennickell and Cajner (2025), "Beyond the Streetlight:
+Economic Measurement in the Division of Research and Statistics at the Federal
+Reserve", Finance and Economics Discussion Series 2025-019,
+<https://doi.org/10.17016/FEDS.2025.019>. The conference draft was titled "100
+years of Economic Measurement in the Division of Research & Statistics: Beyond
+the Streetlight".
 
----
+## The argument
 
-## Website-specific metadata for enhanced display and discoverability
+The discussion treats measurement as information production. Beyond primary
+data (such as the Survey of Consumer Finances) and secondary data (such as
+industrial production), the Fed produces "tertiary" information: the staff
+forecasts in the Greenbook and Tealbook, staff memos, and similar work. The
+Greenspan Fed's call of a "new economy" in the mid-1990s is the leading example
+of that information being used well. The discussion asks whether the Fed was
+just lucky then, or whether forecasting has improved over time, at the Fed and
+elsewhere, as better measurement would imply.
 
-learning_objectives:
+## What the code does
 
-- "Understand the limitations of traditional data sources in economic research"
-- "Explore how Google Books data can supplement conventional economic indicators"
-- "Apply web scraping and text analysis techniques to economic research"
-- "Assess the validity of alternative data sources through replication studies"
-- "Compare forecast accuracy between traditional and unconventional data approaches"
+The analysis compares two sets of forecasts with what actually happened:
 
-prerequisites:
+- **Greenbook/Tealbook (GB)**: the Federal Reserve Board staff forecasts,
+  from the Federal Reserve Bank of Philadelphia's Greenbook data set;
+- **Survey of Professional Forecasters (SPF)**: the mean private-sector
+  forecast, also from the Philadelphia Fed;
+- **Realized values**: the unemployment rate (FRED series `UNRATE`) and real
+  personal consumption expenditures (`DPCERA3Q086SBEA`).
 
-- "Intermediate knowledge of macroeconomics and economic indicators"
-- "Basic Python programming skills"
-- "Familiarity with data manipulation (pandas) and visualization (matplotlib)"
-- "Understanding of statistical concepts and forecast evaluation"
-- "Knowledge of web APIs and data scraping concepts"
+For each quarter it builds a year-ahead forecast of the change in unemployment
+and of real consumption growth, computes the absolute forecast error, and
+regresses the error on a time trend with heteroskedasticity-robust (HC3)
+standard errors, over the full sample (144 quarters, labeled 1983Q1-2018Q4)
+and from 1995 on.
 
-jupyter_notebooks:
+## Findings
 
-- path: "RS100_Discussion_Slides.ipynb"
-    description: "Main presentation slides and interactive analysis"
-    type: "presentation"
-    estimated_runtime: "10-15 minutes"
+Errors in forecasts of real consumption growth have fallen significantly, for
+both forecasters. Over the full sample the trend is -0.039 percentage points a
+year for the Greenbook and -0.031 for the SPF (both p < 0.001), and it remains
+negative after 1995. Errors in forecasts of the change in unemployment show no
+significant trend. The two figures in the slides show the consumption results.
 
-related_materials:
+## Reproducing the results
 
-- "data-analysis-techniques"
-- "economic-forecasting"
-- "web-scraping-methods"
-- "alternative-data-sources"
-
-methodology_tags:
-
-- "alternative data"
-- "web scraping"
-- "forecast evaluation"
-- "text analysis"
-- "economic indicators"
-- "google books ngram"
-- "replication study"
-
-difficulty_level: "intermediate"
-
-estimated_completion_time: "2-3 hours for full analysis"
-
-research_context: |
-  This project demonstrates the exploration of unconventional data sources for economic research,
-  specifically using Google Books Ngram data to track economic concepts over time. It serves as
-  both a methodological contribution and a replication study, showing how alternative data can
-  complement traditional economic indicators.
-
-educational_value: |
-  Students and researchers will learn how to think creatively about data sources, implement
-  web scraping techniques for research, and critically evaluate the validity of alternative
-  data through rigorous comparison with established sources.
-
-policy_relevance: |
-  The methods demonstrated here are relevant for real-time economic monitoring, early warning
-  systems, and situations where traditional data may be delayed or unavailable. This is
-  particularly valuable for emerging economies or during crisis periods.
-
-computational_requirements:
-  python_version: "3.8+"
-  key_packages:
-    - "pandas"
-    - "matplotlib"
-    - "requests"
-    - "beautifulsoup4"
-    - "numpy"
-    - "jupyter"
-  memory_requirements: "Moderate (< 4GB RAM)"
-  runtime_estimates:
-    full_reproduction: "30-45 minutes"
-    quick_demonstration: "5-10 minutes"
-
-data_sources:
-
-- name: "Google Books Ngram Viewer"
-    description: "Historical frequency of words/phrases in books"
-    url: "<https://books.google.com/ngrams>"
-    access_method: "Web scraping"
-
-- name: "Federal Reserve Economic Data (FRED)"
-    description: "Official economic time series data"
-    url: "<https://fred.stlouisfed.org/>"
-    access_method: "API"
-
-- name: "Survey of Professional Forecasters"
-    description: "Professional economic forecasts"
-    url: "<https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/survey-of-professional-forecasters>"
-    access_method: "Direct download"
-
-reproducibility_notes: |
-  This project demonstrates best practices for reproducible research with web-scraped data:
-
-- All data sources are documented with URLs and access dates
-- Web scraping code includes error handling and rate limiting
-- Results are compared against multiple validation sources
-- Environment specifications ensure consistent package versions
-
-extensions_and_variations:
-
-- "Apply similar techniques to other economic concepts or time periods"
-- "Explore other alternative data sources (social media, satellite data, etc.)"
-- "Develop real-time monitoring systems using these techniques"
-- "Compare forecast accuracy across different alternative data sources"
-- "Investigate cultural and linguistic biases in text-based economic indicators"
-
-teaching_applications:
-
-- "Data science courses: web scraping and API integration"
-- "Economics courses: alternative data and nowcasting"
-- "Research methods: validation and replication techniques"
-- "Policy analysis: real-time economic monitoring"
-
-### citation_context
-
-- This work builds on and references the broader literature on alternative data in economics, including nowcasting techniques, textual analysis of economic content, and the evaluation of unconventional economic indicators. It serves as both an educational resource and a methodological contribution to the field
-
----
-
-## Beyond the Streetlight: Alternative Data Sources in Economic Research
-
-## Project Overview
-
-This research project explores the famous methodological challenge in economics: like the drunk man looking for his keys only under the streetlight "because that's where the light is," economists often rely on traditional data sources simply because they are readily available, not because they are necessarily the most informative.
-
-## Research Question
-
-Can alternative data sources, specifically Google Books Ngram data tracking the usage of economic terms over time, provide valuable insights that complement or enhance traditional economic indicators and forecasting methods?
-
-## Methodology
-
-The project employs a rigorous empirical approach:
-
-1. **Data Collection**: Automated scraping of Google Books Ngram data for economic terms
-2. **Data Integration**: Combining alternative data with traditional economic indicators from FRED
-3. **Comparative Analysis**: Evaluating forecast accuracy using both conventional and unconventional data
-4. **Validation**: Cross-checking results against professional forecaster surveys
-5. **Reproducibility**: Full documentation and automation of the research pipeline
-
-## Key Findings
-
-The analysis reveals both the potential and limitations of alternative data sources:
-
-- **Complementary Value**: Alternative indicators can provide additional signals not captured in traditional data
-- **Timing Advantages**: Some alternative sources may offer earlier signals than official statistics
-- **Methodological Challenges**: Validation and interpretation require careful consideration of data generation processes
-- **Context Dependency**: Effectiveness varies by economic indicator and time period
-
-## Educational Value
-
-This project serves multiple educational purposes:
-
-- **Methodological Training**: Demonstrates web scraping, API integration, and data validation techniques
-- **Critical Thinking**: Encourages questioning of conventional data sources and research approaches
-- **Practical Skills**: Provides hands-on experience with real-world data challenges
-- **Research Ethics**: Illustrates responsible use of scraped data and proper attribution
-
-## Broader Implications
-
-The "beyond the streetlight" approach has applications across economics and social science:
-
-- **Crisis Monitoring**: Alternative data may be crucial when traditional statistics are delayed
-- **Emerging Markets**: Unconventional sources may fill gaps in official data availability
-- **Policy Making**: Real-time indicators could inform more timely policy responses
-- **Academic Research**: Methodological framework applicable to other research questions
-
-## Interactive Components
-
-The project includes interactive Jupyter notebooks that allow users to:
-
-- Modify search terms and explore different economic concepts
-- Adjust time periods and geographical regions
-- Experiment with different validation approaches
-- Extend the analysis to new data sources
-
-## Reproducibility and Transparency
-
-All code, data, and analysis steps are fully documented and automated:
-
-- Environment specifications ensure consistent results across platforms
-- Error handling and logging provide transparency in data collection
-- Version control tracks all changes and updates
-- Documentation includes both technical details and conceptual explanations
-
-This project exemplifies the REMARK standard's emphasis on computational reproducibility while advancing methodological discussions in economic research. It demonstrates how economists can responsibly explore alternative data sources while maintaining rigorous standards for validation and interpretation.
-
-## Getting Started
-
-To explore this research:
-
-1. **Quick Start**: Run the Jupyter notebook for an interactive overview
-2. **Full Reproduction**: Execute the complete analysis pipeline
-3. **Experimentation**: Modify parameters to explore different research questions
-4. **Extension**: Use the framework as a starting point for your own alternative data research
-
-The project is designed to be both a standalone research contribution and an educational resource for the computational economics community.
+`./reproduce.sh` regenerates every table and figure from the raw data, checks
+them against the committed versions, and renders the slides; it takes about 30
+seconds once the environment (pinned in `uv.lock`) is installed. It needs no
+network access or API key: the realized values come from a committed snapshot of
+the FRED data used for the published results. See `README.md` for Docker, conda
+and Binder instructions and for a description of every output.
