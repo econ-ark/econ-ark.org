@@ -1,0 +1,212 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<p class="visuallyhidden">
+  The following form filters and update content in the table below.
+</p>
+
+<form class="tag-filter" id="tag-filter">
+  <div class="form-group">
+    <label for="tagSelect">Tags</label>
+    <select name="tagSelect" id="tagSelect" placeholder="Select tags" multiple>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="search" class="visuallyhidden">Search</label>
+    <button class="submit-btn" id="submit-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <input name="search" type="search" id="search" placeholder="Search" class="input-search" />
+  </div>
+</form>
+
+<div class="materials-panel">
+
+  <table class="materials" id="materialsList">
+    <tbody>
+      {% for material in site.materials %}
+      <tr class="material visible">
+        <td>
+          <div class="material__details">
+
+            <ul class="authors">
+              {% for item in material.authors %}
+              <li>{{ item.family-names }}</li>
+              {% endfor %}
+            </ul>
+
+            <h2 class="title"><a href="{{ material.url }}">
+
+                {% assign github_parts = material.github_repo_url | split: "/" | reverse %}
+                {% assign github_repo = github_parts[0] %}
+
+                {% if material.name %}
+                {{ material.name }}
+                {% elsif material.title %}
+                {{ material.title }}
+                {% elsif material.remark-name %}
+                {{ material.remark-name }}
+                {% elsif material.title-original-paper %}
+                {{ material.title-original-paper }}
+                {% else %}
+                {{ github_repo }}
+                {% endif %}
+
+              </a></h2>
+
+              <p class="summary">{{ material.abstract | truncatewords: 30 }}</p>
+
+            <ul class="tags">
+              {% for tag in material.tags %}
+              <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+  const materials = {};
+  {% for mat in site.materials %}
+    materials["{{ mat.url }}"] = {
+      title: "{{ mat.title  | normalize_whitespace | replace: '"', "'" }}",
+      abstract: "{{ mat.abstract | normalize_whitespace | replace: '"', "'" }}",
+      name: "{{ mat.name | normalize_whitespace | replace: '"', "'" }}",
+      "remark-name": "{{ mat.remark-name | normalize_whitespace | replace: '"', "'" }}",
+      content: "{{ mat.content | normalize_whitespace | replace: '"', "'" }}",
+      authors: [{% for auth in mat.authors %}"{{ auth.given-names }} {{ auth.family-names }}",{% endfor %}],
+      tags: [{% for t in mat.tags %}"{{ t }}",{% endfor %}],
+  }
+  {% endfor %}
+
+
+  const tagSelect = document.getElementById('tagSelect');
+  const tags = [...document.querySelectorAll("ul.tags li")].map((v) => { return v.innerText });
+
+  const form = document.querySelector("form")
+  form.addEventListener("change", (e) => {
+    let evt = document.createEvent("Event");
+    evt.initEvent("submit", true, true);
+    form.dispatchEvent(evt)
+  });
+
+  function isSuperset(set, subset) {
+    for (const elem of subset) {
+      if (!set.has(elem)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault()
+    const formData = new FormData(form);
+    const searchstr = formData.get("search").toLowerCase();
+    for (let [key, entry] of Object.entries(materials)) {
+      const textMatches = [
+        entry.title.toLowerCase().includes(searchstr),
+        entry.abstract.toLowerCase().includes(searchstr),
+        entry.name.toLowerCase().includes(searchstr),
+        entry["remark-name"].toLowerCase().includes(searchstr),
+        entry.content.toLowerCase().includes(searchstr),
+        entry.authors.some((name) => { return name.toLowerCase().includes(searchstr) }),
+      ];
+
+      const tagMatches = isSuperset(new Set(entry.tags), formData.getAll("tagSelect"))
+      // accounts for accidental duplicate documents
+      let rows = [...document.querySelectorAll(`a[href="${key}"]`)].map((s) => s.closest('tr'));
+      if (tagMatches && textMatches.some((x) => x)) {
+        rows.forEach((elem) => elem.style.display = '');
+      } else {
+        rows.forEach((elem) => elem.style.display = 'none');
+      }
+    }
+    document.documentElement.scrollTop = 0;
+  });
+
+  function insertTextAndSubmit(event) {
+    var textValue = event.target.textContent;
+    document.getElementById('search').value = textValue;
+    document.getElementById('submit-btn').click();
+  }
+
+  var listItems = document.querySelectorAll('.authors li');
+  listItems.forEach(function(li) {
+    li.addEventListener('click', insertTextAndSubmit);
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const choices = new Choices(tagSelect, {
+      allowHTML: true,
+      choices: [...new Set(tags)].map((v) => { return { 'value': v } }),
+      delimiter: ',',
+      editItems: true,
+      maxItemCount: 5,
+      removeItemButton: true,
+    });
+
+    function addTagToFilter(event) {
+      var textValue = event.target.textContent;
+      choices.setChoiceByValue(textValue);
+      let evt = document.createEvent("Event");
+      evt.initEvent("change", true, true);
+      tagSelect.dispatchEvent(evt)
+    }
+
+    var tagPills = document.querySelectorAll('.tags li');
+    tagPills.forEach(function(li) {
+      li.addEventListener('click', addTagToFilter);
+    });
+
+
+    // Get the already initialized Choices.js instance
+    //const selectElement = document.getElementById('mySelect');
+    //const choicesInstance = choices;
+
+    // Function to get the value from query string or anchor hash
+    function getSelectionFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const hash = window.location.hash.substring(1);
+
+        // Check for query string parameter 'select' first
+        if (urlParams.has('select')) {
+            return urlParams.get('select');
+        }
+        // If not found, check for hash value
+        else if (hash) {
+            return hash;
+        }
+        return null;
+    }
+
+    // Auto-select the option based on the URL
+    function autoSelectOption() {
+        const selection = getSelectionFromUrl();
+        if (selection) {
+            const option = choices.setChoiceByValue(selection);
+
+            let evt = document.createEvent("Event");
+            evt.initEvent("change", true, true);
+            tagSelect.dispatchEvent(evt);
+
+            // Check if the option exists
+            if (!option) {
+                console.warn(`Option with value "${selection}" not found.`);
+            }
+        }
+    }
+
+    // Call the autoSelectOption function on page load
+    autoSelectOption();
+
+  });
+
+</script>
