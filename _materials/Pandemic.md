@@ -22,7 +22,6 @@ authors:
 cff-version: 1.2.0
 dashboards:
 - Code/Python/dashboard.ipynb
-github_repo_url: https://github.com/econ-ark/Pandemic
 identifiers-paper:
 - type: url
   value: https://www.nber.org/papers/w27876
