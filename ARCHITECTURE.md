@@ -21,7 +21,8 @@ The Econ-ARK website is a Jekyll-based static site that serves as the discovery 
 2. Concurrent Content Fetching  
    - Multi-threaded cloning of research repositories
    - Sparse checkout for performance (metadata files only)
-   - Error handling for unreachable repositories
+   - An unreachable repository fails the build, after the other pages are written
+   - An entry marked `private: true` in the catalog is not cloned and gets no page
 
 3. Metadata Extraction and Merging
    - Parse CITATION.cff (bibliographic data)
@@ -38,7 +39,8 @@ The Econ-ARK website is a Jekyll-based static site that serves as the discovery 
 **Technical Implementation**:
 - **Concurrency**: ThreadPoolExecutor for parallel repository operations
 - **Git Operations**: Sparse checkout with `--filter=tree:0` for efficiency
-- **Error Resilience**: Continues processing if individual repositories fail
+- **Errors**: Prints the outcome for every catalog entry; exits with an error if the catalog, an entry or its repository cannot be read, so the site is not published with pages silently missing
+- **Tests**: `python -m unittest discover -s scripts` (run on pull requests by `.github/workflows/tests.yml`)
 - **Memory Management**: Uses temporary directories, automatic cleanup
 
 #### Workflow Automation (`.github/workflows/site-preprocess.yml`)
