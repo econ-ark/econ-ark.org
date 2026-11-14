@@ -1,0 +1,102 @@
+# Research Taxonomy for AI Systems and Search Engines
+# This file provides structured categorization of economic research topics
+
+domains:
+  - name: "Computational Economics"
+    description: "Quantitative economic modeling using computational methods"
+    keywords: ["computational economics", "numerical methods", "economic simulation"]
+    subdomains:
+      - name: "Consumption Theory"
+        description: "Models of individual and household consumption decisions"
+        keywords: ["consumption function", "saving behavior", "buffer stock theory"]
+        concepts:
+          - "Permanent Income Hypothesis"
+          - "Life Cycle Hypothesis"
+          - "Precautionary Saving"
+          - "Liquidity Constraints"
+      
+      - name: "Portfolio Choice"
+        description: "Asset allocation and financial decision-making models"
+        keywords: ["portfolio optimization", "asset allocation", "financial planning"]
+        concepts:
+          - "Mean-Variance Optimization"
+          - "Risk Management"
+          - "Retirement Planning"
+          - "Investment Strategies"
+      
+      - name: "Macroeconomic Modeling"
+        description: "Aggregate economic dynamics and policy analysis"
+        keywords: ["macroeconomics", "DSGE", "heterogeneous agents"]
+        concepts:
+          - "Dynamic Stochastic General Equilibrium"
+          - "Heterogeneous Agent Models"
+          - "Wealth Distribution"
+          - "Policy Analysis"
+
+methodologies:
+  - name: "Dynamic Programming"
+    description: "Sequential decision-making under uncertainty"
+    applications: ["optimization", "value function iteration", "policy function iteration"]
+    
+  - name: "Numerical Methods"
+    description: "Computational techniques for solving economic models"
+    applications: ["interpolation", "root finding", "optimization", "simulation"]
+    
+  - name: "Endogenous Grid Methods"
+    description: "Advanced numerical solution techniques"
+    applications: ["consumption models", "portfolio choice", "lifecycle models"]
+
+research_types:
+  - name: "Exploration"
+    description: "Demonstrations using Econ-ARK/HARK toolkit"
+    characteristics: ["educational", "demonstrative", "tutorial"]
+    
+  - name: "Replication"
+    description: "Attempts to replicate published research results"
+    characteristics: ["verification", "reproducibility", "validation"]
+    
+  - name: "Reproduction"
+    description: "Complete reproduction of paper results using Econ-ARK"
+    characteristics: ["comprehensive", "exact replication", "full results"]
+
+technical_stack:
+  languages:
+    - name: "Python"
+      frameworks: ["HARK", "NumPy", "SciPy", "Matplotlib"]
+      use_cases: ["economic modeling", "data analysis", "visualization"]
+      
+  environments:
+    - name: "Jupyter Notebooks"
+      description: "Interactive computational documents"
+      benefits: ["reproducibility", "documentation", "exploration"]
+      
+    - name: "MyBinder"
+      description: "Cloud-based notebook execution"
+      benefits: ["accessibility", "no local setup", "sharing"]
+
+data_sources:
+  - name: "FRED (Federal Reserve Economic Data)"
+    description: "Macroeconomic time series data"
+    url: "https://fred.stlouisfed.org/"
+    
+  - name: "Survey of Professional Forecasters"
+    description: "Economic forecast data"
+    provider: "Philadelphia Fed"
+    
+  - name: "Consumer Expenditure Survey"
+    description: "Household spending data"
+    provider: "Bureau of Labor Statistics"
+
+academic_keywords:
+  primary: ["computational economics", "heterogeneous agents", "dynamic programming"]
+  secondary: ["consumption theory", "portfolio choice", "macroeconomic modeling"]
+  technical: ["numerical methods", "simulation", "optimization", "interpolation"]
+  policy: ["wealth inequality", "social insurance", "retirement policy"]
+
+related_fields:
+  - "Econometrics"
+  - "Financial Economics" 
+  - "Behavioral Economics"
+  - "Public Economics"
+  - "Labor Economics"
+  - "Industrial Organization" 

@@ -1,0 +1,41 @@
+---
+layout: null
+search: exclude
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    {% for page in site.pages %}
+    <url>
+        <loc>{{page.url}}</loc>
+        <lastmod>{{site.time | date: '%Y-%m-%d' }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    {% endfor %}
+
+    {% for post in site.posts %}
+    <url>
+        <loc>{{ site.url }}{{post.url}}</loc>
+        <lastmod>{{site.time | date: '%Y-%m-%d' }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    {% endfor %}
+
+    {% for material in site.materials %}
+    <url>
+        <loc>{{ site.url }}{{ material.url }}</loc>
+        <lastmod>{% if material.date-released %}{{ material.date-released }}{% else %}{{ site.time | date: '%Y-%m-%d' }}{% endif %}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>{{ site.url }}/assets/img/econ-ark-logo.png</image:loc>
+            <image:title>{% if material.title %}{{ material.title }}{% else %}{{ material.name }}{% endif %}</image:title>
+            <image:caption>{{ material.abstract | truncate: 100 }}</image:caption>
+        </image:image>
+    </url>
+    {% endfor %}
+
+</urlset>
