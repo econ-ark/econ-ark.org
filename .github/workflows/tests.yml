@@ -1,0 +1,26 @@
+name: Test the build scripts
+on:
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: set up Python
+        uses: actions/setup-python@v5
+        with:
+          # The versions the site's build uses, in site-preprocess.yml
+          python-version: '3.11.x'
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml==6.0.0
+      - name: run the tests
+        run: python -m unittest discover -s scripts -v
