@@ -1,0 +1,147 @@
+---
+abstract: Compares growth rates of durable vs nondurable goods consumption at quarterly
+  and 10-year frequencies
+authors:
+- family-names: Kumar
+  given-names: Ashish
+dashboards: null
+date-released: null
+github_repo_url: https://github.com/econ-ark/DemARK
+name: Durables vs Nondurables At Low And High Frequencies
+notebooks:
+- notebooks/Durables-vs-Nondurables-At-Low-And-High-Frequencies.ipynb
+redirect_from:
+- /materials/durables-vs-nondurables-at-low-and-high-Frequencies/
+- /materials/durables-vs-nondurables-at-low-and-High-frequencies/
+- /materials/durables-vs-nondurables-at-low-and-High-Frequencies/
+- /materials/durables-vs-nondurables-at-low-And-high-frequencies/
+- /materials/durables-vs-nondurables-at-low-And-high-Frequencies/
+- /materials/durables-vs-nondurables-at-low-And-High-frequencies/
+- /materials/durables-vs-nondurables-at-low-And-High-Frequencies/
+- /materials/durables-vs-nondurables-at-Low-and-high-frequencies/
+- /materials/durables-vs-nondurables-at-Low-and-high-Frequencies/
+- /materials/durables-vs-nondurables-at-Low-and-High-frequencies/
+- /materials/durables-vs-nondurables-at-Low-and-High-Frequencies/
+- /materials/durables-vs-nondurables-at-Low-And-high-frequencies/
+- /materials/durables-vs-nondurables-at-Low-And-high-Frequencies/
+- /materials/durables-vs-nondurables-at-Low-And-High-frequencies/
+- /materials/durables-vs-nondurables-at-Low-And-High-Frequencies/
+- /materials/durables-vs-nondurables-At-low-and-high-frequencies/
+- /materials/durables-vs-nondurables-At-low-and-high-Frequencies/
+- /materials/durables-vs-nondurables-At-low-and-High-frequencies/
+- /materials/durables-vs-nondurables-At-low-and-High-Frequencies/
+- /materials/durables-vs-nondurables-At-low-And-high-frequencies/
+- /materials/durables-vs-nondurables-At-low-And-high-Frequencies/
+- /materials/durables-vs-nondurables-At-low-And-High-frequencies/
+- /materials/durables-vs-nondurables-At-low-And-High-Frequencies/
+- /materials/durables-vs-nondurables-At-Low-and-high-frequencies/
+- /materials/durables-vs-nondurables-At-Low-and-high-Frequencies/
+- /materials/durables-vs-nondurables-At-Low-and-High-frequencies/
+- /materials/durables-vs-nondurables-At-Low-and-High-Frequencies/
+- /materials/durables-vs-nondurables-At-Low-And-high-frequencies/
+- /materials/durables-vs-nondurables-At-Low-And-high-Frequencies/
+- /materials/durables-vs-nondurables-At-Low-And-High-frequencies/
+- /materials/durables-vs-nondurables-At-Low-And-High-Frequencies/
+- /materials/durables-vs-Nondurables-at-low-and-high-frequencies/
+- /materials/durables-vs-Nondurables-at-low-and-high-Frequencies/
+- /materials/durables-vs-Nondurables-at-low-and-High-frequencies/
+- /materials/durables-vs-Nondurables-at-low-and-High-Frequencies/
+- /materials/durables-vs-Nondurables-at-low-And-high-frequencies/
+- /materials/durables-vs-Nondurables-at-low-And-high-Frequencies/
+- /materials/durables-vs-Nondurables-at-low-And-High-frequencies/
+- /materials/durables-vs-Nondurables-at-low-And-High-Frequencies/
+- /materials/durables-vs-Nondurables-at-Low-and-high-frequencies/
+- /materials/durables-vs-Nondurables-at-Low-and-high-Frequencies/
+- /materials/durables-vs-Nondurables-at-Low-and-High-frequencies/
+- /materials/durables-vs-Nondurables-at-Low-and-High-Frequencies/
+- /materials/durables-vs-Nondurables-at-Low-And-high-frequencies/
+- /materials/durables-vs-Nondurables-at-Low-And-high-Frequencies/
+- /materials/durables-vs-Nondurables-at-Low-And-High-frequencies/
+- /materials/durables-vs-Nondurables-at-Low-And-High-Frequencies/
+- /materials/durables-vs-Nondurables-At-low-and-high-frequencies/
+- /materials/durables-vs-Nondurables-At-low-and-high-Frequencies/
+- /materials/durables-vs-Nondurables-At-low-and-High-frequencies/
+- /materials/durables-vs-Nondurables-At-low-and-High-Frequencies/
+- /materials/durables-vs-Nondurables-At-low-And-high-frequencies/
+- /materials/durables-vs-Nondurables-At-low-And-high-Frequencies/
+- /materials/durables-vs-Nondurables-At-low-And-High-frequencies/
+- /materials/durables-vs-Nondurables-At-low-And-High-Frequencies/
+- /materials/durables-vs-Nondurables-At-Low-and-high-frequencies/
+- /materials/durables-vs-Nondurables-At-Low-and-high-Frequencies/
+- /materials/durables-vs-Nondurables-At-Low-and-High-frequencies/
+- /materials/durables-vs-Nondurables-At-Low-and-High-Frequencies/
+- /materials/durables-vs-Nondurables-At-Low-And-high-frequencies/
+- /materials/durables-vs-Nondurables-At-Low-And-high-Frequencies/
+- /materials/durables-vs-Nondurables-At-Low-And-High-frequencies/
+- /materials/durables-vs-Nondurables-At-Low-And-High-Frequencies/
+- /materials/Durables-vs-nondurables-at-low-and-high-frequencies/
+- /materials/Durables-vs-nondurables-at-low-and-high-Frequencies/
+- /materials/Durables-vs-nondurables-at-low-and-High-frequencies/
+- /materials/Durables-vs-nondurables-at-low-and-High-Frequencies/
+- /materials/Durables-vs-nondurables-at-low-And-high-frequencies/
+- /materials/Durables-vs-nondurables-at-low-And-high-Frequencies/
+- /materials/Durables-vs-nondurables-at-low-And-High-frequencies/
+- /materials/Durables-vs-nondurables-at-low-And-High-Frequencies/
+- /materials/Durables-vs-nondurables-at-Low-and-high-frequencies/
+- /materials/Durables-vs-nondurables-at-Low-and-high-Frequencies/
+- /materials/Durables-vs-nondurables-at-Low-and-High-frequencies/
+- /materials/Durables-vs-nondurables-at-Low-and-High-Frequencies/
+- /materials/Durables-vs-nondurables-at-Low-And-high-frequencies/
+- /materials/Durables-vs-nondurables-at-Low-And-high-Frequencies/
+- /materials/Durables-vs-nondurables-at-Low-And-High-frequencies/
+- /materials/Durables-vs-nondurables-at-Low-And-High-Frequencies/
+- /materials/Durables-vs-nondurables-At-low-and-high-frequencies/
+- /materials/Durables-vs-nondurables-At-low-and-high-Frequencies/
+- /materials/Durables-vs-nondurables-At-low-and-High-frequencies/
+- /materials/Durables-vs-nondurables-At-low-and-High-Frequencies/
+- /materials/Durables-vs-nondurables-At-low-And-high-frequencies/
+- /materials/Durables-vs-nondurables-At-low-And-high-Frequencies/
+- /materials/Durables-vs-nondurables-At-low-And-High-frequencies/
+- /materials/Durables-vs-nondurables-At-low-And-High-Frequencies/
+- /materials/Durables-vs-nondurables-At-Low-and-high-frequencies/
+- /materials/Durables-vs-nondurables-At-Low-and-high-Frequencies/
+- /materials/Durables-vs-nondurables-At-Low-and-High-frequencies/
+- /materials/Durables-vs-nondurables-At-Low-and-High-Frequencies/
+- /materials/Durables-vs-nondurables-At-Low-And-high-frequencies/
+- /materials/Durables-vs-nondurables-At-Low-And-high-Frequencies/
+- /materials/Durables-vs-nondurables-At-Low-And-High-frequencies/
+- /materials/Durables-vs-nondurables-At-Low-And-High-Frequencies/
+- /materials/Durables-vs-Nondurables-at-low-and-high-frequencies/
+- /materials/Durables-vs-Nondurables-at-low-and-high-Frequencies/
+- /materials/Durables-vs-Nondurables-at-low-and-High-frequencies/
+- /materials/Durables-vs-Nondurables-at-low-and-High-Frequencies/
+- /materials/Durables-vs-Nondurables-at-low-And-high-frequencies/
+- /materials/Durables-vs-Nondurables-at-low-And-high-Frequencies/
+- /materials/Durables-vs-Nondurables-at-low-And-High-frequencies/
+- /materials/Durables-vs-Nondurables-at-low-And-High-Frequencies/
+- /materials/Durables-vs-Nondurables-at-Low-and-high-frequencies/
+- /materials/Durables-vs-Nondurables-at-Low-and-high-Frequencies/
+- /materials/Durables-vs-Nondurables-at-Low-and-High-frequencies/
+- /materials/Durables-vs-Nondurables-at-Low-and-High-Frequencies/
+- /materials/Durables-vs-Nondurables-at-Low-And-high-frequencies/
+- /materials/Durables-vs-Nondurables-at-Low-And-high-Frequencies/
+- /materials/Durables-vs-Nondurables-at-Low-And-High-frequencies/
+- /materials/Durables-vs-Nondurables-at-Low-And-High-Frequencies/
+- /materials/Durables-vs-Nondurables-At-low-and-high-frequencies/
+- /materials/Durables-vs-Nondurables-At-low-and-high-Frequencies/
+- /materials/Durables-vs-Nondurables-At-low-and-High-frequencies/
+- /materials/Durables-vs-Nondurables-At-low-and-High-Frequencies/
+- /materials/Durables-vs-Nondurables-At-low-And-high-frequencies/
+- /materials/Durables-vs-Nondurables-At-low-And-high-Frequencies/
+- /materials/Durables-vs-Nondurables-At-low-And-High-frequencies/
+- /materials/Durables-vs-Nondurables-At-low-And-High-Frequencies/
+- /materials/Durables-vs-Nondurables-At-Low-and-high-frequencies/
+- /materials/Durables-vs-Nondurables-At-Low-and-high-Frequencies/
+- /materials/Durables-vs-Nondurables-At-Low-and-High-frequencies/
+- /materials/Durables-vs-Nondurables-At-Low-and-High-Frequencies/
+- /materials/Durables-vs-Nondurables-At-Low-And-high-frequencies/
+- /materials/Durables-vs-Nondurables-At-Low-And-high-Frequencies/
+- /materials/Durables-vs-Nondurables-At-Low-And-High-frequencies/
+- /materials/Durables-vs-Nondurables-At-Low-And-High-Frequencies/
+tags:
+- DemARK
+- Demonstration
+- Notebook
+---
+
+Durables vs Nondurables At Low And High Frequencies
