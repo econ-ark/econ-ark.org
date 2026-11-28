@@ -1,0 +1,1 @@
+The goal of Econ‑ARK is to offer a modular, open‑source tool‑kit that plugs seamlessly into your own micro model code or external libraries, giving you a robust way to dynamic general‑equilibrium and aggregate and simulate the macro aggregates and dynamics. 
